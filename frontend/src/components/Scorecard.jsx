@@ -13,6 +13,11 @@ function Scorecard({ scorecard, loan, documents }) {
   const [pdfError, setPdfError] = useState(null);
   const [useTestPdf, setUseTestPdf] = useState(false);
 
+  // Document selection state - initialize with all documents selected
+  const [selectedDocIds, setSelectedDocIds] = useState(() =>
+    documents ? documents.map(doc => doc.id) : []
+  );
+
   // Sample PDF URL for testing
   const TEST_PDF_URL = 'https://pdfobject.com/pdf/sample.pdf';
 
@@ -363,15 +368,35 @@ function Scorecard({ scorecard, loan, documents }) {
     return { id: 'agent-015', name: 'Consistency Checker', icon: '🔗' };
   };
 
-  // Calculate statistics
+  // Document selection handlers
+  const toggleDocumentSelection = (docId) => {
+    setSelectedDocIds(prev =>
+      prev.includes(docId)
+        ? prev.filter(id => id !== docId)
+        : [...prev, docId]
+    );
+  };
+
+  const selectAllDocuments = () => {
+    setSelectedDocIds(documents.map(doc => doc.id));
+  };
+
+  const deselectAllDocuments = () => {
+    setSelectedDocIds([]);
+  };
+
+  // Filter documents based on selection
+  const filteredDocuments = documents.filter(doc => selectedDocIds.includes(doc.id));
+
+  // Calculate statistics (based on filtered documents)
   const stats = {
-    totalCells: dataFields.length * documents.length,
+    totalCells: dataFields.length * filteredDocuments.length,
     matches: 0,
     mismatches: 0,
     na: 0
   };
 
-  documents.forEach(doc => {
+  filteredDocuments.forEach(doc => {
     dataFields.forEach(field => {
       const cellStatus = getCellStatus(field, doc);
       if (cellStatus.status === 'match') stats.matches++;
@@ -420,6 +445,54 @@ function Scorecard({ scorecard, loan, documents }) {
         </div>
       </div>
 
+      {/* Document Selector */}
+      <div className="document-selector">
+        <div className="selector-header">
+          <h3>📄 Document Selector</h3>
+          <p>Select which documents to compare in the grid</p>
+        </div>
+        <div className="selector-controls">
+          <button
+            className="selector-btn"
+            onClick={selectAllDocuments}
+            disabled={selectedDocIds.length === documents.length}
+          >
+            ✓ Select All
+          </button>
+          <button
+            className="selector-btn"
+            onClick={deselectAllDocuments}
+            disabled={selectedDocIds.length === 0}
+          >
+            ✗ Deselect All
+          </button>
+          <div className="selection-count">
+            {selectedDocIds.length} of {documents.length} selected
+          </div>
+        </div>
+        <div className="document-checkboxes">
+          {documents.map((doc, idx) => (
+            <label key={doc.id} className="document-checkbox-item">
+              <input
+                type="checkbox"
+                checked={selectedDocIds.includes(doc.id)}
+                onChange={() => toggleDocumentSelection(doc.id)}
+                className="document-checkbox"
+              />
+              <div className="document-checkbox-content">
+                <div className="document-checkbox-icon">📄</div>
+                <div className="document-checkbox-info">
+                  <div className="document-checkbox-name" title={doc.fileName}>
+                    {doc.fileName}
+                  </div>
+                  <div className="document-checkbox-type">{doc.documentType}</div>
+                </div>
+              </div>
+            </label>
+          ))}
+        </div>
+      </div>
+
       {/* Main Matrix Layout */}
       <div className="matrix-layout">
         {/* Matrix Table */}
@@ -434,7 +507,7 @@ function Scorecard({ scorecard, loan, documents }) {
                       <div className="header-subtitle">ByteLOS Value</div>
                     </div>
                   </th>
-                  {documents.map((doc, idx) => (
+                  {filteredDocuments.map((doc, idx) => (
                     <th
                       key={doc.id}
                       className={`doc-header ${selectedCell?.documentId === doc.id ? 'selected-column' : ''}`}
@@ -455,13 +528,13 @@ function Scorecard({ scorecard, loan, documents }) {
                 {Object.entries(fieldsByCategory).map(([category, fields]) => (
                   <>
                     <tr key={`category-${category}`} className="category-row">
-                      <td className="category-cell" colSpan={documents.length + 2}>
+                      <td className="category-cell" colSpan={filteredDocuments.length + 2}>
                         <div className="category-label">{category}</div>
                       </td>
                     </tr>
                     {fields.map(field => {
                       const losValue = getByteLOSValue(field);
-                      const hasAnyMismatch = documents.some(doc =>
+                      const hasAnyMismatch = filteredDocuments.some(doc =>
                         getCellStatus(field, doc).status === 'mismatch'
                       );
                       const suggestedAgent = getSuggestedAgent(field);
@@ -480,7 +553,7 @@ function Scorecard({ scorecard, loan, documents }) {
                               </div>
                             </div>
                           </td>
-                          {documents.map(doc => {
+                          {filteredDocuments.map(doc => {
                             const cellData = getCellStatus(field, doc);
                             const isSelected = selectedCell?.fieldName === field.name &&
                                              selectedCell?.documentId === doc.id;
