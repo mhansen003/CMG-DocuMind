@@ -15,7 +15,13 @@ const loanDataService = require('./services/loanDataService');
 const conditionsService = require('./services/conditionsService');
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://cmg-docu-mind.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, '../data/uploads')));
 app.use('/sample-documents', express.static(path.join(__dirname, '../data/sample-documents')));
