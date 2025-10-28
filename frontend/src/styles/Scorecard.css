@@ -154,6 +154,8 @@
   overflow: auto;
   max-height: 70vh;
   position: relative;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom Scrollbar */
@@ -182,6 +184,7 @@
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.8rem;
+  table-layout: fixed;
 }
 
 .data-matrix thead {
@@ -222,8 +225,8 @@
 }
 
 .doc-header {
-  min-width: 50px;
-  max-width: 50px;
+  min-width: 120px;
+  max-width: 120px;
   text-align: center;
   transition: background 0.2s;
 }
@@ -239,17 +242,21 @@
   justify-content: center;
 }
 
-.doc-number {
-  font-size: 0.85rem;
-  font-weight: 700;
-  line-height: 1;
+.doc-name-compact {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
 }
 
 .actions-header {
   position: sticky;
   right: 0;
   z-index: 20;
-  min-width: 140px;
+  min-width: 180px;
   text-align: center;
   box-shadow: -2px 0 8px rgba(0,0,0,0.1);
   transition: all 0.2s;
@@ -374,8 +381,8 @@
   transition: all 0.15s;
   border-right: 1px solid #f3f4f6;
   position: relative;
-  min-width: 50px;
-  max-width: 50px;
+  min-width: 120px;
+  max-width: 120px;
 }
 
 .data-cell:hover {
@@ -463,11 +470,11 @@
   position: sticky;
   right: 0;
   background: white;
-  padding: 0.875rem 1rem;
+  padding: 0.5rem 0.6rem;
   border-left: 2px solid #e5e7eb;
   box-shadow: -2px 0 4px rgba(0,0,0,0.05);
   z-index: 5;
-  min-width: 200px;
+  min-width: 180px;
   transition: all 0.2s;
 }
 
@@ -532,6 +539,19 @@
 
 .ignore-btn:hover {
   background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+.sync-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-color: #10b981;
+  flex-basis: 100%;
+  justify-content: center;
+  margin-bottom: 0.3rem;
+}
+
+.sync-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 /* Document Viewer Panel */
@@ -1664,4 +1684,130 @@
   .complexity-bar {
     height: 6px;
   }
+}
+
+/* ====================================== */
+/* SYNC TO LOS MODAL STYLES */
+/* ====================================== */
+
+.sync-document-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.sync-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.sync-option-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.sync-option-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f9fafb;
+}
+
+.sync-option-btn.match {
+  border-color: #10b981;
+  background: linear-gradient(to right, #f0fdf4 0%, #ffffff 100%);
+}
+
+.sync-option-btn.match:hover:not(:disabled) {
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.sync-option-btn.mismatch {
+  border-color: #ef4444;
+  background: linear-gradient(to right, #fef2f2 0%, #ffffff 100%);
+}
+
+.sync-option-btn.mismatch:hover:not(:disabled) {
+  border-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.sync-option-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.sync-option-icon {
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sync-option-btn.match .sync-option-icon {
+  color: #10b981;
+}
+
+.sync-option-btn.mismatch .sync-option-icon {
+  color: #ef4444;
+}
+
+.sync-option-btn.na .sync-option-icon {
+  color: #9ca3af;
+}
+
+.sync-option-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sync-option-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  word-break: break-word;
+}
+
+.sync-option-btn.match .sync-option-value {
+  background: #f0fdf4;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.sync-option-btn.mismatch .sync-option-value {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.sync-option-type {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }

@@ -182,6 +182,7 @@ function Scorecard({ scorecard, loan, documents }) {
   // State for action modals
   const [showAgentPanel, setShowAgentPanel] = useState(false);
   const [showConditionModal, setShowConditionModal] = useState(false);
+  const [showSyncModal, setShowSyncModal] = useState(false);
   const [selectedFieldForAction, setSelectedFieldForAction] = useState(null);
 
   // State for toasts and agent results
@@ -205,6 +206,22 @@ function Scorecard({ scorecard, loan, documents }) {
       alert(`✓ Mismatch for ${field.label} has been marked as ignored.`);
       console.log(`Mismatch ignored for field: ${field.label}`);
     }
+  };
+
+  const handleSyncToLOS = (field) => {
+    setSelectedFieldForAction({ field, documents: filteredDocuments });
+    setShowSyncModal(true);
+  };
+
+  const syncValueToLOS = (documentId, field) => {
+    const selectedDoc = filteredDocuments.find(doc => doc.id === documentId);
+    const value = getDocumentValue(selectedDoc, field.name);
+
+    console.log(`Syncing ${field.label} to LOS with value from ${selectedDoc.fileName}:`, value);
+    alert(`✓ ${field.label} synced to LOS\n\nNew value: ${value}\nSource: ${selectedDoc.fileName}\n\n(In production, this would update the ByteLOS system)`);
+
+    setShowSyncModal(false);
+    setSelectedFieldForAction(null);
   };
 
   // Generate agent result based on agent type and field
@@ -561,7 +578,11 @@ function Scorecard({ scorecard, loan, documents }) {
                       title={`${doc.fileName}\n${doc.documentType}`}
                     >
                       <div className="doc-header-content">
-                        <div className="doc-number">#{idx + 1}</div>
+                        <div className="doc-name-compact">
+                          {doc.fileName.length > 12
+                            ? doc.fileName.substring(0, 12) + '...'
+                            : doc.fileName}
+                        </div>
                       </div>
                     </th>
                   ))}
@@ -588,6 +609,14 @@ function Scorecard({ scorecard, loan, documents }) {
                         getCellStatus(field, doc).status === 'mismatch'
                       );
                       const suggestedAgent = getSuggestedAgent(field);
+
+                      // Check for mixed status (some match, some mismatch)
+                      const hasMixedStatus = (() => {
+                        const statuses = filteredDocuments.map(doc => getCellStatus(field, doc).status);
+                        const hasMatch = statuses.includes('match');
+                        const hasMismatch = statuses.includes('mismatch');
+                        return hasMatch && hasMismatch;
+                      })();
 
                       return (
                         <tr key={field.name} className={`data-row ${selectedCell?.fieldName === field.name ? 'selected-row' : ''}`}>
@@ -667,6 +696,15 @@ function Scorecard({ scorecard, loan, documents }) {
                             {hasAnyMismatch && (
                               <>
                                 <div className="action-buttons">
+                                  {hasMixedStatus && (
+                                    <button
+                                      className="action-btn sync-btn"
+                                      title="Sync to ByteLOS - Choose which document to use"
+                                      onClick={() => handleSyncToLOS(field)}
+                                    >
+                                      🔄 Sync to LOS
+                                    </button>
+                                  )}
                                   <button
                                     className="action-btn agent-btn"
                                     title={`Assign to ${suggestedAgent.name}`}
@@ -1003,6 +1041,67 @@ function Scorecard({ scorecard, loan, documents }) {
                 }}
               >
                 📋 Create Condition
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sync to LOS Modal */}
+      {showSyncModal && selectedFieldForAction && (
+        <div className="modal-overlay" onClick={() => setShowSyncModal(false)}>
+          <div className="modal-content sync-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>🔄 Sync to ByteLOS</h3>
+              <button className="close-btn" onClick={() => setShowSyncModal(false)}>✕</button>
+            </div>
+            <div className="modal-body">
+              <div className="form-group">
+                <label>Field:</label>
+                <input type="text" value={selectedFieldForAction.field.label} disabled className="form-input" />
+              </div>
+              <div className="form-group">
+                <label>Current ByteLOS Value:</label>
+                <input
+                  type="text"
+                  value={getByteLOSValue(selectedFieldForAction.field) || 'No value'}
+                  disabled
+                  className="form-input"
+                  style={{ background: '#fee2e2', color: '#991b1b', fontWeight: '600' }}
+                />
+              </div>
+              <div className="form-group">
+                <label>Select Document to Use for Sync:</label>
+                <div className="sync-document-options">
+                  {selectedFieldForAction.documents.map((doc) => {
+                    const cellData = getCellStatus(selectedFieldForAction.field, doc);
+                    const isMatch = cellData.status === 'match';
+                    const isMismatch = cellData.status === 'mismatch';
+
+                    return (
+                      <button
+                        key={doc.id}
+                        className={`sync-option-btn ${isMatch ? 'match' : isMismatch ? 'mismatch' : 'na'}`}
+                        onClick={() => syncValueToLOS(doc.id, selectedFieldForAction.field)}
+                        disabled={!cellData.docValue}
+                      >
+                        <div className="sync-option-header">
+                          <span className="sync-option-icon">{isMatch ? '✓' : isMismatch ? '✗' : '—'}</span>
+                          <span className="sync-option-name">{doc.fileName}</span>
+                        </div>
+                        <div className="sync-option-value">
+                          {cellData.docValue ? String(cellData.docValue) : 'No data'}
+                        </div>
+                        <div className="sync-option-type">{doc.documentType}</div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="btn btn-secondary" onClick={() => setShowSyncModal(false)}>
+                Cancel
               </button>
             </div>
           </div>
