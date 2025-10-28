@@ -500,6 +500,74 @@
   background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Connection line indicators */
+.legend-line {
+  width: 32px;
+  height: 3px;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.legend-line::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid inherit;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.legend-line.primary {
+  background: #667eea;
+}
+
+.legend-line.primary::after {
+  border-left-color: #667eea;
+}
+
+.legend-line.secondary {
+  background: #cbd5e1;
+}
+
+.legend-line.secondary::after {
+  border-left-color: #cbd5e1;
+}
+
+.legend-line.hover {
+  background: #f59e0b;
+}
+
+.legend-line.hover::after {
+  border-left-color: #f59e0b;
+}
+
+.legend-line.animated {
+  background: #10b981;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #10b981,
+    #10b981 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.legend-line.animated::after {
+  border-left-color: #10b981;
+}
+
+/* Control icons */
+.legend-icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
 /* Node count badge */
 .node-count {
   padding: 0.5rem 0.75rem;

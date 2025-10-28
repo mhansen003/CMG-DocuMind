@@ -560,6 +560,44 @@ function AgentFlowDiagram({ agentId, allAgents = false }) {
             ))}
           </div>
         </div>
+        <div className="legend-section">
+          <div className="legend-subtitle">Connection Lines</div>
+          <div className="legend-items">
+            <div className="legend-item">
+              <div className="legend-line primary"></div>
+              <span>Primary Flow</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-line secondary"></div>
+              <span>Secondary Flow</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-line hover"></div>
+              <span>Selected/Hovered</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-line animated"></div>
+              <span>Active Data Flow</span>
+            </div>
+          </div>
+        </div>
+        <div className="legend-section">
+          <div className="legend-subtitle">Controls</div>
+          <div className="legend-items">
+            <div className="legend-item">
+              <span className="legend-icon">🖱️</span>
+              <span>Drag to pan</span>
+            </div>
+            <div className="legend-item">
+              <span className="legend-icon">🔍</span>
+              <span>Scroll to zoom</span>
+            </div>
+            <div className="legend-item">
+              <span className="legend-icon">👆</span>
+              <span>Click nodes to select</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Canvas */}
