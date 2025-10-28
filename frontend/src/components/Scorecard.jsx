@@ -432,6 +432,52 @@ function Scorecard({ scorecard, loan, documents }) {
     return 'Very Hard';
   };
 
+  // Generate AI summary for mismatch row
+  const generateMismatchSummary = (field, docs) => {
+    const mismatchDocs = docs.filter(doc => getCellStatus(field, doc).status === 'mismatch');
+    const matchDocs = docs.filter(doc => getCellStatus(field, doc).status === 'match');
+    const losValue = getByteLOSValue(field);
+
+    if (mismatchDocs.length === 0) return null;
+
+    // Get unique values from all documents
+    const uniqueValues = [...new Set(docs.map(doc => {
+      const cellData = getCellStatus(field, doc);
+      return cellData.docValue ? String(cellData.docValue).trim() : null;
+    }).filter(Boolean))];
+
+    // Build summary based on mismatch pattern
+    let summary = '';
+
+    if (mismatchDocs.length === docs.length) {
+      // All documents mismatch
+      summary = `All ${docs.length} documents show different values for ${field.label} than ByteLOS (${losValue || 'not set'}). `;
+      if (uniqueValues.length === 1) {
+        summary += `All documents consistently show "${uniqueValues[0]}" - suggests ByteLOS may need updating.`;
+      } else {
+        summary += `Documents show ${uniqueValues.length} different values - requires verification and standardization.`;
+      }
+    } else if (matchDocs.length > 0 && mismatchDocs.length > 0) {
+      // Mixed matches and mismatches
+      summary = `${mismatchDocs.length} of ${docs.length} documents don't match ByteLOS. `;
+      summary += `${matchDocs.length} document(s) match correctly. `;
+      summary += `Review mismatched documents to determine correct value.`;
+    }
+
+    // Add category-specific context
+    if (field.category === 'Income' && uniqueValues.length > 1) {
+      summary += ` Income discrepancies may affect DTI calculations and loan approval.`;
+    } else if (field.category === 'Identity') {
+      summary += ` Identity field discrepancies require immediate resolution for compliance.`;
+    } else if (field.category === 'Property') {
+      summary += ` Property information must match across all documents and public records.`;
+    } else if (field.category === 'Banking') {
+      summary += ` Banking information must be consistent for asset verification.`;
+    }
+
+    return summary;
+  };
+
   // Document selection handlers
   const toggleDocumentSelection = (docId) => {
     setSelectedDocIds(prev =>
@@ -727,6 +773,24 @@ function Scorecard({ scorecard, loan, documents }) {
                                     🚫 Ignore
                                   </button>
                                 </div>
+
+                                {/* AI Summary Section */}
+                                {(() => {
+                                  const summary = generateMismatchSummary(field, filteredDocuments);
+                                  if (!summary) return null;
+
+                                  return (
+                                    <div className="ai-summary">
+                                      <div className="ai-summary-header">
+                                        <span className="ai-icon">🤖</span>
+                                        <span className="ai-label">AI Analysis</span>
+                                      </div>
+                                      <div className="ai-summary-text">
+                                        {summary}
+                                      </div>
+                                    </div>
+                                  );
+                                })()}
 
                                 {/* Agent Results Section */}
                                 {(() => {

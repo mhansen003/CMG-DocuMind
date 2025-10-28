@@ -1687,6 +1687,45 @@
 }
 
 /* ====================================== */
+/* AI SUMMARY STYLES */
+/* ====================================== */
+
+.ai-summary {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+  border: 1px solid #c7d2fe;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.ai-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #4c51bf;
+}
+
+.ai-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.ai-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ai-summary-text {
+  color: #3730a3;
+  font-weight: 500;
+}
+
+/* ====================================== */
 /* SYNC TO LOS MODAL STYLES */
 /* ====================================== */
 
