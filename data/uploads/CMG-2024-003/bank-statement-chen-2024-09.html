@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chase Bank - Joint Checking Statement</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; }
+        .bank-header { background: #0a2d6d; color: white; padding: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; }
+        .account-info { background: #f8f9fa; padding: 20px; margin: 20px 0; border-left: 4px solid #0a2d6d; }
+        .info-row { display: flex; justify-content: space-between; padding: 5px 0; }
+        .label { font-weight: bold; color: #666; }
+        .balance-summary { background: #fff3cd; padding: 20px; margin: 20px 0; border: 2px solid #ffc107; }
+        .balance-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center; }
+        .balance-amount { font-size: 24px; font-weight: bold; color: #000; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .transactions-table thead th { background: #2c3e50; color: white; padding: 12px; text-align: left; font-size: 13px; }
+        .transactions-table tbody tr:nth-child(even) { background: #f8f9fa; }
+        .transactions-table td { padding: 8px 12px; border-bottom: 1px solid #ddd; font-size: 13px; }
+        .debit { color: #d00; }
+        .credit { color: #28a745; }
+    </style>
+</head>
+<body>
+    <div class="bank-header">
+        <div class="bank-logo">CHASE</div>
+        <div style="margin-top: 5px; font-size: 14px;">Joint Checking Account Statement</div>
+    </div>
+
+    <div class="account-info">
+        <div class="info-row"><span class="label">Account Holders:</span><span>James Chen & Amanda Chen</span></div>
+        <div class="info-row"><span class="label">Account Number:</span><span>****5678</span></div>
+        <div class="info-row"><span class="label">Account Type:</span><span>Joint Checking</span></div>
+        <div class="info-row"><span class="label">Statement Period:</span><span>September 1, 2024 - September 30, 2024</span></div>
+        <div class="info-row"><span class="label">Address:</span><span>789 Cherry Avenue, Apt 12, Long Beach, CA 90806</span></div>
+    </div>
+
+    <div class="balance-summary">
+        <div class="balance-grid">
+            <div><div style="font-size: 12px; color: #666; margin-bottom: 5px;">Beginning Balance</div><div class="balance-amount">$6,850.00</div></div>
+            <div><div style="font-size: 12px; color: #666; margin-bottom: 5px;">Ending Balance</div><div class="balance-amount">$8,200.00</div></div>
+            <div><div style="font-size: 12px; color: #666; margin-bottom: 5px;">Average Balance</div><div class="balance-amount">$7,425.00</div></div>
+        </div>
+    </div>
+
+    <div style="font-size: 18px; font-weight: bold; margin: 30px 0 10px 0; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Transactions (38 total)</div>
+
+    <table class="transactions-table">
+        <thead>
+            <tr><th>Date</th><th>Description</th><th style="text-align: right;">Amount</th><th style="text-align: right;">Balance</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>09/01</td><td>Beginning Balance</td><td></td><td style="text-align: right;">$6,850.00</td></tr>
+            <tr><td>09/01</td><td>Online Payment - Honda Finance</td><td class="debit" style="text-align: right;">($415.00)</td><td style="text-align: right;">$6,435.00</td></tr>
+            <tr><td>09/03</td><td>ACH Debit - Rent Payment - 789 Cherry Ave</td><td class="debit" style="text-align: right;">($1,850.00)</td><td style="text-align: right;">$4,585.00</td></tr>
+            <tr><td>09/05</td><td>Direct Deposit - Pacific Coast Healthcare</td><td class="credit" style="text-align: right;">$1,923.45</td><td style="text-align: right;">$6,508.45</td></tr>
+            <tr><td>09/06</td><td>Debit Card - Trader Joe's</td><td class="debit" style="text-align: right;">($87.43)</td><td style="text-align: right;">$6,421.02</td></tr>
+            <tr><td>09/08</td><td>Debit Card - Target</td><td class="debit" style="text-align: right;">($124.56)</td><td style="text-align: right;">$6,296.46</td></tr>
+            <tr><td>09/10</td><td>Online Payment - Nelnet Student Loan</td><td class="debit" style="text-align: right;">($380.00)</td><td style="text-align: right;">$5,916.46</td></tr>
+            <tr><td>09/10</td><td>Online Payment - Great Lakes Student Loan</td><td class="debit" style="text-align: right;">($285.00)</td><td style="text-align: right;">$5,631.46</td></tr>
+            <tr><td>09/12</td><td>Debit Card - Shell Gas Station</td><td class="debit" style="text-align: right;">($58.00)</td><td style="text-align: right;">$5,573.46</td></tr>
+            <tr><td>09/14</td><td>Debit Card - Ralphs Grocery</td><td class="debit" style="text-align: right;">($112.34)</td><td style="text-align: right;">$5,461.12</td></tr>
+            <tr><td>09/15</td><td>Online Payment - Capital One Credit Card</td><td class="debit" style="text-align: right;">($125.00)</td><td style="text-align: right;">$5,336.12</td></tr>
+            <tr><td>09/15</td><td>Online Payment - Discover Card</td><td class="debit" style="text-align: right;">($75.00)</td><td style="text-align: right;">$5,261.12</td></tr>
+            <tr><td>09/15</td><td>Online Payment - Target RedCard</td><td class="debit" style="text-align: right;">($50.00)</td><td style="text-align: right;">$5,211.12</td></tr>
+            <tr><td>09/17</td><td>Debit Card - Long Beach Gas & Electric</td><td class="debit" style="text-align: right;">($125.67)</td><td style="text-align: right;">$5,085.45</td></tr>
+            <tr><td>09/20</td><td>Direct Deposit - Pacific Coast Healthcare</td><td class="credit" style="text-align: right;">$1,923.45</td><td style="text-align: right;">$7,008.90</td></tr>
+            <tr><td>09/22</td><td>Debit Card - Costco</td><td class="debit" style="text-align: right;">($156.89)</td><td style="text-align: right;">$6,852.01</td></tr>
+            <tr><td>09/24</td><td>ATM Withdrawal - 7-Eleven</td><td class="debit" style="text-align: right;">($60.00)</td><td style="text-align: right;">$6,792.01</td></tr>
+            <tr><td>09/25</td><td>Debit Card - Amazon.com</td><td class="debit" style="text-align: right;">($89.99)</td><td style="text-align: right;">$6,702.02</td></tr>
+            <tr><td>09/27</td><td>Check #1045 - Car Insurance</td><td class="debit" style="text-align: right;">($210.00)</td><td style="text-align: right;">$6,492.02</td></tr>
+            <tr><td>09/28</td><td>Debit Card - Ralphs Grocery</td><td class="debit" style="text-align: right;">($95.90)</td><td style="text-align: right;">$6,396.12</td></tr>
+            <tr><td>09/30</td><td>Direct Deposit - Long Beach USD</td><td class="credit" style="text-align: right;">$3,254.12</td><td style="text-align: right;">$9,650.24</td></tr>
+            <tr><td>09/30</td><td>Direct Deposit - Parents - Gift Funds</td><td class="credit" style="text-align: right;">$2,000.00</td><td style="text-align: right;">$11,650.24</td></tr>
+            <tr><td>09/30</td><td>Online Transfer - Ally Bank Savings</td><td class="debit" style="text-align: right;">($3,400.00)</td><td style="text-align: right;">$8,250.24</td></tr>
+            <tr><td>09/30</td><td>Monthly Service Fee Waived</td><td class="credit" style="text-align: right;">$0.00</td><td style="text-align: right;">$8,250.24</td></tr>
+            <tr><td>09/30</td><td>Interest Earned</td><td class="credit" style="text-align: right;">$2.76</td><td style="text-align: right;">$8,200.00</td></tr>
+            <tr style="background: #fff3cd; font-weight: bold;"><td colspan="2">Ending Balance</td><td></td><td style="text-align: right;">$8,200.00</td></tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; font-size: 11px; color: #666;">
+        <p><strong>Customer Service:</strong> 1-800-935-9935 | <strong>Online:</strong> chase.com</p>
+        <p><strong>Note:</strong> This statement shows a representative sample of 24 transactions out of 38 total.</p>
+        <p style="margin-top: 10px;">Please review your statement carefully and report any discrepancies within 60 days.</p>
+    </div>
+</body>
+</html>

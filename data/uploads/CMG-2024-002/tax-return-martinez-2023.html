@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form 1040 - U.S. Individual Income Tax Return - 2023</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 850px; margin: 40px auto; padding: 20px; }
+        .form-header { text-align: center; font-weight: bold; font-size: 20px; border-bottom: 3px solid #000; padding-bottom: 15px; margin-bottom: 25px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .section-title { background: #2c3e50; color: white; padding: 8px; font-weight: bold; margin: -15px -15px 15px -15px; }
+        .line-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dotted #ddd; }
+        .label { font-weight: bold; }
+        .amount { font-family: 'Courier New', monospace; text-align: right; }
+        .highlight { background: #fff3cd; padding: 10px; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="form-header">
+        Form 1040 - U.S. Individual Income Tax Return<br>
+        Tax Year 2023
+    </div>
+
+    <div class="section">
+        <div class="section-title">Taxpayer Information</div>
+        <div class="line-item"><span class="label">Name:</span><span>Rebecca Lynn Martinez</span></div>
+        <div class="line-item"><span class="label">SSN:</span><span>234-56-7890</span></div>
+        <div class="line-item"><span class="label">Address:</span><span>2847 Harbor View Lane, San Diego, CA 92101</span></div>
+        <div class="line-item"><span class="label">Filing Status:</span><span>Head of Household</span></div>
+        <div class="line-item"><span class="label">Dependents:</span><span>1 child</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Income</div>
+        <div class="line-item"><span class="label">1. Wages, salaries, tips (W-2)</span><span class="amount">$0.00</span></div>
+        <div class="line-item"><span class="label">3. Business income (Schedule C)</span><span class="amount">$215,480.00</span></div>
+        <div class="line-item"><span class="label">8. Other income</span><span class="amount">$0.00</span></div>
+        <div class="line-item highlight"><span class="label">9. Total Income</span><span class="amount">$215,480.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Adjustments to Income</div>
+        <div class="line-item"><span class="label">SEP, SIMPLE, qualified plans</span><span class="amount">$21,548.00</span></div>
+        <div class="line-item"><span class="label">Self-employment tax deduction</span><span class="amount">$15,192.00</span></div>
+        <div class="line-item"><span class="label">Health insurance deduction</span><span class="amount">$500.00</span></div>
+        <div class="line-item highlight"><span class="label">10. Total Adjustments</span><span class="amount">$37,240.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Adjusted Gross Income & Tax Computation</div>
+        <div class="line-item highlight"><span class="label">11. Adjusted Gross Income (AGI)</span><span class="amount">$178,240.00</span></div>
+        <div class="line-item"><span class="label">12. Standard Deduction (Head of Household)</span><span class="amount">$21,460.00</span></div>
+        <div class="line-item highlight"><span class="label">15. Taxable Income</span><span class="amount">$156,780.00</span></div>
+        <div class="line-item"><span class="label">16. Tax (from tax tables)</span><span class="amount">$28,642.00</span></div>
+        <div class="line-item"><span class="label">17. Child Tax Credit</span><span class="amount">($2,000.00)</span></div>
+        <div class="line-item highlight"><span class="label">24. Total Tax</span><span class="amount">$26,642.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Schedule C - Profit or Loss From Business</div>
+        <div class="line-item"><span class="label">Business Name:</span><span>Martinez Design Studio</span></div>
+        <div class="line-item"><span class="label">Principal Business Code:</span><span>541410 (Interior Design Services)</span></div>
+        <div class="line-item"><span class="label">Gross receipts or sales</span><span class="amount">$285,600.00</span></div>
+        <div class="line-item"><span class="label">Total expenses</span><span class="amount">$70,120.00</span></div>
+        <div class="line-item highlight"><span class="label">Net Profit</span><span class="amount">$215,480.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Refund or Amount Owed</div>
+        <div class="line-item"><span class="label">Total payments and credits</span><span class="amount">$32,450.00</span></div>
+        <div class="line-item"><span class="label">Federal income tax withheld</span><span class="amount">$0.00</span></div>
+        <div class="line-item"><span class="label">Estimated tax payments</span><span class="amount">$32,450.00</span></div>
+        <div class="line-item" style="background: #d4edda; padding: 10px; font-weight: bold;">
+            <span class="label">REFUND DUE</span><span class="amount">$5,808.00</span>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; font-size: 11px;">
+        <p><strong>Filed:</strong> April 12, 2024 (electronically)</p>
+        <p><strong>Tax Preparer:</strong> Anderson & Associates CPA, San Diego, CA</p>
+        <p><strong>Preparer PTIN:</strong> P01234567</p>
+    </div>
+</body>
+</html>

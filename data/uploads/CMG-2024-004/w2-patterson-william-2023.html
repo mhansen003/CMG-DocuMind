@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form W-2 - Wage and Tax Statement - 2023</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 850px; margin: 40px auto; padding: 20px; }
+        .form-container { border: 3px solid #000; padding: 20px; }
+        .form-header { text-align: center; font-weight: bold; font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; }
+        .box { border: 1px solid #333; padding: 10px; margin: 5px 0; min-height: 50px; }
+        .box-label { font-size: 10px; color: #666; font-weight: bold; }
+        .box-value { font-size: 14px; font-weight: bold; margin-top: 5px; }
+        .amount-box { background: #ffffcc; font-size: 16px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">Form W-2 - Wage and Tax Statement<br>Tax Year 2023</div>
+
+        <div class="box">
+            <div class="box-label">a. Employee's social security number</div>
+            <div class="box-value">456-78-9012</div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">b. Employer identification number (EIN)</div>
+            <div class="box-value">95-3847562</div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">c. Employer's name, address, and ZIP code</div>
+            <div class="box-value">
+                Patterson & Associates Law Firm<br>
+                18500 Von Karman Avenue, Suite 1200<br>
+                Irvine, CA 92612
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">e. Employee's name, address, and ZIP code</div>
+            <div class="box-value">
+                William A. Patterson III<br>
+                5623 Vista Del Mar<br>
+                Newport Beach, CA 92663
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="box amount-box">
+                <div class="box-label">1. Wages, tips, other compensation</div>
+                <div class="box-value">$458,750.00</div>
+            </div>
+            <div class="box amount-box">
+                <div class="box-label">2. Federal income tax withheld</div>
+                <div class="box-value">$112,450.00</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="box amount-box">
+                <div class="box-label">3. Social security wages</div>
+                <div class="box-value">$160,200.00</div>
+            </div>
+            <div class="box amount-box">
+                <div class="box-label">4. Social security tax withheld</div>
+                <div class="box-value">$9,932.40</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="box amount-box">
+                <div class="box-label">5. Medicare wages and tips</div>
+                <div class="box-value">$458,750.00</div>
+            </div>
+            <div class="box amount-box">
+                <div class="box-label">6. Medicare tax withheld</div>
+                <div class="box-value">$6,651.88</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">12a. Code D - 401(k) contributions</div>
+            <div class="box-value">$19,500.00</div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">12b. Code G - Elective deferrals under section 457(b) plan (Bonus)</div>
+            <div class="box-value">$85,000.00</div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">13. Retirement plan checkbox</div>
+            <div class="box-value">☑ Retirement plan</div>
+        </div>
+
+        <div class="grid-2">
+            <div class="box amount-box">
+                <div class="box-label">15. State</div>
+                <div class="box-value">CA</div>
+            </div>
+            <div class="box">
+                <div class="box-label">Employer's state ID number</div>
+                <div class="box-value">2345678-9</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="box amount-box">
+                <div class="box-label">16. State wages, tips, etc.</div>
+                <div class="box-value">$458,750.00</div>
+            </div>
+            <div class="box amount-box">
+                <div class="box-label">17. State income tax</div>
+                <div class="box-value">$48,234.50</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; font-size: 11px;">
+            <p><strong>Copy B - To Be Filed With Employee's FEDERAL Tax Return</strong></p>
+            <p>This information is being furnished to the Internal Revenue Service.</p>
+            <p>Form W-2 (Rev. January 2023) - Department of the Treasury - Internal Revenue Service</p>
+        </div>
+    </div>
+</body>
+</html>

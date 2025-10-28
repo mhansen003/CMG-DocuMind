@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form 1040 - U.S. Individual Income Tax Return - 2023</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 850px; margin: 40px auto; padding: 20px; }
+        .form-header { text-align: center; font-weight: bold; font-size: 20px; border-bottom: 3px solid #000; padding-bottom: 15px; margin-bottom: 25px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .section-title { background: #2c3e50; color: white; padding: 8px; font-weight: bold; margin: -15px -15px 15px -15px; }
+        .line-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dotted #ddd; }
+        .label { font-weight: bold; }
+        .amount { font-family: 'Courier New', monospace; text-align: right; }
+        .highlight { background: #fff3cd; padding: 10px; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="form-header">
+        Form 1040 - U.S. Individual Income Tax Return<br>
+        Tax Year 2023
+    </div>
+
+    <div class="section">
+        <div class="section-title">Taxpayer Information</div>
+        <div class="line-item"><span class="label">Filing Status:</span><span>Married Filing Jointly</span></div>
+        <div class="line-item"><span class="label">Primary:</span><span>William Alexander Patterson III (SSN: ***-**-9012)</span></div>
+        <div class="line-item"><span class="label">Spouse:</span><span>Catherine Elizabeth Patterson (SSN: ***-**-0123)</span></div>
+        <div class="line-item"><span class="label">Address:</span><span>5623 Vista Del Mar, Newport Beach, CA 92663</span></div>
+        <div class="line-item"><span class="label">Dependents:</span><span>2 children (ages 14 and 11)</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Income</div>
+        <div class="line-item"><span class="label">1a. Total wages (W-2)</span><span class="amount">$943,990.00</span></div>
+        <div class="line-item"><span class="label">   William - Patterson & Associates</span><span class="amount">$458,750.00</span></div>
+        <div class="line-item"><span class="label">   Catherine - Hoag Memorial Hospital</span><span class="amount">$485,240.00</span></div>
+        <div class="line-item"><span class="label">2b. Tax-exempt interest</span><span class="amount">$4,250.00</span></div>
+        <div class="line-item"><span class="label">3b. Qualified dividends</span><span class="amount">$18,560.00</span></div>
+        <div class="line-item"><span class="label">5a. Rental income (Schedule E)</span><span class="amount">$17,550.00</span></div>
+        <div class="line-item"><span class="label">7. Capital gain/loss</span><span class="amount">$2,100.00</span></div>
+        <div class="line-item highlight"><span class="label">9. Total Income</span><span class="amount">$986,450.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Adjustments to Income</div>
+        <div class="line-item"><span class="label">Student loan interest deduction</span><span class="amount">$0.00</span></div>
+        <div class="line-item"><span class="label">Self-employed health insurance</span><span class="amount">$0.00</span></div>
+        <div class="line-item highlight"><span class="label">10. Total Adjustments</span><span class="amount">$0.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Tax Computation</div>
+        <div class="line-item highlight"><span class="label">11. Adjusted Gross Income (AGI)</span><span class="amount">$986,450.00</span></div>
+        <div class="line-item"><span class="label">12. Standard Deduction (MFJ)</span><span class="amount">$27,700.00</span></div>
+        <div class="line-item"><span class="label">   Itemized Deductions</span><span class="amount">$46,410.00</span></div>
+        <div class="line-item"><span class="label">   (SALT cap: $10,000 + Mortgage Interest: $28,410 + Charity: $8,000)</span><span></span></div>
+        <div class="line-item highlight"><span class="label">15. Taxable Income</span><span class="amount">$940,040.00</span></div>
+        <div class="line-item"><span class="label">16. Tax (from tax tables)</span><span class="amount">$238,620.00</span></div>
+        <div class="line-item"><span class="label">17. Child Tax Credit (2 children)</span><span class="amount">($4,000.00)</span></div>
+        <div class="line-item highlight"><span class="label">24. Total Tax</span><span class="amount">$234,620.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Schedule E - Supplemental Income (Rental Property)</div>
+        <div class="line-item"><span class="label">Property Address:</span><span>1245 Prospect Avenue, Tustin, CA 92780</span></div>
+        <div class="line-item"><span class="label">Gross rents received</span><span class="amount">$36,000.00</span></div>
+        <div class="line-item"><span class="label">Expenses:</span><span></span></div>
+        <div class="line-item"><span class="label">   Mortgage interest</span><span class="amount">($9,240.00)</span></div>
+        <div class="line-item"><span class="label">   Property taxes</span><span class="amount">($3,420.00)</span></div>
+        <div class="line-item"><span class="label">   Insurance</span><span class="amount">($1,850.00)</span></div>
+        <div class="line-item"><span class="label">   Repairs & maintenance</span><span class="amount">($2,145.00)</span></div>
+        <div class="line-item"><span class="label">   HOA fees</span><span class="amount">($1,595.00)</span></div>
+        <div class="line-item"><span class="label">   Depreciation</span><span class="amount">($9,200.00)</span></div>
+        <div class="line-item"><span class="label">Total expenses</span><span class="amount">($27,450.00)</span></div>
+        <div class="line-item highlight"><span class="label">Net rental income</span><span class="amount">$8,550.00</span></div>
+        <div class="line-item"><span class="label">Depreciation add-back for AGI</span><span class="amount">$9,200.00</span></div>
+        <div class="line-item highlight"><span class="label">Cash flow rental income</span><span class="amount">$17,750.00</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Payments</div>
+        <div class="line-item"><span class="label">Federal income tax withheld</span><span class="amount">$240,900.00</span></div>
+        <div class="line-item"><span class="label">Estimated tax payments</span><span class="amount">$0.00</span></div>
+        <div class="line-item highlight"><span class="label">Total Payments</span><span class="amount">$240,900.00</span></div>
+    </div>
+
+    <div class="section" style="background: #d4edda;">
+        <div class="line-item" style="font-size: 18px;"><span class="label"><strong>REFUND DUE</strong></span><span class="amount"><strong>$6,280.00</strong></span></div>
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; font-size: 11px;">
+        <p><strong>Filed:</strong> April 10, 2024 (electronically)</p>
+        <p><strong>Tax Preparer:</strong> Newport Financial Advisors, Newport Beach, CA</p>
+        <p><strong>Preparer PTIN:</strong> P09876543</p>
+        <p><strong>Effective Tax Rate:</strong> 23.78%</p>
+    </div>
+</body>
+</html>

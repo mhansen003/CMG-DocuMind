@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tri-Merge Credit Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        .header { text-align: center; background: #2c3e50; color: white; padding: 20px; margin-bottom: 30px; }
+        .score-section { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .score-box { border: 2px solid #ddd; padding: 20px; text-align: center; }
+        .score-title { font-size: 14px; color: #666; margin-bottom: 10px; }
+        .score-value { font-size: 48px; font-weight: bold; }
+        .good { color: #28a745; }
+        .fair { color: #ffc107; }
+        .section-title { background: #2c3e50; color: white; padding: 10px; font-weight: bold; margin: 30px 0 10px 0; }
+        .account-item { padding: 15px; margin: 10px 0; border: 1px solid #ddd; background: #f8f9fa; }
+        .alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="margin: 0;">TRI-MERGE CREDIT REPORT</h1>
+        <div style="font-size: 14px; margin-top: 10px;">Experian • Equifax • TransUnion</div>
+        <div style="font-size: 12px; margin-top: 5px;">Report Date: October 14, 2024</div>
+    </div>
+
+    <div class="section-title">BORROWER: James Robert Chen</div>
+    <div style="padding: 15px; background: #f8f9fa; margin-bottom: 20px;">
+        <p><strong>SSN:</strong> ***-**-8901 | <strong>DOB:</strong> 11/28/1996 | <strong>Age:</strong> 27</p>
+        <p><strong>Address:</strong> 789 Cherry Avenue, Apt 12, Long Beach, CA 90806</p>
+    </div>
+
+    <div class="score-section">
+        <div class="score-box">
+            <div class="score-title">EXPERIAN FICO Score</div>
+            <div class="score-value fair">678</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Fair Credit</div>
+        </div>
+        <div class="score-box">
+            <div class="score-title">EQUIFAX FICO Score</div>
+            <div class="score-value fair">682</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Fair Credit</div>
+        </div>
+        <div class="score-box">
+            <div class="score-title">TRANSUNION FICO Score</div>
+            <div class="score-value fair">685</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Fair Credit</div>
+        </div>
+        <div class="score-box" style="background: #fff3cd;">
+            <div class="score-title">MIDDLE SCORE (Used for Lending)</div>
+            <div class="score-value">682</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Fair Credit - FHA Eligible</div>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ DEROGATORY ITEMS FOUND:</strong> 1 Late Payment (30 days) - November 2023
+    </div>
+
+    <div class="section-title">CREDIT ACCOUNTS - Borrower</div>
+
+    <div class="account-item">
+        <strong>Capital One Quicksilver Credit Card</strong> - ****7890<br>
+        Status: <span style="color: #d00;">⚠️ 30-Day Late Payment (Nov 2023)</span><br>
+        Balance: $4,200 | Limit: $8,000 | Monthly Payment: $125<br>
+        Opened: 06/2021 | Payment History: 1 late payment in last 24 months
+    </div>
+
+    <div class="account-item">
+        <strong>Discover It Card</strong> - ****2345<br>
+        Status: <span style="color: #28a745;">Current / Never Late</span><br>
+        Balance: $1,850 | Limit: $5,000 | Monthly Payment: $75<br>
+        Opened: 03/2022
+    </div>
+
+    <div class="account-item">
+        <strong>Honda Finance Auto Loan</strong> - ****6789<br>
+        Status: <span style="color: #28a745;">Current / Never Late</span><br>
+        Balance: $22,500 | Original Amount: $28,000 | Monthly Payment: $415<br>
+        Opened: 01/2021 | 54 months remaining
+    </div>
+
+    <div class="account-item">
+        <strong>Nelnet Federal Student Loan</strong> - ****4567<br>
+        Status: <span style="color: #28a745;">Current / Never Late</span><br>
+        Balance: $38,000 | Monthly Payment: $380<br>
+        Opened: 09/2015 | 120 months remaining
+    </div>
+
+    <div class="section-title">CO-BORROWER: Amanda Lee Chen</div>
+    <div style="padding: 15px; background: #f8f9fa; margin-bottom: 20px;">
+        <p><strong>SSN:</strong> ***-**-9012 | <strong>DOB:</strong> 04/15/1998 | <strong>Age:</strong> 26</p>
+        <p><strong>Address:</strong> 789 Cherry Avenue, Apt 12, Long Beach, CA 90806</p>
+    </div>
+
+    <div class="score-section">
+        <div class="score-box">
+            <div class="score-title">EXPERIAN FICO Score</div>
+            <div class="score-value good">692</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Good Credit</div>
+        </div>
+        <div class="score-box">
+            <div class="score-title">EQUIFAX FICO Score</div>
+            <div class="score-value good">695</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Good Credit</div>
+        </div>
+        <div class="score-box">
+            <div class="score-title">TRANSUNION FICO Score</div>
+            <div class="score-value good">698</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Good Credit</div>
+        </div>
+        <div class="score-box" style="background: #d4edda;">
+            <div class="score-title">MIDDLE SCORE (Used for Lending)</div>
+            <div class="score-value good">695</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">Good Credit - Well Qualified</div>
+        </div>
+    </div>
+
+    <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0;">
+        <strong>✓ CLEAN CREDIT:</strong> No derogatory items, collections, or late payments
+    </div>
+
+    <div class="section-title">CREDIT ACCOUNTS - Co-Borrower</div>
+
+    <div class="account-item">
+        <strong>Target RedCard</strong> - ****3456<br>
+        Status: <span style="color: #28a745;">Current / Never Late</span><br>
+        Balance: $850 | Limit: $2,500 | Monthly Payment: $50<br>
+        Opened: 08/2020
+    </div>
+
+    <div class="account-item">
+        <strong>Great Lakes Student Loan</strong> - ****5678<br>
+        Status: <span style="color: #28a745;">Current / Never Late</span><br>
+        Balance: $28,500 | Monthly Payment: $285<br>
+        Opened: 08/2016 | 100 months remaining
+    </div>
+
+    <div class="section-title">CREDIT INQUIRIES (Last 6 Months)</div>
+    <div class="alert">
+        <strong>3 inquiries detected:</strong><br>
+        • 08/15/2024 - Auto Loan Shopping (Honda Finance, Toyota Finance)<br>
+        • 09/20/2024 - Mortgage Pre-Qualification (CMG Financial)<br>
+        • 10/10/2024 - Mortgage Application (CMG Financial)
+    </div>
+
+    <div class="section-title">PUBLIC RECORDS & COLLECTIONS</div>
+    <div style="padding: 15px; background: #d4edda;">
+        <strong>✓ None Found</strong> - No bankruptcies, judgments, tax liens, or collections
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; font-size: 12px; color: #666;">
+        <p><strong>Report Generated By:</strong> Residential Mortgage Services (RMS)</p>
+        <p><strong>Report ID:</strong> TMC-2024-103456</p>
+        <p><strong>Prepared For:</strong> CMG Financial - Loan Application #CMG-2024-003</p>
+        <p style="margin-top: 15px;"><strong>IMPORTANT:</strong> This credit report is for mortgage lending purposes only. The middle credit score for the borrower with the lowest score (James Chen - 682) will be used for underwriting decisions.</p>
+    </div>
+</body>
+</html>

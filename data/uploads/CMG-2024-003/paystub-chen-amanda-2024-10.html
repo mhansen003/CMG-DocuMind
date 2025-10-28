@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Long Beach USD - Pay Stub</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
+        .header { text-align: center; border-bottom: 3px solid #1e4d2b; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #1e4d2b; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 15px; background: #f8f9fa; }
+        .info-item { display: flex; justify-content: space-between; padding: 5px 0; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .earnings-table th { background: #1e4d2b; color: white; padding: 10px; text-align: left; }
+        .earnings-table td { padding: 8px; border-bottom: 1px solid #ddd; }
+        .net-pay { background: #28a745; color: white; padding: 15px; text-align: center; font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">LONG BEACH UNIFIED SCHOOL DISTRICT</div>
+        <div style="font-size: 14px; color: #666; margin-top: 5px;">1515 Hughes Way, Long Beach, CA 90810</div>
+        <div style="font-size: 18px; margin-top: 10px;">EARNINGS STATEMENT</div>
+    </div>
+
+    <div class="info-grid">
+        <div><div class="info-item"><span class="label">Employee Name:</span><span>Amanda L. Chen</span></div></div>
+        <div><div class="info-item"><span class="label">Employee ID:</span><span>TCH-28471</span></div></div>
+        <div><div class="info-item"><span class="label">Pay Period:</span><span>09/01/2024 - 09/30/2024</span></div></div>
+        <div><div class="info-item"><span class="label">Pay Date:</span><span>10/01/2024</span></div></div>
+        <div><div class="info-item"><span class="label">School:</span><span>Jefferson Elementary</span></div></div>
+        <div><div class="info-item"><span class="label">Position:</span><span>Elementary Teacher</span></div></div>
+    </div>
+
+    <table class="earnings-table">
+        <thead>
+            <tr><th>Earnings</th><th>Current</th><th>YTD</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Monthly Salary</td><td>$4,833.33</td><td>$48,333.30</td></tr>
+            <tr style="font-weight: bold; background: #e9ecef;"><td>Total Gross Pay</td><td>$4,833.33</td><td>$48,333.30</td></tr>
+        </tbody>
+    </table>
+
+    <table class="earnings-table">
+        <thead>
+            <tr><th>Deductions</th><th>Current</th><th>YTD</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Federal Income Tax</td><td>$620.00</td><td>$6,200.00</td></tr>
+            <tr><td>Social Security</td><td>$299.67</td><td>$2,996.66</td></tr>
+            <tr><td>Medicare</td><td>$70.08</td><td>$700.83</td></tr>
+            <tr><td>CA State Tax</td><td>$193.33</td><td>$1,933.33</td></tr>
+            <tr><td>CA SDI</td><td>$43.50</td><td>$435.00</td></tr>
+            <tr><td>Health Insurance</td><td>$145.00</td><td>$1,450.00</td></tr>
+            <tr><td>CalSTRS Pension (11.5%)</td><td>$555.83</td><td>$5,558.33</td></tr>
+            <tr><td>Union Dues</td><td>$52.00</td><td>$520.00</td></tr>
+            <tr style="font-weight: bold; background: #e9ecef;"><td>Total Deductions</td><td>$1,579.21</td><td>$19,794.15</td></tr>
+        </tbody>
+    </table>
+
+    <div class="net-pay">
+        NET PAY: $3,254.12
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; font-size: 12px;">
+        <p><strong>Direct Deposit:</strong> Chase Bank (Joint) ****5678 - $3,254.12</p>
+        <p><strong>Contract Year:</strong> 2024-2025 | <strong>Annual Salary:</strong> $58,000</p>
+        <p><strong>YTD Summary:</strong> Gross: $48,333.30 | Deductions: $19,794.15 | Net: $28,539.15</p>
+        <p style="color: #666; margin-top: 10px;">This is not a check. Please retain for your records.</p>
+    </div>
+</body>
+</html>

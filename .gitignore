@@ -41,9 +41,10 @@ tmp/
 temp/
 *.tmp
 
-# Upload directories (keep structure but not files)
-data/uploads/*
-!data/uploads/.gitkeep
+# Upload directories for user uploads (future use)
+# Note: Sample documents in data/uploads are committed for demo purposes
+# data/uploads/*
+# !data/uploads/.gitkeep
 
 # Cache
 .cache/
