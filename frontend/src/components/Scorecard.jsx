@@ -558,13 +558,10 @@ function Scorecard({ scorecard, loan, documents }) {
                     <th
                       key={doc.id}
                       className={`doc-header ${selectedCell?.documentId === doc.id ? 'selected-column' : ''}`}
+                      title={`${doc.fileName}\n${doc.documentType}`}
                     >
                       <div className="doc-header-content">
-                        <div className="doc-icon">📄</div>
-                        <div className="doc-info">
-                          <div className="doc-name" title={doc.fileName}>{doc.fileName}</div>
-                          <div className="doc-type">{doc.documentType}</div>
-                        </div>
+                        <div className="doc-number">#{idx + 1}</div>
                       </div>
                     </th>
                   ))}
