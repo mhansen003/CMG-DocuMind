@@ -368,6 +368,53 @@ function Scorecard({ scorecard, loan, documents }) {
     return { id: 'agent-015', name: 'Consistency Checker', icon: '🔗' };
   };
 
+  // Calculate complexity score for a field with mismatches (1-10 scale)
+  const getComplexityScore = (field, docs) => {
+    // Count number of mismatches
+    const mismatchCount = docs.filter(doc =>
+      getCellStatus(field, doc).status === 'mismatch'
+    ).length;
+
+    if (mismatchCount === 0) return 0; // No mismatches
+
+    // Base complexity by category
+    const categoryComplexity = {
+      'Identity': 8, // High complexity - critical field, requires verification
+      'Employment': 7, // High - needs employer verification
+      'Income': 9, // Very high - financial calculations, YTD tracking
+      'Property': 6, // Medium-high - address matching
+      'Banking': 7, // High - financial data, account verification
+      'Deductions': 5, // Medium - tax calculations
+      'Default': 5
+    };
+
+    const baseScore = categoryComplexity[field.category] || categoryComplexity['Default'];
+
+    // Adjust based on number of mismatches
+    // More mismatches = higher complexity
+    const mismatchFactor = Math.min(mismatchCount * 0.5, 2); // Cap at +2
+
+    // Final score (1-10 scale)
+    const finalScore = Math.min(Math.max(Math.round(baseScore + mismatchFactor), 1), 10);
+
+    return finalScore;
+  };
+
+  // Get color for complexity score
+  const getComplexityColor = (score) => {
+    if (score <= 3) return '#10b981'; // Green - Easy
+    if (score <= 6) return '#f59e0b'; // Orange - Medium
+    return '#ef4444'; // Red - Hard
+  };
+
+  // Get label for complexity score
+  const getComplexityLabel = (score) => {
+    if (score <= 3) return 'Easy';
+    if (score <= 6) return 'Medium';
+    if (score <= 8) return 'Hard';
+    return 'Very Hard';
+  };
+
   // Document selection handlers
   const toggleDocumentSelection = (docId) => {
     setSelectedDocIds(prev =>
@@ -521,6 +568,12 @@ function Scorecard({ scorecard, loan, documents }) {
                       </div>
                     </th>
                   ))}
+                  <th className="complexity-header">
+                    <div className="header-content">
+                      <div>Complexity</div>
+                      <div className="header-subtitle">1-10 Scale</div>
+                    </div>
+                  </th>
                   <th className={`actions-header sticky-header-right ${selectedCell?.documentId ? 'selected-column' : ''}`}>Actions</th>
                 </tr>
               </thead>
@@ -528,7 +581,7 @@ function Scorecard({ scorecard, loan, documents }) {
                 {Object.entries(fieldsByCategory).map(([category, fields]) => (
                   <>
                     <tr key={`category-${category}`} className="category-row">
-                      <td className="category-cell" colSpan={filteredDocuments.length + 2}>
+                      <td className="category-cell" colSpan={filteredDocuments.length + 3}>
                         <div className="category-label">{category}</div>
                       </td>
                     </tr>
@@ -586,6 +639,33 @@ function Scorecard({ scorecard, loan, documents }) {
                               </td>
                             );
                           })}
+                          <td className="complexity-cell">
+                            {hasAnyMismatch && (() => {
+                              const complexityScore = getComplexityScore(field, filteredDocuments);
+                              const complexityColor = getComplexityColor(complexityScore);
+                              const complexityLabel = getComplexityLabel(complexityScore);
+
+                              return (
+                                <div className="complexity-indicator" title={`${complexityLabel} - Score: ${complexityScore}/10`}>
+                                  <div className="complexity-score" style={{ color: complexityColor }}>
+                                    {complexityScore}
+                                  </div>
+                                  <div className="complexity-bar">
+                                    <div
+                                      className="complexity-bar-fill"
+                                      style={{
+                                        width: `${complexityScore * 10}%`,
+                                        background: complexityColor
+                                      }}
+                                    ></div>
+                                  </div>
+                                  <div className="complexity-label" style={{ color: complexityColor }}>
+                                    {complexityLabel}
+                                  </div>
+                                </div>
+                              );
+                            })()}
+                          </td>
                           <td className={`actions-cell sticky-column-right`}>
                             {hasAnyMismatch && (
                               <>
