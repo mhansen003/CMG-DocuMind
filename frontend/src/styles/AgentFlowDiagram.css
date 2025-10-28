@@ -401,3 +401,369 @@
 .info-panel-body::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* ====================================== */
+/* ENHANCED VISUAL STYLES */
+/* ====================================== */
+
+/* Enhanced container with animated background */
+.flow-canvas.enhanced {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+/* Pulse animation for activity indicators */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animated data flow effect */
+@keyframes flowAnimation {
+  0% {
+    stroke-dashoffset: 10;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-flow {
+  animation: flowAnimation 1s linear infinite;
+}
+
+/* Enhanced Legend Styles */
+.flow-legend.enhanced {
+  max-width: 220px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.legend-section {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.legend-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.legend-subtitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Legend shape indicators */
+.legend-shape {
+  width: 24px;
+  height: 16px;
+  margin-right: 0.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legend-shape.circle {
+  border-radius: 6px;
+}
+
+.legend-shape.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.legend-shape.diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.legend-shape.cylinder {
+  border-radius: 12px 12px 4px 4px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Node count badge */
+.node-count {
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Enhanced Info Panel */
+.flow-info-panel.enhanced {
+  background: white;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.flow-info-panel.enhanced .info-panel-header {
+  padding: 1.25rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-info-panel.enhanced .info-panel-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.flow-info-panel.enhanced .info-panel-header h3 {
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node-type-badge {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(10px);
+}
+
+.category-badge.enhanced {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #4b5563;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+/* Enhanced Dependency Items */
+.dependency-item.enhanced {
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dependency-item.enhanced:hover {
+  background: #f9fafb;
+  border-color: #667eea;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.dependency-item.enhanced .dep-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.dependency-item.enhanced > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dependency-item.enhanced .dep-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.dependency-item.enhanced .dep-type {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Enhanced Instructions */
+.flow-instructions.enhanced {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flow-instructions.enhanced .instruction-item {
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+}
+
+.flow-instructions.enhanced .instruction-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Node type specific styles */
+.agent-node.system rect,
+.agent-node.system path {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agent-node.ai_service {
+  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.3));
+}
+
+.agent-node.data_source {
+  filter: drop-shadow(0 0 8px rgba(20, 184, 166, 0.3));
+}
+
+.agent-node.api {
+  filter: drop-shadow(0 0 8px rgba(100, 116, 139, 0.3));
+}
+
+/* Connection line animations */
+.connection-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glow effect for SVG elements */
+.svg-glow {
+  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5));
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced zoom level indicator */
+.zoom-level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #667eea;
+  padding: 0 0.5rem;
+}
+
+/* Responsive enhancements for enhanced mode */
+@media (max-width: 1024px) {
+  .flow-legend.enhanced {
+    max-width: 180px;
+    font-size: 0.8rem;
+  }
+
+  .node-count {
+    display: none;
+  }
+
+  .legend-section {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-legend.enhanced {
+    max-width: 140px;
+  }
+
+  .flow-info-panel.enhanced {
+    width: calc(100% - 2rem);
+    max-height: 60vh;
+  }
+
+  .description-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Loading animation for initial render */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flow-diagram-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Tooltip styles for enhanced mode */
+.enhanced-tooltip {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Particle effect styling */
+.data-particle {
+  fill: #10b981;
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.8));
+}
+
