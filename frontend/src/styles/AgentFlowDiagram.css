@@ -70,8 +70,8 @@
 /* Legend */
 .flow-legend {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 5rem;
+  right: 1rem;
   z-index: 10;
   background: white;
   padding: 1rem;
