@@ -543,7 +543,7 @@ function DocumentViewer({ document, loanData }) {
                     <div className="error-icon">⚠️</div>
                     <p>{pdfError}</p>
                     <a
-                      href={`http://localhost:3001${document.filePath}`}
+                      href={document.s3Url || document.filePath}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-secondary"
@@ -554,7 +554,7 @@ function DocumentViewer({ document, loanData }) {
                 ) : (
                   <>
                     <Document
-                      file={`http://localhost:3001${document.filePath}`}
+                      file={document.s3Url || document.filePath}
                       onLoadSuccess={onDocumentLoadSuccess}
                       onLoadError={onDocumentLoadError}
                       loading={
@@ -599,7 +599,7 @@ function DocumentViewer({ document, loanData }) {
               // HTML and text files - use iframe
               <div className="document-frame-viewer">
                 <iframe
-                  src={`http://localhost:3001${document.filePath}`}
+                  src={document.s3Url || document.filePath}
                   title={document.fileName}
                   className="document-frame"
                 />
