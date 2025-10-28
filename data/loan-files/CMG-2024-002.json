@@ -272,7 +272,7 @@
       "documentType": "1099",
       "fileName": "1099-martinez-2023.html",
       "filePath": "/uploads/CMG-2024-002/1099-martinez-2023.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/1099-martinez-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-002/1099-martinez-2023.html",
       "uploadDate": "2024-10-05T10:15:00.000Z",
       "extractedData": {
         "documentType": "1099",
@@ -328,7 +328,7 @@
       "documentType": "tax_return",
       "fileName": "tax-return-martinez-2023.html",
       "filePath": "/uploads/CMG-2024-002/tax-return-martinez-2023.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/tax-return-martinez-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-002/tax-return-martinez-2023.html",
       "uploadDate": "2024-10-05T11:30:00.000Z",
       "extractedData": {
         "documentType": "tax_return",
@@ -377,7 +377,7 @@
       "documentType": "profit_loss",
       "fileName": "pl-statement-martinez-2024-ytd.html",
       "filePath": "/uploads/CMG-2024-002/pl-statement-martinez-2024-ytd.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/pl-statement-martinez-2024-ytd.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-002/pl-statement-martinez-2024-ytd.html",
       "uploadDate": "2024-10-06T09:00:00.000Z",
       "extractedData": {
         "documentType": "profit_loss",
@@ -417,7 +417,7 @@
       "documentType": "bank_statement",
       "fileName": "bank-statement-martinez-business-2024-09.html",
       "filePath": "/uploads/CMG-2024-002/bank-statement-martinez-business-2024-09.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/bank-statement-martinez-business-2024-09.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-002/bank-statement-martinez-business-2024-09.html",
       "uploadDate": "2024-10-06T14:20:00.000Z",
       "extractedData": {
         "documentType": "bank_statement",
@@ -476,7 +476,7 @@
       "documentType": "divorce_decree",
       "fileName": "divorce-decree-martinez-2022.html",
       "filePath": "/uploads/CMG-2024-002/divorce-decree-martinez-2022.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/divorce-decree-martinez-2022.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-002/divorce-decree-martinez-2022.html",
       "uploadDate": "2024-10-07T08:45:00.000Z",
       "extractedData": {
         "documentType": "divorce_decree",

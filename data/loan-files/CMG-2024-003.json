@@ -379,7 +379,7 @@
       "documentType": "paystub",
       "fileName": "paystub-chen-james-2024-10.html",
       "filePath": "/uploads/CMG-2024-003/paystub-chen-james-2024-10.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/paystub-chen-james-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-003/paystub-chen-james-2024-10.html",
       "uploadDate": "2024-10-12T09:30:00.000Z",
       "extractedData": {
         "documentType": "paystub",
@@ -432,7 +432,7 @@
       "documentType": "paystub",
       "fileName": "paystub-chen-amanda-2024-10.html",
       "filePath": "/uploads/CMG-2024-003/paystub-chen-amanda-2024-10.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/paystub-chen-amanda-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-003/paystub-chen-amanda-2024-10.html",
       "uploadDate": "2024-10-12T09:35:00.000Z",
       "extractedData": {
         "documentType": "paystub",
@@ -485,7 +485,7 @@
       "documentType": "bank_statement",
       "fileName": "bank-statement-chen-2024-09.html",
       "filePath": "/uploads/CMG-2024-003/bank-statement-chen-2024-09.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/bank-statement-chen-2024-09.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-003/bank-statement-chen-2024-09.html",
       "uploadDate": "2024-10-13T11:00:00.000Z",
       "extractedData": {
         "documentType": "bank_statement",
@@ -571,7 +571,7 @@
       "documentType": "credit_report",
       "fileName": "credit-report-chen-2024-10.html",
       "filePath": "/uploads/CMG-2024-003/credit-report-chen-2024-10.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/credit-report-chen-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-003/credit-report-chen-2024-10.html",
       "uploadDate": "2024-10-14T10:00:00.000Z",
       "extractedData": {
         "documentType": "credit_report",
@@ -648,7 +648,7 @@
       "documentType": "purchase_agreement",
       "fileName": "purchase-agreement-456-ocean-blvd.html",
       "filePath": "/uploads/CMG-2024-003/purchase-agreement-456-ocean-blvd.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/purchase-agreement-456-ocean-blvd.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-003/purchase-agreement-456-ocean-blvd.html",
       "uploadDate": "2024-10-15T14:30:00.000Z",
       "extractedData": {
         "documentType": "purchase_agreement",

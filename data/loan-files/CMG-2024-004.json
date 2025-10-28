@@ -374,7 +374,7 @@
       "documentType": "w2",
       "fileName": "w2-patterson-william-2023.html",
       "filePath": "/uploads/CMG-2024-004/w2-patterson-william-2023.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/w2-patterson-william-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/w2-patterson-william-2023.html",
       "uploadDate": "2024-09-28T10:00:00.000Z",
       "extractedData": {
         "documentType": "w2",
@@ -444,7 +444,7 @@
       "documentType": "w2",
       "fileName": "w2-patterson-catherine-2023.html",
       "filePath": "/uploads/CMG-2024-004/w2-patterson-catherine-2023.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/w2-patterson-catherine-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/w2-patterson-catherine-2023.html",
       "uploadDate": "2024-09-28T10:05:00.000Z",
       "extractedData": {
         "documentType": "w2",
@@ -509,7 +509,7 @@
       "documentType": "tax_return",
       "fileName": "tax-return-patterson-2023.html",
       "filePath": "/uploads/CMG-2024-004/tax-return-patterson-2023.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/tax-return-patterson-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/tax-return-patterson-2023.html",
       "uploadDate": "2024-09-28T11:00:00.000Z",
       "extractedData": {
         "documentType": "tax_return",
@@ -562,7 +562,7 @@
       "documentType": "lease_agreement",
       "fileName": "lease-agreement-tustin-rental.html",
       "filePath": "/uploads/CMG-2024-004/lease-agreement-tustin-rental.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/lease-agreement-tustin-rental.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/lease-agreement-tustin-rental.html",
       "uploadDate": "2024-09-29T14:00:00.000Z",
       "extractedData": {
         "documentType": "lease_agreement",
@@ -610,7 +610,7 @@
       "documentType": "appraisal",
       "fileName": "appraisal-1824-bayside-drive.html",
       "filePath": "/uploads/CMG-2024-004/appraisal-1824-bayside-drive.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/appraisal-1824-bayside-drive.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/appraisal-1824-bayside-drive.html",
       "uploadDate": "2024-10-15T09:00:00.000Z",
       "extractedData": {
         "documentType": "appraisal",
@@ -658,7 +658,7 @@
       "documentType": "insurance_quote",
       "fileName": "insurance-quote-1824-bayside.html",
       "filePath": "/uploads/CMG-2024-004/insurance-quote-1824-bayside.html",
-      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/insurance-quote-1824-bayside.html",
+      "s3Url": "https://cmg-documind.onrender.com/uploads/CMG-2024-004/insurance-quote-1824-bayside.html",
       "uploadDate": "2024-10-16T11:30:00.000Z",
       "extractedData": {
         "documentType": "insurance_quote",

@@ -354,7 +354,7 @@
       "documentType": "paystub",
       "fileName": "paystub-thompson-michael-2024-10.html",
       "filePath": "/sample-documents/paystub-thompson-michael-2024-10.html",
-      "s3Url": "http://localhost:3001/sample-documents/paystub-thompson-michael-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/paystub-thompson-michael-2024-10.html",
       "uploadDate": "2024-10-27T15:30:00.000Z",
       "extractedData": {
         "documentType": "paystub",
@@ -441,7 +441,7 @@
       "documentType": "w2",
       "fileName": "w2-thompson-michael-2024.html",
       "filePath": "/sample-documents/w2-thompson-michael-2024.html",
-      "s3Url": "http://localhost:3001/sample-documents/w2-thompson-michael-2024.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/w2-thompson-michael-2024.html",
       "uploadDate": "2024-10-27T16:45:00.000Z",
       "extractedData": {
         "documentType": "w2",
@@ -560,7 +560,7 @@
       "documentType": "bank_statement",
       "fileName": "bank-statement-thompson-2024-09.html",
       "filePath": "/sample-documents/bank-statement-thompson-2024-09.html",
-      "s3Url": "http://localhost:3001/sample-documents/bank-statement-thompson-2024-09.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-thompson-2024-09.html",
       "uploadDate": "2024-10-27T17:15:00.000Z",
       "extractedData": {
         "documentType": "bank_statement",
