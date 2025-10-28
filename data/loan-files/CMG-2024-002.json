@@ -1,0 +1,515 @@
+{
+  "loanId": "CMG-2024-002",
+  "loanNumber": "100234568",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Refinance",
+    "loanAmountRequested": 380000,
+    "propertyEstimatedValue": 625000,
+    "downPaymentAmount": 0,
+    "ltvRatio": 60.8,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "San Diego",
+    "city": "San Diego",
+    "zipCode": "92101",
+    "propertyAddress": "2847 Harbor View Lane",
+    "propertyCity": "San Diego",
+    "propertyState": "CA",
+    "propertyZip": "92101",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 6.625,
+    "monthlyPayment": 2445.68,
+    "income": 8750.00,
+    "closingDate": "2024-11-22",
+    "applicationDate": "2024-10-01"
+  },
+  "borrower": {
+    "firstName": "Rebecca",
+    "middleName": "Lynn",
+    "lastName": "Martinez",
+    "fullName": "Rebecca Lynn Martinez",
+    "suffix": "",
+    "ssn": "234-56-7890",
+    "dateOfBirth": "1979-03-12",
+    "maritalStatus": "Divorced",
+    "spouse": null,
+    "dependents": 1,
+    "citizenship": "USCitizen",
+    "email": "rebecca.martinez@designstudio.com",
+    "phone": "619-555-0234",
+    "totalIncome": 210000,
+    "adjustedGrossIncome": 178000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "2847 Harbor View Lane",
+      "unit": "",
+      "city": "San Diego",
+      "state": "CA",
+      "zipCode": "92101",
+      "monthsAtAddress": 84,
+      "residencyType": "Own",
+      "monthlyRent": 0
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Martinez Design Studio LLC",
+        "jobTitle": "Owner / Principal Designer",
+        "position": "Owner / Principal Designer",
+        "employmentType": "SelfEmployed",
+        "startDate": "2016-01-15",
+        "monthsEmployed": 105,
+        "baseIncome": 210000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 210000,
+        "employerPhone": "619-555-8888",
+        "address": {
+          "street": "1550 5th Avenue, Suite 200",
+          "city": "San Diego",
+          "state": "CA",
+          "zipCode": "92101"
+        },
+        "phone": "619-555-8888",
+        "supervisorName": "N/A (Self-Employed)"
+      },
+      "previous": {
+        "employerName": "Urban Interiors Inc",
+        "position": "Senior Interior Designer",
+        "employmentType": "W2",
+        "startDate": "2010-06-01",
+        "endDate": "2015-12-31",
+        "monthsEmployed": 67,
+        "baseIncome": 85000
+      }
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Wells Fargo Business Checking",
+          "bankName": "Wells Fargo",
+          "accountNumber": "****3456",
+          "currentBalance": 48500,
+          "balance": 48500,
+          "accountType": "Business Checking",
+          "accountHolderName": "Martinez Design Studio LLC"
+        },
+        {
+          "institutionName": "Bank of America Personal Savings",
+          "bankName": "Bank of America",
+          "accountNumber": "****7891",
+          "currentBalance": 92000,
+          "balance": 92000,
+          "accountType": "Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Wells Fargo Business",
+          "accountNumber": "****3456",
+          "balance": 48500,
+          "accountType": "Business Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "accountNumber": "****7891",
+          "balance": 92000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Charles Schwab SEP IRA",
+          "accountNumber": "****2468",
+          "balance": 185000,
+          "accountType": "SEP-IRA"
+        }
+      ],
+      "totalAssets": 325500
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "American Express Business",
+          "accountNumber": "****9012",
+          "balance": 8500,
+          "monthlyPayment": 425,
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "Chase Sapphire Reserve",
+          "accountNumber": "****3457",
+          "balance": 3200,
+          "monthlyPayment": 160,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "BMW Financial Services",
+          "accountNumber": "****6789",
+          "balance": 32000,
+          "monthlyPayment": 685,
+          "monthsRemaining": 48,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [
+        {
+          "creditorName": "Business Equipment Lease",
+          "accountNumber": "****1357",
+          "balance": 12000,
+          "monthlyPayment": 450,
+          "description": "Office furniture and equipment",
+          "toBePaidOff": false
+        }
+      ],
+      "totalMonthlyDebtPayments": 1720
+    },
+    "creditScore": 728,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": true
+    }
+  },
+  "coBorrower": null,
+  "transactions": {
+    "purchasePrice": 0,
+    "downPayment": 0,
+    "loanAmount": 380000,
+    "estimatedClosingCosts": 8500,
+    "prepaids": 3200,
+    "sellerCredits": 0,
+    "cashToClose": 11700,
+    "totalAssetVerificationRequired": 11700
+  },
+  "ratios": {
+    "housingExpense": 2445.68,
+    "totalDebtExpense": 4165.68,
+    "grossMonthlyIncome": 17500.00,
+    "housingRatio": 13.98,
+    "debtToIncomeRatio": 23.80,
+    "combinedLTV": 60.8
+  },
+  "propertyDetails": {
+    "address": "2847 Harbor View Lane",
+    "city": "San Diego",
+    "state": "CA",
+    "zipCode": "92101",
+    "county": "San Diego",
+    "apn": "543-210-98-00",
+    "yearBuilt": 2008,
+    "squareFeet": 2850,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "garages": 2,
+    "lotSize": 4500,
+    "propertyType": "Single Family Residence",
+    "style": "Mediterranean",
+    "constructionType": "Stucco",
+    "roofType": "Tile",
+    "zoningCode": "RS-1-7",
+    "hoaFees": 185,
+    "taxYear": 2024,
+    "annualPropertyTax": 7500
+  },
+  "loanOfficer": {
+    "name": "Maria Rodriguez",
+    "nmls": "234567",
+    "email": "maria.rodriguez@cmg.com",
+    "phone": "619-555-7100",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "InitialReview",
+    "submittedDate": "2024-10-01",
+    "lastUpdated": "2024-10-27",
+    "assignedUnderwriter": "James Park",
+    "assignedProcessor": "Linda Chen"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Bank Statement - Business Checking (2 months)",
+      "Bank Statement - Personal Savings (2 months)",
+      "Tax Returns - Business (2 years)",
+      "Tax Returns - Personal (2 years)",
+      "1099 Forms (2 years)",
+      "Profit & Loss Statement (YTD)",
+      "Business License",
+      "CPA Letter verifying income",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Current Mortgage Statement",
+      "Appraisal",
+      "Divorce Decree"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-1099-002",
+      "loanId": "CMG-2024-002",
+      "documentType": "1099",
+      "fileName": "1099-martinez-2023.html",
+      "filePath": "/uploads/CMG-2024-002/1099-martinez-2023.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/1099-martinez-2023.html",
+      "uploadDate": "2024-10-05T10:15:00.000Z",
+      "extractedData": {
+        "documentType": "1099",
+        "extractedAt": "2024-10-05T10:15:00.000Z",
+        "confidence": 92,
+        "data": {
+          "taxYear": "2023",
+          "recipientSSN": "234-56-7890",
+          "recipientName": "Rebecca L. Martinez",
+          "payerEIN": "77-1234567",
+          "payerName": "Coastal Properties Development",
+          "nonemployeeCompensation": "68500.00",
+          "federalTaxWithheld": "0.00"
+        }
+      },
+      "validationResults": {
+        "documentType": "1099",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "noTaxWithholding",
+            "severity": "warning",
+            "message": "No federal tax withholding reported on 1099. Self-employed borrowers should be making quarterly estimated tax payments."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "singleIncomeSource",
+            "severity": "warning",
+            "message": "Only one 1099 source identified. Self-employed income should be verified against Schedule C on tax returns."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "recipientSSN": {
+            "isValid": true,
+            "message": "SSN matches loan application",
+            "rule": "ssnMatch"
+          },
+          "recipientName": {
+            "isValid": true,
+            "message": "Name matches borrower",
+            "rule": "nameMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-taxreturn-002",
+      "loanId": "CMG-2024-002",
+      "documentType": "tax_return",
+      "fileName": "tax-return-martinez-2023.html",
+      "filePath": "/uploads/CMG-2024-002/tax-return-martinez-2023.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/tax-return-martinez-2023.html",
+      "uploadDate": "2024-10-05T11:30:00.000Z",
+      "extractedData": {
+        "documentType": "tax_return",
+        "extractedAt": "2024-10-05T11:30:00.000Z",
+        "confidence": 89,
+        "data": {
+          "taxYear": "2023",
+          "filingStatus": "Head of Household",
+          "totalIncome": "215480.00",
+          "adjustedGrossIncome": "178245.00",
+          "taxableIncome": "156780.00",
+          "scheduleC": {
+            "businessName": "Martinez Design Studio",
+            "grossReceipts": "285600.00",
+            "expenses": "70120.00",
+            "netProfit": "215480.00"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "tax_return",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "incomeVariance",
+            "severity": "warning",
+            "message": "2023 income ($215,480) is 2.6% higher than stated income ($210,000). Minor variance acceptable."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "totalIncome": {
+            "isValid": true,
+            "message": "Income verification successful",
+            "rule": "incomeConsistency"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-profitloss-002",
+      "loanId": "CMG-2024-002",
+      "documentType": "profit_loss",
+      "fileName": "pl-statement-martinez-2024-ytd.html",
+      "filePath": "/uploads/CMG-2024-002/pl-statement-martinez-2024-ytd.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/pl-statement-martinez-2024-ytd.html",
+      "uploadDate": "2024-10-06T09:00:00.000Z",
+      "extractedData": {
+        "documentType": "profit_loss",
+        "extractedAt": "2024-10-06T09:00:00.000Z",
+        "confidence": 87,
+        "data": {
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-09-30",
+          "totalRevenue": "198750.00",
+          "totalExpenses": "52340.00",
+          "netIncome": "146410.00"
+        }
+      },
+      "validationResults": {
+        "documentType": "profit_loss",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "incomeDecline",
+            "severity": "critical",
+            "message": "YTD 2024 income ($146,410 for 9 months) projects to $195,213 annually, which is 9.4% decline from 2023 ($215,480). Requires explanation and CPA verification."
+          }
+        ],
+        "warnings": [],
+        "info": [],
+        "fieldValidations": {}
+      },
+      "conditions": [
+        "Obtain CPA letter explaining income decline from 2023 to 2024",
+        "Provide business contracts or invoices showing Q4 2024 expected revenue"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-bankstmt-002",
+      "loanId": "CMG-2024-002",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-martinez-business-2024-09.html",
+      "filePath": "/uploads/CMG-2024-002/bank-statement-martinez-business-2024-09.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/bank-statement-martinez-business-2024-09.html",
+      "uploadDate": "2024-10-06T14:20:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-10-06T14:20:00.000Z",
+        "confidence": 94,
+        "data": {
+          "institutionName": "Wells Fargo Business",
+          "accountHolderName": "Martinez Design Studio LLC",
+          "accountNumber": "****3456",
+          "accountType": "Business Checking",
+          "statementPeriodStart": "2024-09-01",
+          "statementPeriodEnd": "2024-09-30",
+          "beginningBalance": "52340.00",
+          "endingBalance": "48500.00",
+          "totalDeposits": "28650.00",
+          "totalWithdrawals": "32490.00",
+          "transactionCount": 47,
+          "largeDeposits": [
+            {
+              "date": "2024-09-05",
+              "description": "ACH Deposit - Coastal Properties",
+              "amount": "15000.00"
+            }
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "averageBalance": "50125.00"
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "highWithdrawalActivity",
+            "severity": "warning",
+            "message": "Withdrawals ($32,490) exceeded deposits ($28,650) this period. Monitor cash flow trends."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance matches stated assets",
+            "rule": "balanceMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-divorce-002",
+      "loanId": "CMG-2024-002",
+      "documentType": "divorce_decree",
+      "fileName": "divorce-decree-martinez-2022.html",
+      "filePath": "/uploads/CMG-2024-002/divorce-decree-martinez-2022.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-002/divorce-decree-martinez-2022.html",
+      "uploadDate": "2024-10-07T08:45:00.000Z",
+      "extractedData": {
+        "documentType": "divorce_decree",
+        "extractedAt": "2024-10-07T08:45:00.000Z",
+        "confidence": 96,
+        "data": {
+          "decreeDate": "2022-03-15",
+          "county": "San Diego",
+          "state": "CA",
+          "childSupportPayment": "1200.00",
+          "childSupportDuration": "Until age 18",
+          "spousalSupport": "0.00"
+        }
+      },
+      "validationResults": {
+        "documentType": "divorce_decree",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "childSupportNotAccountedFor",
+            "severity": "critical",
+            "message": "Divorce decree shows $1,200/month child support obligation, but this is not listed in liabilities. DTI calculation may be incorrect."
+          }
+        ],
+        "warnings": [],
+        "info": [],
+        "fieldValidations": {}
+      },
+      "conditions": [
+        "Update loan application to include $1,200/month child support payment in liabilities",
+        "Recalculate DTI with child support obligation"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

@@ -1,0 +1,1536 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2024-10-27",
+  "documentTypes": [
+    {
+      "id": "drivers-license",
+      "name": "Driver's License",
+      "category": "identification",
+      "required": true,
+      "conditions": [],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "fullName",
+            "description": "Full name as shown on license",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "licenseNumber",
+            "description": "Driver's license number",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "dateOfBirth",
+            "description": "Date of birth",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "mustMatchBorrowerDOB"
+          },
+          {
+            "name": "expirationDate",
+            "description": "License expiration date",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "mustNotBeExpired"
+          },
+          {
+            "name": "address",
+            "description": "Address on license",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "state",
+            "description": "Issuing state",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "photo",
+            "description": "Photo is clear and visible",
+            "dataType": "boolean",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "documentNotExpired",
+            "severity": "critical",
+            "message": "Driver's license is expired"
+          },
+          {
+            "rule": "nameMatches",
+            "severity": "critical",
+            "message": "Name on license does not match borrower name"
+          },
+          {
+            "rule": "dobMatches",
+            "severity": "critical",
+            "message": "Date of birth does not match loan application"
+          }
+        ]
+      },
+      "aiPrompt": "Extract the following information from this driver's license: full name, license number, date of birth, expiration date, address, and issuing state. Verify the photo is clear and visible."
+    },
+    {
+      "id": "bank-statement",
+      "name": "Bank Statement",
+      "category": "assets",
+      "required": true,
+      "conditions": [
+        {
+          "field": "loanAmount",
+          "operator": "greaterThan",
+          "value": 0,
+          "description": "Always required for asset verification"
+        }
+      ],
+      "multipleAllowed": true,
+      "minimumRequired": 2,
+      "monthsRequired": 2,
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "accountHolderName",
+            "description": "Name on account",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerOrCoBorrower"
+          },
+          {
+            "name": "bankName",
+            "description": "Name of financial institution",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "accountNumber",
+            "description": "Account number (last 4 digits)",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchLoanApplication"
+          },
+          {
+            "name": "accountType",
+            "description": "Type of account (checking, savings)",
+            "dataType": "enum",
+            "enumValues": ["checking", "savings", "money market"],
+            "required": true
+          },
+          {
+            "name": "statementDate",
+            "description": "Statement closing date",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "within60Days"
+          },
+          {
+            "name": "beginningBalance",
+            "description": "Beginning balance",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "endingBalance",
+            "description": "Ending balance",
+            "dataType": "currency",
+            "required": true,
+            "validationRule": "mustMatchAssetListing"
+          },
+          {
+            "name": "largeDeposits",
+            "description": "Deposits over $1000",
+            "dataType": "array",
+            "required": false
+          },
+          {
+            "name": "nsfOrOverdrafts",
+            "description": "NSF or overdraft fees present",
+            "dataType": "boolean",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "statementNotTooOld",
+            "severity": "critical",
+            "message": "Bank statement is older than 60 days"
+          },
+          {
+            "rule": "consecutiveMonths",
+            "severity": "critical",
+            "message": "Bank statements must be consecutive months"
+          },
+          {
+            "rule": "largeDepositsNeedSourcing",
+            "severity": "warning",
+            "message": "Large deposits require documentation/explanation"
+          },
+          {
+            "rule": "nsfFeesPresent",
+            "severity": "warning",
+            "message": "NSF or overdraft fees detected - may require explanation"
+          }
+        ]
+      },
+      "aiPrompt": "Extract account holder name, bank name, account number (last 4 digits), account type, statement date, beginning balance, ending balance. Identify any deposits over $1000 and check for NSF or overdraft fees."
+    },
+    {
+      "id": "w2",
+      "name": "W-2 Form",
+      "category": "income",
+      "required": true,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "W2",
+          "description": "Required for W2 employees"
+        }
+      ],
+      "multipleAllowed": true,
+      "minimumRequired": 2,
+      "yearsRequired": 2,
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "employeeName",
+            "description": "Employee name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "employeeSsn",
+            "description": "Employee SSN (last 4)",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerSSN"
+          },
+          {
+            "name": "employerName",
+            "description": "Employer name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchEmploymentHistory"
+          },
+          {
+            "name": "employerEin",
+            "description": "Employer EIN",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "taxYear",
+            "description": "Tax year",
+            "dataType": "number",
+            "required": true
+          },
+          {
+            "name": "wagesBox1",
+            "description": "Box 1 - Wages, tips, other compensation",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "federalTaxWithheldBox2",
+            "description": "Box 2 - Federal income tax withheld",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "socialSecurityWagesBox3",
+            "description": "Box 3 - Social security wages",
+            "dataType": "currency",
+            "required": false
+          },
+          {
+            "name": "medicareWagesBox5",
+            "description": "Box 5 - Medicare wages and tips",
+            "dataType": "currency",
+            "required": false
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "twoYearsRequired",
+            "severity": "critical",
+            "message": "Two consecutive years of W-2s required"
+          },
+          {
+            "rule": "nameMatches",
+            "severity": "critical",
+            "message": "Name on W-2 does not match borrower"
+          },
+          {
+            "rule": "employerMatches",
+            "severity": "warning",
+            "message": "Employer on W-2 does not match stated employment"
+          },
+          {
+            "rule": "incomeConsistency",
+            "severity": "info",
+            "message": "Income variance year-over-year exceeds 20%"
+          }
+        ]
+      },
+      "aiPrompt": "Extract employee name, SSN (last 4), employer name, EIN, tax year, and all wage amounts from boxes 1, 2, 3, and 5 of this W-2 form."
+    },
+    {
+      "id": "paystub",
+      "name": "Pay Stub",
+      "category": "income",
+      "required": true,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "W2",
+          "description": "Required for W2 employees"
+        }
+      ],
+      "multipleAllowed": true,
+      "minimumRequired": 2,
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "employeeName",
+            "description": "Employee name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "employerName",
+            "description": "Employer name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchEmploymentHistory"
+          },
+          {
+            "name": "payPeriodStart",
+            "description": "Pay period start date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "payPeriodEnd",
+            "description": "Pay period end date",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "within30Days"
+          },
+          {
+            "name": "payDate",
+            "description": "Pay date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "grossPayCurrent",
+            "description": "Gross pay for current period",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "grossPayYTD",
+            "description": "Year-to-date gross pay",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "regularHours",
+            "description": "Regular hours worked",
+            "dataType": "number",
+            "required": false
+          },
+          {
+            "name": "overtimeHours",
+            "description": "Overtime hours worked",
+            "dataType": "number",
+            "required": false
+          },
+          {
+            "name": "netPay",
+            "description": "Net pay",
+            "dataType": "currency",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "paystubRecent",
+            "severity": "critical",
+            "message": "Pay stub must be within last 30 days"
+          },
+          {
+            "rule": "ytdIncomeConsistent",
+            "severity": "warning",
+            "message": "YTD income does not align with stated annual income"
+          }
+        ]
+      },
+      "aiPrompt": "Extract employee name, employer name, pay period dates, pay date, gross pay (current and YTD), regular and overtime hours if shown, and net pay from this pay stub."
+    },
+    {
+      "id": "tax-return",
+      "name": "Tax Return (1040)",
+      "category": "income",
+      "required": true,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "in",
+          "value": ["self-employed", "1099"],
+          "description": "Required for self-employed or 1099 income"
+        },
+        {
+          "field": "loanAmount",
+          "operator": "greaterThan",
+          "value": 500000,
+          "description": "Required for jumbo loans"
+        }
+      ],
+      "multipleAllowed": true,
+      "minimumRequired": 2,
+      "yearsRequired": 2,
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "taxpayerName",
+            "description": "Primary taxpayer name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "spouseName",
+            "description": "Spouse name if joint filing",
+            "dataType": "string",
+            "required": false
+          },
+          {
+            "name": "ssn",
+            "description": "SSN (last 4)",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "taxYear",
+            "description": "Tax year",
+            "dataType": "number",
+            "required": true
+          },
+          {
+            "name": "filingStatus",
+            "description": "Filing status",
+            "dataType": "enum",
+            "enumValues": ["single", "married-joint", "married-separate", "head-of-household"],
+            "required": true
+          },
+          {
+            "name": "totalIncome",
+            "description": "Total income (Line 9)",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "adjustedGrossIncome",
+            "description": "Adjusted gross income (Line 11)",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "taxableIncome",
+            "description": "Taxable income",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "scheduleC",
+            "description": "Schedule C business income included",
+            "dataType": "boolean",
+            "required": false
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "twoYearsRequired",
+            "severity": "critical",
+            "message": "Two consecutive years of tax returns required"
+          },
+          {
+            "rule": "mustBeSigned",
+            "severity": "critical",
+            "message": "Tax return must be signed by taxpayer"
+          },
+          {
+            "rule": "incomeDecline",
+            "severity": "warning",
+            "message": "Income declined more than 20% year-over-year"
+          }
+        ]
+      },
+      "aiPrompt": "Extract taxpayer name(s), SSN, tax year, filing status, total income (line 9), adjusted gross income (line 11), and taxable income. Check if Schedule C is included for business income."
+    },
+    {
+      "id": "insurance-quote",
+      "name": "Homeowners Insurance Quote",
+      "category": "property",
+      "required": true,
+      "conditions": [],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "insuranceCompany",
+            "description": "Insurance company name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "policyNumber",
+            "description": "Policy or quote number",
+            "dataType": "string",
+            "required": false
+          },
+          {
+            "name": "propertyAddress",
+            "description": "Property address",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchSubjectProperty"
+          },
+          {
+            "name": "coverageAmount",
+            "description": "Dwelling coverage amount",
+            "dataType": "currency",
+            "required": true,
+            "validationRule": "mustMeetLenderMinimum"
+          },
+          {
+            "name": "annualPremium",
+            "description": "Annual premium amount",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "effectiveDate",
+            "description": "Policy effective date",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "mustCoverClosingDate"
+          },
+          {
+            "name": "deductible",
+            "description": "Policy deductible",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "liabilityCoverage",
+            "description": "Liability coverage amount",
+            "dataType": "currency",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "coverageAdequate",
+            "severity": "critical",
+            "message": "Coverage amount must meet or exceed loan amount"
+          },
+          {
+            "rule": "effectiveDateValid",
+            "severity": "critical",
+            "message": "Effective date must cover closing date"
+          },
+          {
+            "rule": "addressMatches",
+            "severity": "critical",
+            "message": "Property address must match subject property"
+          }
+        ]
+      },
+      "aiPrompt": "Extract insurance company name, policy/quote number, property address, dwelling coverage amount, annual premium, effective date, deductible, and liability coverage from this insurance quote."
+    },
+    {
+      "id": "purchase-agreement",
+      "name": "Purchase Agreement",
+      "category": "property",
+      "required": true,
+      "conditions": [
+        {
+          "field": "loanPurposeType",
+          "operator": "equals",
+          "value": "Purchase",
+          "description": "Required for purchase transactions"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "propertyAddress",
+            "description": "Property address",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchSubjectProperty"
+          },
+          {
+            "name": "purchasePrice",
+            "description": "Purchase price",
+            "dataType": "currency",
+            "required": true,
+            "validationRule": "mustMatchLoanApplication"
+          },
+          {
+            "name": "buyerNames",
+            "description": "Buyer name(s)",
+            "dataType": "array",
+            "required": true,
+            "validationRule": "mustMatchBorrowers"
+          },
+          {
+            "name": "sellerNames",
+            "description": "Seller name(s)",
+            "dataType": "array",
+            "required": true
+          },
+          {
+            "name": "contractDate",
+            "description": "Contract execution date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "closingDate",
+            "description": "Expected closing date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "earnestMoneyDeposit",
+            "description": "Earnest money deposit amount",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "sellerConcessions",
+            "description": "Seller concessions amount",
+            "dataType": "currency",
+            "required": false
+          },
+          {
+            "name": "contingencies",
+            "description": "Active contingencies",
+            "dataType": "array",
+            "required": false
+          },
+          {
+            "name": "financeContingency",
+            "description": "Finance contingency present",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "appraisalContingency",
+            "description": "Appraisal contingency present",
+            "dataType": "boolean",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "fullyExecuted",
+            "severity": "critical",
+            "message": "Purchase agreement must be signed by all parties"
+          },
+          {
+            "rule": "priceMatches",
+            "severity": "critical",
+            "message": "Purchase price must match loan application"
+          },
+          {
+            "rule": "buyersMatch",
+            "severity": "critical",
+            "message": "Buyers on contract must match loan borrowers"
+          }
+        ]
+      },
+      "aiPrompt": "Extract property address, purchase price, buyer and seller names, contract date, closing date, earnest money deposit, seller concessions, and check for finance and appraisal contingencies."
+    },
+    {
+      "id": "appraisal",
+      "name": "Appraisal Report",
+      "category": "property",
+      "required": true,
+      "conditions": [],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "propertyAddress",
+            "description": "Subject property address",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchSubjectProperty"
+          },
+          {
+            "name": "appraisedValue",
+            "description": "Appraised value",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "appraisalDate",
+            "description": "Effective date of appraisal",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "appraiserName",
+            "description": "Appraiser name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "appraiserLicense",
+            "description": "Appraiser license number",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "formType",
+            "description": "Form type (1004, 1073, etc.)",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "propertyCondition",
+            "description": "Property condition rating",
+            "dataType": "enum",
+            "enumValues": ["excellent", "good", "average", "fair", "poor"],
+            "required": true
+          },
+          {
+            "name": "repairsRequired",
+            "description": "Repairs required",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "repairsList",
+            "description": "List of required repairs",
+            "dataType": "array",
+            "required": false
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "valueSupportsLoan",
+            "severity": "critical",
+            "message": "Appraised value does not support loan amount (LTV exceeds guidelines)"
+          },
+          {
+            "rule": "repairsIdentified",
+            "severity": "warning",
+            "message": "Repairs required - may need 203k or rehab loan"
+          },
+          {
+            "rule": "appraisalRecent",
+            "severity": "warning",
+            "message": "Appraisal is older than 120 days"
+          }
+        ]
+      },
+      "aiPrompt": "Extract property address, appraised value, appraisal date, appraiser name and license, form type, property condition, and any required repairs from this appraisal report."
+    },
+    {
+      "id": "credit-report",
+      "name": "Credit Report",
+      "category": "credit",
+      "required": true,
+      "conditions": [],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "borrowerName",
+            "description": "Borrower name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "reportDate",
+            "description": "Report date",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "within90Days"
+          },
+          {
+            "name": "equifaxScore",
+            "description": "Equifax credit score",
+            "dataType": "number",
+            "required": false
+          },
+          {
+            "name": "experianScore",
+            "description": "Experian credit score",
+            "dataType": "number",
+            "required": false
+          },
+          {
+            "name": "transUnionScore",
+            "description": "TransUnion credit score",
+            "dataType": "number",
+            "required": false
+          },
+          {
+            "name": "middleScore",
+            "description": "Middle credit score",
+            "dataType": "number",
+            "required": true
+          },
+          {
+            "name": "publicRecords",
+            "description": "Public records present",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "collections",
+            "description": "Collections present",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "recentInquiries",
+            "description": "Number of inquiries in last 6 months",
+            "dataType": "number",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "creditScoreMeetsGuidelines",
+            "severity": "critical",
+            "message": "Credit score does not meet minimum requirements for loan program"
+          },
+          {
+            "rule": "publicRecordsFound",
+            "severity": "warning",
+            "message": "Public records found - may require explanation or resolution"
+          },
+          {
+            "rule": "collectionsFound",
+            "severity": "warning",
+            "message": "Collections accounts found - may need to be paid or explained"
+          },
+          {
+            "rule": "multipleInquiries",
+            "severity": "info",
+            "message": "Multiple recent credit inquiries - may require explanation"
+          }
+        ]
+      },
+      "aiPrompt": "Extract borrower name, report date, all three credit scores, middle score, presence of public records or collections, and number of recent inquiries from this credit report."
+    },
+    {
+      "id": "voe",
+      "name": "Verification of Employment (VOE)",
+      "category": "income",
+      "required": true,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "W2",
+          "description": "Required for W2 employees"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "employeeName",
+            "description": "Employee name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "employerName",
+            "description": "Employer name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "position",
+            "description": "Job title/position",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "hireDate",
+            "description": "Date of hire",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "employmentStatus",
+            "description": "Current employment status",
+            "dataType": "enum",
+            "enumValues": ["active", "terminated", "leave"],
+            "required": true
+          },
+          {
+            "name": "baseSalary",
+            "description": "Base salary/wage",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "verificationDate",
+            "description": "Date of verification",
+            "dataType": "date",
+            "required": true,
+            "validationRule": "within10DaysOfClosing"
+          },
+          {
+            "name": "verifiedBy",
+            "description": "Name of person who verified",
+            "dataType": "string",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "employmentActive",
+            "severity": "critical",
+            "message": "Employment status is not active"
+          },
+          {
+            "rule": "verificationRecent",
+            "severity": "critical",
+            "message": "VOE must be completed within 10 days of closing"
+          },
+          {
+            "rule": "incomeMatches",
+            "severity": "warning",
+            "message": "Verified income differs from stated income on application"
+          }
+        ]
+      },
+      "aiPrompt": "Extract employee name, employer name, position, hire date, employment status, base salary, verification date, and name of person who verified from this VOE form."
+    },
+    {
+      "id": "hoa-docs",
+      "name": "HOA Documents",
+      "category": "property",
+      "required": false,
+      "conditions": [
+        {
+          "field": "propertyDetails.hoaFees",
+          "operator": "greaterThan",
+          "value": 0,
+          "description": "Required if property has HOA"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "hoaName",
+            "description": "HOA name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "propertyAddress",
+            "description": "Property address",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "monthlyDues",
+            "description": "Monthly HOA dues",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "specialAssessments",
+            "description": "Special assessments pending",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "percentOwnerOccupied",
+            "description": "Percent owner occupied",
+            "dataType": "number",
+            "required": true
+          },
+          {
+            "name": "masterInsurance",
+            "description": "Master insurance coverage amount",
+            "dataType": "currency",
+            "required": false
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "ownerOccupiedRatio",
+            "severity": "warning",
+            "message": "Owner occupied ratio below 50% - may not meet guidelines"
+          },
+          {
+            "rule": "specialAssessmentsPending",
+            "severity": "warning",
+            "message": "Special assessments pending - may affect DTI"
+          }
+        ]
+      },
+      "aiPrompt": "Extract HOA name, property address, monthly dues, any special assessments, percentage of owner-occupied units, and master insurance coverage from these HOA documents."
+    },
+    {
+      "id": "gift-letter",
+      "name": "Gift Letter",
+      "category": "assets",
+      "required": false,
+      "conditions": [
+        {
+          "field": "transactions.downPaymentSource",
+          "operator": "contains",
+          "value": "gift",
+          "description": "Required if down payment includes gift funds"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "donorName",
+            "description": "Donor name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "donorRelationship",
+            "description": "Relationship to borrower",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustBeAcceptableRelationship"
+          },
+          {
+            "name": "recipientName",
+            "description": "Recipient (borrower) name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "giftAmount",
+            "description": "Gift amount",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "propertyAddress",
+            "description": "Property address",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "noRepaymentRequired",
+            "description": "Statement that no repayment is required",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "donorSignature",
+            "description": "Donor signature present",
+            "dataType": "boolean",
+            "required": true
+          },
+          {
+            "name": "dateOfLetter",
+            "description": "Date of letter",
+            "dataType": "date",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "mustBeSigned",
+            "severity": "critical",
+            "message": "Gift letter must be signed by donor"
+          },
+          {
+            "rule": "noRepaymentStated",
+            "severity": "critical",
+            "message": "Gift letter must state no repayment is required"
+          },
+          {
+            "rule": "relationshipAcceptable",
+            "severity": "critical",
+            "message": "Donor must be acceptable relative (per guidelines)"
+          },
+          {
+            "rule": "needsSourceVerification",
+            "severity": "info",
+            "message": "Gift funds require verification of donor's account and transfer"
+          }
+        ]
+      },
+      "aiPrompt": "Extract donor name, relationship to borrower, recipient name, gift amount, property address, confirmation that no repayment is required, verify donor signature is present, and date of letter."
+    },
+    {
+      "id": "1099",
+      "name": "1099 Form",
+      "category": "income",
+      "required": false,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "1099",
+          "description": "Required for 1099 contractors"
+        }
+      ],
+      "multipleAllowed": true,
+      "minimumRequired": 2,
+      "yearsRequired": 2,
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "recipientName",
+            "description": "Recipient name",
+            "dataType": "string",
+            "required": true,
+            "validationRule": "mustMatchBorrowerName"
+          },
+          {
+            "name": "recipientTin",
+            "description": "Recipient TIN/SSN",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "payerName",
+            "description": "Payer name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "taxYear",
+            "description": "Tax year",
+            "dataType": "number",
+            "required": true
+          },
+          {
+            "name": "formType",
+            "description": "1099 form type (MISC, NEC, etc.)",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "nonemployeeCompensation",
+            "description": "Nonemployee compensation amount",
+            "dataType": "currency",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "twoYearsRequired",
+            "severity": "critical",
+            "message": "Two consecutive years of 1099s required for stability"
+          }
+        ]
+      },
+      "aiPrompt": "Extract recipient name, TIN/SSN, payer name, tax year, form type, and nonemployee compensation amount from this 1099 form."
+    },
+    {
+      "id": "profit-loss",
+      "name": "Profit & Loss Statement",
+      "category": "income",
+      "required": false,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "self-employed",
+          "description": "Required for self-employed borrowers"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "businessName",
+            "description": "Business name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "ownerName",
+            "description": "Owner name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "periodStart",
+            "description": "Period start date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "periodEnd",
+            "description": "Period end date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "totalRevenue",
+            "description": "Total revenue/income",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "totalExpenses",
+            "description": "Total expenses",
+            "dataType": "currency",
+            "required": true
+          },
+          {
+            "name": "netIncome",
+            "description": "Net income (profit)",
+            "dataType": "currency",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "ytdRequired",
+            "severity": "critical",
+            "message": "Year-to-date P&L required for self-employed"
+          },
+          {
+            "rule": "profitabilityCheck",
+            "severity": "warning",
+            "message": "Business showing loss - may affect qualifying income"
+          }
+        ]
+      },
+      "aiPrompt": "Extract business name, owner name, period covered, total revenue, total expenses, and net income from this profit and loss statement."
+    },
+    {
+      "id": "business-license",
+      "name": "Business License",
+      "category": "income",
+      "required": false,
+      "conditions": [
+        {
+          "field": "employment.employmentType",
+          "operator": "equals",
+          "value": "self-employed",
+          "description": "Required for self-employed borrowers"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "businessName",
+            "description": "Business name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "ownerName",
+            "description": "Owner name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "licenseNumber",
+            "description": "License number",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "issueDate",
+            "description": "Issue date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "expirationDate",
+            "description": "Expiration date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "issuingAuthority",
+            "description": "Issuing authority",
+            "dataType": "string",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "licenseActive",
+            "severity": "critical",
+            "message": "Business license is expired"
+          }
+        ]
+      },
+      "aiPrompt": "Extract business name, owner name, license number, issue date, expiration date, and issuing authority from this business license."
+    },
+    {
+      "id": "divorce-decree",
+      "name": "Divorce Decree",
+      "category": "legal",
+      "required": false,
+      "conditions": [
+        {
+          "field": "borrower.maritalStatus",
+          "operator": "equals",
+          "value": "Divorced",
+          "description": "Required if borrower is divorced with obligations"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "petitionerName",
+            "description": "Petitioner name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "respondentName",
+            "description": "Respondent name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "decreeDate",
+            "description": "Decree date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "childSupportAmount",
+            "description": "Child support amount if any",
+            "dataType": "currency",
+            "required": false
+          },
+          {
+            "name": "alimonyAmount",
+            "description": "Alimony/spousal support amount if any",
+            "dataType": "currency",
+            "required": false
+          },
+          {
+            "name": "paymentObligations",
+            "description": "Any payment obligations",
+            "dataType": "boolean",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "obligationsIdentified",
+            "severity": "info",
+            "message": "Payment obligations must be included in DTI calculation"
+          }
+        ]
+      },
+      "aiPrompt": "Extract petitioner and respondent names, decree date, any child support or alimony amounts, and identify if there are ongoing payment obligations."
+    },
+    {
+      "id": "bankruptcy-discharge",
+      "name": "Bankruptcy Discharge",
+      "category": "legal",
+      "required": false,
+      "conditions": [
+        {
+          "field": "borrower.declarations.bankruptcyInLast7Years",
+          "operator": "equals",
+          "value": true,
+          "description": "Required if bankruptcy disclosed"
+        }
+      ],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "debtorName",
+            "description": "Debtor name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "caseNumber",
+            "description": "Case number",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "chapter",
+            "description": "Bankruptcy chapter (7, 13, etc.)",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "filingDate",
+            "description": "Filing date",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "dischargeDate",
+            "description": "Discharge date",
+            "dataType": "date",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "seasoningPeriodMet",
+            "severity": "critical",
+            "message": "Bankruptcy seasoning period not met (typically 2-4 years from discharge)"
+          }
+        ]
+      },
+      "aiPrompt": "Extract debtor name, case number, bankruptcy chapter, filing date, and discharge date from this bankruptcy discharge document."
+    },
+    {
+      "id": "explanation-letter",
+      "name": "Letter of Explanation",
+      "category": "other",
+      "required": false,
+      "conditions": [],
+      "extractionRules": {
+        "fields": [
+          {
+            "name": "borrowerName",
+            "description": "Borrower name",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "dateOfLetter",
+            "description": "Date of letter",
+            "dataType": "date",
+            "required": true
+          },
+          {
+            "name": "subject",
+            "description": "Subject of explanation",
+            "dataType": "string",
+            "required": true
+          },
+          {
+            "name": "explanation",
+            "description": "Explanation text",
+            "dataType": "text",
+            "required": true
+          },
+          {
+            "name": "signed",
+            "description": "Letter is signed",
+            "dataType": "boolean",
+            "required": true
+          }
+        ],
+        "documentValidations": [
+          {
+            "rule": "mustBeSigned",
+            "severity": "critical",
+            "message": "Letter of explanation must be signed and dated"
+          }
+        ]
+      },
+      "aiPrompt": "Extract borrower name, date, subject of the explanation, the explanation text, and verify the letter is signed."
+    }
+  ],
+  "conditionalLogic": {
+    "loanPurposeRules": {
+      "Purchase": {
+        "required": ["purchase-agreement", "appraisal"],
+        "optional": ["gift-letter"]
+      },
+      "Refinance": {
+        "required": ["appraisal"],
+        "optional": []
+      }
+    },
+    "loanTypeRules": {
+      "Conventional": {
+        "minimumCreditScore": 620,
+        "maxDTI": 50,
+        "maxLTV": 97
+      },
+      "FHA": {
+        "minimumCreditScore": 580,
+        "maxDTI": 56.9,
+        "maxLTV": 96.5,
+        "additionalRequired": ["fha-case-number"]
+      },
+      "VA": {
+        "minimumCreditScore": 580,
+        "maxDTI": 60,
+        "maxLTV": 100,
+        "additionalRequired": ["certificate-of-eligibility"]
+      },
+      "USDA": {
+        "minimumCreditScore": 640,
+        "maxDTI": 45,
+        "maxLTV": 100,
+        "additionalRequired": ["usda-eligibility"]
+      }
+    },
+    "employmentTypeRules": {
+      "W2": {
+        "required": ["w2", "paystub", "voe"],
+        "yearsRequired": 2
+      },
+      "self-employed": {
+        "required": ["tax-return", "profit-loss", "business-license"],
+        "yearsRequired": 2
+      },
+      "1099": {
+        "required": ["1099", "tax-return"],
+        "yearsRequired": 2
+      }
+    },
+    "stateSpecificRules": {
+      "CA": {
+        "additionalRequired": [],
+        "notes": "California requires additional disclosures"
+      },
+      "TX": {
+        "additionalRequired": ["50a6"],
+        "notes": "Texas 50(a)(6) required"
+      },
+      "NY": {
+        "additionalRequired": [],
+        "notes": "New York requires attorney review"
+      }
+    }
+  },
+  "scoringRules": {
+    "documentCompleteness": {
+      "weight": 30,
+      "calculation": "percentageOfRequiredDocsReceived"
+    },
+    "dataAccuracy": {
+      "weight": 25,
+      "calculation": "percentageOfFieldsMatchingLoanData"
+    },
+    "complianceIssues": {
+      "weight": 20,
+      "calculation": "criticalIssuesCount * -10, warningIssuesCount * -5"
+    },
+    "readyToClose": {
+      "weight": 25,
+      "calculation": "allConditionsMet && noOutstandingItems"
+    }
+  }
+}

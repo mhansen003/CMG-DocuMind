@@ -1,0 +1,761 @@
+{
+  "loanId": "CMG-2024-001",
+  "loanNumber": "100234567",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 450000,
+    "propertyEstimatedValue": 550000,
+    "downPaymentAmount": 100000,
+    "ltvRatio": 81.82,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Orange",
+    "city": "Irvine",
+    "zipCode": "92618",
+    "propertyAddress": "123 Innovation Drive",
+    "propertyCity": "Irvine",
+    "propertyState": "CA",
+    "propertyZip": "92618",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 6.875,
+    "monthlyPayment": 2958.87,
+    "income": 5995.20,
+    "closingDate": "2024-12-15",
+    "applicationDate": "2024-10-15"
+  },
+  "borrower": {
+    "firstName": "Michael",
+    "middleName": "James",
+    "lastName": "Thompson",
+    "fullName": "Michael James Thompson",
+    "suffix": "",
+    "ssn": "123-45-6789",
+    "dateOfBirth": "1985-06-15",
+    "maritalStatus": "Married",
+    "spouse": {
+      "fullName": "Jennifer Marie Thompson"
+    },
+    "dependents": 2,
+    "citizenship": "USCitizen",
+    "email": "michael.thompson@email.com",
+    "phone": "949-555-0123",
+    "totalIncome": 268000,
+    "adjustedGrossIncome": 260000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "456 Oak Street",
+      "unit": "Apt 2B",
+      "city": "Mission Viejo",
+      "state": "CA",
+      "zipCode": "92691",
+      "monthsAtAddress": 36,
+      "residencyType": "Rent",
+      "monthlyRent": 2500
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Tech Solutions Inc",
+        "jobTitle": "Senior Software Engineer",
+        "position": "Senior Software Engineer",
+        "employmentType": "W2",
+        "startDate": "2018-03-15",
+        "monthsEmployed": 78,
+        "baseIncome": 145000,
+        "overtimeIncome": 5000,
+        "bonusIncome": 15000,
+        "totalIncome": 165000,
+        "employerPhone": "949-555-9000",
+        "address": {
+          "street": "789 Technology Parkway",
+          "city": "Irvine",
+          "state": "CA",
+          "zipCode": "92614"
+        },
+        "phone": "949-555-9000",
+        "supervisorName": "Sarah Chen"
+      },
+      "previous": null
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "bankName": "Chase Bank",
+          "accountNumber": "****1234",
+          "currentBalance": 35000,
+          "balance": 31285.50,
+          "accountType": "Chase Total Checking",
+          "accountHolderName": "Michael J. Thompson"
+        },
+        {
+          "institutionName": "Wells Fargo",
+          "bankName": "Wells Fargo",
+          "accountNumber": "****5678",
+          "currentBalance": 85000,
+          "balance": 85000,
+          "accountType": "Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "accountNumber": "****1234",
+          "balance": 35000,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Wells Fargo",
+          "accountNumber": "****5678",
+          "balance": 85000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Fidelity 401k",
+          "accountNumber": "****9012",
+          "balance": 275000,
+          "accountType": "401k"
+        }
+      ],
+      "totalAssets": 395000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Chase Credit Card",
+          "accountNumber": "****3456",
+          "balance": 2500,
+          "monthlyPayment": 125,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Toyota Financial",
+          "accountNumber": "****7890",
+          "balance": 18000,
+          "monthlyPayment": 425,
+          "monthsRemaining": 42,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 550
+    },
+    "creditScore": 760,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": {
+    "firstName": "Jennifer",
+    "middleName": "Marie",
+    "lastName": "Thompson",
+    "suffix": "",
+    "ssn": "987-65-4321",
+    "dateOfBirth": "1987-09-22",
+    "maritalStatus": "Married",
+    "citizenship": "USCitizen",
+    "email": "jennifer.thompson@email.com",
+    "phone": "949-555-0124",
+    "currentAddress": {
+      "sameAsBorrower": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Orange County Medical Center",
+        "position": "Registered Nurse",
+        "employmentType": "W2",
+        "startDate": "2015-06-01",
+        "monthsEmployed": 111,
+        "baseIncome": 95000,
+        "overtimeIncome": 8000,
+        "bonusIncome": 0,
+        "totalIncome": 103000,
+        "address": {
+          "street": "234 Medical Plaza",
+          "city": "Orange",
+          "state": "CA",
+          "zipCode": "92868"
+        },
+        "phone": "714-555-2000",
+        "supervisorName": "Dr. Robert Martinez"
+      }
+    },
+    "assets": {
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank (Joint)",
+          "accountNumber": "****1234",
+          "balance": 35000,
+          "accountType": "Checking",
+          "joint": true
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "accountNumber": "****2468",
+          "balance": 25000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Vanguard 403b",
+          "accountNumber": "****1357",
+          "balance": 125000,
+          "accountType": "403b"
+        }
+      ],
+      "totalAssets": 185000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Citi Credit Card",
+          "accountNumber": "****8642",
+          "balance": 1200,
+          "monthlyPayment": 75,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [],
+      "studentLoans": [
+        {
+          "creditorName": "Federal Student Loan",
+          "accountNumber": "****9753",
+          "balance": 12000,
+          "monthlyPayment": 180,
+          "monthsRemaining": 66,
+          "toBePaidOff": false
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 255
+    },
+    "creditScore": 755,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "transactions": {
+    "purchasePrice": 550000,
+    "downPayment": 100000,
+    "loanAmount": 450000,
+    "estimatedClosingCosts": 15000,
+    "prepaids": 5000,
+    "sellerCredits": 5000,
+    "cashToClose": 115000,
+    "totalAssetVerificationRequired": 115000
+  },
+  "ratios": {
+    "housingExpense": 2958.87,
+    "totalDebtExpense": 3763.87,
+    "grossMonthlyIncome": 22333.33,
+    "housingRatio": 13.25,
+    "debtToIncomeRatio": 16.85,
+    "combinedLTV": 81.82
+  },
+  "propertyDetails": {
+    "address": "123 Innovation Drive",
+    "city": "Irvine",
+    "state": "CA",
+    "zipCode": "92618",
+    "county": "Orange",
+    "apn": "123-456-78-00",
+    "yearBuilt": 2015,
+    "squareFeet": 2400,
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "lotSize": 6000,
+    "propertyType": "Single Family Residence",
+    "style": "Contemporary",
+    "constructionType": "Frame/Stucco",
+    "roofType": "Composition Shingle",
+    "zoningCode": "R-1",
+    "hoaFees": 250,
+    "taxYear": 2024,
+    "annualPropertyTax": 6600
+  },
+  "loanOfficer": {
+    "name": "David Chen",
+    "nmls": "123456",
+    "email": "david.chen@cmg.com",
+    "phone": "949-555-7000",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-10-20",
+    "lastUpdated": "2024-10-27",
+    "assignedUnderwriter": "Sarah Williams",
+    "assignedProcessor": "Mike Johnson"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Drivers License - Co-Borrower",
+      "Bank Statement - Checking (2 months)",
+      "Bank Statement - Savings (2 months)",
+      "W2 - Borrower (2 years)",
+      "W2 - Co-Borrower (2 years)",
+      "Pay Stubs - Borrower (2 recent)",
+      "Pay Stubs - Co-Borrower (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "HOA Documents",
+      "Appraisal",
+      "Employment Verification - Borrower",
+      "Employment Verification - Co-Borrower",
+      "Gift Letter (if applicable)",
+      "Divorce Decree (if applicable)",
+      "Explanation of Credit Inquiries"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-001",
+      "loanId": "sample-loan-001",
+      "documentType": "paystub",
+      "fileName": "paystub-thompson-michael-2024-10.html",
+      "filePath": "/sample-documents/paystub-thompson-michael-2024-10.html",
+      "s3Url": "http://localhost:3001/sample-documents/paystub-thompson-michael-2024-10.html",
+      "uploadDate": "2024-10-27T15:30:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-10-27T15:30:00.000Z",
+        "confidence": 95,
+        "data": {
+          "employeeName": "Michael James Thompson",
+          "employerName": "Tech Solutions Inc",
+          "payPeriodStart": "2024-10-01",
+          "payPeriodEnd": "2024-10-15",
+          "payDate": "2024-10-20",
+          "grossPayCurrent": 5995.20,
+          "grossPayYTD": 126634.55,
+          "regularHours": 80.00,
+          "overtimeHours": 4.00,
+          "netPay": 3338.21
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "ytdIncomeConsistent",
+            "severity": "warning",
+            "message": "YTD income of $126,634.55 is tracking slightly below the annual projection of $165,000. This could indicate reduced overtime/bonus in recent periods or pay schedule timing. Verify with additional pay stubs if income consistency is critical to qualification."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Michael James Thompson' matches borrower name on loan application. Name verification passed.",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'Tech Solutions Inc' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "matchesApplication"
+          },
+          "payPeriodStart": {
+            "isValid": false,
+            "message": "Pay period start date (Oct 1, 2024) is more than 60 days old. Paystubs must be dated within the last 60 days of loan application.",
+            "rule": "documentRecency",
+            "comparedValue": "Within 60 days of Oct 27, 2024",
+            "expectedValue": "After August 28, 2024"
+          },
+          "payPeriodEnd": {
+            "isValid": true,
+            "message": "Pay period end date (Oct 15, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payDate": {
+            "isValid": false,
+            "message": "Pay date (Oct 20, 2024) does not fall on or after the last day of the pay period (Oct 15, 2024). The pay date appears invalid or inconsistent with standard payroll practices.",
+            "rule": "payDateLogic",
+            "comparedValue": "On or after Oct 15, 2024",
+            "explanation": "Pay dates must be on or after the pay period end date"
+          },
+          "grossPayCurrent": {
+            "isValid": true,
+            "message": "Current gross pay of $5,995.20 is consistent with stated annual income of $145,000 (base) plus overtime and bonus. Biweekly calculation verified.",
+            "rule": "incomeConsistency"
+          },
+          "grossPayYTD": {
+            "isValid": true,
+            "message": "Year-to-date gross pay of $126,634.55 aligns with pay period timing (20 periods completed through Oct 15). Annual income projection on track.",
+            "rule": "ytdCalculation"
+          },
+          "netPay": {
+            "isValid": true,
+            "message": "Net pay of $3,338.21 represents reasonable deductions (~44%) for federal/state taxes, FICA, benefits, and retirement contributions on gross pay of $5,995.20.",
+            "rule": "netPayCalculation"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-w2-001",
+      "loanId": "CMG-2024-001",
+      "documentType": "w2",
+      "fileName": "w2-thompson-michael-2024.html",
+      "filePath": "/sample-documents/w2-thompson-michael-2024.html",
+      "s3Url": "http://localhost:3001/sample-documents/w2-thompson-michael-2024.html",
+      "uploadDate": "2024-10-27T16:45:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-10-27T16:45:00.000Z",
+        "confidence": 98,
+        "data": {
+          "taxYear": "2024",
+          "employeeSSN": "123-45-6789",
+          "employeeName": "Michael J. Thompson",
+          "employeeAddress": "456 Oak Street, Apt 2B, Mission Viejo, CA 92691",
+          "employerEIN": "94-2847561",
+          "employerName": "Tech Solutions Inc",
+          "employerAddress": "789 Technology Parkway, Irvine, CA 92614",
+          "wages": "145850.00",
+          "federalTaxWithheld": "28450.00",
+          "socialSecurityWages": "145850.00",
+          "socialSecurityTaxWithheld": "9042.70",
+          "medicareWages": "145850.00",
+          "medicareTaxWithheld": "2114.83",
+          "box12Codes": ["D"],
+          "box12Values": ["8500.00"],
+          "statutoryEmployee": true,
+          "retirementPlan": false,
+          "thirdPartySickPay": false,
+          "state": "CA",
+          "stateID": "1234567-8",
+          "stateWages": "145850.00",
+          "stateIncomeTax": "8234.50"
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "incomeVariance",
+            "severity": "critical",
+            "field": "wages",
+            "message": "W2 reported wages of $145,850 differ by 0.6% from stated annual income of $145,000 on loan application. Variance exceeds acceptable 15% threshold and requires income re-verification."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "missingRetirementInfo",
+            "severity": "warning",
+            "field": "box12Codes",
+            "message": "Box 12 shows code D ($8,500.00) which indicates 401k deferrals. This is expected and aligns with borrower's employment profile."
+          },
+          {
+            "rule": "lowTaxWithholding",
+            "severity": "warning",
+            "field": "federalTaxWithheld",
+            "message": "Federal tax withholding of $28,450 represents 19.5% of wages ($145,850). This is within normal range but slightly high - borrower may receive tax refund."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN on W2 (***-**-6789) matches loan application SSN. Identity verification successful.",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Michael J. Thompson' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'Tech Solutions Inc' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "employerMatch"
+          },
+          "taxYear": {
+            "isValid": true,
+            "message": "W2 is from tax year 2024, which is the most recent year. Document is current and acceptable.",
+            "rule": "taxYearCurrent"
+          },
+          "wages": {
+            "isValid": true,
+            "message": "W2 wages of $145,850 are very close to stated base income of $145,000. Minor variance of 0.6% is acceptable and likely due to mid-year employment start or partial year calculation.",
+            "rule": "incomeConsistency"
+          },
+          "federalTaxWithheld": {
+            "isValid": true,
+            "message": "Federal tax withholding of $28,450 represents 19.5% effective rate. This is within normal range for this income level and filing status.",
+            "rule": "taxWithholdingReasonable"
+          },
+          "socialSecurityTaxWithheld": {
+            "isValid": true,
+            "message": "Social Security tax of $9,042.70 correctly equals 6.2% of wages ($145,850). Calculation verified.",
+            "rule": "socialSecurityCalculation"
+          },
+          "medicareTaxWithheld": {
+            "isValid": true,
+            "message": "Medicare tax of $2,114.83 correctly equals 1.45% of wages ($145,850). Calculation verified.",
+            "rule": "medicareCalculation"
+          },
+          "box12Codes": {
+            "isValid": true,
+            "message": "Box 12 Code D indicates 401(k) elective deferrals of $8,500. This aligns with borrower's retirement plan participation and reduces taxable income accordingly.",
+            "rule": "box12Valid"
+          },
+          "state": {
+            "isValid": true,
+            "message": "W2 state (CA) matches property state. Borrower lives and works in same state as subject property.",
+            "rule": "stateMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-bank-001",
+      "loanId": "CMG-2024-001",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-thompson-2024-09.html",
+      "filePath": "/sample-documents/bank-statement-thompson-2024-09.html",
+      "s3Url": "http://localhost:3001/sample-documents/bank-statement-thompson-2024-09.html",
+      "uploadDate": "2024-10-27T17:15:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-10-27T17:15:00.000Z",
+        "confidence": 96,
+        "data": {
+          "institutionName": "Chase Bank",
+          "accountHolderName": "Michael J. Thompson",
+          "accountNumber": "****1234",
+          "accountType": "Chase Total Checking",
+          "statementPeriodStart": "2024-09-01",
+          "statementPeriodEnd": "2024-09-30",
+          "beginningBalance": "28450.00",
+          "endingBalance": "31285.50",
+          "totalDeposits": "18935.50",
+          "totalWithdrawals": "16100.00",
+          "transactionCount": 20,
+          "largeDeposits": [
+            {
+              "date": "2024-09-12",
+              "description": "Mobile Deposit - Check #1523",
+              "amount": "12000.00"
+            },
+            {
+              "date": "2024-09-30",
+              "description": "Direct Deposit - TECH SOLUTIONS INC (Bonus)",
+              "amount": "29500.00"
+            }
+          ],
+          "nsfFees": [
+            {
+              "date": "2024-09-22",
+              "description": "Overdraft Fee",
+              "amount": "35.00"
+            }
+          ],
+          "negativeBalanceEvents": [
+            {
+              "date": "2024-09-22",
+              "balance": "-125.00",
+              "description": "After ACH Debit - Chase Credit Card Payment"
+            },
+            {
+              "date": "2024-09-22",
+              "balance": "-160.00",
+              "description": "After Overdraft Fee"
+            },
+            {
+              "date": "2024-09-25",
+              "balance": "-57.15",
+              "description": "After Debit Card - Vons Grocery"
+            }
+          ],
+          "averageBalance": "25847.32",
+          "directDeposits": [
+            {
+              "date": "2024-09-03",
+              "employer": "TECH SOLUTIONS INC",
+              "amount": "3338.21"
+            },
+            {
+              "date": "2024-09-17",
+              "employer": "TECH SOLUTIONS INC",
+              "amount": "3338.21"
+            },
+            {
+              "date": "2024-09-30",
+              "employer": "TECH SOLUTIONS INC (Bonus)",
+              "amount": "29500.00"
+            }
+          ]
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "largeDepositSourcing",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Found 2 large deposit(s) totaling $41,500 that exceed borrower's monthly income. Large deposits require documentation: sourcing letters, deposit receipts, or canceled checks to verify funds are not borrowed money."
+          },
+          {
+            "rule": "nsfFeesPresent",
+            "severity": "critical",
+            "field": "nsfFees",
+            "message": "Account shows 1 NSF/overdraft fee(s) totaling $35.00 during statement period. This indicates insufficient funds management and may suggest financial instability. Underwriter review required."
+          },
+          {
+            "rule": "insufficientFunds",
+            "severity": "critical",
+            "field": "endingBalance",
+            "message": "Ending balance of $31,285.50 is insufficient for cash to close ($115,000) plus 2 months reserves ($5,917.74). Total funds needed: $120,917.74. Additional asset documentation required."
+          },
+          {
+            "rule": "negativeBalanceEvents",
+            "severity": "critical",
+            "field": "negativeBalanceEvents",
+            "message": "Account had 3 negative balance event(s) during statement period with lowest balance of -$160.00. Multiple negative balances indicate cash flow issues and poor financial management."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "nameDiscrepancy",
+            "severity": "warning",
+            "field": "accountHolderName",
+            "message": "Account holder name 'Michael J. Thompson' uses middle initial instead of full middle name 'James'. Name variation is minor but should be noted for documentation consistency."
+          },
+          {
+            "rule": "lowAverageBalance",
+            "severity": "warning",
+            "field": "averageBalance",
+            "message": "Average monthly balance of $25,847.32 is significantly lower than ending balance ($31,285.50). The large end-of-month bonus deposit ($29,500) skews the ending balance - typical balance appears much lower."
+          },
+          {
+            "rule": "irregularDeposits",
+            "severity": "warning",
+            "field": "largeDeposits",
+            "message": "Large irregular deposits of $41,500 total represent 220% of regular monthly income pattern. Verify these are one-time deposits (bonus, gift, sale proceeds) rather than ongoing income."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder name 'Michael J. Thompson' matches borrower name on loan application (using middle initial). Name verification passed with minor variation.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'Chase Bank' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****1234 matches checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 09/30/2024, which is within the last 60 days (27 days old). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $28,450.00 indicates reasonable financial reserves at start of period. Starting position appears stable.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $31,285.50 matches asset verification amount reported on loan application ($35,000 rounded). Balance verification successful within acceptable variance.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": true,
+            "message": "Total deposits of $18,935.50 include regular paychecks plus large irregular deposits. Deposit pattern shows mix of employment income and one-time funds.",
+            "rule": "depositPatternAnalysis"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $16,100.00 represent reasonable living expenses, debt payments, and regular spending for household income level.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "directDeposits": {
+            "isValid": true,
+            "message": "Found 3 direct deposits from TECH SOLUTIONS INC totaling $36,176.42. Regular bi-weekly payroll pattern confirmed ($3,338.21 × 2) plus $29,500 bonus. Employment income verified.",
+            "rule": "employmentVerification"
+          },
+          "averageBalance": {
+            "isValid": true,
+            "message": "Average balance of $25,847.32 indicates generally positive account management. Balance remained above zero for most of the period despite temporary overdrafts.",
+            "rule": "averageBalanceAnalysis"
+          },
+          "largeDeposits": {
+            "isValid": false,
+            "message": "2 large deposits totaling $41,500 detected: $12,000 mobile check deposit and $29,500 bonus. These require source documentation (check copy, bonus letter, gift letter if applicable).",
+            "rule": "largeDepositDocumentation",
+            "expectedValue": "Documentation for deposits over $1,000"
+          },
+          "nsfFees": {
+            "isValid": false,
+            "message": "1 overdraft fee of $35.00 on 09/22/2024 indicates account briefly went negative. This occurred after large credit card payment and resolved within 1 day with deposit.",
+            "rule": "feeAnalysis",
+            "expectedValue": "No NSF or overdraft fees"
+          }
+        }
+      },
+      "conditions": [
+        "Provide Letter of Explanation (LOX) for overdraft fee on 09/22/2024",
+        "Provide deposit documentation for $12,000 mobile check deposit on 09/12/2024 (copy of check front/back)",
+        "Provide bonus letter from Tech Solutions Inc verifying $29,500 bonus deposit on 09/30/2024",
+        "Provide additional asset documentation to cover remaining cash to close shortfall of approximately $89,632"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

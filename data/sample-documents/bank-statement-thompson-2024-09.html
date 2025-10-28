@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Bank Statement - September 2024</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .statement-container {
+            background: white;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .bank-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 3px solid #0066b2;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .bank-logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0066b2;
+        }
+        .statement-date {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+        }
+        .account-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .info-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            margin-bottom: 10px;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #333;
+        }
+        .info-value {
+            color: #666;
+        }
+        .summary-section {
+            margin-bottom: 30px;
+        }
+        .summary-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0066b2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .summary-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #0066b2;
+        }
+        .summary-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .summary-amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+        .summary-amount.positive {
+            color: #10b981;
+        }
+        .summary-amount.negative {
+            color: #ef4444;
+        }
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .transactions-table th {
+            background: #0066b2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .transactions-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 13px;
+        }
+        .transactions-table tr:hover {
+            background: #f9fafb;
+        }
+        .date-col {
+            width: 100px;
+        }
+        .desc-col {
+            width: auto;
+        }
+        .amount-col {
+            width: 120px;
+            text-align: right;
+        }
+        .balance-col {
+            width: 120px;
+            text-align: right;
+            font-weight: 600;
+        }
+        .deposit {
+            color: #10b981;
+            font-weight: 600;
+        }
+        .withdrawal {
+            color: #ef4444;
+        }
+        .fee {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        .large-deposit {
+            background: #fef3c7;
+        }
+        .negative-balance {
+            background: #fee2e2;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .alert-box {
+            background: #fff4e6;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .alert-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 5px;
+        }
+        .alert-text {
+            font-size: 12px;
+            color: #78350f;
+        }
+    </style>
+</head>
+<body>
+    <div class="statement-container">
+        <div class="bank-header">
+            <div class="bank-logo">CHASE</div>
+            <div class="statement-date">
+                <strong>Statement Period</strong><br>
+                September 1 - September 30, 2024<br>
+                Page 1 of 3
+            </div>
+        </div>
+
+        <div class="account-info">
+            <div class="info-row">
+                <div class="info-label">Account Holder:</div>
+                <div class="info-value">Michael J. Thompson</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Account Number:</div>
+                <div class="info-value">****1234</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Account Type:</div>
+                <div class="info-value">Chase Total Checking</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Address:</div>
+                <div class="info-value">456 Oak Street, Apt 2B, Mission Viejo, CA 92691</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <div class="alert-title">⚠️ Important Notice</div>
+            <div class="alert-text">Your account had 1 overdraft fee(s) this statement period totaling $35.00. Please ensure sufficient funds to avoid future fees.</div>
+        </div>
+
+        <div class="summary-section">
+            <div class="summary-title">Account Summary</div>
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <div class="summary-label">Beginning Balance (09/01/24)</div>
+                    <div class="summary-amount positive">$28,450.00</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">Ending Balance (09/30/24)</div>
+                    <div class="summary-amount positive">$31,285.50</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">Total Deposits</div>
+                    <div class="summary-amount positive">+$18,935.50</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">Total Withdrawals</div>
+                    <div class="summary-amount negative">-$16,100.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="summary-title">Transaction Details</div>
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th class="date-col">Date</th>
+                        <th class="desc-col">Description</th>
+                        <th class="amount-col">Amount</th>
+                        <th class="balance-col">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09/01/24</td>
+                        <td>Beginning Balance</td>
+                        <td class="amount-col">—</td>
+                        <td class="balance-col">$28,450.00</td>
+                    </tr>
+                    <tr>
+                        <td>09/02/24</td>
+                        <td>Rent Payment - Irvine Property Mgmt</td>
+                        <td class="amount-col withdrawal">-$2,500.00</td>
+                        <td class="balance-col">$25,950.00</td>
+                    </tr>
+                    <tr>
+                        <td>09/03/24</td>
+                        <td>Direct Deposit - TECH SOLUTIONS INC</td>
+                        <td class="amount-col deposit">+$3,338.21</td>
+                        <td class="balance-col">$29,288.21</td>
+                    </tr>
+                    <tr>
+                        <td>09/05/24</td>
+                        <td>Debit Card - Amazon.com</td>
+                        <td class="amount-col withdrawal">-$156.78</td>
+                        <td class="balance-col">$29,131.43</td>
+                    </tr>
+                    <tr>
+                        <td>09/07/24</td>
+                        <td>Debit Card - Trader Joe's #438</td>
+                        <td class="amount-col withdrawal">-$234.56</td>
+                        <td class="balance-col">$28,896.87</td>
+                    </tr>
+                    <tr>
+                        <td>09/10/24</td>
+                        <td>ATM Withdrawal - Chase ATM</td>
+                        <td class="amount-col withdrawal">-$200.00</td>
+                        <td class="balance-col">$28,696.87</td>
+                    </tr>
+                    <tr class="large-deposit">
+                        <td>09/12/24</td>
+                        <td>Mobile Deposit - Check #1523</td>
+                        <td class="amount-col deposit">+$12,000.00</td>
+                        <td class="balance-col">$40,696.87</td>
+                    </tr>
+                    <tr>
+                        <td>09/13/24</td>
+                        <td>Online Transfer to Savings</td>
+                        <td class="amount-col withdrawal">-$5,000.00</td>
+                        <td class="balance-col">$35,696.87</td>
+                    </tr>
+                    <tr>
+                        <td>09/15/24</td>
+                        <td>Debit Card - Shell Gas Station</td>
+                        <td class="amount-col withdrawal">-$68.45</td>
+                        <td class="balance-col">$35,628.42</td>
+                    </tr>
+                    <tr>
+                        <td>09/17/24</td>
+                        <td>Direct Deposit - TECH SOLUTIONS INC</td>
+                        <td class="amount-col deposit">+$3,338.21</td>
+                        <td class="balance-col">$38,966.63</td>
+                    </tr>
+                    <tr>
+                        <td>09/18/24</td>
+                        <td>Bill Pay - Toyota Financial</td>
+                        <td class="amount-col withdrawal">-$425.00</td>
+                        <td class="balance-col">$38,541.63</td>
+                    </tr>
+                    <tr>
+                        <td>09/20/24</td>
+                        <td>Debit Card - Costco Wholesale</td>
+                        <td class="amount-col withdrawal">-$387.92</td>
+                        <td class="balance-col">$38,153.71</td>
+                    </tr>
+                    <tr class="negative-balance">
+                        <td>09/22/24</td>
+                        <td>ACH Debit - Chase Credit Card Payment</td>
+                        <td class="amount-col withdrawal">-$7,200.00</td>
+                        <td class="balance-col negative">-$125.00</td>
+                    </tr>
+                    <tr class="negative-balance">
+                        <td>09/22/24</td>
+                        <td>Overdraft Fee</td>
+                        <td class="amount-col fee">-$35.00</td>
+                        <td class="balance-col negative">-$160.00</td>
+                    </tr>
+                    <tr>
+                        <td>09/23/24</td>
+                        <td>Mobile Deposit - Check #2847</td>
+                        <td class="amount-col deposit">+$259.08</td>
+                        <td class="balance-col">$99.08</td>
+                    </tr>
+                    <tr>
+                        <td>09/25/24</td>
+                        <td>Debit Card - Vons Grocery</td>
+                        <td class="amount-col withdrawal">-$156.23</td>
+                        <td class="balance-col negative">-$57.15</td>
+                    </tr>
+                    <tr>
+                        <td>09/26/24</td>
+                        <td>Zelle - From Jennifer Thompson</td>
+                        <td class="amount-col deposit">+$2,000.00</td>
+                        <td class="balance-col">$1,942.85</td>
+                    </tr>
+                    <tr>
+                        <td>09/28/24</td>
+                        <td>Debit Card - Target Store #2438</td>
+                        <td class="amount-col withdrawal">-$192.35</td>
+                        <td class="balance-col">$1,750.50</td>
+                    </tr>
+                    <tr>
+                        <td>09/30/24</td>
+                        <td>Interest Earned</td>
+                        <td class="amount-col deposit">+$35.00</td>
+                        <td class="balance-col">$1,785.50</td>
+                    </tr>
+                    <tr>
+                        <td>09/30/24</td>
+                        <td>Direct Deposit - TECH SOLUTIONS INC (Bonus)</td>
+                        <td class="amount-col deposit">+$29,500.00</td>
+                        <td class="balance-col">$31,285.50</td>
+                    </tr>
+                    <tr>
+                        <td>09/30/24</td>
+                        <td><strong>Ending Balance</strong></td>
+                        <td class="amount-col">—</td>
+                        <td class="balance-col">$31,285.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <strong>Chase Bank, N.A.</strong><br>
+            Member FDIC | Equal Housing Lender<br>
+            <br>
+            <strong>Important Information:</strong> Please review your statement carefully. Report any discrepancies within 60 days.
+            Large deposits may require verification for mortgage applications. Overdraft protection is available - contact us to enroll.
+            <br><br>
+            <strong>Customer Service:</strong> 1-800-935-9935 | <strong>Online Banking:</strong> chase.com
+        </div>
+    </div>
+</body>
+</html>

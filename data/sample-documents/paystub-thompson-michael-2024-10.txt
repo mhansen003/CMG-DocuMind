@@ -1,0 +1,70 @@
+TECH SOLUTIONS INC
+789 Technology Parkway, Irvine, CA 92614
+Phone: (949) 555-9000 | EIN: 94-1234567
+
+========================================
+EMPLOYEE INFORMATION
+========================================
+
+Employee Name: Michael James Thompson
+Employee ID: TSI-00892
+Position: Senior Software Engineer
+Department: Engineering - Cloud Services
+Hire Date: 03/15/2018
+Pay Rate: $145,000.00 /year
+
+========================================
+PAY PERIOD INFORMATION
+========================================
+
+Pay Period Start: 10/01/2024
+Pay Period End: 10/15/2024
+Pay Date: 10/20/2024
+Pay Method: Direct Deposit
+Pay Frequency: Bi-Weekly
+
+========================================
+EARNINGS
+========================================
+
+Description          Hours/Units   Rate         Current      YTD
+Regular Salary       80.00        $69.71/hr    $5,576.92    $111,538.40
+Overtime              4.00        $104.57/hr     $418.28      $3,846.15
+Quarterly Bonus       1.00             -         $0.00      $11,250.00
+-----------------------------------------------------------------------
+TOTAL EARNINGS                                 $5,995.20    $126,634.55
+
+========================================
+DEDUCTIONS & TAXES
+========================================
+
+Description                      Current         YTD
+Federal Income Tax              $1,199.04    $25,326.91
+Social Security Tax               $371.70     $7,851.34
+Medicare Tax                       $86.93     $1,836.20
+CA State Income Tax               $419.66     $8,864.42
+CA SDI                             $59.95     $1,266.35
+401(k) Contribution (6%)          $359.71     $7,598.07
+Health Insurance                  $125.00     $2,500.00
+Dental Insurance                   $25.00       $500.00
+Vision Insurance                   $10.00       $200.00
+-----------------------------------------------------------------------
+TOTAL DEDUCTIONS                $2,656.99    $55,943.29
+
+========================================
+SUMMARY
+========================================
+
+Gross Pay (Current):             $5,995.20
+Gross Pay (YTD):               $126,634.55
+Total Deductions (Current):     $2,656.99
+Total Deductions (YTD):        $55,943.29
+
+NET PAY:                        $3,338.21
+
+========================================
+
+This is a computer-generated pay statement and does not require a signature.
+For questions regarding your pay, contact HR at hr@techsolutions.com
+
+CONFIDENTIAL - This document contains private and confidential information

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-2 Wage and Tax Statement - 2024</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .w2-container {
+            background: white;
+            border: 3px solid #000;
+            padding: 20px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .w2-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        .w2-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .w2-subtitle {
+            font-size: 12px;
+        }
+        .w2-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border: 2px solid #000;
+        }
+        .w2-box {
+            border: 1px solid #000;
+            padding: 8px;
+            min-height: 50px;
+        }
+        .box-label {
+            font-size: 9px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .box-value {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        .triple-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .triple-box .w2-box {
+            border-right: 1px solid #000;
+        }
+        .triple-box .w2-box:last-child {
+            border-right: none;
+        }
+        .amount {
+            text-align: right;
+        }
+        .copy-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 10px;
+            color: #666;
+        }
+        .irs-info {
+            margin-top: 15px;
+            font-size: 9px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="w2-container">
+        <div class="w2-header">
+            <div class="w2-title">Form W-2 Wage and Tax Statement</div>
+            <div class="w2-subtitle">Copy B—To Be Filed With Employee's FEDERAL Tax Return</div>
+            <div class="w2-subtitle">Department of the Treasury—Internal Revenue Service</div>
+        </div>
+
+        <div class="w2-grid">
+            <!-- Box a: Employee's SSN -->
+            <div class="w2-box">
+                <span class="box-label">a Employee's social security number</span>
+                <span class="box-value">123-45-6789</span>
+            </div>
+
+            <!-- OMB No -->
+            <div class="w2-box" style="text-align: right;">
+                <span class="box-label">OMB No. 1545-0008</span>
+            </div>
+
+            <!-- Box b: Employer ID Number -->
+            <div class="w2-box">
+                <span class="box-label">b Employer identification number (EIN)</span>
+                <span class="box-value">94-2847561</span>
+            </div>
+
+            <!-- Box empty -->
+            <div class="w2-box">
+                <span class="box-label"></span>
+            </div>
+
+            <!-- Box c: Employer's name and address -->
+            <div class="w2-box full-width">
+                <span class="box-label">c Employer's name, address, and ZIP code</span>
+                <div class="box-value">
+                    Tech Solutions Inc<br>
+                    789 Technology Parkway<br>
+                    Irvine, CA 92614
+                </div>
+            </div>
+
+            <!-- Box d: Control number -->
+            <div class="w2-box">
+                <span class="box-label">d Control number</span>
+                <span class="box-value">2024-TS-000892</span>
+            </div>
+
+            <!-- Box e: Employee's name -->
+            <div class="w2-box">
+                <span class="box-label">e Employee's first name and initial, Last name, Suff.</span>
+                <div class="box-value">
+                    Michael J. Thompson
+                </div>
+            </div>
+
+            <!-- Box f: Employee's address -->
+            <div class="w2-box full-width">
+                <span class="box-label">f Employee's address and ZIP code</span>
+                <div class="box-value">
+                    456 Oak Street, Apt 2B<br>
+                    Mission Viejo, CA 92691
+                </div>
+            </div>
+
+            <!-- Boxes 1-6 -->
+            <div class="w2-box">
+                <span class="box-label">1 Wages, tips, other compensation</span>
+                <span class="box-value amount">$145,850.00</span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">2 Federal income tax withheld</span>
+                <span class="box-value amount">$28,450.00</span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">3 Social security wages</span>
+                <span class="box-value amount">$145,850.00</span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">4 Social security tax withheld</span>
+                <span class="box-value amount">$9,042.70</span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">5 Medicare wages and tips</span>
+                <span class="box-value amount">$145,850.00</span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">6 Medicare tax withheld</span>
+                <span class="box-value amount">$2,114.83</span>
+            </div>
+
+            <!-- Boxes 7-10 -->
+            <div class="w2-box">
+                <span class="box-label">7 Social security tips</span>
+                <span class="box-value amount"></span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">8 Allocated tips</span>
+                <span class="box-value amount"></span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">9</span>
+                <span class="box-value amount"></span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">10 Dependent care benefits</span>
+                <span class="box-value amount"></span>
+            </div>
+
+            <!-- Boxes 11-14 -->
+            <div class="w2-box">
+                <span class="box-label">11 Nonqualified plans</span>
+                <span class="box-value amount"></span>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">12a See instructions for box 12</span>
+                <div style="display: flex; gap: 10px;">
+                    <span class="box-value">D: $8,500.00</span>
+                </div>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">13</span>
+                <div>
+                    <input type="checkbox" checked> Statutory employee<br>
+                    <input type="checkbox"> Retirement plan<br>
+                    <input type="checkbox"> Third-party sick pay
+                </div>
+            </div>
+
+            <div class="w2-box">
+                <span class="box-label">14 Other</span>
+                <span class="box-value"></span>
+            </div>
+
+            <!-- State and Local Tax Info -->
+            <div class="w2-box full-width triple-box">
+                <div class="w2-box">
+                    <span class="box-label">15 State, Employer's state ID number</span>
+                    <span class="box-value">CA, 1234567-8</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">16 State wages, tips, etc.</span>
+                    <span class="box-value amount">$145,850.00</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">17 State income tax</span>
+                    <span class="box-value amount">$8,234.50</span>
+                </div>
+            </div>
+
+            <div class="w2-box full-width triple-box">
+                <div class="w2-box">
+                    <span class="box-label">18 Local wages, tips, etc.</span>
+                    <span class="box-value amount"></span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">19 Local income tax</span>
+                    <span class="box-value amount"></span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">20 Locality name</span>
+                    <span class="box-value"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copy-info">
+            Form W-2 (2024) | This information is being furnished to the Internal Revenue Service
+        </div>
+
+        <div class="irs-info">
+            <strong>Instructions for Employee:</strong> File Copy B of this form with your federal tax return.
+            Keep Copy C for your records. This form shows the amount of federal, state, and local income tax
+            and social security and Medicare taxes withheld from your pay during 2024.
+        </div>
+    </div>
+</body>
+</html>

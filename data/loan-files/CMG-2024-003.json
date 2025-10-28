@@ -1,0 +1,701 @@
+{
+  "loanId": "CMG-2024-003",
+  "loanNumber": "100234569",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 315000,
+    "propertyEstimatedValue": 350000,
+    "downPaymentAmount": 12250,
+    "ltvRatio": 90.0,
+    "productType": "FHA",
+    "lienPosition": "FirstLien",
+    "propertyType": "Condo",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Los Angeles",
+    "city": "Long Beach",
+    "zipCode": "90802",
+    "propertyAddress": "456 Ocean Boulevard, Unit 305",
+    "propertyCity": "Long Beach",
+    "propertyState": "CA",
+    "propertyZip": "90802",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 6.750,
+    "monthlyPayment": 2043.53,
+    "income": 3846.15,
+    "closingDate": "2024-12-30",
+    "applicationDate": "2024-10-10"
+  },
+  "borrower": {
+    "firstName": "James",
+    "middleName": "Robert",
+    "lastName": "Chen",
+    "fullName": "James Robert Chen",
+    "suffix": "",
+    "ssn": "345-67-8901",
+    "dateOfBirth": "1996-11-28",
+    "maritalStatus": "Married",
+    "spouse": {
+      "fullName": "Amanda Lee Chen"
+    },
+    "dependents": 0,
+    "citizenship": "USCitizen",
+    "email": "jchen1996@gmail.com",
+    "phone": "562-555-0345",
+    "totalIncome": 72000,
+    "adjustedGrossIncome": 70500,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "789 Cherry Avenue",
+      "unit": "Apt 12",
+      "city": "Long Beach",
+      "state": "CA",
+      "zipCode": "90806",
+      "monthsAtAddress": 18,
+      "residencyType": "Rent",
+      "monthlyRent": 1850
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Pacific Coast Healthcare",
+        "jobTitle": "Medical Lab Technician",
+        "position": "Medical Lab Technician",
+        "employmentType": "W2",
+        "startDate": "2021-08-15",
+        "monthsEmployed": 38,
+        "baseIncome": 72000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 72000,
+        "employerPhone": "562-555-6000",
+        "address": {
+          "street": "3501 Atlantic Avenue",
+          "city": "Long Beach",
+          "state": "CA",
+          "zipCode": "90807"
+        },
+        "phone": "562-555-6000",
+        "supervisorName": "Dr. Patricia Wong"
+      },
+      "previous": {
+        "employerName": "CVS Pharmacy",
+        "position": "Pharmacy Technician",
+        "employmentType": "W2",
+        "startDate": "2019-01-10",
+        "endDate": "2021-08-01",
+        "monthsEmployed": 31,
+        "baseIncome": 42000
+      }
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "bankName": "Chase Bank",
+          "accountNumber": "****5678",
+          "currentBalance": 8200,
+          "balance": 8200,
+          "accountType": "Checking",
+          "accountHolderName": "James R. Chen"
+        },
+        {
+          "institutionName": "Ally Bank Online Savings",
+          "bankName": "Ally Bank",
+          "accountNumber": "****9012",
+          "currentBalance": 14500,
+          "balance": 14500,
+          "accountType": "Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "accountNumber": "****5678",
+          "balance": 8200,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Ally Bank",
+          "accountNumber": "****9012",
+          "balance": 14500,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Fidelity 401k",
+          "accountNumber": "****3456",
+          "balance": 18500,
+          "accountType": "401k"
+        }
+      ],
+      "totalAssets": 41200
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Capital One Quicksilver",
+          "accountNumber": "****7890",
+          "balance": 4200,
+          "monthlyPayment": 125,
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "Discover It Card",
+          "accountNumber": "****2345",
+          "balance": 1850,
+          "monthlyPayment": 75,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Honda Finance",
+          "accountNumber": "****6789",
+          "balance": 22500,
+          "monthlyPayment": 415,
+          "monthsRemaining": 54,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [
+        {
+          "creditorName": "Nelnet Federal Student Loan",
+          "accountNumber": "****4567",
+          "balance": 38000,
+          "monthlyPayment": 380,
+          "monthsRemaining": 120,
+          "toBePaidOff": false
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 995
+    },
+    "creditScore": 682,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": true,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": {
+    "firstName": "Amanda",
+    "middleName": "Lee",
+    "lastName": "Chen",
+    "suffix": "",
+    "ssn": "456-78-9012",
+    "dateOfBirth": "1998-04-15",
+    "maritalStatus": "Married",
+    "citizenship": "USCitizen",
+    "email": "amanda.chen@email.com",
+    "phone": "562-555-0346",
+    "currentAddress": {
+      "sameAsBorrower": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Long Beach Unified School District",
+        "position": "Elementary School Teacher",
+        "employmentType": "W2",
+        "startDate": "2020-08-20",
+        "monthsEmployed": 50,
+        "baseIncome": 58000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 58000,
+        "address": {
+          "street": "1515 Hughes Way",
+          "city": "Long Beach",
+          "state": "CA",
+          "zipCode": "90810"
+        },
+        "phone": "562-555-2300",
+        "supervisorName": "Principal Maria Sanchez"
+      }
+    },
+    "assets": {
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank (Joint)",
+          "accountNumber": "****5678",
+          "balance": 8200,
+          "accountType": "Checking",
+          "joint": true
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Teachers Credit Union",
+          "accountNumber": "****7890",
+          "balance": 6800,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "CalSTRS Pension",
+          "accountNumber": "****8901",
+          "balance": 12400,
+          "accountType": "Pension"
+        }
+      ],
+      "totalAssets": 27400
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Target RedCard",
+          "accountNumber": "****3456",
+          "balance": 850,
+          "monthlyPayment": 50,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [],
+      "studentLoans": [
+        {
+          "creditorName": "Great Lakes Student Loan",
+          "accountNumber": "****5678",
+          "balance": 28500,
+          "monthlyPayment": 285,
+          "monthsRemaining": 100,
+          "toBePaidOff": false
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 335
+    },
+    "creditScore": 695,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "transactions": {
+    "purchasePrice": 350000,
+    "downPayment": 12250,
+    "loanAmount": 315000,
+    "estimatedClosingCosts": 11500,
+    "prepaids": 4800,
+    "sellerCredits": 7000,
+    "cashToClose": 21550,
+    "totalAssetVerificationRequired": 21550
+  },
+  "ratios": {
+    "housingExpense": 2043.53,
+    "totalDebtExpense": 3373.53,
+    "grossMonthlyIncome": 10833.33,
+    "housingRatio": 18.86,
+    "debtToIncomeRatio": 31.14,
+    "combinedLTV": 90.0
+  },
+  "propertyDetails": {
+    "address": "456 Ocean Boulevard, Unit 305",
+    "city": "Long Beach",
+    "state": "CA",
+    "zipCode": "90802",
+    "county": "Los Angeles",
+    "apn": "731-548-32-00",
+    "yearBuilt": 2018,
+    "squareFeet": 1250,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garages": 1,
+    "lotSize": 0,
+    "propertyType": "Condominium",
+    "style": "Modern",
+    "constructionType": "Concrete/Steel",
+    "roofType": "Flat/Membrane",
+    "zoningCode": "R4",
+    "hoaFees": 425,
+    "taxYear": 2024,
+    "annualPropertyTax": 4200
+  },
+  "loanOfficer": {
+    "name": "Kevin Park",
+    "nmls": "345678",
+    "email": "kevin.park@cmg.com",
+    "phone": "562-555-7200",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "PreQualification",
+    "submittedDate": "2024-10-10",
+    "lastUpdated": "2024-10-27",
+    "assignedUnderwriter": "Lisa Anderson",
+    "assignedProcessor": "Tom Brady"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Drivers License - Co-Borrower",
+      "Bank Statement - Checking (2 months)",
+      "Bank Statement - Savings - Borrower (2 months)",
+      "Bank Statement - Savings - Co-Borrower (2 months)",
+      "W2 - Borrower (2 years)",
+      "W2 - Co-Borrower (2 years)",
+      "Pay Stubs - Borrower (2 recent)",
+      "Pay Stubs - Co-Borrower (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "HOA Documents",
+      "Appraisal",
+      "Employment Verification - Borrower",
+      "Employment Verification - Co-Borrower",
+      "Gift Letter (Parents contributing $10,000)",
+      "Student Loan Payment Documentation",
+      "FHA Case Number Documentation"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-003-a",
+      "loanId": "CMG-2024-003",
+      "documentType": "paystub",
+      "fileName": "paystub-chen-james-2024-10.html",
+      "filePath": "/uploads/CMG-2024-003/paystub-chen-james-2024-10.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/paystub-chen-james-2024-10.html",
+      "uploadDate": "2024-10-12T09:30:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-10-12T09:30:00.000Z",
+        "confidence": 91,
+        "data": {
+          "employeeName": "James R. Chen",
+          "employerName": "Pacific Coast Healthcare",
+          "payPeriodStart": "2024-09-16",
+          "payPeriodEnd": "2024-09-30",
+          "payDate": "2024-10-05",
+          "grossPayCurrent": 2769.23,
+          "grossPayYTD": 66461.52,
+          "regularHours": 80.00,
+          "overtimeHours": 0.00,
+          "netPay": 1923.45
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "ytdIncomeProjection",
+            "severity": "warning",
+            "message": "YTD income of $66,461.52 projects to $71,965 annually, which is close to stated income of $72,000 but slightly lower. This is acceptable."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name matches borrower",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer matches application",
+            "rule": "matchesApplication"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-paystub-003-b",
+      "loanId": "CMG-2024-003",
+      "documentType": "paystub",
+      "fileName": "paystub-chen-amanda-2024-10.html",
+      "filePath": "/uploads/CMG-2024-003/paystub-chen-amanda-2024-10.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/paystub-chen-amanda-2024-10.html",
+      "uploadDate": "2024-10-12T09:35:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-10-12T09:35:00.000Z",
+        "confidence": 93,
+        "data": {
+          "employeeName": "Amanda L. Chen",
+          "employerName": "Long Beach USD",
+          "payPeriodStart": "2024-09-01",
+          "payPeriodEnd": "2024-09-30",
+          "payDate": "2024-10-01",
+          "grossPayCurrent": 4833.33,
+          "grossPayYTD": 48333.30,
+          "regularHours": 0.00,
+          "overtimeHours": 0.00,
+          "netPay": 3254.12
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "salaryEmployeeNoHours",
+            "severity": "info",
+            "message": "No hours shown - salaried employee. This is expected for teachers."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name matches co-borrower",
+            "rule": "matchesCoBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer matches application (LBUSD abbreviation)",
+            "rule": "matchesApplication"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-bank-003",
+      "loanId": "CMG-2024-003",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-chen-2024-09.html",
+      "filePath": "/uploads/CMG-2024-003/bank-statement-chen-2024-09.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/bank-statement-chen-2024-09.html",
+      "uploadDate": "2024-10-13T11:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-10-13T11:00:00.000Z",
+        "confidence": 90,
+        "data": {
+          "institutionName": "Chase Bank",
+          "accountHolderName": "James Chen & Amanda Chen",
+          "accountNumber": "****5678",
+          "accountType": "Joint Checking",
+          "statementPeriodStart": "2024-09-01",
+          "statementPeriodEnd": "2024-09-30",
+          "beginningBalance": "6850.00",
+          "endingBalance": "8200.00",
+          "totalDeposits": "8123.57",
+          "totalWithdrawals": "6773.57",
+          "transactionCount": 38,
+          "largeDeposits": [],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "averageBalance": "7425.00",
+          "directDeposits": [
+            {
+              "date": "2024-09-05",
+              "employer": "Pacific Coast Healthcare",
+              "amount": "1923.45"
+            },
+            {
+              "date": "2024-09-20",
+              "employer": "Pacific Coast Healthcare",
+              "amount": "1923.45"
+            },
+            {
+              "date": "2024-09-30",
+              "employer": "Long Beach USD",
+              "amount": "3254.12"
+            }
+          ]
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "insufficientAssets",
+            "severity": "critical",
+            "field": "endingBalance",
+            "message": "Checking account balance ($8,200) is insufficient. Total verified assets ($41,200) fall short of cash to close ($21,550) plus 2 months reserves ($4,747). Total needed: $26,297."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "lowReserves",
+            "severity": "warning",
+            "message": "After cash to close, borrowers will have only $19,650 remaining, which is 4.1 months reserves. FHA requires minimum 2 months, but more is preferred."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Joint account matches both borrowers",
+            "rule": "nameMatch"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance matches stated assets",
+            "rule": "balanceMatch"
+          }
+        }
+      },
+      "conditions": [
+        "Provide gift letter and gift funds documentation ($10,000 from parents)",
+        "Provide most recent statement for Ally Bank savings account ($14,500)",
+        "Provide retirement account statements to verify total assets"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-creditreport-003",
+      "loanId": "CMG-2024-003",
+      "documentType": "credit_report",
+      "fileName": "credit-report-chen-2024-10.html",
+      "filePath": "/uploads/CMG-2024-003/credit-report-chen-2024-10.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/credit-report-chen-2024-10.html",
+      "uploadDate": "2024-10-14T10:00:00.000Z",
+      "extractedData": {
+        "documentType": "credit_report",
+        "extractedAt": "2024-10-14T10:00:00.000Z",
+        "confidence": 97,
+        "data": {
+          "borrowerScores": {
+            "equifax": 682,
+            "experian": 678,
+            "transunion": 685,
+            "middleScore": 682
+          },
+          "coBorrowerScores": {
+            "equifax": 695,
+            "experian": 692,
+            "transunion": 698,
+            "middleScore": 695
+          },
+          "delinquencies": [
+            {
+              "creditor": "Capital One",
+              "accountType": "Credit Card",
+              "date": "2023-11-15",
+              "daysLate": 30,
+              "borrower": "James Chen"
+            }
+          ],
+          "collections": [],
+          "publicRecords": [],
+          "totalInquiries": 3
+        }
+      },
+      "validationResults": {
+        "documentType": "credit_report",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "recentDelinquency",
+            "severity": "critical",
+            "field": "delinquencies",
+            "message": "Borrower has 30-day late payment on Capital One credit card from November 2023 (11 months ago). Requires letter of explanation for late payment."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "borderlineScore",
+            "severity": "warning",
+            "message": "Borrower's credit score of 682 is above FHA minimum (580) but below conventional threshold (620). Score is acceptable but borderline."
+          },
+          {
+            "rule": "multipleInquiries",
+            "severity": "warning",
+            "message": "3 credit inquiries in last 6 months. May indicate additional debt applications."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "borrowerScores": {
+            "isValid": true,
+            "message": "Scores meet FHA minimum requirements",
+            "rule": "fhaCreditMinimum"
+          }
+        }
+      },
+      "conditions": [
+        "Provide Letter of Explanation for 30-day late payment on Capital One card (Nov 2023)",
+        "Provide explanation for 3 recent credit inquiries"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-purchase-003",
+      "loanId": "CMG-2024-003",
+      "documentType": "purchase_agreement",
+      "fileName": "purchase-agreement-456-ocean-blvd.html",
+      "filePath": "/uploads/CMG-2024-003/purchase-agreement-456-ocean-blvd.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-003/purchase-agreement-456-ocean-blvd.html",
+      "uploadDate": "2024-10-15T14:30:00.000Z",
+      "extractedData": {
+        "documentType": "purchase_agreement",
+        "extractedAt": "2024-10-15T14:30:00.000Z",
+        "confidence": 95,
+        "data": {
+          "propertyAddress": "456 Ocean Boulevard Unit 305, Long Beach CA 90802",
+          "purchasePrice": "350000.00",
+          "earnestMoneyDeposit": "5000.00",
+          "closingDate": "2024-12-30",
+          "sellerCredits": "7000.00",
+          "contingencies": ["Inspection", "Appraisal", "Financing"],
+          "buyers": ["James Robert Chen", "Amanda Lee Chen"]
+        }
+      },
+      "validationResults": {
+        "documentType": "purchase_agreement",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "tightClosingTimeline",
+            "severity": "warning",
+            "message": "Closing date is 80 days from application. Timeline is tight for FHA loan processing. Consider extension if needed."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "propertyAddress": {
+            "isValid": true,
+            "message": "Address matches loan application",
+            "rule": "addressMatch"
+          },
+          "purchasePrice": {
+            "isValid": true,
+            "message": "Purchase price matches loan amount + down payment",
+            "rule": "priceConsistency"
+          },
+          "buyers": {
+            "isValid": true,
+            "message": "Buyers match borrowers on loan application",
+            "rule": "buyerMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    }
+  ]
+}

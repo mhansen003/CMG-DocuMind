@@ -1,0 +1,704 @@
+{
+  "loanId": "CMG-2024-004",
+  "loanNumber": "100234570",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 560000,
+    "propertyEstimatedValue": 700000,
+    "downPaymentAmount": 140000,
+    "ltvRatio": 80.0,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "InvestmentProperty",
+    "state": "CA",
+    "county": "Orange",
+    "city": "Newport Beach",
+    "zipCode": "92660",
+    "propertyAddress": "1824 Bayside Drive",
+    "propertyCity": "Newport Beach",
+    "propertyState": "CA",
+    "propertyZip": "92660",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 7.125,
+    "monthlyPayment": 3802.45,
+    "income": 12500.00,
+    "closingDate": "2024-11-15",
+    "applicationDate": "2024-09-25"
+  },
+  "borrower": {
+    "firstName": "William",
+    "middleName": "Alexander",
+    "lastName": "Patterson",
+    "fullName": "William Alexander Patterson",
+    "suffix": "III",
+    "ssn": "456-78-9012",
+    "dateOfBirth": "1972-07-08",
+    "maritalStatus": "Married",
+    "spouse": {
+      "fullName": "Catherine Elizabeth Patterson"
+    },
+    "dependents": 2,
+    "citizenship": "USCitizen",
+    "email": "w.patterson@pattersonlaw.com",
+    "phone": "949-555-0456",
+    "totalIncome": 385000,
+    "adjustedGrossIncome": 342000,
+    "rentalIncome": 36000,
+    "currentAddress": {
+      "street": "5623 Vista Del Mar",
+      "unit": "",
+      "city": "Newport Beach",
+      "state": "CA",
+      "zipCode": "92663",
+      "monthsAtAddress": 156,
+      "residencyType": "Own",
+      "monthlyRent": 0
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Patterson & Associates Law Firm",
+        "jobTitle": "Senior Partner",
+        "position": "Senior Partner",
+        "employmentType": "W2",
+        "startDate": "1999-01-10",
+        "monthsEmployed": 310,
+        "baseIncome": 385000,
+        "overtimeIncome": 0,
+        "bonusIncome": 75000,
+        "totalIncome": 460000,
+        "employerPhone": "949-555-3000",
+        "address": {
+          "street": "18500 Von Karman Avenue, Suite 1200",
+          "city": "Irvine",
+          "state": "CA",
+          "zipCode": "92612"
+        },
+        "phone": "949-555-3000",
+        "supervisorName": "Managing Partner Committee"
+      },
+      "previous": null
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "JP Morgan Private Bank",
+          "bankName": "JP Morgan Chase",
+          "accountNumber": "****6789",
+          "currentBalance": 185000,
+          "balance": 185000,
+          "accountType": "Private Banking Checking",
+          "accountHolderName": "William A. Patterson III"
+        },
+        {
+          "institutionName": "Morgan Stanley",
+          "bankName": "Morgan Stanley",
+          "accountNumber": "****0123",
+          "currentBalance": 425000,
+          "balance": 425000,
+          "accountType": "Money Market"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "JP Morgan Private Bank",
+          "accountNumber": "****6789",
+          "balance": 185000,
+          "accountType": "Private Banking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Morgan Stanley Money Market",
+          "accountNumber": "****0123",
+          "balance": 425000,
+          "accountType": "Money Market"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Vanguard 401k",
+          "accountNumber": "****4567",
+          "balance": 1250000,
+          "accountType": "401k"
+        }
+      ],
+      "investmentAccounts": [
+        {
+          "institutionName": "Morgan Stanley Brokerage",
+          "accountNumber": "****8901",
+          "balance": 780000,
+          "accountType": "Individual Brokerage",
+          "description": "Stocks, bonds, mutual funds"
+        }
+      ],
+      "totalAssets": 2640000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "American Express Platinum",
+          "accountNumber": "****2345",
+          "balance": 12500,
+          "monthlyPayment": 625,
+          "toBePaidOff": true
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Mercedes-Benz Financial",
+          "accountNumber": "****6789",
+          "balance": 58000,
+          "monthlyPayment": 1250,
+          "monthsRemaining": 48,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [
+        {
+          "creditorName": "Wells Fargo Mortgage (Primary Residence)",
+          "accountNumber": "****3456",
+          "balance": 425000,
+          "monthlyPayment": 3200,
+          "description": "30-year fixed at 3.25%",
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "Bank of America Mortgage (Rental Property #1)",
+          "accountNumber": "****7890",
+          "balance": 285000,
+          "monthlyPayment": 1850,
+          "rentalIncome": 3000,
+          "description": "Investment property - Tustin, CA",
+          "toBePaidOff": false
+        }
+      ],
+      "totalMonthlyDebtPayments": 6925
+    },
+    "creditScore": 812,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": true,
+      "obligatedOnOtherLoans": true,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": false,
+      "ownershipInterestInLast3Years": true
+    }
+  },
+  "coBorrower": {
+    "firstName": "Catherine",
+    "middleName": "Elizabeth",
+    "lastName": "Patterson",
+    "suffix": "",
+    "ssn": "567-89-0123",
+    "dateOfBirth": "1975-12-18",
+    "maritalStatus": "Married",
+    "citizenship": "USCitizen",
+    "email": "cpatterson@medical.com",
+    "phone": "949-555-0457",
+    "currentAddress": {
+      "sameAsBorrower": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Hoag Memorial Hospital",
+        "position": "Chief of Radiology",
+        "employmentType": "W2",
+        "startDate": "2010-03-01",
+        "monthsEmployed": 175,
+        "baseIncome": 425000,
+        "overtimeIncome": 0,
+        "bonusIncome": 50000,
+        "totalIncome": 475000,
+        "address": {
+          "street": "1 Hoag Drive",
+          "city": "Newport Beach",
+          "state": "CA",
+          "zipCode": "92663"
+        },
+        "phone": "949-555-5000",
+        "supervisorName": "Chief Medical Officer"
+      }
+    },
+    "assets": {
+      "checkingAccounts": [
+        {
+          "institutionName": "JP Morgan Private Bank (Joint)",
+          "accountNumber": "****6789",
+          "balance": 185000,
+          "accountType": "Joint Checking",
+          "joint": true
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Wells Fargo Private Bank",
+          "accountNumber": "****1357",
+          "balance": 150000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Vanguard 401k",
+          "accountNumber": "****2468",
+          "balance": 980000,
+          "accountType": "401k"
+        }
+      ],
+      "totalAssets": 1315000
+    },
+    "liabilities": {
+      "creditCards": [],
+      "autoLoans": [
+        {
+          "creditorName": "Lexus Financial",
+          "accountNumber": "****4567",
+          "balance": 42000,
+          "monthlyPayment": 895,
+          "monthsRemaining": 48,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 895
+    },
+    "creditScore": 798,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": true,
+      "obligatedOnOtherLoans": true,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": false,
+      "ownershipInterestInLast3Years": true
+    }
+  },
+  "transactions": {
+    "purchasePrice": 700000,
+    "downPayment": 140000,
+    "loanAmount": 560000,
+    "estimatedClosingCosts": 18500,
+    "prepaids": 6200,
+    "sellerCredits": 0,
+    "cashToClose": 164700,
+    "totalAssetVerificationRequired": 164700
+  },
+  "ratios": {
+    "housingExpense": 3802.45,
+    "totalDebtExpense": 14622.45,
+    "grossMonthlyIncome": 77916.67,
+    "housingRatio": 4.88,
+    "debtToIncomeRatio": 18.77,
+    "combinedLTV": 80.0
+  },
+  "propertyDetails": {
+    "address": "1824 Bayside Drive",
+    "city": "Newport Beach",
+    "state": "CA",
+    "zipCode": "92660",
+    "county": "Orange",
+    "apn": "456-789-01-00",
+    "yearBuilt": 1998,
+    "squareFeet": 3200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "lotSize": 5500,
+    "propertyType": "Single Family Residence",
+    "style": "Coastal Contemporary",
+    "constructionType": "Frame/Stucco",
+    "roofType": "Tile",
+    "zoningCode": "R-1",
+    "hoaFees": 295,
+    "taxYear": 2024,
+    "annualPropertyTax": 8750
+  },
+  "loanOfficer": {
+    "name": "Jennifer Walsh",
+    "nmls": "456789",
+    "email": "jennifer.walsh@cmg.com",
+    "phone": "949-555-7300",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "ConditionalApproval",
+    "submittedDate": "2024-09-25",
+    "lastUpdated": "2024-10-27",
+    "assignedUnderwriter": "David Kim",
+    "assignedProcessor": "Rachel Green"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Drivers License - Co-Borrower",
+      "Bank Statement - JP Morgan Private Bank (2 months)",
+      "Bank Statement - Morgan Stanley (2 months)",
+      "Investment Account Statements (most recent)",
+      "W2 - Borrower (2 years)",
+      "W2 - Co-Borrower (2 years)",
+      "Pay Stubs - Borrower (2 recent)",
+      "Pay Stubs - Co-Borrower (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "Appraisal",
+      "Employment Verification - Borrower",
+      "Employment Verification - Co-Borrower",
+      "Rental Property Documentation (existing)",
+      "Schedule E (Rental Income)",
+      "Lease Agreement (Rental Property #1)",
+      "Rental Property Management Agreement"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-w2-004-a",
+      "loanId": "CMG-2024-004",
+      "documentType": "w2",
+      "fileName": "w2-patterson-william-2023.html",
+      "filePath": "/uploads/CMG-2024-004/w2-patterson-william-2023.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/w2-patterson-william-2023.html",
+      "uploadDate": "2024-09-28T10:00:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-09-28T10:00:00.000Z",
+        "confidence": 98,
+        "data": {
+          "taxYear": "2023",
+          "employeeSSN": "456-78-9012",
+          "employeeName": "William A. Patterson III",
+          "employeeAddress": "5623 Vista Del Mar, Newport Beach, CA 92663",
+          "employerEIN": "95-3847562",
+          "employerName": "Patterson & Associates Law Firm",
+          "employerAddress": "18500 Von Karman Avenue, Suite 1200, Irvine, CA 92612",
+          "wages": "458750.00",
+          "federalTaxWithheld": "112450.00",
+          "socialSecurityWages": "160200.00",
+          "socialSecurityTaxWithheld": "9932.40",
+          "medicareWages": "458750.00",
+          "medicareTaxWithheld": "6651.88",
+          "box12Codes": ["D", "G"],
+          "box12Values": ["19500.00", "85000.00"],
+          "statutoryEmployee": false,
+          "retirementPlan": true,
+          "thirdPartySickPay": false,
+          "state": "CA",
+          "stateID": "2345678-9",
+          "stateWages": "458750.00",
+          "stateIncomeTax": "48234.50"
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "highIncomeVerification",
+            "severity": "info",
+            "message": "W2 wages of $458,750 exceed $250k. High-income earner verified. Bonus income of $85,000 shown in Box 12 code G."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN matches loan application",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Name matches borrower including suffix",
+            "rule": "nameMatch"
+          },
+          "wages": {
+            "isValid": true,
+            "message": "Income significantly exceeds stated income - conservative underwriting",
+            "rule": "incomeConsistency"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-w2-004-b",
+      "loanId": "CMG-2024-004",
+      "documentType": "w2",
+      "fileName": "w2-patterson-catherine-2023.html",
+      "filePath": "/uploads/CMG-2024-004/w2-patterson-catherine-2023.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/w2-patterson-catherine-2023.html",
+      "uploadDate": "2024-09-28T10:05:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-09-28T10:05:00.000Z",
+        "confidence": 98,
+        "data": {
+          "taxYear": "2023",
+          "employeeSSN": "567-89-0123",
+          "employeeName": "Catherine E. Patterson",
+          "employeeAddress": "5623 Vista Del Mar, Newport Beach, CA 92663",
+          "employerEIN": "77-8574321",
+          "employerName": "Hoag Memorial Hospital Presbyterian",
+          "employerAddress": "1 Hoag Drive, Newport Beach, CA 92663",
+          "wages": "485240.00",
+          "federalTaxWithheld": "128450.00",
+          "socialSecurityWages": "160200.00",
+          "socialSecurityTaxWithheld": "9932.40",
+          "medicareWages": "485240.00",
+          "medicareTaxWithheld": "7035.98",
+          "box12Codes": ["D", "BB"],
+          "box12Values": ["22500.00", "8500.00"],
+          "statutoryEmployee": false,
+          "retirementPlan": true,
+          "thirdPartySickPay": false,
+          "state": "CA",
+          "stateID": "3456789-0",
+          "stateWages": "485240.00",
+          "stateIncomeTax": "52340.80"
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "highIncomeVerification",
+            "severity": "info",
+            "message": "W2 wages of $485,240 reflect high medical professional income. Box 12 code BB shows employer-designated Roth contributions."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN matches co-borrower",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Name matches co-borrower",
+            "rule": "nameMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-taxreturn-004",
+      "loanId": "CMG-2024-004",
+      "documentType": "tax_return",
+      "fileName": "tax-return-patterson-2023.html",
+      "filePath": "/uploads/CMG-2024-004/tax-return-patterson-2023.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/tax-return-patterson-2023.html",
+      "uploadDate": "2024-09-28T11:00:00.000Z",
+      "extractedData": {
+        "documentType": "tax_return",
+        "extractedAt": "2024-09-28T11:00:00.000Z",
+        "confidence": 96,
+        "data": {
+          "taxYear": "2023",
+          "filingStatus": "Married Filing Jointly",
+          "totalIncome": "986450.00",
+          "adjustedGrossIncome": "912340.00",
+          "taxableIncome": "854720.00",
+          "scheduleE": {
+            "rentalPropertyAddress": "1245 Prospect Avenue, Tustin, CA 92780",
+            "grossRentalIncome": "36000.00",
+            "totalExpenses": "18450.00",
+            "netRentalIncome": "17550.00",
+            "depreciation": "9200.00"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "tax_return",
+        "isValid": true,
+        "issues": [],
+        "warnings": [],
+        "info": [
+          {
+            "message": "Schedule E shows rental property generating $36,000 gross rental income with net income of $17,550. Property cash flows positively."
+          }
+        ],
+        "fieldValidations": {
+          "totalIncome": {
+            "isValid": true,
+            "message": "Combined income verification successful",
+            "rule": "incomeConsistency"
+          },
+          "scheduleE": {
+            "isValid": true,
+            "message": "Rental income documented and verified on Schedule E",
+            "rule": "rentalIncomeVerified"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-lease-004",
+      "loanId": "CMG-2024-004",
+      "documentType": "lease_agreement",
+      "fileName": "lease-agreement-tustin-rental.html",
+      "filePath": "/uploads/CMG-2024-004/lease-agreement-tustin-rental.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/lease-agreement-tustin-rental.html",
+      "uploadDate": "2024-09-29T14:00:00.000Z",
+      "extractedData": {
+        "documentType": "lease_agreement",
+        "extractedAt": "2024-09-29T14:00:00.000Z",
+        "confidence": 94,
+        "data": {
+          "propertyAddress": "1245 Prospect Avenue, Tustin, CA 92780",
+          "tenantName": "Robert and Lisa Martinez",
+          "monthlyRent": "3000.00",
+          "leaseStartDate": "2023-07-01",
+          "leaseEndDate": "2024-06-30",
+          "securityDeposit": "4500.00",
+          "leaseType": "Fixed Term"
+        }
+      },
+      "validationResults": {
+        "documentType": "lease_agreement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "leaseExpired",
+            "severity": "critical",
+            "message": "Lease agreement expired on June 30, 2024. Need current lease or proof of month-to-month continuation to verify ongoing rental income."
+          }
+        ],
+        "warnings": [],
+        "info": [],
+        "fieldValidations": {
+          "monthlyRent": {
+            "isValid": true,
+            "message": "Monthly rent of $3,000 matches Schedule E rental income documentation",
+            "rule": "rentMatchesScheduleE"
+          }
+        }
+      },
+      "conditions": [
+        "Provide current lease agreement or documentation showing lease has been renewed/converted to month-to-month",
+        "Provide proof of most recent rent payment (canceled check or bank statement showing deposit)"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-appraisal-004",
+      "loanId": "CMG-2024-004",
+      "documentType": "appraisal",
+      "fileName": "appraisal-1824-bayside-drive.html",
+      "filePath": "/uploads/CMG-2024-004/appraisal-1824-bayside-drive.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/appraisal-1824-bayside-drive.html",
+      "uploadDate": "2024-10-15T09:00:00.000Z",
+      "extractedData": {
+        "documentType": "appraisal",
+        "extractedAt": "2024-10-15T09:00:00.000Z",
+        "confidence": 97,
+        "data": {
+          "propertyAddress": "1824 Bayside Drive, Newport Beach, CA 92660",
+          "appraisedValue": "715000.00",
+          "effectiveDate": "2024-10-12",
+          "appraiserName": "Michael Roberts, MAI",
+          "appraiserLicense": "AG054821",
+          "propertyCondition": "Good",
+          "estimatedMarketTime": "30-60 days"
+        }
+      },
+      "validationResults": {
+        "documentType": "appraisal",
+        "isValid": true,
+        "issues": [],
+        "warnings": [],
+        "info": [
+          {
+            "message": "Appraisal of $715,000 exceeds purchase price of $700,000 by $15,000 (2.1%). This strengthens the loan-to-value position."
+          }
+        ],
+        "fieldValidations": {
+          "appraisedValue": {
+            "isValid": true,
+            "message": "Appraisal supports purchase price. LTV recalculated at 78.32% based on appraised value (even better than stated 80%).",
+            "rule": "valueSupportsLoanAmount"
+          },
+          "propertyCondition": {
+            "isValid": true,
+            "message": "Property condition is 'Good' with no material deficiencies noted",
+            "rule": "conditionAcceptable"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-insurance-004",
+      "loanId": "CMG-2024-004",
+      "documentType": "insurance_quote",
+      "fileName": "insurance-quote-1824-bayside.html",
+      "filePath": "/uploads/CMG-2024-004/insurance-quote-1824-bayside.html",
+      "s3Url": "http://localhost:3001/uploads/CMG-2024-004/insurance-quote-1824-bayside.html",
+      "uploadDate": "2024-10-16T11:30:00.000Z",
+      "extractedData": {
+        "documentType": "insurance_quote",
+        "extractedAt": "2024-10-16T11:30:00.000Z",
+        "confidence": 95,
+        "data": {
+          "propertyAddress": "1824 Bayside Drive, Newport Beach, CA 92660",
+          "carrier": "State Farm Insurance",
+          "policyType": "HO-6 Landlord/Dwelling Fire",
+          "annualPremium": "2850.00",
+          "coverageAmount": "715000.00",
+          "effectiveDate": "2024-11-15",
+          "deductible": "2500.00"
+        }
+      },
+      "validationResults": {
+        "documentType": "insurance_quote",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "wrongPolicyType",
+            "severity": "critical",
+            "message": "Insurance shows HO-6 policy type (condominium), but property is Single Family Residence. Requires HO-3 (homeowners) or DP-3 (landlord/dwelling fire) policy."
+          }
+        ],
+        "warnings": [],
+        "info": [],
+        "fieldValidations": {
+          "coverageAmount": {
+            "isValid": true,
+            "message": "Coverage amount of $715,000 meets or exceeds loan amount",
+            "rule": "adequateCoverage"
+          }
+        }
+      },
+      "conditions": [
+        "Obtain corrected insurance quote with HO-3 or DP-3 policy type for Single Family investment property",
+        "Ensure policy includes loss of rents coverage for investment property"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}
