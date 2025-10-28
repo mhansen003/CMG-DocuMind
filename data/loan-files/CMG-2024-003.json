@@ -386,16 +386,127 @@
         "extractedAt": "2024-10-12T09:30:00.000Z",
         "confidence": 91,
         "data": {
+          "employee": {
+            "name": "James Robert Chen",
+            "ssn": "***-**-8901",
+            "address": "789 Cherry Avenue, Apt 12",
+            "city": "Long Beach",
+            "state": "CA",
+            "zipCode": "90806",
+            "employeeId": "EMP-45678"
+          },
           "employeeName": "James R. Chen",
+          "employer": {
+            "name": "Pacific Coast Healthcare",
+            "address": "3501 Atlantic Avenue",
+            "city": "Long Beach",
+            "state": "CA",
+            "zipCode": "90807",
+            "ein": "95-3847561"
+          },
           "employerName": "Pacific Coast Healthcare",
+          "payPeriod": {
+            "start": "2024-09-16",
+            "end": "2024-09-30",
+            "payDate": "2024-10-05",
+            "payFrequency": "Bi-Weekly"
+          },
           "payPeriodStart": "2024-09-16",
           "payPeriodEnd": "2024-09-30",
           "payDate": "2024-10-05",
+          "earnings": {
+            "regular": {
+              "hours": 80.00,
+              "rate": 34.62,
+              "amount": 2769.60,
+              "ytd": 66470.40
+            },
+            "overtime": {
+              "hours": 0.00,
+              "rate": 51.93,
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 0.00
+            }
+          },
           "grossPayCurrent": 2769.23,
           "grossPayYTD": 66461.52,
           "regularHours": 80.00,
           "overtimeHours": 0.00,
-          "netPay": 1923.45
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 285.40,
+                "ytd": 6848.50
+              },
+              "socialSecurity": {
+                "current": 171.69,
+                "ytd": 4120.61
+              },
+              "medicare": {
+                "current": 40.15,
+                "ytd": 963.69
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 110.77,
+                "ytd": 2658.46,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 27.69,
+                "ytd": 664.62,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 138.46,
+                "ytd": 3323.08,
+                "percentage": 5.0,
+                "description": "401(k) Pre-tax"
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 92.00,
+                "ytd": 2208.00,
+                "plan": "Kaiser HMO - Individual"
+              },
+              "dental": {
+                "current": 18.50,
+                "ytd": 444.00,
+                "plan": "DeltaCare - Individual"
+              },
+              "vision": {
+                "current": 8.00,
+                "ytd": 192.00,
+                "plan": "VSP - Individual"
+              }
+            },
+            "totalDeductions": {
+              "current": 892.66,
+              "ytd": 21422.96
+            }
+          },
+          "netPay": 1876.57,
+          "netPayYTD": 45038.56,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Chase Bank",
+            "accountType": "Checking",
+            "accountLast4": "5678",
+            "amount": 1876.57
+          },
+          "taxInfo": {
+            "filingStatus": "Married Filing Jointly",
+            "allowances": 2,
+            "additionalWithholding": 0.00
+          }
         }
       },
       "validationResults": {
@@ -439,16 +550,130 @@
         "extractedAt": "2024-10-12T09:35:00.000Z",
         "confidence": 93,
         "data": {
+          "employee": {
+            "name": "Amanda Lee Chen",
+            "ssn": "***-**-9012",
+            "address": "789 Cherry Avenue, Apt 12",
+            "city": "Long Beach",
+            "state": "CA",
+            "zipCode": "90806",
+            "employeeId": "T-892345"
+          },
           "employeeName": "Amanda L. Chen",
+          "employer": {
+            "name": "Long Beach Unified School District",
+            "address": "1515 Hughes Way",
+            "city": "Long Beach",
+            "state": "CA",
+            "zipCode": "90810",
+            "ein": "95-6012345"
+          },
           "employerName": "Long Beach USD",
+          "payPeriod": {
+            "start": "2024-09-01",
+            "end": "2024-09-30",
+            "payDate": "2024-10-01",
+            "payFrequency": "Monthly"
+          },
           "payPeriodStart": "2024-09-01",
           "payPeriodEnd": "2024-09-30",
           "payDate": "2024-10-01",
+          "earnings": {
+            "salary": {
+              "annualSalary": "58000.00",
+              "monthlyRate": "4833.33",
+              "amount": "4833.33",
+              "ytd": "48333.30"
+            },
+            "regular": {
+              "hours": 0.00,
+              "rate": 0.00,
+              "amount": "4833.33",
+              "ytd": "48333.30"
+            }
+          },
           "grossPayCurrent": 4833.33,
           "grossPayYTD": 48333.30,
           "regularHours": 0.00,
           "overtimeHours": 0.00,
-          "netPay": 3254.12
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 622.50,
+                "ytd": 6225.00
+              },
+              "socialSecurity": {
+                "current": 299.67,
+                "ytd": 2996.66
+              },
+              "medicare": {
+                "current": 70.08,
+                "ytd": 700.83
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 241.67,
+                "ytd": 2416.65,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 48.33,
+                "ytd": 483.33,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "pension": {
+                "current": 387.00,
+                "ytd": 3870.00,
+                "percentage": 8.0,
+                "description": "CalSTRS Pension Contribution"
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 115.00,
+                "ytd": 1150.00,
+                "plan": "Blue Shield HMO - Employee + Spouse"
+              },
+              "dental": {
+                "current": 24.00,
+                "ytd": 240.00,
+                "plan": "Delta Dental - Family"
+              },
+              "vision": {
+                "current": 12.00,
+                "ytd": 120.00,
+                "plan": "VSP - Family"
+              }
+            },
+            "union": {
+              "dues": {
+                "current": 85.00,
+                "ytd": 850.00,
+                "description": "LBTA Union Dues"
+              }
+            },
+            "totalDeductions": {
+              "current": 1905.25,
+              "ytd": 19052.47
+            }
+          },
+          "netPay": 2928.08,
+          "netPayYTD": 29280.83,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Chase Bank",
+            "accountType": "Joint Checking",
+            "accountLast4": "5678",
+            "amount": 2928.08
+          },
+          "taxInfo": {
+            "filingStatus": "Married Filing Jointly",
+            "allowances": 2,
+            "additionalWithholding": 0.00
+          }
         }
       },
       "validationResults": {
@@ -495,35 +720,83 @@
           "institutionName": "Chase Bank",
           "accountHolderName": "James Chen & Amanda Chen",
           "accountNumber": "****5678",
+          "routingNumber": "322271627",
           "accountType": "Joint Checking",
           "statementPeriodStart": "2024-09-01",
           "statementPeriodEnd": "2024-09-30",
+          "statementDate": "2024-10-01",
           "beginningBalance": "6850.00",
           "endingBalance": "8200.00",
           "totalDeposits": "8123.57",
           "totalWithdrawals": "6773.57",
           "transactionCount": 38,
+          "deposits": [
+            {"date": "2024-09-05", "type": "Direct Deposit", "description": "Pacific Coast Healthcare", "amount": "1923.45"},
+            {"date": "2024-09-20", "type": "Direct Deposit", "description": "Pacific Coast Healthcare", "amount": "1923.45"},
+            {"date": "2024-09-30", "type": "Direct Deposit", "description": "Long Beach USD", "amount": "3254.12"},
+            {"date": "2024-09-15", "type": "Transfer", "description": "Transfer from Ally Savings", "amount": "1022.55"}
+          ],
+          "withdrawals": [
+            {"date": "2024-09-01", "type": "ACH Debit", "description": "Rent - Harbor Heights Apts", "amount": "1850.00"},
+            {"date": "2024-09-02", "type": "ACH Debit", "description": "State Farm Insurance", "amount": "156.00"},
+            {"date": "2024-09-03", "type": "Debit Card", "description": "Trader Joe's", "amount": "92.50"},
+            {"date": "2024-09-04", "type": "ACH Debit", "description": "SoCal Edison", "amount": "125.00"},
+            {"date": "2024-09-05", "type": "Debit Card", "description": "Shell Gas", "amount": "48.00"},
+            {"date": "2024-09-06", "type": "ACH Debit", "description": "T-Mobile", "amount": "110.00"},
+            {"date": "2024-09-08", "type": "Debit Card", "description": "Costco", "amount": "185.50"},
+            {"date": "2024-09-10", "type": "ACH Debit", "description": "Nelnet Student Loan", "amount": "380.00"},
+            {"date": "2024-09-11", "type": "Debit Card", "description": "Starbucks", "amount": "15.80"},
+            {"date": "2024-09-12", "type": "ACH Debit", "description": "Great Lakes Student Loan", "amount": "285.00"},
+            {"date": "2024-09-13", "type": "Debit Card", "description": "Target", "amount": "78.50"},
+            {"date": "2024-09-14", "type": "ACH Debit", "description": "Honda Finance Auto Loan", "amount": "415.00"},
+            {"date": "2024-09-15", "type": "Debit Card", "description": "Ralphs Grocery", "amount": "104.25"},
+            {"date": "2024-09-17", "type": "ACH Debit", "description": "Spectrum Internet", "amount": "79.99"},
+            {"date": "2024-09-18", "type": "Debit Card", "description": "CVS Pharmacy", "amount": "42.30"},
+            {"date": "2024-09-19", "type": "ACH Debit", "description": "Capital One Credit Card", "amount": "125.00"},
+            {"date": "2024-09-20", "type": "Debit Card", "description": "Chipotle", "amount": "28.50"},
+            {"date": "2024-09-21", "type": "ACH Debit", "description": "Discover Card Payment", "amount": "75.00"},
+            {"date": "2024-09-22", "type": "Debit Card", "description": "Chevron Gas", "amount": "52.00"},
+            {"date": "2024-09-23", "type": "ACH Debit", "description": "Target RedCard", "amount": "50.00"},
+            {"date": "2024-09-24", "type": "Debit Card", "description": "Amazon.com", "amount": "67.80"},
+            {"date": "2024-09-25", "type": "Debit Card", "description": "Vons Grocery", "amount": "95.20"},
+            {"date": "2024-09-26", "type": "ATM Withdrawal", "description": "Chase ATM", "amount": "100.00"},
+            {"date": "2024-09-27", "type": "Debit Card", "description": "Panda Express", "amount": "24.90"},
+            {"date": "2024-09-28", "type": "Debit Card", "description": "Long Beach Transit", "amount": "50.00"},
+            {"date": "2024-09-29", "type": "Debit Card", "description": "Walgreens", "amount": "38.75"},
+            {"date": "2024-09-30", "type": "Fee", "description": "Monthly Service Fee", "amount": "12.00"}
+          ],
           "largeDeposits": [],
+          "largeWithdrawals": [
+            {"date": "2024-09-01", "description": "Rent Payment", "amount": "1850.00"}
+          ],
           "nsfFees": [],
           "negativeBalanceEvents": [],
+          "otherFees": [
+            {"date": "2024-09-30", "description": "Monthly Service Fee", "amount": "12.00"}
+          ],
+          "interestEarned": "0.00",
           "averageBalance": "7425.00",
+          "minimumBalance": "5150.00",
+          "maximumBalance": "9875.00",
           "directDeposits": [
-            {
-              "date": "2024-09-05",
-              "employer": "Pacific Coast Healthcare",
-              "amount": "1923.45"
-            },
-            {
-              "date": "2024-09-20",
-              "employer": "Pacific Coast Healthcare",
-              "amount": "1923.45"
-            },
-            {
-              "date": "2024-09-30",
-              "employer": "Long Beach USD",
-              "amount": "3254.12"
-            }
-          ]
+            {"date": "2024-09-05", "employer": "Pacific Coast Healthcare", "amount": "1923.45"},
+            {"date": "2024-09-20", "employer": "Pacific Coast Healthcare", "amount": "1923.45"},
+            {"date": "2024-09-30", "employer": "Long Beach USD", "amount": "3254.12"}
+          ],
+          "depositSummary": {
+            "directDeposits": "7101.02",
+            "transfers": "1022.55",
+            "totalDeposits": "8123.57"
+          },
+          "withdrawalSummary": {
+            "rentPayments": "1850.00",
+            "loanPayments": "1255.00",
+            "utilities": "315.99",
+            "groceries": "370.45",
+            "gas": "100.00",
+            "other": "882.13",
+            "totalWithdrawals": "6773.57"
+          }
         }
       },
       "validationResults": {
@@ -578,6 +851,13 @@
         "extractedAt": "2024-10-14T10:00:00.000Z",
         "confidence": 97,
         "data": {
+          "reportDate": "2024-10-14",
+          "borrower": {
+            "name": "James Robert Chen",
+            "ssn": "***-**-8901",
+            "dateOfBirth": "1996-11-28",
+            "currentAddress": "789 Cherry Avenue Apt 12, Long Beach CA 90806"
+          },
           "borrowerScores": {
             "equifax": 682,
             "experian": 678,
@@ -590,18 +870,164 @@
             "transunion": 698,
             "middleScore": 695
           },
+          "tradeLines": [
+            {
+              "creditor": "Capital One Quicksilver",
+              "accountNumber": "****7890",
+              "accountType": "Revolving",
+              "status": "Open",
+              "dateOpened": "2020-03-15",
+              "creditLimit": "6500.00",
+              "currentBalance": "4200.00",
+              "highBalance": "5800.00",
+              "monthlyPayment": "125.00",
+              "paymentStatus": "Current",
+              "utilization": "64.6%",
+              "paymentHistory": "30 days late in Nov 2023, otherwise current",
+              "lastPaymentDate": "2024-09-19",
+              "lastReportedDate": "2024-10-01",
+              "borrower": "James Chen"
+            },
+            {
+              "creditor": "Discover It Card",
+              "accountNumber": "****2345",
+              "accountType": "Revolving",
+              "status": "Open",
+              "dateOpened": "2021-07-20",
+              "creditLimit": "3500.00",
+              "currentBalance": "1850.00",
+              "highBalance": "2400.00",
+              "monthlyPayment": "75.00",
+              "paymentStatus": "Current",
+              "utilization": "52.9%",
+              "paymentHistory": "Never late, all payments on time",
+              "lastPaymentDate": "2024-09-21",
+              "lastReportedDate": "2024-10-01",
+              "borrower": "James Chen"
+            },
+            {
+              "creditor": "Honda Finance",
+              "accountNumber": "****6789",
+              "accountType": "Installment",
+              "loanType": "Auto Loan",
+              "status": "Open",
+              "dateOpened": "2020-09-01",
+              "originalAmount": "28500.00",
+              "currentBalance": "22500.00",
+              "monthlyPayment": "415.00",
+              "paymentStatus": "Current",
+              "termMonths": 72,
+              "monthsRemaining": 54,
+              "paymentHistory": "Never late, 18 on-time payments",
+              "lastPaymentDate": "2024-09-14",
+              "lastReportedDate": "2024-10-01",
+              "borrower": "James Chen"
+            },
+            {
+              "creditor": "Nelnet Federal Student Loan",
+              "accountNumber": "****4567",
+              "accountType": "Installment",
+              "loanType": "Student Loan",
+              "status": "Open",
+              "dateOpened": "2015-09-01",
+              "originalAmount": "45000.00",
+              "currentBalance": "38000.00",
+              "monthlyPayment": "380.00",
+              "paymentStatus": "Current",
+              "termMonths": 120,
+              "monthsRemaining": 100,
+              "paymentHistory": "Never late, consistent payments since 2019",
+              "lastPaymentDate": "2024-09-10",
+              "lastReportedDate": "2024-10-01",
+              "defermentPeriods": "2015-2019 (in-school deferment)",
+              "borrower": "James Chen"
+            },
+            {
+              "creditor": "Target RedCard",
+              "accountNumber": "****3456",
+              "accountType": "Revolving",
+              "status": "Open",
+              "dateOpened": "2022-01-10",
+              "creditLimit": "1500.00",
+              "currentBalance": "850.00",
+              "highBalance": "1200.00",
+              "monthlyPayment": "50.00",
+              "paymentStatus": "Current",
+              "utilization": "56.7%",
+              "paymentHistory": "Never late, all payments on time",
+              "lastPaymentDate": "2024-09-23",
+              "lastReportedDate": "2024-10-01",
+              "borrower": "Amanda Chen"
+            },
+            {
+              "creditor": "Great Lakes Student Loan",
+              "accountNumber": "****5678",
+              "accountType": "Installment",
+              "loanType": "Student Loan",
+              "status": "Open",
+              "dateOpened": "2016-08-15",
+              "originalAmount": "35000.00",
+              "currentBalance": "28500.00",
+              "monthlyPayment": "285.00",
+              "paymentStatus": "Current",
+              "termMonths": 120,
+              "monthsRemaining": 100,
+              "paymentHistory": "Never late, consistent payments since 2020",
+              "lastPaymentDate": "2024-09-12",
+              "lastReportedDate": "2024-10-01",
+              "defermentPeriods": "2016-2020 (in-school deferment)",
+              "borrower": "Amanda Chen"
+            }
+          ],
           "delinquencies": [
             {
               "creditor": "Capital One",
               "accountType": "Credit Card",
               "date": "2023-11-15",
               "daysLate": 30,
-              "borrower": "James Chen"
+              "borrower": "James Chen",
+              "resolved": true,
+              "accountStatus": "Current since Dec 2023"
             }
           ],
           "collections": [],
           "publicRecords": [],
-          "totalInquiries": 3
+          "inquiries": [
+            {
+              "creditor": "Chase Auto Finance",
+              "date": "2024-08-15",
+              "type": "Hard",
+              "purpose": "Auto Loan"
+            },
+            {
+              "creditor": "CMG Financial",
+              "date": "2024-10-10",
+              "type": "Hard",
+              "purpose": "Mortgage"
+            },
+            {
+              "creditor": "Wells Fargo Credit Card",
+              "date": "2024-07-22",
+              "type": "Hard",
+              "purpose": "Credit Card"
+            }
+          ],
+          "totalInquiries": 3,
+          "summary": {
+            "totalAccounts": 6,
+            "openAccounts": 6,
+            "closedAccounts": 0,
+            "totalCreditLimit": "11500.00",
+            "totalRevolvingBalance": "6900.00",
+            "totalInstallmentBalance": "89000.00",
+            "revolvingUtilization": "60.0%",
+            "oldestAccountAge": "9 years 1 month",
+            "averageAccountAge": "5 years 3 months",
+            "totalMonthlyPayments": "1330.00",
+            "delinquencies30Days": 1,
+            "delinquencies60Days": 0,
+            "delinquencies90Days": 0
+          }
         }
       },
       "validationResults": {
@@ -655,13 +1081,118 @@
         "extractedAt": "2024-10-15T14:30:00.000Z",
         "confidence": 95,
         "data": {
+          "agreementDate": "2024-10-08",
+          "effectiveDate": "2024-10-08",
           "propertyAddress": "456 Ocean Boulevard Unit 305, Long Beach CA 90802",
+          "legalDescription": "Unit 305, Ocean View Condominiums, as shown on Condo Plan recorded in Los Angeles County",
+          "apn": "731-548-32-00",
+          "propertyType": "Condominium",
+          "buyers": {
+            "names": ["James Robert Chen", "Amanda Lee Chen"],
+            "titleVesting": "as Joint Tenants",
+            "agent": "Sarah Martinez",
+            "agentBrokerage": "Pacific Coast Realty",
+            "agentLicense": "DRE #01234567",
+            "agentPhone": "562-555-8900"
+          },
+          "sellers": {
+            "names": ["Robert Williams", "Susan Williams"],
+            "agent": "Michael Zhang",
+            "agentBrokerage": "Long Beach Properties Inc",
+            "agentLicense": "DRE #01987654",
+            "agentPhone": "562-555-4500"
+          },
+          "financialTerms": {
+            "purchasePrice": "350000.00",
+            "initialDeposit": "1000.00",
+            "increasedDeposit": "4000.00",
+            "totalEarnestMoney": "5000.00",
+            "downPayment": "12250.00",
+            "loanAmount": "315000.00",
+            "loanType": "FHA",
+            "sellerCredits": "7000.00",
+            "balanceDueAtClose": "337750.00"
+          },
           "purchasePrice": "350000.00",
           "earnestMoneyDeposit": "5000.00",
           "closingDate": "2024-12-30",
+          "possessionDate": "2024-12-30",
+          "escrowCompany": "Pacific Title Company",
+          "escrowNumber": "2024-LB-8945",
           "sellerCredits": "7000.00",
-          "contingencies": ["Inspection", "Appraisal", "Financing"],
-          "buyers": ["James Robert Chen", "Amanda Lee Chen"]
+          "contingencies": {
+            "inspection": {
+              "included": true,
+              "period": "17 days",
+              "expirationDate": "2024-10-25"
+            },
+            "appraisal": {
+              "included": true,
+              "period": "21 days",
+              "expirationDate": "2024-10-29"
+            },
+            "financing": {
+              "included": true,
+              "period": "21 days",
+              "loanType": "FHA",
+              "expirationDate": "2024-10-29"
+            },
+            "reviewCCRs": {
+              "included": true,
+              "period": "7 days",
+              "expirationDate": "2024-10-15"
+            },
+            "hoaDocs": {
+              "included": true,
+              "period": "7 days",
+              "expirationDate": "2024-10-15"
+            }
+          },
+          "includedItems": [
+            "All existing appliances (refrigerator, stove, dishwasher, microwave)",
+            "Washer and dryer",
+            "Window coverings and blinds",
+            "Light fixtures",
+            "Ceiling fans",
+            "One assigned parking space (#47)",
+            "Storage unit (#305)"
+          ],
+          "excludedItems": [
+            "Artwork in living room",
+            "Custom mirror in master bathroom"
+          ],
+          "disclosures": [
+            "Seller Property Questionnaire",
+            "Transfer Disclosure Statement",
+            "Natural Hazard Disclosure",
+            "HOA Disclosures",
+            "FHA Property Requirements Addendum",
+            "Condominium Project Questionnaire"
+          ],
+          "additionalTerms": [
+            "Property sold AS-IS with right to inspect",
+            "Buyer to verify HOA rules and CC&Rs",
+            "Seller to provide HOA documentation within 3 days",
+            "Property must meet FHA minimum property standards"
+          ],
+          "keyDates": {
+            "agreementDate": "2024-10-08",
+            "initialDepositDue": "2024-10-09",
+            "increasedDepositDue": "2024-10-25",
+            "inspectionContingencyRemoval": "2024-10-25",
+            "appraisalContingencyRemoval": "2024-10-29",
+            "financingContingencyRemoval": "2024-10-29",
+            "finalWalkthrough": "2024-12-28",
+            "closeOfEscrow": "2024-12-30"
+          },
+          "hoaInformation": {
+            "associationName": "Ocean View Homeowners Association",
+            "monthlyDues": "425.00",
+            "transferFee": "500.00",
+            "specialAssessments": "None",
+            "managementCompany": "Coastal Property Management",
+            "managementPhone": "562-555-7800"
+          }
         }
       },
       "validationResults": {

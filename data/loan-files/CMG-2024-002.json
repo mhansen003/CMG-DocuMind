@@ -279,13 +279,42 @@
         "extractedAt": "2024-10-05T10:15:00.000Z",
         "confidence": 92,
         "data": {
+          "formType": "1099-NEC",
           "taxYear": "2023",
+          "corrected": false,
+          "void": false,
+          "recipient": {
+            "ssn": "234-56-7890",
+            "name": "Rebecca L. Martinez",
+            "firstName": "Rebecca",
+            "middleInitial": "L",
+            "lastName": "Martinez",
+            "address": "2847 Harbor View Lane",
+            "city": "San Diego",
+            "state": "CA",
+            "zipCode": "92101"
+          },
           "recipientSSN": "234-56-7890",
           "recipientName": "Rebecca L. Martinez",
+          "payer": {
+            "ein": "77-1234567",
+            "name": "Coastal Properties Development",
+            "address": "5500 Grossmont Center Drive, Suite 200",
+            "city": "La Mesa",
+            "state": "CA",
+            "zipCode": "91942",
+            "phone": "619-555-7800"
+          },
           "payerEIN": "77-1234567",
           "payerName": "Coastal Properties Development",
+          "box1_nonemployeeCompensation": "68500.00",
           "nonemployeeCompensation": "68500.00",
-          "federalTaxWithheld": "0.00"
+          "box4_federalIncomeTaxWithheld": "0.00",
+          "federalTaxWithheld": "0.00",
+          "box5_stateTaxWithheld": "0.00",
+          "box6_statePayersStateNo": "800-1234567-001",
+          "box7_stateIncome": "68500.00",
+          "accountNumber": "MAR-2023-001"
         }
       },
       "validationResults": {
@@ -337,14 +366,123 @@
         "data": {
           "taxYear": "2023",
           "filingStatus": "Head of Household",
+          "firstName": "Rebecca",
+          "middleInitial": "L",
+          "lastName": "Martinez",
+          "ssn": "234-56-7890",
+          "address": "2847 Harbor View Lane",
+          "city": "San Diego",
+          "state": "CA",
+          "zipCode": "92101",
+          "form1040": {
+            "line1z_totalIncome": "215480.00",
+            "line1_wages": "0.00",
+            "line2a_taxExemptInterest": "1250.00",
+            "line2b_taxableInterest": "340.00",
+            "line3a_qualifiedDividends": "0.00",
+            "line3b_ordinaryDividends": "0.00",
+            "line4a_iraDistributions": "0.00",
+            "line5a_pensionsAnnuities": "0.00",
+            "line6a_socialSecurityBenefits": "0.00",
+            "line7_capitalGainLoss": "0.00",
+            "line8_otherIncome": "0.00",
+            "line9_totalIncome": "215480.00",
+            "line10_adjustments": "37235.00",
+            "line11_adjustedGrossIncome": "178245.00",
+            "line12_standardDeduction": "21500.00",
+            "line15_taxableIncome": "156780.00",
+            "line16_tax": "28945.00",
+            "line17_scheduleD_tax": "0.00",
+            "line18_excessAdvancePremiumTax": "0.00",
+            "line19_total": "28945.00",
+            "line20_childTaxCredit": "0.00",
+            "line21_schedule3": "0.00",
+            "line22_totalCredits": "0.00",
+            "line23_subtotal": "28945.00",
+            "line24_selfEmploymentTax": "30415.00",
+            "line25_otherTaxes": "0.00",
+            "line26_totalTax": "59360.00",
+            "line27_federalWithholding": "0.00",
+            "line28_estimatedTaxPayments": "62000.00",
+            "line29_earnedIncomeCredit": "0.00",
+            "line30_refundableCredits": "0.00",
+            "line31_totalPayments": "62000.00",
+            "line32_overpayment": "2640.00",
+            "line33_refund": "2640.00",
+            "line34_amountOwed": "0.00"
+          },
           "totalIncome": "215480.00",
           "adjustedGrossIncome": "178245.00",
           "taxableIncome": "156780.00",
+          "totalTax": "59360.00",
+          "federalWithholding": "0.00",
+          "estimatedTaxPayments": "62000.00",
+          "refundAmount": "2640.00",
+          "amountOwed": "0.00",
           "scheduleC": {
             "businessName": "Martinez Design Studio",
+            "ein": "77-9876543",
+            "businessCode": "541410",
+            "businessActivity": "Interior Design Services",
+            "accountingMethod": "Cash",
+            "materialParticipation": true,
             "grossReceipts": "285600.00",
-            "expenses": "70120.00",
-            "netProfit": "215480.00"
+            "returns": "0.00",
+            "otherIncome": "0.00",
+            "totalIncome": "285600.00",
+            "expenses": {
+              "advertising": "8500.00",
+              "carAndTruck": "4200.00",
+              "commissions": "12000.00",
+              "contractLabor": "0.00",
+              "depletion": "0.00",
+              "depreciation": "6800.00",
+              "employeeBenefits": "0.00",
+              "insurance": "5600.00",
+              "interestMortgage": "0.00",
+              "interestOther": "450.00",
+              "legal": "3200.00",
+              "officeExpense": "6750.00",
+              "pension": "0.00",
+              "rentLease": "18000.00",
+              "repairs": "1850.00",
+              "supplies": "4200.00",
+              "taxes": "3500.00",
+              "travel": "2800.00",
+              "meals": "1520.00",
+              "utilities": "2850.00",
+              "wages": "0.00",
+              "otherExpenses": [
+                {"description": "Software subscriptions", "amount": "2400.00"},
+                {"description": "Professional dues", "amount": "850.00"},
+                {"description": "Continuing education", "amount": "1200.00"}
+              ],
+              "totalExpenses": "70120.00"
+            },
+            "netProfit": "215480.00",
+            "atRisk": true
+          },
+          "scheduleA": {
+            "medicalDentalExpenses": "0.00",
+            "stateTaxesPaid": "9500.00",
+            "mortgageInterest": "0.00",
+            "charitableContributions": "8750.00",
+            "totalItemizedDeductions": "18250.00"
+          },
+          "scheduleSE": {
+            "netEarnings": "215480.00",
+            "selfEmploymentTax": "30415.00",
+            "deductiblePortion": "15207.50"
+          },
+          "preparer": {
+            "name": "Jennifer Wong, CPA",
+            "firm": "Wong & Associates CPAs",
+            "ein": "95-4567890",
+            "phone": "619-555-3344",
+            "address": "1250 Sixth Avenue, Suite 400, San Diego, CA 92101",
+            "ptin": "P01234567",
+            "dateSigned": "2024-04-10",
+            "selfPrepared": false
           }
         }
       },
@@ -384,11 +522,71 @@
         "extractedAt": "2024-10-06T09:00:00.000Z",
         "confidence": 87,
         "data": {
+          "businessName": "Martinez Design Studio LLC",
+          "preparedDate": "2024-10-01",
           "periodStart": "2024-01-01",
           "periodEnd": "2024-09-30",
+          "accountingMethod": "Cash",
+          "revenue": {
+            "residentialDesignFees": "145800.00",
+            "commercialDesignFees": "38950.00",
+            "consultingServices": "8500.00",
+            "furnitureSales": "3200.00",
+            "purchasingServices": "2300.00",
+            "totalRevenue": "198750.00"
+          },
           "totalRevenue": "198750.00",
+          "operatingExpenses": {
+            "salaries": "0.00",
+            "contractLabor": "8500.00",
+            "rentLease": "13500.00",
+            "utilities": "2100.00",
+            "insurance": "4200.00",
+            "advertising": "6400.00",
+            "officeSupplies": "4950.00",
+            "softwareSubscriptions": "1800.00",
+            "professionalFees": "2400.00",
+            "autoExpense": "3150.00",
+            "travel": "2100.00",
+            "mealsEntertainment": "1140.00",
+            "phoneInternet": "945.00",
+            "bankFees": "215.00",
+            "depreciation": "5100.00",
+            "taxes": "2625.00",
+            "miscellaneous": "855.00",
+            "totalOperatingExpenses": "59980.00"
+          },
           "totalExpenses": "52340.00",
-          "netIncome": "146410.00"
+          "netIncome": "146410.00",
+          "ebitda": "151510.00",
+          "monthlyBreakdown": [
+            {"month": "2024-01", "revenue": "18500.00", "expenses": "6200.00", "netIncome": "12300.00"},
+            {"month": "2024-02", "revenue": "21800.00", "expenses": "5950.00", "netIncome": "15850.00"},
+            {"month": "2024-03", "revenue": "25600.00", "expenses": "6100.00", "netIncome": "19500.00"},
+            {"month": "2024-04", "revenue": "22400.00", "expenses": "5800.00", "netIncome": "16600.00"},
+            {"month": "2024-05", "revenue": "24200.00", "expenses": "6300.00", "netIncome": "17900.00"},
+            {"month": "2024-06", "revenue": "19850.00", "expenses": "5450.00", "netIncome": "14400.00"},
+            {"month": "2024-07", "revenue": "23100.00", "expenses": "5900.00", "netIncome": "17200.00"},
+            {"month": "2024-08", "revenue": "20950.00", "expenses": "5420.00", "netIncome": "15530.00"},
+            {"month": "2024-09", "revenue": "22350.00", "expenses": "5220.00", "netIncome": "17130.00"}
+          ],
+          "ytdComparison": {
+            "ytd2024": {
+              "revenue": "198750.00",
+              "expenses": "52340.00",
+              "netIncome": "146410.00"
+            },
+            "ytd2023": {
+              "revenue": "214500.00",
+              "expenses": "52650.00",
+              "netIncome": "161850.00"
+            },
+            "variancePercent": {
+              "revenue": "-7.34%",
+              "expenses": "-0.59%",
+              "netIncome": "-9.54%"
+            }
+          }
         }
       },
       "validationResults": {
@@ -427,24 +625,81 @@
           "institutionName": "Wells Fargo Business",
           "accountHolderName": "Martinez Design Studio LLC",
           "accountNumber": "****3456",
+          "routingNumber": "121000248",
           "accountType": "Business Checking",
           "statementPeriodStart": "2024-09-01",
           "statementPeriodEnd": "2024-09-30",
+          "statementDate": "2024-10-01",
           "beginningBalance": "52340.00",
           "endingBalance": "48500.00",
           "totalDeposits": "28650.00",
           "totalWithdrawals": "32490.00",
           "transactionCount": 47,
+          "deposits": [
+            {"date": "2024-09-03", "type": "Mobile Deposit", "description": "Check #1234 - Anderson Residence", "amount": "8500.00"},
+            {"date": "2024-09-05", "type": "ACH Credit", "description": "ACH Deposit - Coastal Properties", "amount": "15000.00"},
+            {"date": "2024-09-12", "type": "Wire Transfer", "description": "Wire - Pacific Design Group", "amount": "3200.00"},
+            {"date": "2024-09-18", "type": "Mobile Deposit", "description": "Check #5678 - Thompson Commercial", "amount": "1950.00"}
+          ],
+          "withdrawals": [
+            {"date": "2024-09-02", "type": "ACH Debit", "description": "Rent Payment - Harbor Business Center", "amount": "4500.00"},
+            {"date": "2024-09-04", "type": "Check", "description": "Check #2001 - Office Depot", "amount": "845.00"},
+            {"date": "2024-09-05", "type": "Debit Card", "description": "Starbucks Coffee", "amount": "12.50"},
+            {"date": "2024-09-06", "type": "ACH Debit", "description": "Adobe Creative Cloud", "amount": "79.99"},
+            {"date": "2024-09-07", "type": "Debit Card", "description": "Shell Gas Station", "amount": "65.00"},
+            {"date": "2024-09-08", "type": "Check", "description": "Check #2002 - Home Depot", "amount": "234.50"},
+            {"date": "2024-09-10", "type": "ACH Debit", "description": "Insurance Premium - State Farm", "amount": "425.00"},
+            {"date": "2024-09-11", "type": "Debit Card", "description": "Office supplies", "amount": "156.80"},
+            {"date": "2024-09-13", "type": "ACH Debit", "description": "Phone/Internet - Verizon", "amount": "315.00"},
+            {"date": "2024-09-14", "type": "Debit Card", "description": "Lunch meeting", "amount": "78.50"},
+            {"date": "2024-09-15", "type": "Check", "description": "Check #2003 - Contract Designer", "amount": "2500.00"},
+            {"date": "2024-09-16", "type": "Debit Card", "description": "Parking downtown", "amount": "25.00"},
+            {"date": "2024-09-17", "type": "ACH Debit", "description": "Utilities - SDG&E", "amount": "185.00"},
+            {"date": "2024-09-19", "type": "Debit Card", "description": "Client meeting expenses", "amount": "92.30"},
+            {"date": "2024-09-20", "type": "Check", "description": "Check #2004 - Shipping supplies", "amount": "125.00"},
+            {"date": "2024-09-21", "type": "ACH Debit", "description": "Loan payment - Equipment lease", "amount": "450.00"},
+            {"date": "2024-09-22", "type": "Debit Card", "description": "Gas station", "amount": "58.00"},
+            {"date": "2024-09-23", "type": "Debit Card", "description": "Office lunch", "amount": "45.20"},
+            {"date": "2024-09-24", "type": "ACH Debit", "description": "PayPal - Software subscriptions", "amount": "149.00"},
+            {"date": "2024-09-25", "type": "Check", "description": "Check #2005 - Marketing materials", "amount": "680.00"},
+            {"date": "2024-09-26", "type": "Debit Card", "description": "Professional dues", "amount": "285.00"},
+            {"date": "2024-09-27", "type": "ACH Debit", "description": "Credit card payment", "amount": "1500.00"},
+            {"date": "2024-09-28", "type": "Debit Card", "description": "Client entertainment", "amount": "125.00"},
+            {"date": "2024-09-29", "type": "Check", "description": "Check #2006 - Vendor supplies", "amount": "340.00"},
+            {"date": "2024-09-30", "type": "ACH Debit", "description": "Payroll taxes", "amount": "2850.00"}
+          ],
           "largeDeposits": [
-            {
-              "date": "2024-09-05",
-              "description": "ACH Deposit - Coastal Properties",
-              "amount": "15000.00"
-            }
+            {"date": "2024-09-03", "description": "Check - Anderson Residence", "amount": "8500.00"},
+            {"date": "2024-09-05", "description": "ACH Deposit - Coastal Properties", "amount": "15000.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-09-02", "description": "Rent Payment", "amount": "4500.00"},
+            {"date": "2024-09-15", "description": "Contract Designer", "amount": "2500.00"},
+            {"date": "2024-09-30", "description": "Payroll taxes", "amount": "2850.00"}
           ],
           "nsfFees": [],
           "negativeBalanceEvents": [],
-          "averageBalance": "50125.00"
+          "otherFees": [
+            {"date": "2024-09-01", "description": "Monthly maintenance fee", "amount": "15.00"},
+            {"date": "2024-09-30", "description": "Statement delivery fee", "amount": "2.00"}
+          ],
+          "interestEarned": "0.00",
+          "averageBalance": "50125.00",
+          "minimumBalance": "45200.00",
+          "maximumBalance": "67340.00",
+          "depositSummary": {
+            "checkDeposits": "10450.00",
+            "achCredits": "15000.00",
+            "wireTransfers": "3200.00",
+            "totalDeposits": "28650.00"
+          },
+          "withdrawalSummary": {
+            "checks": "4724.50",
+            "achDebits": "10438.99",
+            "debitCard": "1562.80",
+            "otherWithdrawals": "15764.71",
+            "totalWithdrawals": "32490.00"
+          }
         }
       },
       "validationResults": {
@@ -483,12 +738,177 @@
         "extractedAt": "2024-10-07T08:45:00.000Z",
         "confidence": 96,
         "data": {
-          "decreeDate": "2022-03-15",
+          "caseNumber": "D-2021-CV-000845",
+          "courtName": "Superior Court of California, County of San Diego",
           "county": "San Diego",
           "state": "CA",
+          "filingDate": "2021-06-15",
+          "decreeDate": "2022-03-15",
+          "finalizedDate": "2022-03-15",
+          "petitioner": {
+            "name": "Rebecca Lynn Martinez",
+            "aka": "Rebecca Lynn Garcia",
+            "address": "2847 Harbor View Lane, San Diego, CA 92101",
+            "attorney": "Sarah Chen, Esq.",
+            "attorneyFirm": "Chen Family Law Group",
+            "attorneyPhone": "619-555-4200"
+          },
+          "respondent": {
+            "name": "Carlos Martinez",
+            "address": "1450 Elm Street, Unit 302, San Diego, CA 92102",
+            "attorney": "Michael Davidson, Esq.",
+            "attorneyFirm": "Davidson & Associates",
+            "attorneyPhone": "619-555-8900"
+          },
+          "marriageDate": "2010-08-20",
+          "separationDate": "2021-05-01",
+          "marriageDuration": "10 years, 8 months",
+          "children": [
+            {
+              "name": "Sofia Martinez",
+              "dateOfBirth": "2012-11-05",
+              "age": 11,
+              "primaryCustody": "Petitioner (Rebecca Martinez)",
+              "custodyArrangement": "Primary physical custody to petitioner with visitation rights to respondent"
+            }
+          ],
+          "childCustody": {
+            "legalCustody": "Joint legal custody",
+            "physicalCustody": "Primary to petitioner (Rebecca Martinez)",
+            "visitationSchedule": "Alternating weekends (Friday 6pm - Sunday 6pm), one evening per week (Wednesday 5pm-8pm), alternating holidays, 3 weeks summer vacation",
+            "decisionMaking": "Joint decisions on education, healthcare, and religious upbringing"
+          },
+          "childSupport": {
+            "monthlyPayment": "1200.00",
+            "paymentFrequency": "Monthly",
+            "paymentDueDate": "1st of each month",
+            "payee": "Rebecca Lynn Martinez",
+            "payor": "Carlos Martinez",
+            "duration": "Until age 18 or graduation from high school, whichever occurs later",
+            "healthInsurance": "Respondent to maintain health insurance coverage",
+            "unreimbursedMedical": "Split 50/50",
+            "childcareExpenses": "Split 60% respondent, 40% petitioner",
+            "educationExpenses": "Private school tuition split 60% respondent, 40% petitioner",
+            "effectiveDate": "2022-04-01"
+          },
           "childSupportPayment": "1200.00",
           "childSupportDuration": "Until age 18",
-          "spousalSupport": "0.00"
+          "spousalSupport": {
+            "monthlyPayment": "0.00",
+            "duration": "N/A",
+            "terminated": true,
+            "terminationReason": "Waived by petitioner, both parties self-sufficient"
+          },
+          "propertyDivision": {
+            "realProperty": [
+              {
+                "address": "2847 Harbor View Lane, San Diego, CA 92101",
+                "awardedTo": "Petitioner (Rebecca Martinez)",
+                "type": "Primary Residence",
+                "action": "Refinance to remove respondent from mortgage within 180 days",
+                "equity": "Respondent receives $115,000 equity buyout within 180 days"
+              }
+            ],
+            "vehicles": [
+              {
+                "description": "2019 BMW X3",
+                "awardedTo": "Petitioner",
+                "action": "Assume loan, remove respondent from title"
+              },
+              {
+                "description": "2020 Toyota Tacoma",
+                "awardedTo": "Respondent",
+                "action": "Assume loan, remove petitioner from title"
+              }
+            ],
+            "retirementAccounts": [
+              {
+                "account": "Petitioner's SEP-IRA",
+                "balance": "~$145,000 as of separation",
+                "division": "100% to petitioner (premarital and business asset)"
+              },
+              {
+                "account": "Respondent's 401(k)",
+                "balance": "~$78,000 as of separation",
+                "division": "QDRO to divide marital portion: 50% to petitioner ($28,500), 50% to respondent"
+              }
+            ],
+            "businessAssets": [
+              {
+                "business": "Martinez Design Studio LLC",
+                "awardedTo": "Petitioner (Rebecca Martinez)",
+                "action": "100% ownership to petitioner, respondent receives $45,000 buyout",
+                "paymentTerms": "Lump sum within 90 days of decree"
+              }
+            ],
+            "bankAccounts": [
+              {
+                "account": "Wells Fargo Business Checking",
+                "awardedTo": "Petitioner - 100%"
+              },
+              {
+                "account": "Bank of America Joint Savings",
+                "balance": "$68,000",
+                "division": "Split 50/50 ($34,000 each)"
+              },
+              {
+                "account": "Chase Personal Checking - Respondent",
+                "awardedTo": "Respondent - 100%"
+              }
+            ]
+          },
+          "debtDivision": {
+            "creditCards": [
+              {
+                "creditor": "American Express Business",
+                "balance": "$8,500",
+                "responsibility": "Petitioner - 100%"
+              },
+              {
+                "creditor": "Chase Sapphire Reserve",
+                "balance": "$3,200",
+                "responsibility": "Petitioner - 100%"
+              },
+              {
+                "creditor": "Discover Card",
+                "balance": "$5,400",
+                "responsibility": "Respondent - 100%"
+              }
+            ],
+            "autoLoans": [
+              {
+                "vehicle": "2019 BMW X3",
+                "lender": "BMW Financial",
+                "balance": "$32,000",
+                "responsibility": "Petitioner"
+              },
+              {
+                "vehicle": "2020 Toyota Tacoma",
+                "lender": "Toyota Financial",
+                "balance": "$28,500",
+                "responsibility": "Respondent"
+              }
+            ],
+            "otherDebts": [
+              {
+                "description": "Business Equipment Lease",
+                "balance": "$12,000",
+                "responsibility": "Petitioner - 100%"
+              }
+            ]
+          },
+          "namageChange": {
+            "petitionerRevertToMaidenName": false,
+            "retainsMarriedName": "Rebecca Lynn Martinez"
+          },
+          "otherProvisions": {
+            "lifeInsurance": "Both parties to maintain life insurance of at least $250,000 naming child as beneficiary while child support obligation exists",
+            "taxExemptions": "Respondent to claim child as dependent on even years, petitioner on odd years",
+            "relocationRestrictions": "Neither party may relocate child outside of San Diego County without court approval or written consent"
+          },
+          "judgeName": "Hon. Patricia Wong",
+          "attorneyApprovalDate": "2022-03-10",
+          "certifiedCopy": true
         }
       },
       "validationResults": {

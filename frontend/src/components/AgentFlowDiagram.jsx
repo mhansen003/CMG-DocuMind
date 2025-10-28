@@ -10,123 +10,18 @@ const NODE_TYPES = {
   API: 'api'
 };
 
-// Complete network including agents, systems, and integrations
+// Simplified core agent network
 const networkNodes = {
-  // === EXTERNAL SYSTEMS ===
-  'sys-los': {
-    id: 'sys-los',
-    name: 'LOS System',
-    icon: '🏦',
-    type: NODE_TYPES.SYSTEM,
-    category: 'External',
-    description: 'Loan Origination System - Encompass, Calyx Point',
-    calls: ['agent-001', 'agent-016', 'agent-017'],
-    position: { x: 50, y: 50 },
-    shape: 'hexagon'
-  },
-  'sys-credit': {
-    id: 'sys-credit',
-    name: 'Credit Bureau API',
-    icon: '📊',
-    type: NODE_TYPES.API,
-    category: 'External',
-    description: 'Equifax, Experian, TransUnion APIs',
-    calls: ['agent-002', 'agent-009'],
-    position: { x: 50, y: 650 },
-    shape: 'hexagon'
-  },
-  'sys-title': {
-    id: 'sys-title',
-    name: 'Title Company',
-    icon: '📜',
-    type: NODE_TYPES.SYSTEM,
-    category: 'External',
-    description: 'Property title search and verification',
-    calls: ['agent-006'],
-    position: { x: 1400, y: 50 },
-    shape: 'hexagon'
-  },
-
-  // === AI SERVICES ===
-  'ai-openai': {
-    id: 'ai-openai',
-    name: 'OpenAI GPT-4',
-    icon: '🤖',
-    type: NODE_TYPES.AI_SERVICE,
-    category: 'AI',
-    description: 'Document extraction and analysis',
-    calls: ['agent-002', 'agent-007', 'agent-009', 'agent-011', 'agent-016'],
-    position: { x: 350, y: 50 },
-    shape: 'diamond'
-  },
-  'ai-vision': {
-    id: 'ai-vision',
-    name: 'Computer Vision',
-    icon: '👁️',
-    type: NODE_TYPES.AI_SERVICE,
-    category: 'AI',
-    description: 'Document fraud detection and OCR',
-    calls: ['agent-009', 'agent-013'],
-    position: { x: 350, y: 650 },
-    shape: 'diamond'
-  },
-  'ai-vector': {
-    id: 'ai-vector',
-    name: 'Vector Database',
-    icon: '🧠',
-    type: NODE_TYPES.DATA_SOURCE,
-    category: 'AI',
-    description: 'Semantic search and document matching',
-    calls: ['agent-010', 'agent-015', 'agent-018'],
-    position: { x: 650, y: 50 },
-    shape: 'cylinder'
-  },
-
-  // === DATA SOURCES ===
-  'data-docs': {
-    id: 'data-docs',
-    name: 'Document Store',
-    icon: '💾',
-    type: NODE_TYPES.DATA_SOURCE,
-    category: 'Data',
-    description: 'S3 / Cloud storage for documents',
-    calls: ['agent-001', 'agent-003', 'agent-013'],
-    position: { x: 650, y: 650 },
-    shape: 'cylinder'
-  },
-  'data-postgres': {
-    id: 'data-postgres',
-    name: 'PostgreSQL',
-    icon: '🗄️',
-    type: NODE_TYPES.DATA_SOURCE,
-    category: 'Data',
-    description: 'Loan data and application information',
-    calls: ['agent-002', 'agent-005', 'agent-015'],
-    position: { x: 950, y: 650 },
-    shape: 'cylinder'
-  },
-  'data-compliance': {
-    id: 'data-compliance',
-    name: 'Compliance DB',
-    icon: '⚖️',
-    type: NODE_TYPES.DATA_SOURCE,
-    category: 'Data',
-    description: 'Regulatory rules and requirements',
-    calls: ['agent-004', 'agent-012', 'agent-019'],
-    position: { x: 950, y: 50 },
-    shape: 'cylinder'
-  },
-
-  // === CORE WORKFLOW AGENTS (Layer 1) ===
+  // === CORE WORKFLOW AGENTS ===
   'agent-016': {
     id: 'agent-016',
     name: 'Document Ingestion',
     icon: '📥',
     type: NODE_TYPES.AGENT,
     category: 'Ingestion',
-    description: 'Receives and classifies documents from LOS',
-    calls: ['agent-001', 'agent-002', 'agent-004'],
-    position: { x: 200, y: 200 }
+    description: 'Receives and classifies documents',
+    calls: ['agent-017', 'agent-002'],
+    position: { x: 200, y: 250 }
   },
   'agent-017': {
     id: 'agent-017',
@@ -135,19 +30,19 @@ const networkNodes = {
     type: NODE_TYPES.AGENT,
     category: 'Ingestion',
     description: 'Extracts structured data from documents',
-    calls: ['agent-002', 'agent-011', 'agent-015'],
-    position: { x: 200, y: 500 }
+    calls: ['agent-002', 'agent-011'],
+    position: { x: 200, y: 450 }
   },
 
-  // === VALIDATION AGENTS (Layer 2) ===
+  // === VALIDATION AGENTS ===
   'agent-001': {
     id: 'agent-001',
     name: 'Document Request',
     icon: '📄',
     type: NODE_TYPES.AGENT,
     category: 'Communication',
-    description: 'Automatically requests missing documents',
-    calls: ['agent-010', 'agent-005', 'agent-020'],
+    description: 'Requests missing documents',
+    calls: ['agent-005'],
     position: { x: 500, y: 350 }
   },
   'agent-002': {
@@ -156,8 +51,8 @@ const networkNodes = {
     icon: '💰',
     type: NODE_TYPES.AGENT,
     category: 'Analysis',
-    description: 'Cross-references income across documents',
-    calls: ['agent-011', 'agent-015', 'agent-005'],
+    description: 'Verifies income across documents',
+    calls: ['agent-011', 'agent-015'],
     position: { x: 500, y: 200 }
   },
   'agent-003': {
@@ -167,7 +62,7 @@ const networkNodes = {
     type: NODE_TYPES.AGENT,
     category: 'Verification',
     description: 'Verifies employer information',
-    calls: ['agent-002', 'agent-015'],
+    calls: ['agent-015'],
     position: { x: 500, y: 500 }
   },
   'agent-004': {
@@ -176,31 +71,21 @@ const networkNodes = {
     icon: '📅',
     type: NODE_TYPES.AGENT,
     category: 'Compliance',
-    description: 'Ensures document recency and date logic',
-    calls: ['agent-012', 'agent-001'],
+    description: 'Validates document dates',
+    calls: ['agent-001'],
     position: { x: 200, y: 350 }
   },
 
-  // === ANALYSIS AGENTS (Layer 3) ===
+  // === ANALYSIS AGENTS ===
   'agent-009': {
     id: 'agent-009',
     name: 'Fraud Detection',
-    icon: '🔍',
+    icon: '🛡️',
     type: NODE_TYPES.AGENT,
     category: 'Risk',
-    description: 'Detects document tampering and fraud',
-    calls: ['agent-013', 'agent-011', 'agent-005', 'agent-020'],
+    description: 'Detects potential fraud',
+    calls: ['agent-005'],
     position: { x: 800, y: 500 }
-  },
-  'agent-010': {
-    id: 'agent-010',
-    name: 'Document Predictor',
-    icon: '🎯',
-    type: NODE_TYPES.AGENT,
-    category: 'Analysis',
-    description: 'Predicts required documents based on loan type',
-    calls: [],
-    position: { x: 800, y: 350 }
   },
   'agent-011': {
     id: 'agent-011',
@@ -208,51 +93,21 @@ const networkNodes = {
     icon: '🧮',
     type: NODE_TYPES.AGENT,
     category: 'Analysis',
-    description: 'Verifies mathematical calculations',
+    description: 'Verifies calculations',
     calls: ['agent-009'],
     position: { x: 800, y: 200 }
   },
-  'agent-012': {
-    id: 'agent-012',
-    name: 'Expiration Tracker',
-    icon: '⏰',
-    type: NODE_TYPES.AGENT,
-    category: 'Compliance',
-    description: 'Tracks document expiration dates',
-    calls: ['agent-001'],
-    position: { x: 500, y: 650 }
-  },
-  'agent-013': {
-    id: 'agent-013',
-    name: 'Format Detector',
-    icon: '🎨',
-    type: NODE_TYPES.AGENT,
-    category: 'Risk',
-    description: 'Analyzes document formatting for anomalies',
-    calls: [],
-    position: { x: 1100, y: 650 }
-  },
-  'agent-018': {
-    id: 'agent-018',
-    name: 'Pattern Recognition',
-    icon: '🧩',
-    type: NODE_TYPES.AGENT,
-    category: 'Analysis',
-    description: 'Identifies patterns across loan applications',
-    calls: ['agent-010', 'agent-015'],
-    position: { x: 800, y: 50 }
-  },
 
-  // === RECONCILIATION AGENTS (Layer 4) ===
+  // === RECONCILIATION AGENTS ===
   'agent-006': {
     id: 'agent-006',
     name: 'Property Matcher',
     icon: '🏠',
     type: NODE_TYPES.AGENT,
     category: 'Verification',
-    description: 'Matches property details across documents',
-    calls: [],
-    position: { x: 1250, y: 200 }
+    description: 'Matches property details',
+    calls: ['agent-005'],
+    position: { x: 1100, y: 500 }
   },
   'agent-007': {
     id: 'agent-007',
@@ -260,9 +115,9 @@ const networkNodes = {
     icon: '👤',
     type: NODE_TYPES.AGENT,
     category: 'Verification',
-    description: 'Resolves name variations across documents',
-    calls: [],
-    position: { x: 1250, y: 500 }
+    description: 'Reconciles name variations',
+    calls: ['agent-005'],
+    position: { x: 1100, y: 300 }
   },
   'agent-015': {
     id: 'agent-015',
@@ -270,9 +125,9 @@ const networkNodes = {
     icon: '🔗',
     type: NODE_TYPES.AGENT,
     category: 'Verification',
-    description: 'Ensures data consistency across sources',
-    calls: ['agent-007', 'agent-006', 'agent-005'],
-    position: { x: 1100, y: 350 }
+    description: 'Ensures data consistency',
+    calls: ['agent-007', 'agent-006'],
+    position: { x: 1100, y: 200 }
   },
   'agent-019': {
     id: 'agent-019',
@@ -280,41 +135,21 @@ const networkNodes = {
     icon: '✅',
     type: NODE_TYPES.AGENT,
     category: 'Compliance',
-    description: 'Validates against regulatory requirements',
-    calls: ['agent-005', 'agent-020'],
-    position: { x: 1100, y: 200 }
+    description: 'Validates compliance',
+    calls: ['agent-005'],
+    position: { x: 800, y: 350 }
   },
 
-  // === OUTPUT & WORKFLOW AGENTS (Layer 5) ===
+  // === OUTPUT AGENTS ===
   'agent-005': {
     id: 'agent-005',
     name: 'Condition Generator',
     icon: '📋',
     type: NODE_TYPES.AGENT,
     category: 'Workflow',
-    description: 'Creates loan conditions from findings',
-    calls: ['agent-001', 'agent-020'],
-    position: { x: 1100, y: 50 }
-  },
-  'agent-014': {
-    id: 'agent-014',
-    name: 'Field Completion',
-    icon: '✍️',
-    type: NODE_TYPES.AGENT,
-    category: 'Workflow',
-    description: 'Auto-fills missing application fields',
+    description: 'Generates loan conditions',
     calls: [],
-    position: { x: 200, y: 650 }
-  },
-  'agent-020': {
-    id: 'agent-020',
-    name: 'Alert Manager',
-    icon: '🔔',
-    type: NODE_TYPES.AGENT,
-    category: 'Communication',
-    description: 'Manages notifications and alerts',
-    calls: [],
-    position: { x: 1250, y: 350 }
+    position: { x: 1400, y: 350 }
   }
 };
 
@@ -343,27 +178,7 @@ function AgentFlowDiagram({ agentId, allAgents = false }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
 
-  // Animate data flow on mount
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const connections = getConnections();
-      if (connections.length > 0) {
-        const randomConn = connections[Math.floor(Math.random() * connections.length)];
-        const key = `${randomConn.from}-${randomConn.to}`;
-        setAnimatedConnections(prev => new Set(prev).add(key));
-
-        setTimeout(() => {
-          setAnimatedConnections(prev => {
-            const newSet = new Set(prev);
-            newSet.delete(key);
-            return newSet;
-          });
-        }, 2000);
-      }
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, [allAgents, agentId]);
+  // Removed excessive animations for cleaner professional look
 
   // Get visible nodes based on mode
   const getVisibleNodes = () => {
@@ -520,81 +335,35 @@ function AgentFlowDiagram({ agentId, allAgents = false }) {
         </div>
       </div>
 
-      {/* Enhanced Legend */}
-      <div className="flow-legend enhanced">
-        <h4>🎨 Network Legend</h4>
-        <div className="legend-section">
-          <div className="legend-subtitle">Node Types</div>
-          <div className="legend-items">
-            <div className="legend-item">
-              <div className="legend-shape circle"></div>
-              <span>Agents</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-shape hexagon"></div>
-              <span>Systems</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-shape diamond"></div>
-              <span>AI Services</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-shape cylinder"></div>
-              <span>Data Sources</span>
-            </div>
-          </div>
-        </div>
+      {/* Simplified Legend */}
+      <div className="flow-legend">
+        <h4>Agent Network</h4>
         <div className="legend-section">
           <div className="legend-subtitle">Categories</div>
           <div className="legend-items">
-            {Object.entries(categoryStyles).map(([category, style]) => (
-              <div key={category} className="legend-item">
-                <div
-                  className="legend-color"
-                  style={{
-                    background: `linear-gradient(135deg, ${style.gradient[0]}, ${style.gradient[1]})`
-                  }}
-                ></div>
-                <span className="legend-label">{category}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="legend-section">
-          <div className="legend-subtitle">Connection Lines</div>
-          <div className="legend-items">
             <div className="legend-item">
-              <div className="legend-line primary"></div>
-              <span>Primary Flow</span>
+              <div className="legend-color" style={{ background: '#6366f1' }}></div>
+              <span>Ingestion</span>
             </div>
             <div className="legend-item">
-              <div className="legend-line secondary"></div>
-              <span>Secondary Flow</span>
+              <div className="legend-color" style={{ background: '#8b5cf6' }}></div>
+              <span>Analysis</span>
             </div>
             <div className="legend-item">
-              <div className="legend-line hover"></div>
-              <span>Selected/Hovered</span>
+              <div className="legend-color" style={{ background: '#10b981' }}></div>
+              <span>Verification</span>
             </div>
             <div className="legend-item">
-              <div className="legend-line animated"></div>
-              <span>Active Data Flow</span>
-            </div>
-          </div>
-        </div>
-        <div className="legend-section">
-          <div className="legend-subtitle">Controls</div>
-          <div className="legend-items">
-            <div className="legend-item">
-              <span className="legend-icon">🖱️</span>
-              <span>Drag to pan</span>
+              <div className="legend-color" style={{ background: '#ef4444' }}></div>
+              <span>Risk</span>
             </div>
             <div className="legend-item">
-              <span className="legend-icon">🔍</span>
-              <span>Scroll to zoom</span>
+              <div className="legend-color" style={{ background: '#06b6d4' }}></div>
+              <span>Compliance</span>
             </div>
             <div className="legend-item">
-              <span className="legend-icon">👆</span>
-              <span>Click nodes to select</span>
+              <div className="legend-color" style={{ background: '#f59e0b' }}></div>
+              <span>Workflow</span>
             </div>
           </div>
         </div>
@@ -684,7 +453,7 @@ function AgentFlowDiagram({ agentId, allAgents = false }) {
             </marker>
           </defs>
 
-          {/* Draw connections */}
+          {/* Draw connections - simplified */}
           {connections.map((conn, index) => {
             const fromNode = networkNodes[conn.from];
             const toNode = networkNodes[conn.to];
@@ -693,65 +462,33 @@ function AgentFlowDiagram({ agentId, allAgents = false }) {
 
             const isHovered = hoveredNode === conn.from || hoveredNode === conn.to;
             const isSelected = selectedNode === conn.from || selectedNode === conn.to;
-            const connKey = `${conn.from}-${conn.to}`;
-            const isAnimated = animatedConnections.has(connKey);
 
-            // Calculate connection line based on node shapes
-            const startX = fromNode.position.x + (fromNode.shape ? 90 : 80);
+            // Calculate connection line
+            const startX = fromNode.position.x + 80;
             const startY = fromNode.position.y + 40;
-            const endX = toNode.position.x - (toNode.shape ? 10 : 0);
+            const endX = toNode.position.x;
             const endY = toNode.position.y + 40;
 
-            // Create curved path
+            // Create straight or slightly curved path
             const midX = (startX + endX) / 2;
-            const curve = Math.abs(endX - startX) * 0.3;
+            const curve = Math.abs(endX - startX) * 0.15;
             const pathD = `M ${startX} ${startY} Q ${midX} ${startY - curve}, ${endX} ${endY}`;
 
             return (
               <g key={`${conn.from}-${conn.to}-${index}`}>
-                {/* Connection glow */}
-                {(isHovered || isSelected || isAnimated) && (
-                  <path
-                    d={pathD}
-                    fill="none"
-                    stroke={isAnimated ? '#10b981' : '#f59e0b'}
-                    strokeWidth={8}
-                    opacity={0.3}
-                    filter="url(#glow)"
-                  />
-                )}
-
-                {/* Main connection line */}
                 <path
                   d={pathD}
                   fill="none"
                   stroke={
-                    isAnimated ? '#10b981' :
-                    isHovered || isSelected ? '#f59e0b' :
+                    isHovered || isSelected ? '#3b82f6' :
                     conn.type === 'primary' ? '#667eea' :
                     '#cbd5e1'
                   }
-                  strokeWidth={isAnimated ? 4 : isHovered || isSelected ? 3 : 2}
-                  markerEnd={`url(#arrowhead-${
-                    isAnimated ? 'animated' :
-                    isHovered || isSelected ? 'hover' :
-                    conn.type
-                  })`}
-                  className={`connection-line ${isAnimated ? 'animated-flow' : ''}`}
-                  opacity={isHovered || isSelected || isAnimated ? 1 : 0.6}
-                  strokeDasharray={isAnimated ? "5,5" : "none"}
+                  strokeWidth={isHovered || isSelected ? 2.5 : 1.5}
+                  markerEnd={`url(#arrowhead-${isHovered || isSelected ? 'hover' : conn.type})`}
+                  className="connection-line"
+                  opacity={isHovered || isSelected ? 0.9 : 0.5}
                 />
-
-                {/* Data flow particles */}
-                {isAnimated && (
-                  <circle r="4" fill="#10b981" filter="url(#glow)">
-                    <animateMotion
-                      dur="2s"
-                      repeatCount="1"
-                      path={pathD}
-                    />
-                  </circle>
-                )}
               </g>
             );
           })}

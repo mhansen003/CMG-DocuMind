@@ -38,37 +38,86 @@ function Scorecard({ scorecard, loan, documents }) {
     );
   }
 
-  // Define all fields we want to track (rows in the matrix)
+  // Define all fields we want to track (rows in the matrix) - Comprehensive extraction
   const dataFields = [
+    // === IDENTITY ===
     { name: 'employeeName', label: 'Employee Name', byteLOSPath: 'borrower', category: 'Identity' },
+    { name: 'firstName', label: 'First Name', byteLOSPath: 'borrower.firstName', category: 'Identity' },
+    { name: 'lastName', label: 'Last Name', byteLOSPath: 'borrower.lastName', category: 'Identity' },
+    { name: 'ssn', label: 'SSN', byteLOSPath: 'borrower.ssn', category: 'Identity' },
+    { name: 'address', label: 'Address', byteLOSPath: 'borrower.currentAddress.street', category: 'Identity' },
+    { name: 'city', label: 'City', byteLOSPath: 'borrower.currentAddress.city', category: 'Identity' },
+    { name: 'state', label: 'State', byteLOSPath: 'borrower.currentAddress.state', category: 'Identity' },
+    { name: 'zipCode', label: 'ZIP Code', byteLOSPath: 'borrower.currentAddress.zipCode', category: 'Identity' },
+
+    // === EMPLOYMENT ===
     { name: 'employerName', label: 'Employer Name', byteLOSPath: 'borrower.employment.current.employerName', category: 'Employment' },
     { name: 'jobTitle', label: 'Job Title', byteLOSPath: 'borrower.employment.current.jobTitle', category: 'Employment' },
+    { name: 'ein', label: 'Employer EIN', byteLOSPath: null, category: 'Employment' },
+
+    // === INCOME ===
     { name: 'payPeriodStart', label: 'Pay Period Start', byteLOSPath: null, category: 'Income' },
     { name: 'payPeriodEnd', label: 'Pay Period End', byteLOSPath: null, category: 'Income' },
     { name: 'payDate', label: 'Pay Date', byteLOSPath: null, category: 'Income' },
-    { name: 'grossPay', label: 'Gross Pay', byteLOSPath: 'mismo.income', category: 'Income' },
     { name: 'grossPayCurrent', label: 'Gross Pay Current', byteLOSPath: 'mismo.income', category: 'Income' },
+    { name: 'grossPayYTD', label: 'YTD Gross Pay', byteLOSPath: null, category: 'Income' },
     { name: 'netPay', label: 'Net Pay', byteLOSPath: null, category: 'Income' },
-    { name: 'ytdGross', label: 'YTD Gross', byteLOSPath: null, category: 'Income' },
-    { name: 'grossPayYTD', label: 'YTD Gross', byteLOSPath: null, category: 'Income' },
-    { name: 'ytdNet', label: 'YTD Net', byteLOSPath: null, category: 'Income' },
+    { name: 'netPayYTD', label: 'YTD Net Pay', byteLOSPath: null, category: 'Income' },
     { name: 'regularHours', label: 'Regular Hours', byteLOSPath: null, category: 'Income' },
     { name: 'overtimeHours', label: 'Overtime Hours', byteLOSPath: null, category: 'Income' },
-    { name: 'federalTax', label: 'Federal Tax', byteLOSPath: null, category: 'Deductions' },
-    { name: 'stateTax', label: 'State Tax', byteLOSPath: null, category: 'Deductions' },
-    { name: 'socialSecurity', label: 'Social Security', byteLOSPath: null, category: 'Deductions' },
-    { name: 'medicare', label: 'Medicare', byteLOSPath: null, category: 'Deductions' },
+    { name: 'wages', label: 'W2 Wages', byteLOSPath: null, category: 'Income' },
+    { name: 'totalIncome', label: 'Total Income', byteLOSPath: 'borrower.totalIncome', category: 'Income' },
+    { name: 'adjustedGrossIncome', label: 'AGI', byteLOSPath: 'borrower.adjustedGrossIncome', category: 'Income' },
+
+    // === DEDUCTIONS (Paystub) ===
+    { name: 'deductions.federal.federalIncomeTax.current', label: 'Federal Tax Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.federal.federalIncomeTax.ytd', label: 'Federal Tax YTD', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.state.stateIncomeTax.current', label: 'State Tax Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.state.stateIncomeTax.ytd', label: 'State Tax YTD', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.federal.socialSecurity.current', label: 'Social Security Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.federal.socialSecurity.ytd', label: 'Social Security YTD', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.federal.medicare.current', label: 'Medicare Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.federal.medicare.ytd', label: 'Medicare YTD', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.retirement.k401_pretax.current', label: '401k Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.retirement.k401_pretax.ytd', label: '401k YTD', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.insurance.medical.current', label: 'Medical Ins Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.insurance.dental.current', label: 'Dental Ins Current', byteLOSPath: null, category: 'Deductions' },
+    { name: 'deductions.insurance.vision.current', label: 'Vision Ins Current', byteLOSPath: null, category: 'Deductions' },
+
+    // === W2 FIELDS ===
+    { name: 'federalTaxWithheld', label: 'Federal Tax Withheld', byteLOSPath: null, category: 'Tax' },
+    { name: 'socialSecurityWages', label: 'SS Wages', byteLOSPath: null, category: 'Tax' },
+    { name: 'socialSecurityTaxWithheld', label: 'SS Tax Withheld', byteLOSPath: null, category: 'Tax' },
+    { name: 'medicareWages', label: 'Medicare Wages', byteLOSPath: null, category: 'Tax' },
+    { name: 'medicareTaxWithheld', label: 'Medicare Tax Withheld', byteLOSPath: null, category: 'Tax' },
+    { name: 'stateWages', label: 'State Wages', byteLOSPath: null, category: 'Tax' },
+    { name: 'stateIncomeTax', label: 'State Income Tax', byteLOSPath: null, category: 'Tax' },
+
+    // === PROPERTY ===
     { name: 'propertyAddress', label: 'Property Address', byteLOSPath: 'mismo.propertyAddress', category: 'Property' },
     { name: 'propertyCity', label: 'Property City', byteLOSPath: 'mismo.propertyCity', category: 'Property' },
     { name: 'propertyState', label: 'Property State', byteLOSPath: 'mismo.propertyState', category: 'Property' },
     { name: 'propertyZip', label: 'Property ZIP', byteLOSPath: 'mismo.propertyZip', category: 'Property' },
+    { name: 'purchasePrice', label: 'Purchase Price', byteLOSPath: 'transactions.purchasePrice', category: 'Property' },
+    { name: 'appraisedValue', label: 'Appraised Value', byteLOSPath: 'mismo.propertyEstimatedValue', category: 'Property' },
+
+    // === BANKING ===
+    { name: 'institutionName', label: 'Bank Name', byteLOSPath: 'borrower.assets.bankAccounts[0].institutionName', category: 'Banking' },
     { name: 'accountNumber', label: 'Account Number', byteLOSPath: 'borrower.assets.bankAccounts[0].accountNumber', category: 'Banking' },
     { name: 'accountType', label: 'Account Type', byteLOSPath: 'borrower.assets.bankAccounts[0].accountType', category: 'Banking' },
-    { name: 'bankName', label: 'Bank Name', byteLOSPath: 'borrower.assets.bankAccounts[0].bankName', category: 'Banking' },
-    { name: 'institutionName', label: 'Bank Name', byteLOSPath: 'borrower.assets.bankAccounts[0].institutionName', category: 'Banking' },
-    { name: 'balance', label: 'Account Balance', byteLOSPath: 'borrower.assets.bankAccounts[0].balance', category: 'Banking' },
+    { name: 'routingNumber', label: 'Routing Number', byteLOSPath: null, category: 'Banking' },
+    { name: 'beginningBalance', label: 'Beginning Balance', byteLOSPath: null, category: 'Banking' },
     { name: 'endingBalance', label: 'Ending Balance', byteLOSPath: 'borrower.assets.bankAccounts[0].balance', category: 'Banking' },
+    { name: 'totalDeposits', label: 'Total Deposits', byteLOSPath: null, category: 'Banking' },
+    { name: 'totalWithdrawals', label: 'Total Withdrawals', byteLOSPath: null, category: 'Banking' },
     { name: 'accountHolderName', label: 'Account Holder', byteLOSPath: 'borrower.assets.bankAccounts[0].accountHolderName', category: 'Banking' },
+
+    // === CREDIT ===
+    { name: 'borrowerScores.middleScore', label: 'Credit Score', byteLOSPath: 'borrower.creditScore', category: 'Credit' },
+    { name: 'totalAccounts', label: 'Total Accounts', byteLOSPath: null, category: 'Credit' },
+    { name: 'openAccounts', label: 'Open Accounts', byteLOSPath: null, category: 'Credit' },
+    { name: 'totalCreditLimit', label: 'Total Credit Limit', byteLOSPath: null, category: 'Credit' },
+    { name: 'revolvingUtilization', label: 'Credit Utilization', byteLOSPath: null, category: 'Credit' },
   ];
 
   // Get ByteLOS value for a field
@@ -105,10 +154,20 @@ function Scorecard({ scorecard, loan, documents }) {
     return value;
   };
 
-  // Get document value for a field
+  // Get document value for a field - supports nested paths
   const getDocumentValue = (doc, fieldName) => {
     if (!doc.extractedData || !doc.extractedData.data) return null;
-    return doc.extractedData.data[fieldName];
+
+    // Handle nested paths like "deductions.federal.federalIncomeTax.current"
+    const paths = fieldName.split('.');
+    let value = doc.extractedData.data;
+
+    for (const path of paths) {
+      if (value === null || value === undefined) return null;
+      value = value[path];
+    }
+
+    return value;
   };
 
   // Normalize values for comparison
@@ -696,17 +755,18 @@ function Scorecard({ scorecard, loan, documents }) {
                                 }
                               >
                                 <div className="cell-content">
-                                  <div className="cell-icon">
+                                  <div className="cell-value-primary" title={String(cellData.docValue || 'No data')}>
+                                    {cellData.docValue ? (
+                                      String(cellData.docValue).length > 20
+                                        ? String(cellData.docValue).substring(0, 17) + '...'
+                                        : String(cellData.docValue)
+                                    ) : (
+                                      <span className="no-value">—</span>
+                                    )}
+                                  </div>
+                                  <div className="cell-icon-small">
                                     {getCellIcon(cellData.status)}
                                   </div>
-                                  {cellData.docValue && (
-                                    <div className="cell-value" title={String(cellData.docValue)}>
-                                      {String(cellData.docValue).length > 30
-                                        ? String(cellData.docValue).substring(0, 27) + '...'
-                                        : String(cellData.docValue)
-                                      }
-                                    </div>
-                                  )}
                                 </div>
                               </td>
                             );
@@ -742,7 +802,7 @@ function Scorecard({ scorecard, loan, documents }) {
                             {hasAnyMismatch && (
                               <>
                                 <div className="action-buttons">
-                                  {hasMixedStatus && (
+                                  {(hasAnyMismatch || hasMixedStatus) && (
                                     <button
                                       className="action-btn sync-btn"
                                       title="Sync to ByteLOS - Choose which document to use"

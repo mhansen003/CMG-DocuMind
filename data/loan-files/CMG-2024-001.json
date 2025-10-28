@@ -361,16 +361,172 @@
         "extractedAt": "2024-10-27T15:30:00.000Z",
         "confidence": 95,
         "data": {
+          "employee": {
+            "name": "Michael James Thompson",
+            "ssn": "***-**-6789",
+            "address": "456 Oak Street, Apt 2B",
+            "city": "Mission Viejo",
+            "state": "CA",
+            "zipCode": "92691",
+            "employeeId": "EMP-10234"
+          },
           "employeeName": "Michael James Thompson",
+          "employer": {
+            "name": "Tech Solutions Inc",
+            "address": "789 Technology Parkway",
+            "city": "Irvine",
+            "state": "CA",
+            "zipCode": "92614",
+            "ein": "94-2847561"
+          },
           "employerName": "Tech Solutions Inc",
+          "payPeriod": {
+            "start": "2024-10-01",
+            "end": "2024-10-15",
+            "payDate": "2024-10-20",
+            "payFrequency": "Bi-Weekly"
+          },
           "payPeriodStart": "2024-10-01",
           "payPeriodEnd": "2024-10-15",
           "payDate": "2024-10-20",
+          "earnings": {
+            "regular": {
+              "hours": 80.00,
+              "rate": 69.47,
+              "amount": 5557.60,
+              "ytd": 117465.50
+            },
+            "overtime": {
+              "hours": 4.00,
+              "rate": 104.21,
+              "amount": 416.84,
+              "ytd": 8325.60
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 843.45,
+              "description": "Quarterly performance bonus"
+            },
+            "commission": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "other": {
+              "amount": 20.76,
+              "ytd": 0.00,
+              "description": "Referral bonus"
+            }
+          },
           "grossPayCurrent": 5995.20,
           "grossPayYTD": 126634.55,
           "regularHours": 80.00,
           "overtimeHours": 4.00,
-          "netPay": 3338.21
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 1045.20,
+                "ytd": 22087.50
+              },
+              "socialSecurity": {
+                "current": 371.70,
+                "ytd": 7851.34
+              },
+              "medicare": {
+                "current": 86.93,
+                "ytd": 1836.20
+              },
+              "additionalMedicare": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 383.70,
+                "ytd": 8110.00,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 59.95,
+                "ytd": 1266.35,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 359.71,
+                "ytd": 7598.07,
+                "percentage": 6.0,
+                "description": "401(k) Pre-tax"
+              },
+              "rothIRA": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 185.00,
+                "ytd": 3885.00,
+                "plan": "Blue Cross PPO - Family"
+              },
+              "dental": {
+                "current": 28.50,
+                "ytd": 598.50,
+                "plan": "Delta Dental - Family"
+              },
+              "vision": {
+                "current": 12.00,
+                "ytd": 252.00,
+                "plan": "VSP - Family"
+              },
+              "lifeInsurance": {
+                "current": 15.40,
+                "ytd": 323.40,
+                "coverage": "$250,000"
+              },
+              "disabilityInsurance": {
+                "current": 8.90,
+                "ytd": 186.90,
+                "coverage": "LTD 60%"
+              }
+            },
+            "other": {
+              "hsa": {
+                "current": 0.00,
+                "ytd": 0.00,
+                "description": "Health Savings Account"
+              },
+              "fsa": {
+                "current": 0.00,
+                "ytd": 0.00,
+                "description": "Flexible Spending Account"
+              },
+              "parkingTransit": {
+                "current": 100.00,
+                "ytd": 2100.00,
+                "description": "Pre-tax commuter benefit"
+              }
+            },
+            "totalDeductions": {
+              "current": 2656.99,
+              "ytd": 56095.26
+            }
+          },
+          "netPay": 3338.21,
+          "netPayYTD": 70539.29,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Chase Bank",
+            "accountType": "Checking",
+            "accountLast4": "1234",
+            "amount": 3338.21
+          },
+          "taxInfo": {
+            "filingStatus": "Married Filing Jointly",
+            "allowances": 2,
+            "additionalWithholding": 0.00
+          }
         }
       },
       "validationResults": {
@@ -449,27 +605,95 @@
         "confidence": 98,
         "data": {
           "taxYear": "2024",
+          "void": false,
+          "corrected": false,
+          "employee": {
+            "ssn": "123-45-6789",
+            "firstName": "Michael",
+            "middleInitial": "J",
+            "lastName": "Thompson",
+            "suffix": "",
+            "address": "456 Oak Street, Apt 2B",
+            "city": "Mission Viejo",
+            "state": "CA",
+            "zipCode": "92691"
+          },
           "employeeSSN": "123-45-6789",
           "employeeName": "Michael J. Thompson",
           "employeeAddress": "456 Oak Street, Apt 2B, Mission Viejo, CA 92691",
+          "employer": {
+            "ein": "94-2847561",
+            "name": "Tech Solutions Inc",
+            "address": "789 Technology Parkway",
+            "city": "Irvine",
+            "state": "CA",
+            "zipCode": "92614",
+            "controlNumber": "TSI-2024-10234"
+          },
           "employerEIN": "94-2847561",
           "employerName": "Tech Solutions Inc",
           "employerAddress": "789 Technology Parkway, Irvine, CA 92614",
+          "box1_wages": "145850.00",
           "wages": "145850.00",
+          "box2_federalTaxWithheld": "28450.00",
           "federalTaxWithheld": "28450.00",
+          "box3_socialSecurityWages": "145850.00",
           "socialSecurityWages": "145850.00",
+          "box4_socialSecurityTaxWithheld": "9042.70",
           "socialSecurityTaxWithheld": "9042.70",
+          "box5_medicareWages": "145850.00",
           "medicareWages": "145850.00",
+          "box6_medicareTaxWithheld": "2114.83",
           "medicareTaxWithheld": "2114.83",
-          "box12Codes": ["D"],
-          "box12Values": ["8500.00"],
-          "statutoryEmployee": true,
-          "retirementPlan": false,
+          "box7_socialSecurityTips": "0.00",
+          "box8_allocatedTips": "0.00",
+          "box9_": "",
+          "box10_dependentCareBenefits": "0.00",
+          "box11_nonqualifiedPlans": "0.00",
+          "box12": [
+            {
+              "code": "D",
+              "amount": "8500.00",
+              "description": "Elective deferrals to 401(k)"
+            },
+            {
+              "code": "DD",
+              "amount": "14250.00",
+              "description": "Cost of employer-sponsored health coverage"
+            }
+          ],
+          "box12Codes": ["D", "DD"],
+          "box12Values": ["8500.00", "14250.00"],
+          "box13": {
+            "statutoryEmployee": false,
+            "retirementPlan": true,
+            "thirdPartySickPay": false
+          },
+          "statutoryEmployee": false,
+          "retirementPlan": true,
           "thirdPartySickPay": false,
+          "box14": [
+            {
+              "description": "State Disability Insurance",
+              "amount": "1458.50"
+            },
+            {
+              "description": "CA SDI/VPDI",
+              "amount": "1458.50"
+            }
+          ],
+          "box15_state": "CA",
+          "box15_employerStateID": "800-1234567-8",
+          "box16_stateWages": "145850.00",
+          "box17_stateIncomeTax": "8234.50",
+          "box18_localWages": "0.00",
+          "box19_localIncomeTax": "0.00",
+          "box20_localityName": "",
           "state": "CA",
-          "stateID": "1234567-8",
+          "stateID": "800-1234567-8",
           "stateWages": "145850.00",
-          "stateIncomeTax": "8234.50"
+          "stateIncomeTax": "8234.50",
+          "additionalStateInfo": []
         }
       },
       "validationResults": {
@@ -570,68 +794,107 @@
           "institutionName": "Chase Bank",
           "accountHolderName": "Michael J. Thompson",
           "accountNumber": "****1234",
+          "routingNumber": "322271627",
           "accountType": "Chase Total Checking",
           "statementPeriodStart": "2024-09-01",
           "statementPeriodEnd": "2024-09-30",
+          "statementDate": "2024-10-01",
           "beginningBalance": "28450.00",
           "endingBalance": "31285.50",
           "totalDeposits": "18935.50",
           "totalWithdrawals": "16100.00",
           "transactionCount": 20,
+          "deposits": [
+            {"date": "2024-09-03", "type": "Direct Deposit", "description": "TECH SOLUTIONS INC PAYROLL", "amount": "3338.21"},
+            {"date": "2024-09-12", "type": "Mobile Deposit", "description": "Check #1523 - Tax Refund", "amount": "12000.00"},
+            {"date": "2024-09-17", "type": "Direct Deposit", "description": "TECH SOLUTIONS INC PAYROLL", "amount": "3338.21"},
+            {"date": "2024-09-23", "type": "Transfer", "description": "Transfer from Wells Fargo Savings", "amount": "259.08"}
+          ],
+          "withdrawals": [
+            {"date": "2024-09-02", "type": "ACH Debit", "description": "GEICO Insurance", "amount": "245.00"},
+            {"date": "2024-09-04", "type": "Debit Card", "description": "Costco Wholesale", "amount": "285.50"},
+            {"date": "2024-09-05", "type": "Check", "description": "Check #2145", "amount": "1200.00"},
+            {"date": "2024-09-06", "type": "Debit Card", "description": "Shell Gas Station", "amount": "67.50"},
+            {"date": "2024-09-08", "type": "ACH Debit", "description": "Verizon Wireless", "amount": "185.00"},
+            {"date": "2024-09-10", "type": "Debit Card", "description": "Target Store", "amount": "124.75"},
+            {"date": "2024-09-12", "type": "ATM Withdrawal", "description": "Chase ATM - Mission Viejo", "amount": "200.00"},
+            {"date": "2024-09-15", "type": "ACH Debit", "description": "SDG&E Utilities", "amount": "235.00"},
+            {"date": "2024-09-17", "type": "Debit Card", "description": "Ralphs Grocery", "amount": "156.80"},
+            {"date": "2024-09-19", "type": "ACH Debit", "description": "Toyota Financial Auto Loan", "amount": "425.00"},
+            {"date": "2024-09-21", "type": "Debit Card", "description": "Amazon.com", "amount": "89.45"},
+            {"date": "2024-09-22", "type": "ACH Debit", "description": "Chase Credit Card Payment", "amount": "2500.00"},
+            {"date": "2024-09-22", "type": "Fee", "description": "Overdraft Fee", "amount": "35.00"},
+            {"date": "2024-09-25", "type": "Debit Card", "description": "Vons Grocery", "amount": "102.15"},
+            {"date": "2024-09-27", "type": "ACH Debit", "description": "Spectrum Internet", "amount": "89.99"},
+            {"date": "2024-09-28", "type": "Debit Card", "description": "Chevron Gas", "amount": "72.00"},
+            {"date": "2024-09-30", "type": "ACH Debit", "description": "HOA Fees - Future Condo", "amount": "250.00"},
+            {"date": "2024-09-30", "type": "Fee", "description": "Monthly Service Fee", "amount": "12.00"}
+          ],
+          "allTransactions": [
+            {"date": "2024-09-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "28450.00", "balance": "28450.00"},
+            {"date": "2024-09-02", "type": "Withdrawal", "description": "GEICO Insurance", "amount": "-245.00", "balance": "28205.00"},
+            {"date": "2024-09-03", "type": "Deposit", "description": "TECH SOLUTIONS INC PAYROLL", "amount": "3338.21", "balance": "31543.21"},
+            {"date": "2024-09-04", "type": "Withdrawal", "description": "Costco Wholesale", "amount": "-285.50", "balance": "31257.71"},
+            {"date": "2024-09-05", "type": "Withdrawal", "description": "Check #2145", "amount": "-1200.00", "balance": "30057.71"},
+            {"date": "2024-09-06", "type": "Withdrawal", "description": "Shell Gas Station", "amount": "-67.50", "balance": "29990.21"},
+            {"date": "2024-09-08", "type": "Withdrawal", "description": "Verizon Wireless", "amount": "-185.00", "balance": "29805.21"},
+            {"date": "2024-09-10", "type": "Withdrawal", "description": "Target Store", "amount": "-124.75", "balance": "29680.46"},
+            {"date": "2024-09-12", "type": "Deposit", "description": "Check #1523 - Tax Refund", "amount": "12000.00", "balance": "41680.46"},
+            {"date": "2024-09-12", "type": "Withdrawal", "description": "Chase ATM", "amount": "-200.00", "balance": "41480.46"},
+            {"date": "2024-09-15", "type": "Withdrawal", "description": "SDG&E Utilities", "amount": "-235.00", "balance": "41245.46"},
+            {"date": "2024-09-17", "type": "Deposit", "description": "TECH SOLUTIONS INC PAYROLL", "amount": "3338.21", "balance": "44583.67"},
+            {"date": "2024-09-17", "type": "Withdrawal", "description": "Ralphs Grocery", "amount": "-156.80", "balance": "44426.87"},
+            {"date": "2024-09-19", "type": "Withdrawal", "description": "Toyota Financial", "amount": "-425.00", "balance": "44001.87"},
+            {"date": "2024-09-21", "type": "Withdrawal", "description": "Amazon.com", "amount": "-89.45", "balance": "43912.42"},
+            {"date": "2024-09-22", "type": "Withdrawal", "description": "Chase Credit Card", "amount": "-2500.00", "balance": "41412.42"},
+            {"date": "2024-09-22", "type": "Fee", "description": "Overdraft Fee", "amount": "-35.00", "balance": "41377.42"},
+            {"date": "2024-09-23", "type": "Deposit", "description": "Transfer from Savings", "amount": "259.08", "balance": "41636.50"},
+            {"date": "2024-09-25", "type": "Withdrawal", "description": "Vons Grocery", "amount": "-102.15", "balance": "41534.35"},
+            {"date": "2024-09-27", "type": "Withdrawal", "description": "Spectrum Internet", "amount": "-89.99", "balance": "41444.36"},
+            {"date": "2024-09-28", "type": "Withdrawal", "description": "Chevron Gas", "amount": "-72.00", "balance": "41372.36"},
+            {"date": "2024-09-30", "type": "Deposit", "description": "TECH SOLUTIONS INC BONUS", "amount": "29500.00", "balance": "70872.36"},
+            {"date": "2024-09-30", "type": "Withdrawal", "description": "HOA Fees", "amount": "-250.00", "balance": "70622.36"},
+            {"date": "2024-09-30", "type": "Fee", "description": "Monthly Service Fee", "amount": "-12.00", "balance": "70610.36"}
+          ],
           "largeDeposits": [
-            {
-              "date": "2024-09-12",
-              "description": "Mobile Deposit - Check #1523",
-              "amount": "12000.00"
-            },
-            {
-              "date": "2024-09-30",
-              "description": "Direct Deposit - TECH SOLUTIONS INC (Bonus)",
-              "amount": "29500.00"
-            }
+            {"date": "2024-09-12", "description": "Check #1523 - Tax Refund", "amount": "12000.00"},
+            {"date": "2024-09-30", "description": "TECH SOLUTIONS INC (Bonus)", "amount": "29500.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-09-05", "description": "Check #2145", "amount": "1200.00"},
+            {"date": "2024-09-22", "description": "Chase Credit Card Payment", "amount": "2500.00"}
           ],
           "nsfFees": [
-            {
-              "date": "2024-09-22",
-              "description": "Overdraft Fee",
-              "amount": "35.00"
-            }
+            {"date": "2024-09-22", "description": "Overdraft Fee", "amount": "35.00"}
           ],
-          "negativeBalanceEvents": [
-            {
-              "date": "2024-09-22",
-              "balance": "-125.00",
-              "description": "After ACH Debit - Chase Credit Card Payment"
-            },
-            {
-              "date": "2024-09-22",
-              "balance": "-160.00",
-              "description": "After Overdraft Fee"
-            },
-            {
-              "date": "2024-09-25",
-              "balance": "-57.15",
-              "description": "After Debit Card - Vons Grocery"
-            }
+          "negativeBalanceEvents": [],
+          "otherFees": [
+            {"date": "2024-09-30", "description": "Monthly Service Fee", "amount": "12.00"}
           ],
+          "interestEarned": "0.00",
           "averageBalance": "25847.32",
+          "minimumBalance": "28205.00",
+          "maximumBalance": "70872.36",
           "directDeposits": [
-            {
-              "date": "2024-09-03",
-              "employer": "TECH SOLUTIONS INC",
-              "amount": "3338.21"
-            },
-            {
-              "date": "2024-09-17",
-              "employer": "TECH SOLUTIONS INC",
-              "amount": "3338.21"
-            },
-            {
-              "date": "2024-09-30",
-              "employer": "TECH SOLUTIONS INC (Bonus)",
-              "amount": "29500.00"
-            }
-          ]
+            {"date": "2024-09-03", "employer": "TECH SOLUTIONS INC", "amount": "3338.21"},
+            {"date": "2024-09-17", "employer": "TECH SOLUTIONS INC", "amount": "3338.21"},
+            {"date": "2024-09-30", "employer": "TECH SOLUTIONS INC (Bonus)", "amount": "29500.00"}
+          ],
+          "depositSummary": {
+            "directDeposits": "36176.42",
+            "checkDeposits": "12000.00",
+            "transfers": "259.08",
+            "totalDeposits": "48435.50"
+          },
+          "withdrawalSummary": {
+            "achDebits": "3929.99",
+            "debitCard": "898.15",
+            "checks": "1200.00",
+            "atmWithdrawals": "200.00",
+            "fees": "47.00",
+            "other": "250.00",
+            "totalWithdrawals": "16100.00"
+          }
         }
       },
       "validationResults": {
