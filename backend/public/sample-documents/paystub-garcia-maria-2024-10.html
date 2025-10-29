@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Maria Garcia - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #8b0000; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; font-size: 14px; background: #e8e8e8; padding: 8px; border-left: 4px solid #8b0000; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #8b0000; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #8b0000; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">LAUSD - Lincoln High School</div>
+            <div>3501 North Broadway, Los Angeles, CA 90031</div>
+            <div>EIN: 95-6001234</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name:</span> Maria Isabel Garcia</div>
+                <div class="info-item"><span class="label">Employee ID:</span> T-78945</div>
+                <div class="info-item"><span class="label">SSN:</span> ***-**-9012</div>
+                <div class="info-item"><span class="label">Pay Date:</span> October 26, 2024</div>
+                <div class="info-item"><span class="label">Pay Period:</span> Oct 1 - Oct 15, 2024</div>
+                <div class="info-item"><span class="label">Pay Frequency:</span> Bi-Weekly</div>
+                <div class="info-item"><span class="label">Position:</span> High School Teacher</div>
+                <div class="info-item"><span class="label">Department:</span> English Department</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Hours/Details</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Teacher Salary</td>
+                    <td>Salary</td>
+                    <td>$2,884.62</td>
+                    <td>$60,577.02</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">GROSS PAY</td>
+                    <td>$2,884.62</td>
+                    <td>$60,577.02</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Federal Income Tax</td>
+                    <td>$285.00</td>
+                    <td>$5,985.00</td>
+                </tr>
+                <tr>
+                    <td>Social Security</td>
+                    <td>$178.85</td>
+                    <td>$3,755.77</td>
+                </tr>
+                <tr>
+                    <td>Medicare</td>
+                    <td>$41.83</td>
+                    <td>$878.37</td>
+                </tr>
+                <tr>
+                    <td>CA State Tax</td>
+                    <td>$125.00</td>
+                    <td>$2,625.00</td>
+                </tr>
+                <tr>
+                    <td>CA SDI</td>
+                    <td>$28.85</td>
+                    <td>$605.77</td>
+                </tr>
+                <tr>
+                    <td>CalSTRS Pension (10.25%)</td>
+                    <td>$295.67</td>
+                    <td>$6,209.15</td>
+                </tr>
+                <tr>
+                    <td>Medical Insurance - Family</td>
+                    <td>$185.00</td>
+                    <td>$3,885.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Insurance - Family</td>
+                    <td>$28.00</td>
+                    <td>$588.00</td>
+                </tr>
+                <tr>
+                    <td>Vision Insurance - Family</td>
+                    <td>$12.00</td>
+                    <td>$252.00</td>
+                </tr>
+                <tr>
+                    <td>Life Insurance</td>
+                    <td>$8.50</td>
+                    <td>$178.50</td>
+                </tr>
+                <tr>
+                    <td>CTA/NEA Dues</td>
+                    <td>$55.00</td>
+                    <td>$1,155.00</td>
+                </tr>
+                <tr>
+                    <td>403(b) Retirement</td>
+                    <td>$144.23</td>
+                    <td>$3,028.85</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL DEDUCTIONS</td>
+                    <td>$1,387.93</td>
+                    <td>$29,146.41</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="net-pay">
+            NET PAY: $1,496.69 | YTD NET PAY: $31,430.61
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT METHOD</div>
+            <div class="info-item">Direct Deposit to Wells Fargo Checking ****4567: $1,496.69</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">LEAVE BALANCES</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Sick Days Remaining:</span> 8.5</div>
+                <div class="info-item"><span class="label">Personal Days:</span> 2.0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">NOTES</div>
+            <div class="info-item">School Year: 2024-2025 | Contract Days: 180 | Step: 5 | Column: B+30</div>
+        </div>
+    </div>
+</body>
+</html>

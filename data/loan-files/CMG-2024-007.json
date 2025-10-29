@@ -1,0 +1,865 @@
+{
+  "loanId": "CMG-2024-007",
+  "loanNumber": "100234573",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 378000,
+    "propertyEstimatedValue": 420000,
+    "downPaymentAmount": 42000,
+    "ltvRatio": 90.00,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Sacramento",
+    "city": "Sacramento",
+    "zipCode": "95864",
+    "propertyAddress": "7820 Fair Oaks Boulevard",
+    "propertyCity": "Sacramento",
+    "propertyState": "CA",
+    "propertyZip": "95864",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 7.375,
+    "monthlyPayment": 2609.27,
+    "income": 3958.33,
+    "closingDate": "2025-02-01",
+    "applicationDate": "2024-11-12"
+  },
+  "borrower": {
+    "firstName": "David",
+    "middleName": "Andrew",
+    "lastName": "Johnson",
+    "fullName": "David Andrew Johnson",
+    "suffix": "",
+    "ssn": "567-89-0123",
+    "dateOfBirth": "1980-04-28",
+    "maritalStatus": "Single",
+    "spouse": null,
+    "dependents": 0,
+    "citizenship": "USCitizen",
+    "email": "david.johnson.contractor@email.com",
+    "phone": "916-555-0234",
+    "totalIncome": 95000,
+    "adjustedGrossIncome": 82500,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "4521 Arden Way",
+      "unit": "Apt 204",
+      "city": "Sacramento",
+      "state": "CA",
+      "zipCode": "95864",
+      "monthsAtAddress": 28,
+      "residencyType": "Rent",
+      "monthlyRent": 1650
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Johnson Construction Services LLC",
+        "jobTitle": "Owner/General Contractor",
+        "position": "Self-Employed Contractor",
+        "employmentType": "1099",
+        "startDate": "2018-06-01",
+        "monthsEmployed": 77,
+        "baseIncome": 95000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 95000,
+        "employerPhone": "916-555-0234",
+        "address": {
+          "street": "4521 Arden Way, Apt 204",
+          "city": "Sacramento",
+          "state": "CA",
+          "zipCode": "95864"
+        },
+        "phone": "916-555-0234",
+        "supervisorName": "Self",
+        "businessStructure": "LLC",
+        "ein": "94-3456789"
+      },
+      "previous": {
+        "employerName": "Delta Construction Inc",
+        "position": "Construction Foreman",
+        "employmentType": "W2",
+        "startDate": "2014-03-01",
+        "endDate": "2018-05-31",
+        "monthsEmployed": 51,
+        "income": 72000
+      }
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "US Bank",
+          "bankName": "US Bank",
+          "accountNumber": "****3456",
+          "currentBalance": 28000,
+          "balance": 28450.00,
+          "accountType": "Business Checking",
+          "accountHolderName": "Johnson Construction Services LLC"
+        },
+        {
+          "institutionName": "US Bank",
+          "bankName": "US Bank",
+          "accountNumber": "****7890",
+          "currentBalance": 22000,
+          "balance": 22000,
+          "accountType": "Personal Checking"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "US Bank",
+          "accountNumber": "****3456",
+          "balance": 28000,
+          "accountType": "Business Checking"
+        },
+        {
+          "institutionName": "US Bank",
+          "accountNumber": "****7890",
+          "balance": 22000,
+          "accountType": "Personal Checking"
+        }
+      ],
+      "savingsAccounts": [],
+      "retirementAccounts": [
+        {
+          "institutionName": "Solo 401k - Fidelity",
+          "accountNumber": "****4567",
+          "balance": 68000,
+          "accountType": "Solo 401k"
+        }
+      ],
+      "totalAssets": 118000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Chase Ink Business Card",
+          "accountNumber": "****6789",
+          "balance": 8500,
+          "monthlyPayment": 425,
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "Capital One Personal Card",
+          "accountNumber": "****9012",
+          "balance": 2800,
+          "monthlyPayment": 140,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Ford Credit - Work Truck",
+          "accountNumber": "****2345",
+          "balance": 32000,
+          "monthlyPayment": 625,
+          "monthsRemaining": 51,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [
+        {
+          "creditorName": "Tool Equipment Loan - Snap-on",
+          "accountNumber": "****6789",
+          "balance": 8500,
+          "monthlyPayment": 285,
+          "monthsRemaining": 30,
+          "toBePaidOff": false
+        }
+      ],
+      "totalMonthlyDebtPayments": 1475
+    },
+    "creditScore": 692,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": true,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": null,
+  "transactions": {
+    "purchasePrice": 420000,
+    "downPayment": 42000,
+    "loanAmount": 378000,
+    "estimatedClosingCosts": 10500,
+    "prepaids": 3800,
+    "sellerCredits": 2000,
+    "cashToClose": 54300,
+    "totalAssetVerificationRequired": 54300
+  },
+  "ratios": {
+    "housingExpense": 2609.27,
+    "totalDebtExpense": 4084.27,
+    "grossMonthlyIncome": 7916.67,
+    "housingRatio": 32.96,
+    "debtToIncomeRatio": 51.59,
+    "combinedLTV": 90.00
+  },
+  "propertyDetails": {
+    "address": "7820 Fair Oaks Boulevard",
+    "city": "Sacramento",
+    "state": "CA",
+    "zipCode": "95864",
+    "county": "Sacramento",
+    "apn": "789-012-34-00",
+    "yearBuilt": 1978,
+    "squareFeet": 1650,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 2,
+    "lotSize": 6800,
+    "propertyType": "Single Family Residence",
+    "style": "Traditional Ranch",
+    "constructionType": "Wood Frame/Siding",
+    "roofType": "Composition Shingle",
+    "zoningCode": "R-1",
+    "hoaFees": 0,
+    "taxYear": 2024,
+    "annualPropertyTax": 4620
+  },
+  "loanOfficer": {
+    "name": "Patricia Anderson",
+    "nmls": "456789",
+    "email": "patricia.anderson@cmg.com",
+    "phone": "916-555-7300",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-11-18",
+    "lastUpdated": "2024-11-25",
+    "assignedUnderwriter": "Michael Chen",
+    "assignedProcessor": "Amanda Rodriguez"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License",
+      "Bank Statement - Business Checking (2 months)",
+      "Bank Statement - Personal Checking (2 months)",
+      "Tax Returns - Personal (2 years)",
+      "Tax Returns - Business (2 years)",
+      "Schedule C - Profit/Loss (2 years)",
+      "1099 Forms (all sources, 2 years)",
+      "Business License",
+      "Profit & Loss Statement (YTD)",
+      "Balance Sheet (current)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "Appraisal",
+      "CPA Letter verifying business income",
+      "Business Bank Statements (12 months)",
+      "Explanation of Income Variability",
+      "Verification of Business Ownership"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-tax-007-1",
+      "loanId": "CMG-2024-007",
+      "documentType": "tax_return",
+      "fileName": "tax-return-johnson-2023-1040.pdf",
+      "filePath": "/sample-documents/tax-return-johnson-2023-1040.pdf",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/tax-return-johnson-2023-1040.pdf",
+      "uploadDate": "2024-11-25T10:30:00.000Z",
+      "extractedData": {
+        "documentType": "tax_return",
+        "extractedAt": "2024-11-25T10:30:00.000Z",
+        "confidence": 93,
+        "data": {
+          "taxYear": 2023,
+          "filingStatus": "Single",
+          "taxpayerName": "David Andrew Johnson",
+          "ssn": "***-**-0123",
+          "address": "4521 Arden Way, Apt 204, Sacramento, CA 95864",
+          "wages": "0.00",
+          "businessIncome": "138750.00",
+          "businessExpenses": "52850.00",
+          "netBusinessIncome": "85900.00",
+          "interestIncome": "245.00",
+          "dividendIncome": "0.00",
+          "capitalGains": "0.00",
+          "totalIncome": "86145.00",
+          "adjustedGrossIncome": "79645.00",
+          "standardDeduction": "13850.00",
+          "taxableIncome": "65795.00",
+          "totalTax": "11285.00",
+          "federalTaxWithheld": "0.00",
+          "estimatedTaxPayments": "18500.00",
+          "refundAmount": "7215.00",
+          "selfEmploymentTax": "12145.00",
+          "selfEmploymentDeduction": "6500.00",
+          "scheduleC": {
+            "businessName": "Johnson Construction Services LLC",
+            "ein": "94-3456789",
+            "businessCode": "236220",
+            "businessDescription": "General Contractor - Residential Construction",
+            "accountingMethod": "Cash",
+            "grossReceipts": "138750.00",
+            "returnsAndAllowances": "0.00",
+            "costOfGoodsSold": "0.00",
+            "grossIncome": "138750.00",
+            "expenses": {
+              "advertising": "1850.00",
+              "carAndTruck": "8450.00",
+              "insurance": "3200.00",
+              "legal": "850.00",
+              "supplies": "18500.00",
+              "tools": "4850.00",
+              "utilities": "1450.00",
+              "wages": "0.00",
+              "other": "13700.00",
+              "totalExpenses": "52850.00"
+            },
+            "netProfit": "85900.00"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "tax_return",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "selfEmployedIncomeVariability",
+            "severity": "critical",
+            "field": "netBusinessIncome",
+            "message": "2023 net business income of $85,900 differs from stated annual income of $95,000 by 10.6%. Self-employed income requires 2-year averaging. Must verify 2022 income and calculate average to establish qualifying income."
+          },
+          {
+            "rule": "highBusinessExpenseRatio",
+            "severity": "critical",
+            "field": "businessExpenses",
+            "message": "Business expenses of $52,850 represent 38.1% of gross receipts ($138,750). High expense ratio typical for construction but requires verification that expenses are ordinary, necessary, and non-recurring."
+          },
+          {
+            "rule": "dtiExceedsThreshold",
+            "severity": "critical",
+            "field": "debtToIncomeRatio",
+            "message": "DTI of 51.59% significantly exceeds conventional loan maximum of 43-50%. Income may need to be re-calculated or debts paid down. Manual underwriting may be required."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "noW2Income",
+            "severity": "warning",
+            "field": "wages",
+            "message": "No W2 wages reported - 100% self-employed income. This requires more stringent documentation and income stability verification over 2+ years."
+          },
+          {
+            "rule": "selfEmploymentTaxBurden",
+            "severity": "warning",
+            "field": "selfEmploymentTax",
+            "message": "Self-employment tax of $12,145 represents 14.1% of net profit. This is normal but reduces available income. SE tax deduction of $6,500 partially offsets this."
+          },
+          {
+            "rule": "cashBasisAccounting",
+            "severity": "warning",
+            "field": "accountingMethod",
+            "message": "Business uses cash basis accounting. This can create income volatility based on payment timing. Verify consistent income pattern across multiple years."
+          },
+          {
+            "rule": "vehicleExpenseConcern",
+            "severity": "warning",
+            "field": "carAndTruck",
+            "message": "Car and truck expenses of $8,450 claimed. Verify business use percentage if vehicle is also used personally. May need to add back personal use portion to income."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "taxpayerName": {
+            "isValid": true,
+            "message": "Taxpayer name 'David Andrew Johnson' matches borrower name on loan application. Identity verification passed.",
+            "rule": "nameMatch"
+          },
+          "ssn": {
+            "isValid": true,
+            "message": "SSN on tax return (***-**-0123) matches loan application SSN. Identity verification successful.",
+            "rule": "ssnMatch"
+          },
+          "taxYear": {
+            "isValid": true,
+            "message": "Tax return is from 2023, which is the most recent complete tax year. Document is current and acceptable.",
+            "rule": "taxYearCurrent"
+          },
+          "netBusinessIncome": {
+            "isValid": false,
+            "message": "2023 net business income of $85,900 is 10.6% below stated annual income of $95,000. Self-employed income must be averaged over 2 years minimum. 2022 tax return required.",
+            "rule": "incomeConsistency",
+            "expectedValue": "Income within 10% of stated income or 2-year average provided"
+          },
+          "adjustedGrossIncome": {
+            "isValid": true,
+            "message": "AGI of $79,645 reflects net business income ($85,900) minus self-employment tax deduction ($6,500) plus interest income ($245). Calculation is correct.",
+            "rule": "agiCalculation"
+          },
+          "selfEmploymentTax": {
+            "isValid": true,
+            "message": "Self-employment tax of $12,145 correctly calculated at ~15.3% of net profit (with income cap considerations). This is normal for self-employed individuals.",
+            "rule": "selfEmploymentTaxCalculation"
+          },
+          "scheduleC": {
+            "isValid": true,
+            "message": "Schedule C shows legitimate construction business expenses. Total expenses of $52,850 on gross receipts of $138,750 yields 38.1% expense ratio, which is reasonable for construction contractor.",
+            "rule": "scheduleCValidation"
+          },
+          "businessOwnership": {
+            "isValid": true,
+            "message": "Schedule C confirms ownership of Johnson Construction Services LLC (EIN 94-3456789) which matches loan application employment information.",
+            "rule": "businessOwnershipVerification"
+          }
+        }
+      },
+      "conditions": [
+        "Provide 2022 Federal Tax Return (Form 1040 with all schedules) to establish 2-year income average",
+        "Provide 2022 Schedule C showing prior year business income and expenses",
+        "Provide YTD Profit & Loss statement for 2024 showing current year income trends",
+        "Provide business bank statements for past 12 months to verify income deposits",
+        "Provide CPA letter verifying business income and confirming income calculation methodology",
+        "Address DTI concern: Consider paying down debts or provide explanation of compensating factors",
+        "Provide business license and proof of liability insurance",
+        "Provide letter of explanation for income variability between years if 2-year average differs significantly"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-bank-007-1",
+      "loanId": "CMG-2024-007",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-johnson-business-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-johnson-business-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-johnson-business-2024-10.html",
+      "uploadDate": "2024-11-25T11:30:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-25T11:30:00.000Z",
+        "confidence": 91,
+        "data": {
+          "institutionName": "US Bank",
+          "accountHolderName": "Johnson Construction Services LLC",
+          "accountNumber": "****3456",
+          "routingNumber": "121000248",
+          "accountType": "Business Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "24850.75",
+          "endingBalance": "28450.00",
+          "totalDeposits": "18750.00",
+          "totalWithdrawals": "15150.75",
+          "transactionCount": 45,
+          "deposits": [
+            {"date": "2024-10-03", "type": "Mobile Deposit", "description": "Check #1245 - Martinez Remodel Project", "amount": "8500.00"},
+            {"date": "2024-10-15", "type": "ACH Deposit", "description": "Zelle from Chen Kitchen Renovation", "amount": "6250.00"},
+            {"date": "2024-10-28", "type": "Mobile Deposit", "description": "Check #8765 - Wilson Bathroom Project", "amount": "4000.00"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-02", "type": "Check", "description": "Check #2156 - Lumber supply", "amount": "2850.00"},
+            {"date": "2024-10-04", "type": "Debit Card", "description": "Home Depot", "amount": "685.50"},
+            {"date": "2024-10-05", "type": "ACH Debit", "description": "Owner Draw to Personal Account", "amount": "3500.00"},
+            {"date": "2024-10-08", "type": "Debit Card", "description": "Chevron Gas", "amount": "125.00"},
+            {"date": "2024-10-10", "type": "Check", "description": "Check #2157 - Subcontractor payment", "amount": "1800.00"},
+            {"date": "2024-10-12", "type": "ACH Debit", "description": "Business Insurance Premium", "amount": "285.00"},
+            {"date": "2024-10-15", "type": "Debit Card", "description": "Home Depot", "amount": "425.80"},
+            {"date": "2024-10-18", "type": "ACH Debit", "description": "Ford Credit - Work Truck", "amount": "625.00"},
+            {"date": "2024-10-20", "type": "ACH Debit", "description": "Owner Draw to Personal Account", "amount": "3500.00"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Lowes", "amount": "385.45"},
+            {"date": "2024-10-25", "type": "Check", "description": "Check #2158 - Electrical subcontractor", "amount": "950.00"},
+            {"date": "2024-10-28", "type": "Debit Card", "description": "Shell Gas", "amount": "95.00"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "24850.75", "balance": "24850.75"},
+            {"date": "2024-10-02", "type": "Withdrawal", "description": "Lumber supply", "amount": "-2850.00", "balance": "22000.75"},
+            {"date": "2024-10-03", "type": "Deposit", "description": "Martinez Project", "amount": "8500.00", "balance": "30500.75"},
+            {"date": "2024-10-04", "type": "Withdrawal", "description": "Home Depot", "amount": "-685.50", "balance": "29815.25"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "Owner Draw", "amount": "-3500.00", "balance": "26315.25"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Chevron Gas", "amount": "-125.00", "balance": "26190.25"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Subcontractor", "amount": "-1800.00", "balance": "24390.25"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "Insurance", "amount": "-285.00", "balance": "24105.25"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Chen Kitchen", "amount": "6250.00", "balance": "30355.25"},
+            {"date": "2024-10-15", "type": "Withdrawal", "description": "Home Depot", "amount": "-425.80", "balance": "29929.45"},
+            {"date": "2024-10-18", "type": "Withdrawal", "description": "Ford Work Truck", "amount": "-625.00", "balance": "29304.45"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "Owner Draw", "amount": "-3500.00", "balance": "25804.45"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Lowes", "amount": "-385.45", "balance": "25419.00"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "Electrical sub", "amount": "-950.00", "balance": "24469.00"},
+            {"date": "2024-10-28", "type": "Deposit", "description": "Wilson Bathroom", "amount": "4000.00", "balance": "28469.00"},
+            {"date": "2024-10-28", "type": "Withdrawal", "description": "Shell Gas", "amount": "-95.00", "balance": "28374.00"},
+            {"date": "2024-10-31", "type": "Interest", "description": "Monthly Interest", "amount": "76.00", "balance": "28450.00"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-03", "description": "Check - Martinez Remodel Project", "amount": "8500.00"},
+            {"date": "2024-10-15", "description": "Zelle - Chen Kitchen Renovation", "amount": "6250.00"},
+            {"date": "2024-10-28", "description": "Check - Wilson Bathroom Project", "amount": "4000.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-05", "description": "Owner Draw to Personal", "amount": "3500.00"},
+            {"date": "2024-10-20", "description": "Owner Draw to Personal", "amount": "3500.00"},
+            {"date": "2024-10-02", "description": "Lumber supply", "amount": "2850.00"}
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "otherFees": [],
+          "interestEarned": "76.00",
+          "averageBalance": "26850.50",
+          "minimumBalance": "22000.75",
+          "maximumBalance": "30500.75",
+          "directDeposits": [],
+          "depositSummary": {
+            "directDeposits": "0.00",
+            "checkDeposits": "12500.00",
+            "transfers": "6250.00",
+            "other": "0.00",
+            "totalDeposits": "18750.00"
+          },
+          "withdrawalSummary": {
+            "achDebits": "7910.00",
+            "debitCard": "1716.75",
+            "checks": "5600.00",
+            "atmWithdrawals": "0.00",
+            "fees": "0.00",
+            "other": "0.00",
+            "totalWithdrawals": "15226.75"
+          },
+          "ownerDraws": [
+            {"date": "2024-10-05", "amount": "3500.00"},
+            {"date": "2024-10-20", "amount": "3500.00"}
+          ],
+          "businessExpenses": {
+            "supplies": "1496.75",
+            "subcontractors": "2750.00",
+            "vehicle": "845.00",
+            "insurance": "285.00",
+            "other": "0.00"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "selfEmployedIncomeVerification",
+            "severity": "critical",
+            "field": "deposits",
+            "message": "Business account shows only $18,750 in deposits for October. This represents approximately $225,000 annualized, significantly higher than reported 2023 income of $138,750. Income variability requires 12-month bank statement review."
+          },
+          {
+            "rule": "irregularDepositPattern",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "All deposits are project-based payments showing irregular income pattern typical of construction. Requires averaging income over longer period (12-24 months) to establish stable qualifying income."
+          },
+          {
+            "rule": "ownerDrawsConcern",
+            "severity": "critical",
+            "field": "ownerDraws",
+            "message": "Owner draws totaling $7,000 in October ($3,500 × 2) represent approximately $84,000 annualized. This is 11.6% below stated income of $95,000. Verify actual take-home vs. reported income."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "businessExpenseScrutiny",
+            "severity": "warning",
+            "field": "businessExpenses",
+            "message": "Material purchases (Home Depot, Lowes, Lumber) total $4,046.75. These are legitimate business expenses but reduce net income. Verify these are not reimbursable project costs that inflate gross income."
+          },
+          {
+            "rule": "mixedPersonalBusiness",
+            "severity": "warning",
+            "field": "withdrawals",
+            "message": "Work truck payment ($625) paid from business account suggests vehicle is business asset. Gas purchases also present. Verify business use percentage if claiming vehicle expenses on taxes."
+          },
+          {
+            "rule": "cashFlowTiming",
+            "severity": "warning",
+            "field": "transactionPattern",
+            "message": "Large deposits followed by immediate material purchases and subcontractor payments show project-based cash flow. Account balance fluctuates significantly ($22k-$30k range). This is normal for contractors but creates income verification challenges."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder name 'Johnson Construction Services LLC' matches business name on loan application and Schedule C. Business account ownership verified.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'US Bank' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****3456 matches business checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (25 days old as of 11/25/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $24,850.75 indicates reasonable business reserves at start of period.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $28,450.00 matches asset verification amount reported on loan application ($28,000 rounded). Balance verification successful.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": false,
+            "message": "Total deposits of $18,750 in single month suggest income higher than tax returns indicate. Requires 12-month review to establish accurate income average.",
+            "rule": "depositPatternAnalysis",
+            "expectedValue": "Consistent with reported annual income of $95,000-$138,750"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $15,150.75 represent normal business operating expenses including materials, subcontractors, vehicle, insurance, and owner draws.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "ownerDraws": {
+            "isValid": false,
+            "message": "Owner draws of $7,000 monthly ($84,000 annualized) are below stated income of $95,000. Need to reconcile actual take-home income vs. business net profit for qualification purposes.",
+            "rule": "ownerDrawAnalysis",
+            "expectedValue": "Owner draws consistent with stated income"
+          },
+          "nsfFees": {
+            "isValid": true,
+            "message": "No NSF or overdraft fees during statement period. Good business funds management demonstrated.",
+            "rule": "feeAnalysis"
+          },
+          "averageBalance": {
+            "isValid": true,
+            "message": "Average balance of $26,850.50 indicates reasonable business liquidity for contractor operations. Balance stays positive throughout period.",
+            "rule": "averageBalanceAnalysis"
+          }
+        }
+      },
+      "conditions": [
+        "Provide business bank statements for past 12 months (October 2023 - October 2024) to establish income average",
+        "Provide personal bank statements showing owner draw deposits to verify personal income received",
+        "Provide 2024 YTD Profit & Loss statement prepared by CPA showing current year performance",
+        "Provide explanation of income calculation methodology: reconcile business deposits vs. Schedule C income vs. owner draws",
+        "Provide 2022 tax return with Schedule C to establish 2-year income trend",
+        "Verify all large deposits and confirm they represent earned income (not loans or transfers)",
+        "Provide current contracts/work in progress to demonstrate income continuity",
+        "Address high DTI of 51.59% - consider paying down credit cards or equipment loan to improve ratio"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-bank-007-2",
+      "loanId": "CMG-2024-007",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-johnson-personal-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-johnson-personal-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-johnson-personal-2024-10.html",
+      "uploadDate": "2024-11-25T12:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-25T12:00:00.000Z",
+        "confidence": 94,
+        "data": {
+          "institutionName": "US Bank",
+          "accountHolderName": "David A. Johnson",
+          "accountNumber": "****7890",
+          "routingNumber": "121000248",
+          "accountType": "Personal Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "19850.25",
+          "endingBalance": "22000.00",
+          "totalDeposits": "7850.00",
+          "totalWithdrawals": "5700.25",
+          "transactionCount": 28,
+          "deposits": [
+            {"date": "2024-10-05", "type": "Transfer", "description": "Transfer from Business Account", "amount": "3500.00"},
+            {"date": "2024-10-20", "type": "Transfer", "description": "Transfer from Business Account", "amount": "3500.00"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Side Job Cash Deposit", "amount": "850.00"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-01", "type": "ACH Debit", "description": "Rent Payment - Arden Way Apts", "amount": "1650.00"},
+            {"date": "2024-10-03", "type": "ACH Debit", "description": "Chase Ink Business Card", "amount": "425.00"},
+            {"date": "2024-10-05", "type": "ACH Debit", "description": "Capital One Card", "amount": "140.00"},
+            {"date": "2024-10-08", "type": "Debit Card", "description": "Safeway", "amount": "125.80"},
+            {"date": "2024-10-12", "type": "ACH Debit", "description": "Snap-on Equipment Loan", "amount": "285.00"},
+            {"date": "2024-10-15", "type": "ACH Debit", "description": "SMUD Electric", "amount": "145.00"},
+            {"date": "2024-10-18", "type": "Debit Card", "description": "Chevron Gas", "amount": "75.00"},
+            {"date": "2024-10-20", "type": "ACH Debit", "description": "AT&T Wireless", "amount": "95.00"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Safeway", "amount": "98.45"},
+            {"date": "2024-10-25", "type": "Debit Card", "description": "Buffalo Wild Wings", "amount": "52.00"},
+            {"date": "2024-10-28", "type": "ATM Withdrawal", "description": "US Bank ATM", "amount": "200.00"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "19850.25", "balance": "19850.25"},
+            {"date": "2024-10-01", "type": "Withdrawal", "description": "Rent", "amount": "-1650.00", "balance": "18200.25"},
+            {"date": "2024-10-03", "type": "Withdrawal", "description": "Chase Ink Card", "amount": "-425.00", "balance": "17775.25"},
+            {"date": "2024-10-05", "type": "Deposit", "description": "Business Transfer", "amount": "3500.00", "balance": "21275.25"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "Capital One", "amount": "-140.00", "balance": "21135.25"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Safeway", "amount": "-125.80", "balance": "21009.45"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "Snap-on Loan", "amount": "-285.00", "balance": "20724.45"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Side Job Cash", "amount": "850.00", "balance": "21574.45"},
+            {"date": "2024-10-15", "type": "Withdrawal", "description": "SMUD Electric", "amount": "-145.00", "balance": "21429.45"},
+            {"date": "2024-10-18", "type": "Withdrawal", "description": "Chevron", "amount": "-75.00", "balance": "21354.45"},
+            {"date": "2024-10-20", "type": "Deposit", "description": "Business Transfer", "amount": "3500.00", "balance": "24854.45"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "AT&T", "amount": "-95.00", "balance": "24759.45"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Safeway", "amount": "-98.45", "balance": "24661.00"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "BWW", "amount": "-52.00", "balance": "24609.00"},
+            {"date": "2024-10-28", "type": "Withdrawal", "description": "ATM", "amount": "-200.00", "balance": "24409.00"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-05", "description": "Transfer from Business Account", "amount": "3500.00"},
+            {"date": "2024-10-20", "description": "Transfer from Business Account", "amount": "3500.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-01", "description": "Rent Payment", "amount": "1650.00"}
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "otherFees": [],
+          "interestEarned": "0.00",
+          "averageBalance": "21450.00",
+          "minimumBalance": "17775.25",
+          "maximumBalance": "24854.45",
+          "directDeposits": [],
+          "depositSummary": {
+            "directDeposits": "0.00",
+            "checkDeposits": "0.00",
+            "transfers": "7000.00",
+            "cash": "850.00",
+            "totalDeposits": "7850.00"
+          },
+          "withdrawalSummary": {
+            "achDebits": "2740.00",
+            "debitCard": "476.25",
+            "checks": "0.00",
+            "atmWithdrawals": "200.00",
+            "fees": "0.00",
+            "other": "0.00",
+            "totalWithdrawals": "3416.25"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "unreportedCashIncome",
+            "severity": "critical",
+            "field": "deposits",
+            "message": "Cash deposit of $850 described as 'Side Job Cash Deposit' represents potential unreported income. All income must be documented and reported to IRS. Requires explanation and verification of tax reporting."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "ownerDrawDependency",
+            "severity": "warning",
+            "field": "deposits",
+            "message": "All regular income comes from business transfers ($7,000 monthly / $84,000 annually). This is below stated income of $95,000. Personal income is entirely dependent on business cash flow."
+          },
+          {
+            "rule": "cashDepositsPattern",
+            "severity": "warning",
+            "field": "deposits",
+            "message": "Cash deposit of $850 for 'side job' raises questions about additional unreported income. Lenders cannot use unreported cash income for qualification. Verify all income is properly documented."
+          },
+          {
+            "rule": "limitedReserves",
+            "severity": "warning",
+            "field": "endingBalance",
+            "message": "Personal account balance of $22,000 combined with business account ($28,000) totals $50,000, which is less than cash to close of $54,300. Borrower is using nearly all liquid assets for purchase."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder name 'David A. Johnson' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'US Bank' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****7890 matches personal checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (25 days old as of 11/25/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $19,850.25 indicates reasonable personal reserves at start of period.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $22,000.00 matches asset verification amount reported on loan application. Balance verification successful.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": false,
+            "message": "Total deposits of $7,850 include $7,000 in owner draws plus $850 cash. Cash deposit requires source documentation and verification of tax reporting.",
+            "rule": "depositPatternAnalysis",
+            "expectedValue": "All deposits properly sourced and documented"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $5,700.25 represent normal personal living expenses including rent, debt payments, groceries, and utilities. Spending pattern is reasonable.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "nsfFees": {
+            "isValid": true,
+            "message": "No NSF or overdraft fees during statement period. Good personal funds management demonstrated.",
+            "rule": "feeAnalysis"
+          },
+          "cashDeposits": {
+            "isValid": false,
+            "message": "Cash deposit of $850 requires Letter of Explanation and verification that income was reported to IRS. Unreported cash income cannot be used for qualification.",
+            "rule": "cashDepositDocumentation",
+            "expectedValue": "Documentation for all cash deposits over $500"
+          },
+          "sufficientFunds": {
+            "isValid": false,
+            "message": "Combined personal ($22,000) and business ($28,000) balances total $50,000. Cash to close is $54,300, leaving $4,300 shortfall plus no post-closing reserves.",
+            "rule": "cashToCloseVerification",
+            "expectedValue": "Sufficient funds for closing plus 2-6 months reserves"
+          }
+        }
+      },
+      "conditions": [
+        "Provide Letter of Explanation for $850 cash deposit on October 15, 2024",
+        "Verify cash income was reported to IRS or confirm it represents reimbursement/non-income funds",
+        "Provide additional asset documentation to cover $4,300 shortfall to cash to close",
+        "Verify adequate reserves will remain after closing (typically 6 months PITI for self-employed borrowers)",
+        "Consider accessing Solo 401k funds if needed, with documentation of loan/withdrawal procedures and tax implications"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

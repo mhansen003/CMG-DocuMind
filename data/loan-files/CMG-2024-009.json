@@ -1,0 +1,831 @@
+{
+  "loanId": "CMG-2024-009",
+  "loanNumber": "100234575",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 365750,
+    "propertyEstimatedValue": 385000,
+    "downPaymentAmount": 19250,
+    "ltvRatio": 95.00,
+    "productType": "FHA",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Riverside",
+    "city": "Riverside",
+    "zipCode": "92507",
+    "propertyAddress": "5620 Canyon Crest Drive",
+    "propertyCity": "Riverside",
+    "propertyState": "CA",
+    "propertyZip": "92507",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 7.50,
+    "monthlyPayment": 2558.27,
+    "income": 3000.00,
+    "closingDate": "2025-02-15",
+    "applicationDate": "2024-11-15"
+  },
+  "borrower": {
+    "firstName": "Thomas",
+    "middleName": "Lee",
+    "lastName": "Williams",
+    "fullName": "Thomas Lee Williams",
+    "suffix": "",
+    "ssn": "890-12-3456",
+    "dateOfBirth": "1995-11-08",
+    "maritalStatus": "Single",
+    "spouse": null,
+    "dependents": 0,
+    "citizenship": "USCitizen",
+    "email": "thomas.williams@email.com",
+    "phone": "951-555-0412",
+    "totalIncome": 72000,
+    "adjustedGrossIncome": 70000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "3340 University Avenue",
+      "unit": "Apt 8",
+      "city": "Riverside",
+      "state": "CA",
+      "zipCode": "92501",
+      "monthsAtAddress": 18,
+      "residencyType": "Rent",
+      "monthlyRent": 1450
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Riverside Medical Center",
+        "jobTitle": "Medical Assistant",
+        "position": "Medical Assistant",
+        "employmentType": "W2",
+        "startDate": "2024-06-15",
+        "monthsEmployed": 5,
+        "baseIncome": 72000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 72000,
+        "employerPhone": "951-555-5000",
+        "address": {
+          "street": "4445 Magnolia Avenue",
+          "city": "Riverside",
+          "state": "CA",
+          "zipCode": "92501"
+        },
+        "phone": "951-555-5000",
+        "supervisorName": "Dr. Maria Santos"
+      },
+      "previous": {
+        "employerName": "Walgreens Pharmacy",
+        "position": "Pharmacy Technician",
+        "employmentType": "W2",
+        "startDate": "2021-03-01",
+        "endDate": "2024-06-10",
+        "monthsEmployed": 39,
+        "income": 48000
+      }
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "bankName": "Bank of America",
+          "accountNumber": "****9876",
+          "currentBalance": 12500,
+          "balance": 12850.00,
+          "accountType": "Checking",
+          "accountHolderName": "Thomas L. Williams"
+        },
+        {
+          "institutionName": "Bank of America",
+          "bankName": "Bank of America",
+          "accountNumber": "****5432",
+          "currentBalance": 8500,
+          "balance": 8500,
+          "accountType": "Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "accountNumber": "****9876",
+          "balance": 12500,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "accountNumber": "****5432",
+          "balance": 8500,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [],
+      "totalAssets": 21000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Capital One Card",
+          "accountNumber": "****7890",
+          "balance": 2850,
+          "monthlyPayment": 145,
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "Discover Card",
+          "accountNumber": "****2345",
+          "balance": 1950,
+          "monthlyPayment": 98,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Honda Financial",
+          "accountNumber": "****6789",
+          "balance": 18500,
+          "monthlyPayment": 425,
+          "monthsRemaining": 44,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [
+        {
+          "creditorName": "Federal Student Loan",
+          "accountNumber": "****0123",
+          "balance": 24500,
+          "monthlyPayment": 0,
+          "monthsRemaining": 240,
+          "toBePaidOff": false,
+          "inDeferment": true
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 668
+    },
+    "creditScore": 680,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": true,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": null,
+  "transactions": {
+    "purchasePrice": 385000,
+    "downPayment": 19250,
+    "loanAmount": 365750,
+    "estimatedClosingCosts": 9500,
+    "prepaids": 3200,
+    "sellerCredits": 5000,
+    "cashToClose": 26950,
+    "totalAssetVerificationRequired": 26950,
+    "fhaUpfrontMIP": 6401.13,
+    "fhaMonthlyMIP": 304.79
+  },
+  "ratios": {
+    "housingExpense": 2558.27,
+    "totalDebtExpense": 3226.27,
+    "grossMonthlyIncome": 6000.00,
+    "housingRatio": 42.64,
+    "debtToIncomeRatio": 53.77,
+    "combinedLTV": 95.00
+  },
+  "propertyDetails": {
+    "address": "5620 Canyon Crest Drive",
+    "city": "Riverside",
+    "state": "CA",
+    "zipCode": "92507",
+    "county": "Riverside",
+    "apn": "890-123-45-00",
+    "yearBuilt": 1985,
+    "squareFeet": 1580,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 2,
+    "lotSize": 7200,
+    "propertyType": "Single Family Residence",
+    "style": "California Ranch",
+    "constructionType": "Wood Frame/Stucco",
+    "roofType": "Composition Shingle",
+    "zoningCode": "R-1",
+    "hoaFees": 0,
+    "taxYear": 2024,
+    "annualPropertyTax": 4235
+  },
+  "loanOfficer": {
+    "name": "Marcus Johnson",
+    "nmls": "678901",
+    "email": "marcus.johnson@cmg.com",
+    "phone": "951-555-7500",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-11-20",
+    "lastUpdated": "2024-11-28",
+    "assignedUnderwriter": "Linda Martinez",
+    "assignedProcessor": "Kevin Nguyen"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License",
+      "Bank Statement - Checking (2 months)",
+      "Bank Statement - Savings (2 months)",
+      "W2 - Current Job (most recent)",
+      "W2 - Previous Job (if in 2024)",
+      "Pay Stubs - Current Job (all paystubs since start date)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "FHA Appraisal",
+      "Employment Verification - Current",
+      "Employment Verification - Previous",
+      "Letter of Explanation - Job Change",
+      "Letter of Explanation - Credit Score",
+      "Letter of Explanation - Student Loan Deferment",
+      "Explanation of Credit Inquiries",
+      "FHA Self-Sufficiency Test Results"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-009",
+      "loanId": "CMG-2024-009",
+      "documentType": "paystub",
+      "fileName": "paystub-williams-thomas-2024-10.html",
+      "filePath": "/sample-documents/paystub-williams-thomas-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/paystub-williams-thomas-2024-10.html",
+      "uploadDate": "2024-11-28T09:00:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-11-28T09:00:00.000Z",
+        "confidence": 92,
+        "data": {
+          "employee": {
+            "name": "Thomas Lee Williams",
+            "ssn": "***-**-3456",
+            "address": "3340 University Avenue, Apt 8",
+            "city": "Riverside",
+            "state": "CA",
+            "zipCode": "92501",
+            "employeeId": "EMP-50412"
+          },
+          "employeeName": "Thomas Lee Williams",
+          "employer": {
+            "name": "Riverside Medical Center",
+            "address": "4445 Magnolia Avenue",
+            "city": "Riverside",
+            "state": "CA",
+            "zipCode": "92501",
+            "ein": "95-7654321"
+          },
+          "employerName": "Riverside Medical Center",
+          "payPeriod": {
+            "start": "2024-10-16",
+            "end": "2024-10-31",
+            "payDate": "2024-11-05",
+            "payFrequency": "Bi-Weekly"
+          },
+          "payPeriodStart": "2024-10-16",
+          "payPeriodEnd": "2024-10-31",
+          "payDate": "2024-11-05",
+          "earnings": {
+            "regular": {
+              "hours": 80.00,
+              "rate": 34.62,
+              "amount": 2769.60,
+              "ytd": 16617.60,
+              "description": "Regular Pay"
+            },
+            "overtime": {
+              "hours": 0,
+              "rate": 0,
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "commission": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "other": {
+              "amount": 0.00,
+              "ytd": 0.00
+            }
+          },
+          "grossPayCurrent": 2769.60,
+          "grossPayYTD": 16617.60,
+          "regularHours": 80.00,
+          "overtimeHours": 0,
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 285.50,
+                "ytd": 1713.00
+              },
+              "socialSecurity": {
+                "current": 171.71,
+                "ytd": 1030.29
+              },
+              "medicare": {
+                "current": 40.16,
+                "ytd": 240.96
+              },
+              "additionalMedicare": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 95.80,
+                "ytd": 574.80,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 27.70,
+                "ytd": 166.18,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "rothIRA": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 125.00,
+                "ytd": 750.00,
+                "plan": "Basic Health Plan - Single"
+              },
+              "dental": {
+                "current": 18.00,
+                "ytd": 108.00,
+                "plan": "Basic Dental - Single"
+              },
+              "vision": {
+                "current": 8.50,
+                "ytd": 51.00,
+                "plan": "Basic Vision - Single"
+              },
+              "lifeInsurance": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "disabilityInsurance": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "other": {
+              "hsa": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "fsa": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "parkingTransit": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "totalDeductions": {
+              "current": 772.37,
+              "ytd": 4634.23
+            }
+          },
+          "netPay": 1997.23,
+          "netPayYTD": 11983.37,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Bank of America",
+            "accountType": "Checking",
+            "accountLast4": "9876",
+            "amount": 1997.23
+          },
+          "taxInfo": {
+            "filingStatus": "Single",
+            "allowances": 1,
+            "additionalWithholding": 0.00
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "recentEmploymentStart",
+            "severity": "critical",
+            "field": "ytd",
+            "message": "YTD gross pay of $16,617.60 indicates recent employment start (approximately 6 paystubs). Borrower started 6/15/2024, which is less than 6 months ago. Recent job change requires: (1) Letter of Explanation, (2) All paystubs since start, (3) Employment letter, (4) Verification borrower is past probation period."
+          },
+          {
+            "rule": "insufficientIncomeHistory",
+            "severity": "critical",
+            "field": "grossPayYTD",
+            "message": "Only 5 months of income history with current employer. FHA guidelines allow recent job changes within same field, but require documentation of: (1) Prior 2 years employment, (2) Explanation of job change, (3) Verification new position is stable and past probationary period."
+          },
+          {
+            "rule": "dtiExceedsThreshold",
+            "severity": "critical",
+            "field": "debtToIncomeRatio",
+            "message": "DTI of 53.77% significantly exceeds FHA maximum of 50% (and preferred 43%). High DTI requires: (1) Manual underwriting, (2) Compensating factors (credit score is borderline at 680), (3) Consider paying down debts before closing."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "noRetirementContributions",
+            "severity": "warning",
+            "message": "No 401k or retirement contributions detected. This may indicate borrower is in probationary period or hasn't enrolled in benefits yet. Verify employment status and benefit eligibility."
+          },
+          {
+            "rule": "incomeVsStatedDiscrepancy",
+            "severity": "warning",
+            "message": "Current gross pay of $2,769.60 biweekly projects to approximately $71,909.60 annually ($2,769.60 × 26). This is close to stated income of $72,000, but YTD only represents 5-6 months. Need full year to confirm annual income."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Thomas Lee Williams' matches borrower name on loan application. Name verification passed.",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'Riverside Medical Center' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "matchesApplication"
+          },
+          "payPeriodStart": {
+            "isValid": true,
+            "message": "Pay period start date (Oct 16, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payPeriodEnd": {
+            "isValid": true,
+            "message": "Pay period end date (Oct 31, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payDate": {
+            "isValid": true,
+            "message": "Pay date (Nov 5, 2024) falls appropriately after the pay period end date (Oct 31, 2024). Timing is consistent with standard payroll practices.",
+            "rule": "payDateLogic"
+          },
+          "grossPayCurrent": {
+            "isValid": true,
+            "message": "Current gross pay of $2,769.60 is consistent with stated annual income of $72,000. Biweekly calculation verified ($72,000 / 26 = $2,769.23).",
+            "rule": "incomeConsistency"
+          },
+          "grossPayYTD": {
+            "isValid": false,
+            "message": "Year-to-date gross pay of $16,617.60 represents only 6 pay periods (approximately 5 months from June start). Recent employment requires additional documentation and verification of job stability.",
+            "rule": "ytdCalculation",
+            "expectedValue": "At least 6-12 months employment history or proper documentation for recent job change"
+          },
+          "netPay": {
+            "isValid": true,
+            "message": "Net pay of $1,997.23 represents reasonable deductions (27.9%) for federal/state taxes, FICA, and basic health benefits on gross pay of $2,769.60.",
+            "rule": "netPayCalculation"
+          },
+          "recentEmployment": {
+            "isValid": false,
+            "message": "Employment start date of 6/15/2024 is only 5 months ago. Recent job changes require: prior employment verification, LOX explaining change, verification of stable position past probation.",
+            "rule": "employmentStability",
+            "expectedValue": "2+ years same employer OR documented job change within same field with stability verification"
+          }
+        }
+      },
+      "conditions": [
+        "Provide ALL paystubs from Riverside Medical Center since hire date (6/15/2024 through present)",
+        "Provide Letter of Explanation for job change from Walgreens to Riverside Medical Center",
+        "Provide written employment verification from Riverside Medical Center confirming: (1) Start date, (2) Current status, (3) Past probationary period, (4) Full-time permanent position",
+        "Provide W2 from Walgreens for 2023 and YTD 2024 to establish prior income history",
+        "Provide employment verification from Walgreens confirming dates of employment and income",
+        "Address high DTI of 53.77%: Consider paying off smaller credit cards to reduce monthly obligations or provide compensating factors documentation",
+        "Provide letter explaining credit score of 680 and any derogatory items on credit report",
+        "Verify borrower qualifies for FHA manual underwriting given DTI exceeds 50%"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-bank-009",
+      "loanId": "CMG-2024-009",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-williams-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-williams-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-williams-2024-10.html",
+      "uploadDate": "2024-11-28T10:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-28T10:00:00.000Z",
+        "confidence": 94,
+        "data": {
+          "institutionName": "Bank of America",
+          "accountHolderName": "Thomas L. Williams",
+          "accountNumber": "****9876",
+          "routingNumber": "121000358",
+          "accountType": "Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "9650.25",
+          "endingBalance": "12850.00",
+          "totalDeposits": "5994.46",
+          "totalWithdrawals": "2794.71",
+          "transactionCount": 42,
+          "deposits": [
+            {"date": "2024-10-08", "type": "Direct Deposit", "description": "RIVERSIDE MEDICAL CTR PAYROLL", "amount": "1997.23"},
+            {"date": "2024-10-22", "type": "Direct Deposit", "description": "RIVERSIDE MEDICAL CTR PAYROLL", "amount": "1997.23"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Mobile Deposit - Birthday Gift", "amount": "2000.00"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-01", "type": "ACH Debit", "description": "Rent - University Apartments", "amount": "1450.00"},
+            {"date": "2024-10-03", "type": "ACH Debit", "description": "Honda Financial Auto Payment", "amount": "425.00"},
+            {"date": "2024-10-05", "type": "Debit Card", "description": "Chevron Gas", "amount": "68.50"},
+            {"date": "2024-10-06", "type": "ACH Debit", "description": "Capital One Card Payment", "amount": "145.00"},
+            {"date": "2024-10-08", "type": "Debit Card", "description": "Walmart", "amount": "125.80"},
+            {"date": "2024-10-10", "type": "Debit Card", "description": "Chipotle", "amount": "18.45"},
+            {"date": "2024-10-12", "type": "ACH Debit", "description": "SCE Electric", "amount": "95.00"},
+            {"date": "2024-10-14", "type": "Debit Card", "description": "Target", "amount": "85.50"},
+            {"date": "2024-10-15", "type": "Fee", "description": "Late Fee - Insufficient Balance", "amount": "35.00"},
+            {"date": "2024-10-18", "type": "ACH Debit", "description": "Discover Card Payment", "amount": "98.00"},
+            {"date": "2024-10-20", "type": "Debit Card", "description": "Chevron Gas", "amount": "72.00"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Stater Bros Grocery", "amount": "98.46"},
+            {"date": "2024-10-25", "type": "ATM Withdrawal", "description": "Bank of America ATM", "amount": "100.00"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "9650.25", "balance": "9650.25"},
+            {"date": "2024-10-01", "type": "Withdrawal", "description": "Rent", "amount": "-1450.00", "balance": "8200.25"},
+            {"date": "2024-10-03", "type": "Withdrawal", "description": "Honda Auto", "amount": "-425.00", "balance": "7775.25"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "Chevron", "amount": "-68.50", "balance": "7706.75"},
+            {"date": "2024-10-06", "type": "Withdrawal", "description": "Capital One", "amount": "-145.00", "balance": "7561.75"},
+            {"date": "2024-10-08", "type": "Deposit", "description": "RIVERSIDE PAYROLL", "amount": "1997.23", "balance": "9558.98"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Walmart", "amount": "-125.80", "balance": "9433.18"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Chipotle", "amount": "-18.45", "balance": "9414.73"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "SCE Electric", "amount": "-95.00", "balance": "9319.73"},
+            {"date": "2024-10-14", "type": "Withdrawal", "description": "Target", "amount": "-85.50", "balance": "9234.23"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Birthday Gift", "amount": "2000.00", "balance": "11234.23"},
+            {"date": "2024-10-15", "type": "Fee", "description": "Late Fee", "amount": "-35.00", "balance": "11199.23"},
+            {"date": "2024-10-18", "type": "Withdrawal", "description": "Discover Card", "amount": "-98.00", "balance": "11101.23"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "Chevron", "amount": "-72.00", "balance": "11029.23"},
+            {"date": "2024-10-22", "type": "Deposit", "description": "RIVERSIDE PAYROLL", "amount": "1997.23", "balance": "13026.46"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Stater Bros", "amount": "-98.46", "balance": "12928.00"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "ATM", "amount": "-100.00", "balance": "12828.00"},
+            {"date": "2024-10-31", "type": "Interest", "description": "Monthly Interest", "amount": "22.00", "balance": "12850.00"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-15", "description": "Mobile Deposit - Birthday Gift", "amount": "2000.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-01", "description": "Rent Payment", "amount": "1450.00"}
+          ],
+          "nsfFees": [
+            {"date": "2024-10-15", "description": "Late Fee - Insufficient Balance", "amount": "35.00"}
+          ],
+          "negativeBalanceEvents": [],
+          "otherFees": [
+            {"date": "2024-10-15", "description": "Late Fee", "amount": "35.00"}
+          ],
+          "interestEarned": "22.00",
+          "averageBalance": "10250.50",
+          "minimumBalance": "7561.75",
+          "maximumBalance": "13026.46",
+          "directDeposits": [
+            {"date": "2024-10-08", "employer": "RIVERSIDE MEDICAL CTR", "amount": "1997.23"},
+            {"date": "2024-10-22", "employer": "RIVERSIDE MEDICAL CTR", "amount": "1997.23"}
+          ],
+          "depositSummary": {
+            "directDeposits": "3994.46",
+            "checkDeposits": "2000.00",
+            "transfers": "0.00",
+            "other": "0.00",
+            "totalDeposits": "5994.46"
+          },
+          "withdrawalSummary": {
+            "achDebits": "2213.00",
+            "debitCard": "468.71",
+            "checks": "0.00",
+            "atmWithdrawals": "100.00",
+            "fees": "35.00",
+            "other": "0.00",
+            "totalWithdrawals": "2816.71"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "nsfFeesPresent",
+            "severity": "critical",
+            "field": "nsfFees",
+            "message": "Account shows 1 late fee/NSF fee of $35.00 on 10/15/2024 described as 'Late Fee - Insufficient Balance'. This indicates account went negative or payment was late, suggesting cash flow issues or poor financial management. Requires Letter of Explanation."
+          },
+          {
+            "rule": "largeDepositSourcing",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Found 1 large deposit of $2,000 described as 'Birthday Gift'. Gift funds require: (1) Gift letter from donor, (2) Donor bank statement showing withdrawal, (3) Verification no repayment expected. For FHA loans, gifts are acceptable but must be fully documented."
+          },
+          {
+            "rule": "insufficientReserves",
+            "severity": "critical",
+            "field": "endingBalance",
+            "message": "Ending balance of $12,850 plus savings ($8,500) totals $21,350. Cash to close is $26,950, leaving a shortfall of $5,600. Borrower does not have sufficient verified assets to close. Additional funds required."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "lowAverageBalance",
+            "severity": "warning",
+            "field": "averageBalance",
+            "message": "Average balance of $10,250.50 and minimum balance of $7,561.75 indicate tight cash flow. Account dropped below $8,000 multiple times during the month. Combined with NSF fee, this shows financial stress."
+          },
+          {
+            "rule": "giftFundsDependency",
+            "severity": "warning",
+            "field": "largeDeposits",
+            "message": "Without the $2,000 gift, ending balance would be $10,850. Borrower appears dependent on gift funds to maintain account balance and meet closing costs. Verify no other undisclosed debts."
+          },
+          {
+            "rule": "recentEmploymentIncome",
+            "severity": "warning",
+            "field": "directDeposits",
+            "message": "Only 2 payroll deposits visible ($1,997.23 each) from current employer. This aligns with recent employment start but provides limited income pattern verification. Need additional months of statements."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder name 'Thomas L. Williams' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'Bank of America' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****9876 matches checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (28 days old as of 11/28/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $9,650.25 is modest but reasonable for first-time homebuyer saving for down payment.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $12,850.00 matches asset verification amount reported on loan application ($12,500 rounded). Balance verification successful.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": false,
+            "message": "Total deposits of $5,994.46 include employment income ($3,994.46) plus $2,000 gift. Gift requires full documentation per FHA guidelines.",
+            "rule": "depositPatternAnalysis",
+            "expectedValue": "All deposits properly sourced and documented"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $2,794.71 represent normal living expenses including rent, car payment, credit cards, groceries, and gas. Spending pattern is reasonable but tight.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "directDeposits": {
+            "isValid": true,
+            "message": "Found 2 direct deposits from RIVERSIDE MEDICAL CTR totaling $3,994.46 ($1,997.23 each). Employment income pattern confirmed but limited to 2 months shown.",
+            "rule": "employmentVerification"
+          },
+          "averageBalance": {
+            "isValid": false,
+            "message": "Average balance of $10,250.50 with minimum of $7,561.75 shows account fluctuates significantly. Combined with NSF fee, indicates tight cash management and potential financial stress.",
+            "rule": "averageBalanceAnalysis",
+            "expectedValue": "Stable balances without negative events"
+          },
+          "largeDeposits": {
+            "isValid": false,
+            "message": "1 gift deposit of $2,000 detected. Requires FHA-compliant gift documentation: gift letter, donor statement, proof of transfer, relationship verification.",
+            "rule": "largeDepositDocumentation",
+            "expectedValue": "Complete gift documentation per FHA guidelines"
+          },
+          "nsfFees": {
+            "isValid": false,
+            "message": "1 late fee of $35.00 on 10/15/2024. This indicates insufficient funds or late payment. Requires Letter of Explanation and may indicate financial instability.",
+            "rule": "feeAnalysis",
+            "expectedValue": "No NSF or late fees"
+          },
+          "sufficientFunds": {
+            "isValid": false,
+            "message": "Total assets of $21,350 ($12,850 + $8,500 savings) fall short of cash to close requirement of $26,950. Shortfall of $5,600 must be addressed.",
+            "rule": "cashToCloseVerification",
+            "expectedValue": "Sufficient verified assets to cover closing costs plus reserves"
+          }
+        }
+      },
+      "conditions": [
+        "Provide Letter of Explanation for $35 late fee on 10/15/2024 - explain circumstances and verify one-time occurrence",
+        "Provide complete gift documentation for $2,000 deposit: (1) Signed gift letter from donor stating no repayment expected, (2) Donor bank statement showing $2,000 withdrawal, (3) Proof of deposit/transfer, (4) Verification of donor-borrower relationship",
+        "Provide documentation of additional $5,600 in verified assets to meet cash to close requirement of $26,950",
+        "Provide 2nd month bank statement (September 2024) to establish additional account history pattern",
+        "Provide savings account statement for October 2024 to verify $8,500 balance",
+        "Provide Letter of Explanation for credit score of 680 - explain any derogatory items, late payments, or collections",
+        "Verify FHA self-sufficiency test results given DTI of 53.77% requires manual underwriting",
+        "Consider options to reduce cash to close or increase assets: (1) Increase seller credits, (2) Accept gift funds from family, (3) Reduce purchase price, (4) Review closing cost breakdown for potential savings"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-lox-009",
+      "loanId": "CMG-2024-009",
+      "documentType": "letter_of_explanation",
+      "fileName": "lox-williams-job-change.pdf",
+      "filePath": "/sample-documents/lox-williams-job-change.pdf",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/lox-williams-job-change.pdf",
+      "uploadDate": "2024-11-28T11:00:00.000Z",
+      "extractedData": {
+        "documentType": "letter_of_explanation",
+        "extractedAt": "2024-11-28T11:00:00.000Z",
+        "confidence": 88,
+        "data": {
+          "borrowerName": "Thomas Lee Williams",
+          "date": "2024-11-20",
+          "subject": "Explanation of Employment Change - June 2024",
+          "summary": "Borrower explains career advancement from pharmacy technician at Walgreens to medical assistant at Riverside Medical Center. Change represents 50% income increase and career growth in healthcare field. Completed medical assistant certification during employment at Walgreens. New position is permanent full-time with successful completion of 90-day probationary period."
+        }
+      },
+      "validationResults": {
+        "documentType": "letter_of_explanation",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "verifyProbationComplete",
+            "severity": "warning",
+            "message": "Letter states borrower completed 90-day probation (hired 6/15, probation ended ~9/15). This should be verified with employment verification letter from Riverside Medical Center confirming permanent status."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "jobChangeReason": {
+            "isValid": true,
+            "message": "Job change explained as career advancement within healthcare field with 50% income increase ($48k to $72k). This is positive and shows upward mobility.",
+            "rule": "jobChangeJustification"
+          },
+          "sameFieldCareer": {
+            "isValid": true,
+            "message": "Both positions in healthcare field (pharmacy technician → medical assistant). Industry continuity strengthens case for stable employment.",
+            "rule": "industryConsistency"
+          },
+          "permanentPosition": {
+            "isValid": true,
+            "message": "Letter states position is permanent full-time and probation has been completed. Requires verification from employer.",
+            "rule": "employmentStability"
+          }
+        }
+      },
+      "conditions": [
+        "Verify with Riverside Medical Center that borrower completed probationary period and is permanent full-time employee",
+        "Provide copy of medical assistant certification mentioned in letter",
+        "Verify no gaps in employment between Walgreens (ended 6/10/2024) and Riverside (started 6/15/2024)"
+      ],
+      "status": "approved"
+    }
+  ]
+}

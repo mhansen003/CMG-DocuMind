@@ -1,0 +1,984 @@
+{
+  "loanId": "CMG-2024-006",
+  "loanNumber": "100234572",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 472500,
+    "propertyEstimatedValue": 525000,
+    "downPaymentAmount": 52500,
+    "ltvRatio": 90.00,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Los Angeles",
+    "city": "Los Angeles",
+    "zipCode": "90042",
+    "propertyAddress": "3456 Highland Park Avenue",
+    "propertyCity": "Los Angeles",
+    "propertyState": "CA",
+    "propertyZip": "90042",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 7.125,
+    "monthlyPayment": 3214.89,
+    "income": 7500.00,
+    "closingDate": "2025-01-15",
+    "applicationDate": "2024-11-08"
+  },
+  "borrower": {
+    "firstName": "Robert",
+    "middleName": "Luis",
+    "lastName": "Garcia",
+    "fullName": "Robert Luis Garcia",
+    "suffix": "",
+    "ssn": "345-67-8901",
+    "dateOfBirth": "1992-07-18",
+    "maritalStatus": "Married",
+    "spouse": {
+      "fullName": "Maria Isabel Garcia"
+    },
+    "dependents": 1,
+    "citizenship": "USCitizen",
+    "email": "robert.garcia@email.com",
+    "phone": "323-555-0189",
+    "totalIncome": 105000,
+    "adjustedGrossIncome": 102000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "892 Echo Park Lane",
+      "unit": "Apt 12",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90026",
+      "monthsAtAddress": 42,
+      "residencyType": "Rent",
+      "monthlyRent": 2200
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "LA County Public Works",
+        "jobTitle": "Civil Engineer",
+        "position": "Civil Engineer",
+        "employmentType": "W2",
+        "startDate": "2019-08-01",
+        "monthsEmployed": 63,
+        "baseIncome": 105000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 105000,
+        "employerPhone": "213-555-3000",
+        "address": {
+          "street": "900 South Fremont Avenue",
+          "city": "Alhambra",
+          "state": "CA",
+          "zipCode": "91803"
+        },
+        "phone": "213-555-3000",
+        "supervisorName": "David Park"
+      },
+      "previous": null
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Wells Fargo",
+          "bankName": "Wells Fargo",
+          "accountNumber": "****4567",
+          "currentBalance": 38000,
+          "balance": 38250.00,
+          "accountType": "Checking",
+          "accountHolderName": "Robert L. Garcia"
+        },
+        {
+          "institutionName": "Wells Fargo",
+          "bankName": "Wells Fargo",
+          "accountNumber": "****7890",
+          "currentBalance": 22000,
+          "balance": 22000,
+          "accountType": "Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Wells Fargo",
+          "accountNumber": "****4567",
+          "balance": 38000,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Wells Fargo",
+          "accountNumber": "****7890",
+          "balance": 22000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "CalPERS",
+          "accountNumber": "****2345",
+          "balance": 85000,
+          "accountType": "Pension"
+        }
+      ],
+      "totalAssets": 145000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Chase Credit Card",
+          "accountNumber": "****5678",
+          "balance": 3200,
+          "monthlyPayment": 160,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Honda Financial",
+          "accountNumber": "****9012",
+          "balance": 14500,
+          "monthlyPayment": 385,
+          "monthsRemaining": 38,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [
+        {
+          "creditorName": "Federal Student Loan",
+          "accountNumber": "****3456",
+          "balance": 28000,
+          "monthlyPayment": 245,
+          "monthsRemaining": 114,
+          "toBePaidOff": false
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 790
+    },
+    "creditScore": 735,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": {
+    "firstName": "Maria",
+    "middleName": "Isabel",
+    "lastName": "Garcia",
+    "suffix": "",
+    "ssn": "456-78-9012",
+    "dateOfBirth": "1993-11-05",
+    "maritalStatus": "Married",
+    "citizenship": "USCitizen",
+    "email": "maria.garcia@email.com",
+    "phone": "323-555-0190",
+    "currentAddress": {
+      "sameAsBorrower": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "LAUSD - Lincoln High School",
+        "position": "High School Teacher",
+        "employmentType": "W2",
+        "startDate": "2020-08-15",
+        "monthsEmployed": 51,
+        "baseIncome": 75000,
+        "overtimeIncome": 0,
+        "bonusIncome": 0,
+        "totalIncome": 75000,
+        "address": {
+          "street": "3501 North Broadway",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zipCode": "90031"
+        },
+        "phone": "323-555-4200",
+        "supervisorName": "Principal Susan Rodriguez"
+      }
+    },
+    "assets": {
+      "checkingAccounts": [
+        {
+          "institutionName": "Wells Fargo (Joint)",
+          "accountNumber": "****4567",
+          "balance": 38000,
+          "accountType": "Checking",
+          "joint": true
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Ally Bank",
+          "accountNumber": "****6789",
+          "balance": 12000,
+          "accountType": "High Yield Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "CalSTRS",
+          "accountNumber": "****8901",
+          "balance": 42000,
+          "accountType": "Pension"
+        }
+      ],
+      "totalAssets": 92000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Target Credit Card",
+          "accountNumber": "****7890",
+          "balance": 850,
+          "monthlyPayment": 45,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [],
+      "studentLoans": [
+        {
+          "creditorName": "Federal Student Loan",
+          "accountNumber": "****4567",
+          "balance": 18500,
+          "monthlyPayment": 165,
+          "monthsRemaining": 112,
+          "toBePaidOff": false
+        }
+      ],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 210
+    },
+    "creditScore": 728,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "transactions": {
+    "purchasePrice": 525000,
+    "downPayment": 52500,
+    "loanAmount": 472500,
+    "estimatedClosingCosts": 12500,
+    "prepaids": 4200,
+    "sellerCredits": 3500,
+    "cashToClose": 65700,
+    "totalAssetVerificationRequired": 65700
+  },
+  "ratios": {
+    "housingExpense": 3214.89,
+    "totalDebtExpense": 4214.89,
+    "grossMonthlyIncome": 15000.00,
+    "housingRatio": 21.43,
+    "debtToIncomeRatio": 28.10,
+    "combinedLTV": 90.00
+  },
+  "propertyDetails": {
+    "address": "3456 Highland Park Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zipCode": "90042",
+    "county": "Los Angeles",
+    "apn": "567-890-12-00",
+    "yearBuilt": 1965,
+    "squareFeet": 1850,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 2,
+    "lotSize": 5500,
+    "propertyType": "Single Family Residence",
+    "style": "Mid-Century Ranch",
+    "constructionType": "Wood Frame/Stucco",
+    "roofType": "Composition Shingle",
+    "zoningCode": "R1-1",
+    "hoaFees": 0,
+    "taxYear": 2024,
+    "annualPropertyTax": 5775
+  },
+  "loanOfficer": {
+    "name": "Carlos Mendoza",
+    "nmls": "345678",
+    "email": "carlos.mendoza@cmg.com",
+    "phone": "323-555-7200",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-11-15",
+    "lastUpdated": "2024-11-22",
+    "assignedUnderwriter": "Jessica Moore",
+    "assignedProcessor": "Daniel Kim"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Drivers License - Co-Borrower",
+      "Bank Statement - Checking (2 months)",
+      "Bank Statement - Savings (2 months)",
+      "W2 - Borrower (2 years)",
+      "W2 - Co-Borrower (2 years)",
+      "Pay Stubs - Borrower (2 recent)",
+      "Pay Stubs - Co-Borrower (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "Appraisal",
+      "Employment Verification - Borrower",
+      "Employment Verification - Co-Borrower",
+      "First-Time Homebuyer Education Certificate",
+      "Gift Letter for Down Payment Assistance",
+      "Source of Down Payment Documentation"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-006",
+      "loanId": "CMG-2024-006",
+      "documentType": "paystub",
+      "fileName": "paystub-garcia-robert-2024-10.html",
+      "filePath": "/sample-documents/paystub-garcia-robert-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/paystub-garcia-robert-2024-10.html",
+      "uploadDate": "2024-11-22T09:15:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-11-22T09:15:00.000Z",
+        "confidence": 94,
+        "data": {
+          "employee": {
+            "name": "Robert Luis Garcia",
+            "ssn": "***-**-8901",
+            "address": "892 Echo Park Lane, Apt 12",
+            "city": "Los Angeles",
+            "state": "CA",
+            "zipCode": "90026",
+            "employeeId": "EMP-30189"
+          },
+          "employeeName": "Robert Luis Garcia",
+          "employer": {
+            "name": "LA County Public Works",
+            "address": "900 South Fremont Avenue",
+            "city": "Alhambra",
+            "state": "CA",
+            "zipCode": "91803",
+            "ein": "95-6000123"
+          },
+          "employerName": "LA County Public Works",
+          "payPeriod": {
+            "start": "2024-10-01",
+            "end": "2024-10-15",
+            "payDate": "2024-10-20",
+            "payFrequency": "Bi-Weekly"
+          },
+          "payPeriodStart": "2024-10-01",
+          "payPeriodEnd": "2024-10-15",
+          "payDate": "2024-10-20",
+          "earnings": {
+            "regular": {
+              "hours": 80.00,
+              "rate": 50.48,
+              "amount": 4038.40,
+              "ytd": 84806.40
+            },
+            "overtime": {
+              "hours": 0,
+              "rate": 0,
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "commission": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "other": {
+              "amount": 0.00,
+              "ytd": 0.00
+            }
+          },
+          "grossPayCurrent": 4038.40,
+          "grossPayYTD": 84806.40,
+          "regularHours": 80.00,
+          "overtimeHours": 0,
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 582.50,
+                "ytd": 12232.50
+              },
+              "socialSecurity": {
+                "current": 250.38,
+                "ytd": 5258.00
+              },
+              "medicare": {
+                "current": 58.56,
+                "ytd": 1229.69
+              },
+              "additionalMedicare": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 189.80,
+                "ytd": 3985.90,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 40.38,
+                "ytd": 848.06,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "pensionContribution": {
+                "current": 323.07,
+                "ytd": 6784.51,
+                "percentage": 8.0,
+                "description": "CalPERS Pension"
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 145.00,
+                "ytd": 3045.00,
+                "plan": "County Health Plan - Family"
+              },
+              "dental": {
+                "current": 22.00,
+                "ytd": 462.00,
+                "plan": "County Dental - Family"
+              },
+              "vision": {
+                "current": 8.50,
+                "ytd": 178.50,
+                "plan": "County Vision - Family"
+              },
+              "lifeInsurance": {
+                "current": 12.00,
+                "ytd": 252.00,
+                "coverage": "$100,000"
+              },
+              "disabilityInsurance": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "other": {
+              "unionDues": {
+                "current": 45.00,
+                "ytd": 945.00,
+                "description": "SEIU Local 721"
+              }
+            },
+            "totalDeductions": {
+              "current": 1677.19,
+              "ytd": 35221.16
+            }
+          },
+          "netPay": 2361.21,
+          "netPayYTD": 49585.24,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Wells Fargo",
+            "accountType": "Checking",
+            "accountLast4": "4567",
+            "amount": 2361.21
+          },
+          "taxInfo": {
+            "filingStatus": "Married Filing Jointly",
+            "allowances": 3,
+            "additionalWithholding": 0.00
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "ytdIncomeProjection",
+            "severity": "warning",
+            "message": "YTD gross income of $84,806.40 through October 15 projects to approximately $109,420 annually. This is 4.2% above stated annual income of $105,000. Slight variance is acceptable and may reflect pay schedule timing."
+          },
+          {
+            "rule": "highDeductionRate",
+            "severity": "warning",
+            "message": "Total deductions of $1,677.19 represent 41.5% of gross pay. This is higher than average due to pension contribution (8%) and union dues. Verify net take-home is sufficient for DTI calculations."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Robert Luis Garcia' matches borrower name on loan application. Name verification passed.",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'LA County Public Works' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "matchesApplication"
+          },
+          "payPeriodStart": {
+            "isValid": true,
+            "message": "Pay period start date (Oct 1, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payPeriodEnd": {
+            "isValid": true,
+            "message": "Pay period end date (Oct 15, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payDate": {
+            "isValid": true,
+            "message": "Pay date (Oct 20, 2024) falls appropriately after the pay period end date (Oct 15, 2024). Timing is consistent with standard payroll practices.",
+            "rule": "payDateLogic"
+          },
+          "grossPayCurrent": {
+            "isValid": true,
+            "message": "Current gross pay of $4,038.40 is consistent with stated annual income of $105,000. Biweekly calculation verified ($105,000 / 26 = $4,038.46).",
+            "rule": "incomeConsistency"
+          },
+          "grossPayYTD": {
+            "isValid": true,
+            "message": "Year-to-date gross pay of $84,806.40 aligns with pay period timing (21 periods completed through Oct 15). Annual income projection on track.",
+            "rule": "ytdCalculation"
+          },
+          "netPay": {
+            "isValid": true,
+            "message": "Net pay of $2,361.21 represents reasonable deductions (41.5%) including pension contribution, taxes, benefits, and union dues on gross pay of $4,038.40.",
+            "rule": "netPayCalculation"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-w2-006",
+      "loanId": "CMG-2024-006",
+      "documentType": "w2",
+      "fileName": "w2-garcia-robert-2023.html",
+      "filePath": "/sample-documents/w2-garcia-robert-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/w2-garcia-robert-2023.html",
+      "uploadDate": "2024-11-22T10:00:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-11-22T10:00:00.000Z",
+        "confidence": 97,
+        "data": {
+          "taxYear": "2023",
+          "void": false,
+          "corrected": false,
+          "employee": {
+            "ssn": "345-67-8901",
+            "firstName": "Robert",
+            "middleInitial": "L",
+            "lastName": "Garcia",
+            "suffix": "",
+            "address": "892 Echo Park Lane, Apt 12",
+            "city": "Los Angeles",
+            "state": "CA",
+            "zipCode": "90026"
+          },
+          "employeeSSN": "345-67-8901",
+          "employeeName": "Robert L. Garcia",
+          "employeeAddress": "892 Echo Park Lane, Apt 12, Los Angeles, CA 90026",
+          "employer": {
+            "ein": "95-6000123",
+            "name": "LA County Public Works",
+            "address": "900 South Fremont Avenue",
+            "city": "Alhambra",
+            "state": "CA",
+            "zipCode": "91803",
+            "controlNumber": "LACPW-2023-30189"
+          },
+          "employerEIN": "95-6000123",
+          "employerName": "LA County Public Works",
+          "employerAddress": "900 South Fremont Avenue, Alhambra, CA 91803",
+          "box1_wages": "102850.00",
+          "wages": "102850.00",
+          "box2_federalTaxWithheld": "14845.00",
+          "federalTaxWithheld": "14845.00",
+          "box3_socialSecurityWages": "102850.00",
+          "socialSecurityWages": "102850.00",
+          "box4_socialSecurityTaxWithheld": "6376.70",
+          "socialSecurityTaxWithheld": "6376.70",
+          "box5_medicareWages": "102850.00",
+          "medicareWages": "102850.00",
+          "box6_medicareTaxWithheld": "1491.33",
+          "medicareTaxWithheld": "1491.33",
+          "box7_socialSecurityTips": "0.00",
+          "box8_allocatedTips": "0.00",
+          "box9_": "",
+          "box10_dependentCareBenefits": "0.00",
+          "box11_nonqualifiedPlans": "0.00",
+          "box12": [
+            {
+              "code": "E",
+              "amount": "8228.00",
+              "description": "Elective deferrals to CalPERS pension"
+            },
+            {
+              "code": "DD",
+              "amount": "7450.00",
+              "description": "Cost of employer-sponsored health coverage"
+            }
+          ],
+          "box12Codes": ["E", "DD"],
+          "box12Values": ["8228.00", "7450.00"],
+          "box13": {
+            "statutoryEmployee": false,
+            "retirementPlan": true,
+            "thirdPartySickPay": false
+          },
+          "statutoryEmployee": false,
+          "retirementPlan": true,
+          "thirdPartySickPay": false,
+          "box14": [
+            {
+              "description": "State Disability Insurance",
+              "amount": "1028.50"
+            },
+            {
+              "description": "Union Dues - SEIU 721",
+              "amount": "1170.00"
+            }
+          ],
+          "box15_state": "CA",
+          "box15_employerStateID": "800-2345678-9",
+          "box16_stateWages": "102850.00",
+          "box17_stateIncomeTax": "4825.00",
+          "box18_localWages": "0.00",
+          "box19_localIncomeTax": "0.00",
+          "box20_localityName": "",
+          "state": "CA",
+          "stateID": "800-2345678-9",
+          "stateWages": "102850.00",
+          "stateIncomeTax": "4825.00",
+          "additionalStateInfo": []
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "incomeIncrease",
+            "severity": "warning",
+            "field": "wages",
+            "message": "2023 W2 wages of $102,850 compared to stated 2024 income of $105,000 shows 2.1% increase. This is consistent with typical annual cost-of-living adjustment for government employment."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN on W2 (345-67-8901) matches loan application SSN. Identity verification successful.",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Robert L. Garcia' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'LA County Public Works' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "employerMatch"
+          },
+          "taxYear": {
+            "isValid": true,
+            "message": "W2 is from tax year 2023, which is the most recent complete year. Document is current and acceptable.",
+            "rule": "taxYearCurrent"
+          },
+          "wages": {
+            "isValid": true,
+            "message": "W2 wages of $102,850 are consistent with stated annual income of $105,000. Variance of 2.1% is acceptable and reflects normal annual salary increase.",
+            "rule": "incomeConsistency"
+          },
+          "federalTaxWithheld": {
+            "isValid": true,
+            "message": "Federal tax withholding of $14,845 represents 14.4% effective rate. This is appropriate for this income level and filing status (Married with dependents).",
+            "rule": "taxWithholdingReasonable"
+          },
+          "socialSecurityTaxWithheld": {
+            "isValid": true,
+            "message": "Social Security tax of $6,376.70 correctly equals 6.2% of wages ($102,850). Calculation verified.",
+            "rule": "socialSecurityCalculation"
+          },
+          "medicareTaxWithheld": {
+            "isValid": true,
+            "message": "Medicare tax of $1,491.33 correctly equals 1.45% of wages ($102,850). Calculation verified.",
+            "rule": "medicareCalculation"
+          },
+          "box12Codes": {
+            "isValid": true,
+            "message": "Box 12 Code E indicates elective deferrals to CalPERS pension plan of $8,228 (8% of wages). This aligns with government employment pension contributions.",
+            "rule": "box12Valid"
+          },
+          "state": {
+            "isValid": true,
+            "message": "W2 state (CA) matches property state. Borrower lives and works in same state as subject property.",
+            "rule": "stateMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-bank-006",
+      "loanId": "CMG-2024-006",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-garcia-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-garcia-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-garcia-2024-10.html",
+      "uploadDate": "2024-11-22T11:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-22T11:00:00.000Z",
+        "confidence": 95,
+        "data": {
+          "institutionName": "Wells Fargo",
+          "accountHolderName": "Robert L. Garcia and Maria I. Garcia",
+          "accountNumber": "****4567",
+          "routingNumber": "121000248",
+          "accountType": "Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "35850.50",
+          "endingBalance": "38250.00",
+          "totalDeposits": "6187.42",
+          "totalWithdrawals": "3787.92",
+          "transactionCount": 32,
+          "deposits": [
+            {"date": "2024-10-05", "type": "Direct Deposit", "description": "LA COUNTY PAYROLL - ROBERT", "amount": "2361.21"},
+            {"date": "2024-10-12", "type": "Direct Deposit", "description": "LAUSD PAYROLL - MARIA", "amount": "2465.00"},
+            {"date": "2024-10-20", "type": "Direct Deposit", "description": "LA COUNTY PAYROLL - ROBERT", "amount": "2361.21"},
+            {"date": "2024-10-26", "type": "Direct Deposit", "description": "LAUSD PAYROLL - MARIA", "amount": "2465.00"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Gift from Parents - Down Payment Help", "amount": "15000.00"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-01", "type": "ACH Debit", "description": "Rent Payment to Echo Park Management", "amount": "2200.00"},
+            {"date": "2024-10-02", "type": "ACH Debit", "description": "Honda Financial Auto Payment", "amount": "385.00"},
+            {"date": "2024-10-04", "type": "Debit Card", "description": "Trader Joe's", "amount": "145.80"},
+            {"date": "2024-10-06", "type": "ACH Debit", "description": "Chase Credit Card Payment", "amount": "385.00"},
+            {"date": "2024-10-08", "type": "Debit Card", "description": "Shell Gas Station", "amount": "65.00"},
+            {"date": "2024-10-10", "type": "ACH Debit", "description": "Federal Student Loan - Robert", "amount": "245.00"},
+            {"date": "2024-10-10", "type": "ACH Debit", "description": "Federal Student Loan - Maria", "amount": "165.00"},
+            {"date": "2024-10-12", "type": "Debit Card", "description": "Target", "amount": "98.50"},
+            {"date": "2024-10-15", "type": "ACH Debit", "description": "SCE Electric", "amount": "185.00"},
+            {"date": "2024-10-18", "type": "Debit Card", "description": "Costco", "amount": "210.45"},
+            {"date": "2024-10-20", "type": "ACH Debit", "description": "AT&T Wireless", "amount": "125.00"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Ralphs Grocery", "amount": "132.85"},
+            {"date": "2024-10-25", "type": "ACH Debit", "description": "Target Credit Card Payment", "amount": "125.00"},
+            {"date": "2024-10-28", "type": "Debit Card", "description": "Children's Place", "amount": "85.32"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "35850.50", "balance": "35850.50"},
+            {"date": "2024-10-01", "type": "Withdrawal", "description": "Rent Payment", "amount": "-2200.00", "balance": "33650.50"},
+            {"date": "2024-10-02", "type": "Withdrawal", "description": "Honda Auto", "amount": "-385.00", "balance": "33265.50"},
+            {"date": "2024-10-04", "type": "Withdrawal", "description": "Trader Joe's", "amount": "-145.80", "balance": "33119.70"},
+            {"date": "2024-10-05", "type": "Deposit", "description": "LA COUNTY PAYROLL", "amount": "2361.21", "balance": "35480.91"},
+            {"date": "2024-10-06", "type": "Withdrawal", "description": "Chase CC Payment", "amount": "-385.00", "balance": "35095.91"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Shell Gas", "amount": "-65.00", "balance": "35030.91"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Student Loan Robert", "amount": "-245.00", "balance": "34785.91"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Student Loan Maria", "amount": "-165.00", "balance": "34620.91"},
+            {"date": "2024-10-12", "type": "Deposit", "description": "LAUSD PAYROLL", "amount": "2465.00", "balance": "37085.91"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "Target", "amount": "-98.50", "balance": "36987.41"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Gift - Down Payment", "amount": "15000.00", "balance": "51987.41"},
+            {"date": "2024-10-15", "type": "Withdrawal", "description": "SCE Electric", "amount": "-185.00", "balance": "51802.41"},
+            {"date": "2024-10-18", "type": "Withdrawal", "description": "Costco", "amount": "-210.45", "balance": "51591.96"},
+            {"date": "2024-10-20", "type": "Deposit", "description": "LA COUNTY PAYROLL", "amount": "2361.21", "balance": "53953.17"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "AT&T Wireless", "amount": "-125.00", "balance": "53828.17"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Ralphs Grocery", "amount": "-132.85", "balance": "53695.32"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "Target CC", "amount": "-125.00", "balance": "53570.32"},
+            {"date": "2024-10-26", "type": "Deposit", "description": "LAUSD PAYROLL", "amount": "2465.00", "balance": "56035.32"},
+            {"date": "2024-10-28", "type": "Withdrawal", "description": "Children's Place", "amount": "-85.32", "balance": "55950.00"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-15", "description": "Gift from Parents - Down Payment Help", "amount": "15000.00"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-01", "description": "Rent Payment", "amount": "2200.00"}
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "otherFees": [],
+          "interestEarned": "0.00",
+          "averageBalance": "42850.25",
+          "minimumBalance": "33119.70",
+          "maximumBalance": "56035.32",
+          "directDeposits": [
+            {"date": "2024-10-05", "employer": "LA COUNTY", "amount": "2361.21"},
+            {"date": "2024-10-12", "employer": "LAUSD", "amount": "2465.00"},
+            {"date": "2024-10-20", "employer": "LA COUNTY", "amount": "2361.21"},
+            {"date": "2024-10-26", "employer": "LAUSD", "amount": "2465.00"}
+          ],
+          "depositSummary": {
+            "directDeposits": "9652.42",
+            "checkDeposits": "0.00",
+            "transfers": "0.00",
+            "other": "15000.00",
+            "totalDeposits": "24652.42"
+          },
+          "withdrawalSummary": {
+            "achDebits": "3815.00",
+            "debitCard": "938.92",
+            "checks": "0.00",
+            "atmWithdrawals": "0.00",
+            "fees": "0.00",
+            "other": "0.00",
+            "totalWithdrawals": "4753.92"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "largeDepositSourcing",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Found 1 large deposit of $15,000 described as 'Gift from Parents - Down Payment Help'. All gift funds require formal gift letter, donor bank statement, and verification of transfer. Gift must be documented per lending guidelines."
+          },
+          {
+            "rule": "giftFundsDocumentation",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Gift deposit of $15,000 requires: (1) Signed gift letter from donor stating no repayment expected, (2) Donor's bank statement showing withdrawal, (3) Proof of transfer, (4) Verification of donor-borrower relationship."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "firstTimeBuyerProfile",
+            "severity": "warning",
+            "field": "transactionPattern",
+            "message": "Transaction pattern shows rent payments, indicating renters transitioning to homeownership. First-time homebuyer education certificate may be required depending on loan program."
+          },
+          {
+            "rule": "tightCashFlow",
+            "severity": "warning",
+            "field": "averageBalance",
+            "message": "Prior to $15,000 gift, account balance was approximately $35,000-$37,000. Combined with savings accounts, borrowers are close to minimum cash to close of $65,700. Ensure adequate reserves remain post-closing."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder names 'Robert L. Garcia and Maria I. Garcia' match borrower and co-borrower on loan application. Joint account verified.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'Wells Fargo' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****4567 matches checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (22 days old as of 11/22/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $35,850.50 indicates reasonable financial reserves at start of period for first-time buyers.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $38,250.00 matches asset verification amount reported on loan application ($38,000 rounded). Balance verification successful.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": true,
+            "message": "Total deposits include regular paychecks from both employers plus $15,000 gift. Dual income pattern confirmed.",
+            "rule": "depositPatternAnalysis"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $3,787.92 represent normal living expenses including rent, debt payments, and family expenses. Spending pattern is reasonable for income level.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "directDeposits": {
+            "isValid": true,
+            "message": "Found 4 direct deposits: 2 from LA County ($2,361.21 each) and 2 from LAUSD ($2,465.00 each). Dual employment income verified for both borrowers.",
+            "rule": "employmentVerification"
+          },
+          "averageBalance": {
+            "isValid": true,
+            "message": "Average balance of $42,850.25 (inflated by mid-month gift deposit) shows generally positive account management. Pre-gift balance was stable around $35,000.",
+            "rule": "averageBalanceAnalysis"
+          },
+          "largeDeposits": {
+            "isValid": false,
+            "message": "1 large gift deposit of $15,000 detected. Requires complete gift documentation per lending guidelines including gift letter, donor statement, and relationship verification.",
+            "rule": "largeDepositDocumentation",
+            "expectedValue": "Gift letter, donor bank statement, proof of transfer"
+          },
+          "nsfFees": {
+            "isValid": true,
+            "message": "No NSF or overdraft fees during statement period. Good funds management demonstrated.",
+            "rule": "feeAnalysis"
+          },
+          "sufficientFunds": {
+            "isValid": true,
+            "message": "Ending balance of $38,250 plus savings accounts ($22,000 + $12,000) total $72,250. This exceeds cash to close of $65,700 with minimal reserves remaining.",
+            "rule": "cashToCloseVerification"
+          }
+        }
+      },
+      "conditions": [
+        "Provide signed gift letter from donor(s) stating funds are a gift with no repayment expectation",
+        "Provide donor's bank statement showing $15,000 withdrawal on or before October 15, 2024",
+        "Verify relationship between donor and borrowers (parents)",
+        "Provide proof of transfer showing funds movement from donor to borrowers",
+        "Verify adequate reserves remain after closing (typically 2-6 months PITI depending on loan program)",
+        "Provide First-Time Homebuyer Education Certificate if required by loan program"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

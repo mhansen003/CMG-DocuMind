@@ -1,0 +1,1059 @@
+{
+  "loanId": "CMG-2024-008",
+  "loanNumber": "100234574",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Purchase",
+    "loanAmountRequested": 960000,
+    "propertyEstimatedValue": 1200000,
+    "downPaymentAmount": 240000,
+    "ltvRatio": 80.00,
+    "productType": "Conventional Jumbo",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "Santa Clara",
+    "city": "San Jose",
+    "zipCode": "95125",
+    "propertyAddress": "1850 Willow Glen Way",
+    "propertyCity": "San Jose",
+    "propertyState": "CA",
+    "propertyZip": "95125",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 6.75,
+    "monthlyPayment": 6227.68,
+    "income": 17708.33,
+    "closingDate": "2025-01-30",
+    "applicationDate": "2024-11-10"
+  },
+  "borrower": {
+    "firstName": "Emily",
+    "middleName": "Grace",
+    "lastName": "Anderson",
+    "fullName": "Emily Grace Anderson",
+    "suffix": "",
+    "ssn": "678-90-1234",
+    "dateOfBirth": "1986-09-12",
+    "maritalStatus": "Married",
+    "spouse": {
+      "fullName": "James Michael Anderson"
+    },
+    "dependents": 2,
+    "citizenship": "USCitizen",
+    "email": "emily.anderson@email.com",
+    "phone": "408-555-0301",
+    "totalIncome": 235000,
+    "adjustedGrossIncome": 228000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "2250 Park Avenue",
+      "unit": "Unit 3B",
+      "city": "Palo Alto",
+      "state": "CA",
+      "zipCode": "94301",
+      "monthsAtAddress": 36,
+      "residencyType": "Rent",
+      "monthlyRent": 4200
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Google LLC",
+        "jobTitle": "Senior Product Manager",
+        "position": "Senior Product Manager",
+        "employmentType": "W2",
+        "startDate": "2019-02-01",
+        "monthsEmployed": 69,
+        "baseIncome": 195000,
+        "overtimeIncome": 0,
+        "bonusIncome": 25000,
+        "stockOptions": 15000,
+        "totalIncome": 235000,
+        "employerPhone": "650-555-1000",
+        "address": {
+          "street": "1600 Amphitheatre Parkway",
+          "city": "Mountain View",
+          "state": "CA",
+          "zipCode": "94043"
+        },
+        "phone": "650-555-1000",
+        "supervisorName": "Kevin Chen"
+      },
+      "previous": {
+        "employerName": "Adobe Inc",
+        "position": "Product Manager",
+        "employmentType": "W2",
+        "startDate": "2015-06-15",
+        "endDate": "2019-01-31",
+        "monthsEmployed": 43,
+        "income": 125000
+      }
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "bankName": "Chase Bank",
+          "accountNumber": "****2468",
+          "currentBalance": 185000,
+          "balance": 185420.50,
+          "accountType": "Chase Private Client Checking",
+          "accountHolderName": "Emily G. Anderson"
+        },
+        {
+          "institutionName": "Charles Schwab",
+          "bankName": "Charles Schwab",
+          "accountNumber": "****1357",
+          "currentBalance": 95000,
+          "balance": 95000,
+          "accountType": "High Yield Savings"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank",
+          "accountNumber": "****2468",
+          "balance": 185000,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Charles Schwab",
+          "accountNumber": "****1357",
+          "balance": 95000,
+          "accountType": "Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Fidelity 401k - Google",
+          "accountNumber": "****8642",
+          "balance": 485000,
+          "accountType": "401k"
+        }
+      ],
+      "investmentAccounts": [
+        {
+          "institutionName": "Vanguard Brokerage",
+          "accountNumber": "****9753",
+          "balance": 225000,
+          "accountType": "Individual Brokerage"
+        }
+      ],
+      "totalAssets": 990000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Chase Sapphire Reserve",
+          "accountNumber": "****1234",
+          "balance": 5200,
+          "monthlyPayment": 260,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "Tesla Financial",
+          "accountNumber": "****5678",
+          "balance": 42000,
+          "monthlyPayment": 825,
+          "monthsRemaining": 51,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 1085
+    },
+    "creditScore": 815,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "coBorrower": {
+    "firstName": "James",
+    "middleName": "Michael",
+    "lastName": "Anderson",
+    "suffix": "",
+    "ssn": "789-01-2345",
+    "dateOfBirth": "1985-05-20",
+    "maritalStatus": "Married",
+    "citizenship": "USCitizen",
+    "email": "james.anderson@email.com",
+    "phone": "408-555-0302",
+    "currentAddress": {
+      "sameAsBorrower": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "Apple Inc",
+        "position": "Senior Software Engineer",
+        "employmentType": "W2",
+        "startDate": "2017-08-15",
+        "monthsEmployed": 87,
+        "baseIncome": 175000,
+        "overtimeIncome": 0,
+        "bonusIncome": 10000,
+        "stockOptions": 25000,
+        "totalIncome": 210000,
+        "address": {
+          "street": "1 Apple Park Way",
+          "city": "Cupertino",
+          "state": "CA",
+          "zipCode": "95014"
+        },
+        "phone": "408-555-2000",
+        "supervisorName": "Director Sarah Kim"
+      },
+      "previous": {
+        "employerName": "Intel Corporation",
+        "position": "Software Engineer",
+        "employmentType": "W2",
+        "startDate": "2012-06-01",
+        "endDate": "2017-08-10",
+        "monthsEmployed": 62,
+        "income": 110000
+      }
+    },
+    "assets": {
+      "checkingAccounts": [
+        {
+          "institutionName": "Chase Bank (Joint)",
+          "accountNumber": "****2468",
+          "balance": 185000,
+          "accountType": "Checking",
+          "joint": true
+        }
+      ],
+      "savingsAccounts": [
+        {
+          "institutionName": "Marcus by Goldman Sachs",
+          "accountNumber": "****3690",
+          "balance": 75000,
+          "accountType": "High Yield Savings"
+        }
+      ],
+      "retirementAccounts": [
+        {
+          "institutionName": "Fidelity 401k - Apple",
+          "accountNumber": "****2580",
+          "balance": 395000,
+          "accountType": "401k"
+        }
+      ],
+      "investmentAccounts": [
+        {
+          "institutionName": "E*TRADE",
+          "accountNumber": "****7410",
+          "balance": 180000,
+          "accountType": "Individual Brokerage"
+        }
+      ],
+      "totalAssets": 835000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "American Express Platinum",
+          "accountNumber": "****4680",
+          "balance": 3800,
+          "monthlyPayment": 190,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [],
+      "studentLoans": [],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 190
+    },
+    "creditScore": 822,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": false
+    }
+  },
+  "transactions": {
+    "purchasePrice": 1200000,
+    "downPayment": 240000,
+    "loanAmount": 960000,
+    "estimatedClosingCosts": 22000,
+    "prepaids": 8500,
+    "sellerCredits": 0,
+    "cashToClose": 270500,
+    "totalAssetVerificationRequired": 270500
+  },
+  "ratios": {
+    "housingExpense": 6227.68,
+    "totalDebtExpense": 7502.68,
+    "grossMonthlyIncome": 37083.33,
+    "housingRatio": 16.79,
+    "debtToIncomeRatio": 20.23,
+    "combinedLTV": 80.00
+  },
+  "propertyDetails": {
+    "address": "1850 Willow Glen Way",
+    "city": "San Jose",
+    "state": "CA",
+    "zipCode": "95125",
+    "county": "Santa Clara",
+    "apn": "234-567-89-00",
+    "yearBuilt": 2020,
+    "squareFeet": 3200,
+    "bedrooms": 4,
+    "bathrooms": 3.5,
+    "garages": 2,
+    "lotSize": 6500,
+    "propertyType": "Single Family Residence",
+    "style": "Modern Contemporary",
+    "constructionType": "Frame/Stucco",
+    "roofType": "Flat/Built-up",
+    "zoningCode": "R-1-8",
+    "hoaFees": 0,
+    "taxYear": 2024,
+    "annualPropertyTax": 13200
+  },
+  "loanOfficer": {
+    "name": "Rebecca Chang",
+    "nmls": "567890",
+    "email": "rebecca.chang@cmg.com",
+    "phone": "408-555-7400",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-11-20",
+    "lastUpdated": "2024-11-27",
+    "assignedUnderwriter": "Thomas Wilson",
+    "assignedProcessor": "Grace Lee"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License - Borrower",
+      "Drivers License - Co-Borrower",
+      "Bank Statement - Checking (2 months)",
+      "Bank Statement - Savings (2 months)",
+      "W2 - Borrower (2 years)",
+      "W2 - Co-Borrower (2 years)",
+      "Pay Stubs - Borrower (2 recent)",
+      "Pay Stubs - Co-Borrower (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Homeowners Insurance Quote",
+      "Purchase Agreement",
+      "Appraisal",
+      "Employment Verification - Borrower",
+      "Employment Verification - Co-Borrower",
+      "Stock Compensation Documentation",
+      "Bonus/Equity Vesting Schedule",
+      "Investment Account Statements",
+      "Jumbo Loan Requirements - Additional Reserves"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-008",
+      "loanId": "CMG-2024-008",
+      "documentType": "paystub",
+      "fileName": "paystub-anderson-emily-2024-10.html",
+      "filePath": "/sample-documents/paystub-anderson-emily-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/paystub-anderson-emily-2024-10.html",
+      "uploadDate": "2024-11-27T09:00:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-11-27T09:00:00.000Z",
+        "confidence": 98,
+        "data": {
+          "employee": {
+            "name": "Emily Grace Anderson",
+            "ssn": "***-**-1234",
+            "address": "2250 Park Avenue, Unit 3B",
+            "city": "Palo Alto",
+            "state": "CA",
+            "zipCode": "94301",
+            "employeeId": "EMP-40301"
+          },
+          "employeeName": "Emily Grace Anderson",
+          "employer": {
+            "name": "Google LLC",
+            "address": "1600 Amphitheatre Parkway",
+            "city": "Mountain View",
+            "state": "CA",
+            "zipCode": "94043",
+            "ein": "77-0493581"
+          },
+          "employerName": "Google LLC",
+          "payPeriod": {
+            "start": "2024-10-01",
+            "end": "2024-10-15",
+            "payDate": "2024-10-20",
+            "payFrequency": "Bi-Weekly"
+          },
+          "payPeriodStart": "2024-10-01",
+          "payPeriodEnd": "2024-10-15",
+          "payDate": "2024-10-20",
+          "earnings": {
+            "regular": {
+              "hours": 80.00,
+              "rate": 93.75,
+              "amount": 7500.00,
+              "ytd": 157500.00,
+              "description": "Base Salary"
+            },
+            "overtime": {
+              "hours": 0,
+              "rate": 0,
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 8350.00,
+              "description": "Quarterly Performance Bonus"
+            },
+            "commission": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "stockCompensation": {
+              "amount": 576.92,
+              "ytd": 12115.32,
+              "description": "RSU Vesting"
+            },
+            "other": {
+              "amount": 0.00,
+              "ytd": 0.00
+            }
+          },
+          "grossPayCurrent": 8076.92,
+          "grossPayYTD": 177965.32,
+          "regularHours": 80.00,
+          "overtimeHours": 0,
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 1895.20,
+                "ytd": 41852.50
+              },
+              "socialSecurity": {
+                "current": 500.77,
+                "ytd": 10533.85
+              },
+              "medicare": {
+                "current": 117.12,
+                "ytd": 2580.50
+              },
+              "additionalMedicare": {
+                "current": 0.00,
+                "ytd": 158.45
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 685.52,
+                "ytd": 15128.95,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 80.77,
+                "ytd": 1779.65,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 1615.38,
+                "ytd": 35593.06,
+                "percentage": 20.0,
+                "description": "401(k) Pre-tax - Google Match 50%"
+              },
+              "rothIRA": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 285.00,
+                "ytd": 5985.00,
+                "plan": "Google Health Plan - Family"
+              },
+              "dental": {
+                "current": 42.00,
+                "ytd": 882.00,
+                "plan": "Google Dental - Family"
+              },
+              "vision": {
+                "current": 18.00,
+                "ytd": 378.00,
+                "plan": "Google Vision - Family"
+              },
+              "lifeInsurance": {
+                "current": 25.00,
+                "ytd": 525.00,
+                "coverage": "$500,000"
+              },
+              "disabilityInsurance": {
+                "current": 15.00,
+                "ytd": 315.00,
+                "coverage": "LTD 60%"
+              }
+            },
+            "other": {
+              "hsa": {
+                "current": 250.00,
+                "ytd": 5250.00,
+                "description": "Health Savings Account"
+              },
+              "fsa": {
+                "current": 192.31,
+                "ytd": 4038.51,
+                "description": "Dependent Care FSA"
+              },
+              "transitBenefit": {
+                "current": 150.00,
+                "ytd": 3150.00,
+                "description": "Pre-tax commuter benefit"
+              }
+            },
+            "totalDeductions": {
+              "current": 5872.07,
+              "ytd": 128150.47
+            }
+          },
+          "netPay": 2204.85,
+          "netPayYTD": 49814.85,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Chase Bank",
+            "accountType": "Checking",
+            "accountLast4": "2468",
+            "amount": 2204.85
+          },
+          "taxInfo": {
+            "filingStatus": "Married Filing Jointly",
+            "allowances": 2,
+            "additionalWithholding": 200.00
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "stockCompensationIncome",
+            "severity": "warning",
+            "message": "RSU income of $576.92 current ($12,115.32 YTD) represents stock compensation. Lenders typically require 2-year history of stock vesting to count as stable income. Verify vesting schedule and historical RSU income."
+          },
+          {
+            "rule": "highDeductionRate",
+            "severity": "warning",
+            "message": "Total deductions of $5,872.07 represent 72.7% of gross pay. This is very high but typical for high earners maximizing 401k (20% contribution) and using HSA/FSA benefits. Net take-home is significantly reduced."
+          },
+          {
+            "rule": "bonusIncomeVariability",
+            "severity": "warning",
+            "message": "YTD bonus of $8,350 with no bonus this period. Quarterly bonuses create income variability. Verify 2-year bonus history to establish consistent pattern for qualification."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Emily Grace Anderson' matches borrower name on loan application. Name verification passed.",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'Google LLC' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "matchesApplication"
+          },
+          "payPeriodStart": {
+            "isValid": true,
+            "message": "Pay period start date (Oct 1, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payPeriodEnd": {
+            "isValid": true,
+            "message": "Pay period end date (Oct 15, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payDate": {
+            "isValid": true,
+            "message": "Pay date (Oct 20, 2024) falls appropriately after the pay period end date (Oct 15, 2024). Timing is consistent with standard payroll practices.",
+            "rule": "payDateLogic"
+          },
+          "grossPayCurrent": {
+            "isValid": true,
+            "message": "Current gross pay of $8,076.92 includes base salary ($7,500) plus RSU vesting ($576.92). Consistent with stated income structure including stock compensation.",
+            "rule": "incomeConsistency"
+          },
+          "grossPayYTD": {
+            "isValid": true,
+            "message": "Year-to-date gross pay of $177,965.32 through Oct 15 includes base ($157,500), bonus ($8,350), and RSU ($12,115). Projects to approximately $229,000 annually, consistent with stated income of $235,000.",
+            "rule": "ytdCalculation"
+          },
+          "netPay": {
+            "isValid": true,
+            "message": "Net pay of $2,204.85 represents high deductions (72.7%) due to maximum 401k contributions (20%), HSA, FSA, and high tax withholding. This is normal for high-income earners optimizing tax benefits.",
+            "rule": "netPayCalculation"
+          },
+          "stockCompensation": {
+            "isValid": true,
+            "message": "RSU income of $576.92 current and $12,115.32 YTD shows regular stock vesting pattern. Requires 2-year W2 history to verify consistency of equity compensation for qualification purposes.",
+            "rule": "stockCompensationVerification",
+            "expectedValue": "2-year history of stock compensation required"
+          }
+        }
+      },
+      "conditions": [
+        "Provide W2s for past 2 years showing RSU/stock compensation history to verify consistency",
+        "Provide RSU vesting schedule from Google showing future vesting dates and amounts",
+        "Provide documentation of bonus structure and 2-year bonus history",
+        "Verify total compensation including stock is consistent with stated income of $235,000"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-w2-008",
+      "loanId": "CMG-2024-008",
+      "documentType": "w2",
+      "fileName": "w2-anderson-emily-2023.html",
+      "filePath": "/sample-documents/w2-anderson-emily-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/w2-anderson-emily-2023.html",
+      "uploadDate": "2024-11-27T10:00:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-11-27T10:00:00.000Z",
+        "confidence": 99,
+        "data": {
+          "taxYear": "2023",
+          "void": false,
+          "corrected": false,
+          "employee": {
+            "ssn": "678-90-1234",
+            "firstName": "Emily",
+            "middleInitial": "G",
+            "lastName": "Anderson",
+            "suffix": "",
+            "address": "2250 Park Avenue, Unit 3B",
+            "city": "Palo Alto",
+            "state": "CA",
+            "zipCode": "94301"
+          },
+          "employeeSSN": "678-90-1234",
+          "employeeName": "Emily G. Anderson",
+          "employeeAddress": "2250 Park Avenue, Unit 3B, Palo Alto, CA 94301",
+          "employer": {
+            "ein": "77-0493581",
+            "name": "Google LLC",
+            "address": "1600 Amphitheatre Parkway",
+            "city": "Mountain View",
+            "state": "CA",
+            "zipCode": "94043",
+            "controlNumber": "GOOG-2023-40301"
+          },
+          "employerEIN": "77-0493581",
+          "employerName": "Google LLC",
+          "employerAddress": "1600 Amphitheatre Parkway, Mountain View, CA 94043",
+          "box1_wages": "228450.00",
+          "wages": "228450.00",
+          "box2_federalTaxWithheld": "54850.00",
+          "federalTaxWithheld": "54850.00",
+          "box3_socialSecurityWages": "160200.00",
+          "socialSecurityWages": "160200.00",
+          "box4_socialSecurityTaxWithheld": "9932.40",
+          "socialSecurityTaxWithheld": "9932.40",
+          "box5_medicareWages": "228450.00",
+          "medicareWages": "228450.00",
+          "box6_medicareTaxWithheld": "3478.53",
+          "medicareTaxWithheld": "3478.53",
+          "box7_socialSecurityTips": "0.00",
+          "box8_allocatedTips": "0.00",
+          "box9_": "",
+          "box10_dependentCareBenefits": "5000.00",
+          "box11_nonqualifiedPlans": "0.00",
+          "box12": [
+            {
+              "code": "D",
+              "amount": "22500.00",
+              "description": "Elective deferrals to 401(k)"
+            },
+            {
+              "code": "DD",
+              "amount": "12850.00",
+              "description": "Cost of employer-sponsored health coverage"
+            },
+            {
+              "code": "W",
+              "amount": "5000.00",
+              "description": "Employer contributions to Health Savings Account"
+            },
+            {
+              "code": "V",
+              "amount": "14850.00",
+              "description": "RSU Stock Compensation"
+            }
+          ],
+          "box12Codes": ["D", "DD", "W", "V"],
+          "box12Values": ["22500.00", "12850.00", "5000.00", "14850.00"],
+          "box13": {
+            "statutoryEmployee": false,
+            "retirementPlan": true,
+            "thirdPartySickPay": false
+          },
+          "statutoryEmployee": false,
+          "retirementPlan": true,
+          "thirdPartySickPay": false,
+          "box14": [
+            {
+              "description": "State Disability Insurance",
+              "amount": "2284.50"
+            },
+            {
+              "description": "Commuter Benefits",
+              "amount": "3000.00"
+            }
+          ],
+          "box15_state": "CA",
+          "box15_employerStateID": "800-5678901-2",
+          "box16_stateWages": "228450.00",
+          "box17_stateIncomeTax": "19850.00",
+          "box18_localWages": "0.00",
+          "box19_localIncomeTax": "0.00",
+          "box20_localityName": "",
+          "state": "CA",
+          "stateID": "800-5678901-2",
+          "stateWages": "228450.00",
+          "stateIncomeTax": "19850.00",
+          "additionalStateInfo": []
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "stockCompensationReported",
+            "severity": "warning",
+            "field": "box12Codes",
+            "message": "Box 12 Code V shows RSU stock compensation of $14,850. This stock income IS included in Box 1 wages. Verify 2-year consistency of stock comp for income qualification."
+          },
+          {
+            "rule": "highIncomeEarner",
+            "severity": "warning",
+            "field": "wages",
+            "message": "2023 wages of $228,450 indicate high earner with jumbo loan requirements. Excellent for qualification but requires additional reserves (typically 12 months PITI for jumbo loans)."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN on W2 (678-90-1234) matches loan application SSN. Identity verification successful.",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Emily G. Anderson' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'Google LLC' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "employerMatch"
+          },
+          "taxYear": {
+            "isValid": true,
+            "message": "W2 is from tax year 2023, which is the most recent complete year. Document is current and acceptable.",
+            "rule": "taxYearCurrent"
+          },
+          "wages": {
+            "isValid": true,
+            "message": "W2 wages of $228,450 are consistent with stated annual income of $235,000. Variance of 2.9% is acceptable and likely reflects 2024 salary increase or additional 2024 bonus.",
+            "rule": "incomeConsistency"
+          },
+          "federalTaxWithheld": {
+            "isValid": true,
+            "message": "Federal tax withholding of $54,850 represents 24.0% effective rate. This is appropriate for this income level and filing status (Married with additional withholding).",
+            "rule": "taxWithholdingReasonable"
+          },
+          "socialSecurityTaxWithheld": {
+            "isValid": true,
+            "message": "Social Security tax of $9,932.40 correctly equals 6.2% of capped wages ($160,200). Calculation verified and appropriate for high income earner.",
+            "rule": "socialSecurityCalculation"
+          },
+          "medicareTaxWithheld": {
+            "isValid": true,
+            "message": "Medicare tax of $3,478.53 includes base 1.45% plus additional 0.9% Medicare tax on income over $200k ($228,450). Calculation verified for high earner.",
+            "rule": "medicareCalculation"
+          },
+          "box12Codes": {
+            "isValid": true,
+            "message": "Box 12 shows: Code D ($22,500 401k - near max), Code DD ($12,850 health coverage), Code W ($5,000 HSA), Code V ($14,850 RSU). All codes properly documented.",
+            "rule": "box12Valid"
+          },
+          "state": {
+            "isValid": true,
+            "message": "W2 state (CA) matches property state. Borrower lives and works in same state as subject property.",
+            "rule": "stateMatch"
+          },
+          "stockIncome": {
+            "isValid": true,
+            "message": "Box 12 Code V shows $14,850 RSU income which is INCLUDED in Box 1 wages. Stock compensation is already counted in total wages. Verify consistency across years.",
+            "rule": "stockCompensationAccounting"
+          }
+        }
+      },
+      "conditions": [
+        "Provide 2022 W2 to verify 2-year income stability including stock compensation",
+        "Verify adequate jumbo loan reserves (typically 12+ months PITI) given $1.2M purchase price"
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "doc-bank-008",
+      "loanId": "CMG-2024-008",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-anderson-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-anderson-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-anderson-2024-10.html",
+      "uploadDate": "2024-11-27T11:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-27T11:00:00.000Z",
+        "confidence": 99,
+        "data": {
+          "institutionName": "Chase Bank",
+          "accountHolderName": "Emily G. Anderson and James M. Anderson",
+          "accountNumber": "****2468",
+          "routingNumber": "322271627",
+          "accountType": "Chase Private Client Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "178950.75",
+          "endingBalance": "185420.50",
+          "totalDeposits": "15845.20",
+          "totalWithdrawals": "9375.45",
+          "transactionCount": 38,
+          "deposits": [
+            {"date": "2024-10-05", "type": "Direct Deposit", "description": "GOOGLE LLC PAYROLL - EMILY", "amount": "2204.85"},
+            {"date": "2024-10-12", "type": "Direct Deposit", "description": "APPLE INC PAYROLL - JAMES", "amount": "3285.45"},
+            {"date": "2024-10-20", "type": "Direct Deposit", "description": "GOOGLE LLC PAYROLL - EMILY", "amount": "2204.85"},
+            {"date": "2024-10-26", "type": "Direct Deposit", "description": "APPLE INC PAYROLL - JAMES", "amount": "3285.45"},
+            {"date": "2024-10-15", "type": "ACH Deposit", "description": "E*TRADE - Investment Income", "amount": "4864.60"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-01", "type": "ACH Debit", "description": "Rent - Palo Alto Property", "amount": "4200.00"},
+            {"date": "2024-10-03", "type": "Debit Card", "description": "Whole Foods", "amount": "285.50"},
+            {"date": "2024-10-05", "type": "ACH Debit", "description": "Chase Sapphire Reserve Payment", "amount": "2850.00"},
+            {"date": "2024-10-08", "type": "ACH Debit", "description": "Tesla Payment", "amount": "825.00"},
+            {"date": "2024-10-10", "type": "Debit Card", "description": "Equinox Gym", "amount": "395.00"},
+            {"date": "2024-10-12", "type": "ACH Debit", "description": "Kindercare Daycare", "amount": "2400.00"},
+            {"date": "2024-10-15", "type": "ACH Debit", "description": "PG&E Utilities", "amount": "185.00"},
+            {"date": "2024-10-18", "type": "Debit Card", "description": "Erewhon Market", "amount": "325.80"},
+            {"date": "2024-10-20", "type": "ACH Debit", "description": "Verizon Wireless", "amount": "215.00"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Amazon", "amount": "425.65"},
+            {"date": "2024-10-25", "type": "ACH Debit", "description": "American Express Payment", "amount": "1850.00"},
+            {"date": "2024-10-28", "type": "Debit Card", "description": "Whole Foods", "amount": "295.50"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "178950.75", "balance": "178950.75"},
+            {"date": "2024-10-01", "type": "Withdrawal", "description": "Rent", "amount": "-4200.00", "balance": "174750.75"},
+            {"date": "2024-10-03", "type": "Withdrawal", "description": "Whole Foods", "amount": "-285.50", "balance": "174465.25"},
+            {"date": "2024-10-05", "type": "Deposit", "description": "Google Payroll Emily", "amount": "2204.85", "balance": "176670.10"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "Chase Sapphire", "amount": "-2850.00", "balance": "173820.10"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Tesla", "amount": "-825.00", "balance": "172995.10"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Equinox", "amount": "-395.00", "balance": "172600.10"},
+            {"date": "2024-10-12", "type": "Deposit", "description": "Apple Payroll James", "amount": "3285.45", "balance": "175885.55"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "Kindercare", "amount": "-2400.00", "balance": "173485.55"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "E*TRADE Investment", "amount": "4864.60", "balance": "178350.15"},
+            {"date": "2024-10-15", "type": "Withdrawal", "description": "PG&E", "amount": "-185.00", "balance": "178165.15"},
+            {"date": "2024-10-18", "type": "Withdrawal", "description": "Erewhon", "amount": "-325.80", "balance": "177839.35"},
+            {"date": "2024-10-20", "type": "Deposit", "description": "Google Payroll Emily", "amount": "2204.85", "balance": "180044.20"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "Verizon", "amount": "-215.00", "balance": "179829.20"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Amazon", "amount": "-425.65", "balance": "179403.55"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "AMEX", "amount": "-1850.00", "balance": "177553.55"},
+            {"date": "2024-10-26", "type": "Deposit", "description": "Apple Payroll James", "amount": "3285.45", "balance": "180839.00"},
+            {"date": "2024-10-28", "type": "Withdrawal", "description": "Whole Foods", "amount": "-295.50", "balance": "180543.50"},
+            {"date": "2024-10-31", "type": "Interest", "description": "Monthly Interest", "amount": "877.00", "balance": "181420.50"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-15", "description": "E*TRADE Investment Income", "amount": "4864.60"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-01", "description": "Rent Payment", "amount": "4200.00"},
+            {"date": "2024-10-05", "description": "Chase Sapphire Reserve Payment", "amount": "2850.00"},
+            {"date": "2024-10-12", "description": "Kindercare Daycare", "amount": "2400.00"},
+            {"date": "2024-10-25", "description": "American Express Payment", "amount": "1850.00"}
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "otherFees": [],
+          "interestEarned": "877.00",
+          "averageBalance": "180250.00",
+          "minimumBalance": "172600.10",
+          "maximumBalance": "181420.50",
+          "directDeposits": [
+            {"date": "2024-10-05", "employer": "GOOGLE LLC - EMILY", "amount": "2204.85"},
+            {"date": "2024-10-12", "employer": "APPLE INC - JAMES", "amount": "3285.45"},
+            {"date": "2024-10-20", "employer": "GOOGLE LLC - EMILY", "amount": "2204.85"},
+            {"date": "2024-10-26", "employer": "APPLE INC - JAMES", "amount": "3285.45"}
+          ],
+          "depositSummary": {
+            "directDeposits": "10980.60",
+            "checkDeposits": "0.00",
+            "transfers": "0.00",
+            "investmentIncome": "4864.60",
+            "totalDeposits": "15845.20"
+          },
+          "withdrawalSummary": {
+            "achDebits": "15875.00",
+            "debitCard": "2002.95",
+            "checks": "0.00",
+            "atmWithdrawals": "0.00",
+            "fees": "0.00",
+            "other": "0.00",
+            "totalWithdrawals": "17877.95"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "investmentIncomeDocumentation",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Large deposit of $4,864.60 from E*TRADE investment account. Investment income (dividends, interest, capital gains) requires brokerage statement to verify source and determine if income is recurring/qualifying."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "highLivingExpenses",
+            "severity": "warning",
+            "field": "withdrawals",
+            "message": "Monthly living expenses including rent ($4,200), daycare ($2,400), credit card payments ($4,700) total approximately $15,000+. High expenses typical for Bay Area but verify post-purchase expenses will be sustainable with new mortgage payment of $6,227."
+          },
+          {
+            "rule": "excellentCreditManagement",
+            "severity": "info",
+            "field": "creditCards",
+            "message": "Credit card payments of $4,700 monthly ($2,850 + $1,850) suggest high spending but paid in full. This is positive for credit management but verify balances aren't increasing month-to-month."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder names 'Emily G. Anderson and James M. Anderson' match borrower and co-borrower on loan application. Joint account verified.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'Chase Bank' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****2468 matches checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (27 days old as of 11/27/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $178,950.75 indicates excellent financial reserves at start of period. Very strong starting position.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $185,420.50 matches asset verification amount reported on loan application ($185,000 rounded). Balance verification successful.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": true,
+            "message": "Total deposits of $15,845.20 include dual employment income ($10,980.60) plus investment income ($4,864.60). Dual high-income household confirmed.",
+            "rule": "depositPatternAnalysis"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $9,375.45 (not including large credit card/rent payments) represent normal living expenses for high-income Bay Area household with children.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "directDeposits": {
+            "isValid": true,
+            "message": "Found 4 direct deposits: 2 from Google ($2,204.85 each) and 2 from Apple ($3,285.45 each). Dual employment income verified for both borrowers.",
+            "rule": "employmentVerification"
+          },
+          "averageBalance": {
+            "isValid": true,
+            "message": "Average balance of $180,250.00 indicates excellent account management. Balance remained well above $170k throughout entire period.",
+            "rule": "averageBalanceAnalysis"
+          },
+          "largeDeposits": {
+            "isValid": false,
+            "message": "1 large deposit of $4,864.60 from E*TRADE investment income. Requires brokerage statement to verify source (dividends, interest, capital gains distribution) and establish if recurring.",
+            "rule": "largeDepositDocumentation",
+            "expectedValue": "Brokerage statement showing source of investment income"
+          },
+          "nsfFees": {
+            "isValid": true,
+            "message": "No NSF or overdraft fees during statement period. Excellent funds management demonstrated.",
+            "rule": "feeAnalysis"
+          },
+          "sufficientFunds": {
+            "isValid": true,
+            "message": "Ending balance of $185,420.50 plus savings accounts ($95k + $75k = $170k) total $355,420. This exceeds cash to close of $270,500 with $84,920 remaining for reserves. Strong liquidity position.",
+            "rule": "cashToCloseVerification"
+          },
+          "jumboReserves": {
+            "isValid": true,
+            "message": "Total liquid assets of $355,420 provide approximately 4.75 months reserves based on new PITI. Jumbo loans typically require 6-12 months. Additional reserves may be needed or verify with investment accounts.",
+            "rule": "jumboLoanReserves",
+            "expectedValue": "6-12 months PITI reserves for jumbo loan ($960k)"
+          }
+        }
+      },
+      "conditions": [
+        "Provide E*TRADE brokerage statement for October 2024 showing source of $4,864.60 deposit",
+        "Verify investment income type (dividends, interest, capital gains) and determine if recurring/qualifying",
+        "Provide documentation of total liquid reserves including investment accounts to meet jumbo loan reserve requirements",
+        "Verify 6-12 months PITI reserves ($37k-$74k) available post-closing for $960k jumbo loan",
+        "Provide investment account statements (Vanguard, E*TRADE) showing balances to supplement bank reserves"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

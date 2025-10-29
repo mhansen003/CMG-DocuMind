@@ -1,0 +1,884 @@
+{
+  "loanId": "CMG-2024-005",
+  "loanNumber": "100234571",
+  "mismo": {
+    "version": "3.5",
+    "loanPurposeType": "Refinance",
+    "loanAmountRequested": 620000,
+    "propertyEstimatedValue": 850000,
+    "downPaymentAmount": 0,
+    "ltvRatio": 72.94,
+    "productType": "Conventional",
+    "lienPosition": "FirstLien",
+    "propertyType": "SingleFamily",
+    "occupancyType": "PrimaryResidence",
+    "state": "CA",
+    "county": "San Diego",
+    "city": "La Jolla",
+    "zipCode": "92037",
+    "propertyAddress": "8920 Coastal View Drive",
+    "propertyCity": "La Jolla",
+    "propertyState": "CA",
+    "propertyZip": "92037",
+    "numberOfUnits": 1,
+    "loanTerm": 360,
+    "interestRate": 6.25,
+    "monthlyPayment": 3817.43,
+    "income": 6800.00,
+    "closingDate": "2024-12-20",
+    "applicationDate": "2024-11-01"
+  },
+  "borrower": {
+    "firstName": "Sarah",
+    "middleName": "Elizabeth",
+    "lastName": "Chen",
+    "fullName": "Sarah Elizabeth Chen",
+    "suffix": "",
+    "ssn": "234-56-7890",
+    "dateOfBirth": "1988-03-22",
+    "maritalStatus": "Single",
+    "spouse": null,
+    "dependents": 0,
+    "citizenship": "USCitizen",
+    "email": "sarah.chen@email.com",
+    "phone": "858-555-0145",
+    "totalIncome": 312000,
+    "adjustedGrossIncome": 305000,
+    "rentalIncome": 0,
+    "currentAddress": {
+      "street": "8920 Coastal View Drive",
+      "unit": "",
+      "city": "La Jolla",
+      "state": "CA",
+      "zipCode": "92037",
+      "monthsAtAddress": 48,
+      "residencyType": "Own",
+      "monthlyRent": 0
+    },
+    "mailingAddress": {
+      "sameAsCurrent": true
+    },
+    "employment": {
+      "current": {
+        "employerName": "BioPharm Solutions LLC",
+        "jobTitle": "Senior Pharmaceutical Sales Executive",
+        "position": "Senior Pharmaceutical Sales Executive",
+        "employmentType": "W2",
+        "startDate": "2019-01-15",
+        "monthsEmployed": 70,
+        "baseIncome": 195000,
+        "overtimeIncome": 0,
+        "bonusIncome": 45000,
+        "commissionIncome": 72000,
+        "totalIncome": 312000,
+        "employerPhone": "858-555-2000",
+        "address": {
+          "street": "10450 Science Center Drive",
+          "city": "San Diego",
+          "state": "CA",
+          "zipCode": "92121"
+        },
+        "phone": "858-555-2000",
+        "supervisorName": "Michael Zhang"
+      },
+      "previous": null
+    },
+    "assets": {
+      "bankAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "bankName": "Bank of America",
+          "accountNumber": "****8765",
+          "currentBalance": 95000,
+          "balance": 95420.75,
+          "accountType": "Premium Checking",
+          "accountHolderName": "Sarah E. Chen"
+        },
+        {
+          "institutionName": "Charles Schwab",
+          "bankName": "Charles Schwab",
+          "accountNumber": "****4321",
+          "currentBalance": 185000,
+          "balance": 185000,
+          "accountType": "Brokerage Account"
+        }
+      ],
+      "checkingAccounts": [
+        {
+          "institutionName": "Bank of America",
+          "accountNumber": "****8765",
+          "balance": 95000,
+          "accountType": "Checking"
+        }
+      ],
+      "savingsAccounts": [],
+      "retirementAccounts": [
+        {
+          "institutionName": "Fidelity 401k",
+          "accountNumber": "****7654",
+          "balance": 425000,
+          "accountType": "401k"
+        }
+      ],
+      "totalAssets": 705000
+    },
+    "liabilities": {
+      "creditCards": [
+        {
+          "creditorName": "Chase Sapphire Reserve",
+          "accountNumber": "****9876",
+          "balance": 4500,
+          "monthlyPayment": 225,
+          "toBePaidOff": false
+        },
+        {
+          "creditorName": "American Express Platinum",
+          "accountNumber": "****6543",
+          "balance": 2100,
+          "monthlyPayment": 105,
+          "toBePaidOff": false
+        }
+      ],
+      "autoLoans": [
+        {
+          "creditorName": "BMW Financial Services",
+          "accountNumber": "****3210",
+          "balance": 28500,
+          "monthlyPayment": 685,
+          "monthsRemaining": 41,
+          "toBePaidOff": false
+        }
+      ],
+      "studentLoans": [],
+      "otherDebts": [],
+      "totalMonthlyDebtPayments": 1015
+    },
+    "creditScore": 795,
+    "declarations": {
+      "outstandingJudgements": false,
+      "bankruptcyInLast7Years": false,
+      "foreclosureInLast7Years": false,
+      "loanOnPropertyInLast3Years": false,
+      "obligatedOnOtherLoans": false,
+      "coMakerOnNote": false,
+      "usCitizen": true,
+      "primaryResidence": true,
+      "ownershipInterestInLast3Years": true
+    }
+  },
+  "coBorrower": null,
+  "transactions": {
+    "purchasePrice": 0,
+    "downPayment": 0,
+    "loanAmount": 620000,
+    "estimatedClosingCosts": 8500,
+    "prepaids": 3500,
+    "sellerCredits": 0,
+    "cashToClose": 12000,
+    "totalAssetVerificationRequired": 12000,
+    "currentLoanBalance": 625000,
+    "cashOutAmount": 0
+  },
+  "ratios": {
+    "housingExpense": 3817.43,
+    "totalDebtExpense": 4832.43,
+    "grossMonthlyIncome": 26000.00,
+    "housingRatio": 14.68,
+    "debtToIncomeRatio": 18.59,
+    "combinedLTV": 72.94
+  },
+  "propertyDetails": {
+    "address": "8920 Coastal View Drive",
+    "city": "La Jolla",
+    "state": "CA",
+    "zipCode": "92037",
+    "county": "San Diego",
+    "apn": "345-678-90-00",
+    "yearBuilt": 2018,
+    "squareFeet": 2850,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "garages": 2,
+    "lotSize": 5200,
+    "propertyType": "Single Family Residence",
+    "style": "Contemporary Coastal",
+    "constructionType": "Frame/Stucco",
+    "roofType": "Tile",
+    "zoningCode": "RS-1-4",
+    "hoaFees": 385,
+    "taxYear": 2024,
+    "annualPropertyTax": 9350
+  },
+  "loanOfficer": {
+    "name": "Jennifer Martinez",
+    "nmls": "234567",
+    "email": "jennifer.martinez@cmg.com",
+    "phone": "858-555-7100",
+    "company": "CMG Financial",
+    "companyNMLS": "1820"
+  },
+  "processingStatus": {
+    "stage": "DocumentReview",
+    "submittedDate": "2024-11-05",
+    "lastUpdated": "2024-11-12",
+    "assignedUnderwriter": "Robert Thompson",
+    "assignedProcessor": "Lisa Chen"
+  },
+  "documentChecklist": {
+    "required": [
+      "Drivers License",
+      "Bank Statement - Checking (2 months)",
+      "Brokerage Statement (most recent)",
+      "W2 (2 years)",
+      "Pay Stubs (2 recent)",
+      "Tax Returns (2 years)",
+      "Credit Report",
+      "Current Mortgage Statement",
+      "Homeowners Insurance - Current Policy",
+      "HOA Documents",
+      "Appraisal",
+      "Employment Verification",
+      "Commission/Bonus Documentation"
+    ],
+    "received": [],
+    "pending": []
+  },
+  "documents": [
+    {
+      "id": "doc-paystub-005",
+      "loanId": "CMG-2024-005",
+      "documentType": "paystub",
+      "fileName": "paystub-chen-sarah-2024-10.html",
+      "filePath": "/sample-documents/paystub-chen-sarah-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/paystub-chen-sarah-2024-10.html",
+      "uploadDate": "2024-11-12T10:30:00.000Z",
+      "extractedData": {
+        "documentType": "paystub",
+        "extractedAt": "2024-11-12T10:30:00.000Z",
+        "confidence": 97,
+        "data": {
+          "employee": {
+            "name": "Sarah Elizabeth Chen",
+            "ssn": "***-**-7890",
+            "address": "8920 Coastal View Drive",
+            "city": "La Jolla",
+            "state": "CA",
+            "zipCode": "92037",
+            "employeeId": "EMP-20145"
+          },
+          "employeeName": "Sarah Elizabeth Chen",
+          "employer": {
+            "name": "BioPharm Solutions LLC",
+            "address": "10450 Science Center Drive",
+            "city": "San Diego",
+            "state": "CA",
+            "zipCode": "92121",
+            "ein": "33-1234567"
+          },
+          "employerName": "BioPharm Solutions LLC",
+          "payPeriod": {
+            "start": "2024-10-01",
+            "end": "2024-10-15",
+            "payDate": "2024-10-25",
+            "payFrequency": "Bi-Weekly"
+          },
+          "payPeriodStart": "2024-10-01",
+          "payPeriodEnd": "2024-10-15",
+          "payDate": "2024-10-25",
+          "earnings": {
+            "regular": {
+              "hours": 0,
+              "rate": 0,
+              "amount": 7500.00,
+              "ytd": 157500.00,
+              "description": "Base Salary"
+            },
+            "overtime": {
+              "hours": 0,
+              "rate": 0,
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "bonus": {
+              "amount": 0.00,
+              "ytd": 0.00
+            },
+            "commission": {
+              "amount": 3200.00,
+              "ytd": 58400.00,
+              "description": "Sales Commission"
+            },
+            "other": {
+              "amount": 0.00,
+              "ytd": 0.00
+            }
+          },
+          "grossPayCurrent": 10700.00,
+          "grossPayYTD": 215900.00,
+          "regularHours": 0,
+          "overtimeHours": 0,
+          "deductions": {
+            "federal": {
+              "federalIncomeTax": {
+                "current": 2354.00,
+                "ytd": 47522.00
+              },
+              "socialSecurity": {
+                "current": 663.40,
+                "ytd": 13385.80
+              },
+              "medicare": {
+                "current": 155.15,
+                "ytd": 3130.55
+              },
+              "additionalMedicare": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "state": {
+              "stateIncomeTax": {
+                "current": 856.00,
+                "ytd": 17272.00,
+                "state": "CA"
+              },
+              "sdi": {
+                "current": 107.00,
+                "ytd": 2159.00,
+                "description": "CA State Disability Insurance"
+              }
+            },
+            "retirement": {
+              "k401_pretax": {
+                "current": 642.00,
+                "ytd": 12954.00,
+                "percentage": 6.0,
+                "description": "401(k) Pre-tax"
+              },
+              "rothIRA": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "insurance": {
+              "medical": {
+                "current": 220.00,
+                "ytd": 4620.00,
+                "plan": "Health Insurance"
+              },
+              "dental": {
+                "current": 35.00,
+                "ytd": 735.00,
+                "plan": "Dental Insurance"
+              },
+              "vision": {
+                "current": 15.00,
+                "ytd": 315.00,
+                "plan": "Vision Insurance"
+              },
+              "lifeInsurance": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "disabilityInsurance": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "other": {
+              "hsa": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "fsa": {
+                "current": 0.00,
+                "ytd": 0.00
+              },
+              "parkingTransit": {
+                "current": 0.00,
+                "ytd": 0.00
+              }
+            },
+            "totalDeductions": {
+              "current": 5047.55,
+              "ytd": 102093.35
+            }
+          },
+          "netPay": 5652.45,
+          "netPayYTD": 113806.65,
+          "paymentMethod": {
+            "method": "Direct Deposit",
+            "bankName": "Bank of America",
+            "accountType": "Checking",
+            "accountLast4": "8765",
+            "amount": 5652.45
+          },
+          "taxInfo": {
+            "filingStatus": "Single",
+            "allowances": 1,
+            "additionalWithholding": 0.00
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "paystub",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "commissionIncomeVariability",
+            "severity": "critical",
+            "field": "commission",
+            "message": "Commission income of $3,200 (current) varies significantly from stated monthly average. YTD commission of $58,400 over 21 pay periods suggests average of $2,781 per period. Commission income requires 2-year history verification for stability."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "ytdIncomeProjection",
+            "severity": "warning",
+            "message": "YTD gross income of $215,900 through October 15 projects to approximately $278,270 annually. This is 10.8% below stated annual income of $312,000. Verify commission/bonus expectations for remainder of year."
+          },
+          {
+            "rule": "highIncomeEarner",
+            "severity": "warning",
+            "message": "Borrower income exceeds $200,000 annually. Verify income stability with prior year W2s and tax returns to confirm consistency of commission-based earnings."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Sarah Elizabeth Chen' matches borrower name on loan application. Name verification passed.",
+            "rule": "matchesBorrowerName"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'BioPharm Solutions LLC' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "matchesApplication"
+          },
+          "payPeriodStart": {
+            "isValid": true,
+            "message": "Pay period start date (Oct 1, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payPeriodEnd": {
+            "isValid": true,
+            "message": "Pay period end date (Oct 15, 2024) is within the required 60-day recency window. Document is current and acceptable.",
+            "rule": "documentRecency"
+          },
+          "payDate": {
+            "isValid": true,
+            "message": "Pay date (Oct 25, 2024) falls appropriately after the pay period end date (Oct 15, 2024). Timing is consistent with standard payroll practices.",
+            "rule": "payDateLogic"
+          },
+          "grossPayCurrent": {
+            "isValid": true,
+            "message": "Current gross pay of $10,700.00 includes base salary ($7,500) plus commission ($3,200). Consistent with stated income structure for sales executive role.",
+            "rule": "incomeConsistency"
+          },
+          "grossPayYTD": {
+            "isValid": true,
+            "message": "Year-to-date gross pay of $215,900.00 aligns with pay period timing (21 periods completed through Oct 15). Income projection tracking slightly below annual target due to variable commission.",
+            "rule": "ytdCalculation"
+          },
+          "netPay": {
+            "isValid": true,
+            "message": "Net pay of $5,652.45 represents reasonable deductions (~47%) for federal/state taxes, FICA, benefits, and retirement contributions on gross pay of $10,700.00.",
+            "rule": "netPayCalculation"
+          },
+          "commission": {
+            "isValid": false,
+            "message": "Commission of $3,200 current and $58,400 YTD shows variability typical of sales positions. Requires verification of 2-year commission history to establish stability for loan qualification purposes.",
+            "rule": "commissionStability",
+            "expectedValue": "2-year commission income history required"
+          }
+        }
+      },
+      "conditions": [
+        "Provide additional paystub from prior pay period to establish commission income pattern",
+        "Provide W2s for past 2 years showing commission income history",
+        "Provide commission plan documentation or employment letter verifying commission structure"
+      ],
+      "status": "conditionally_approved"
+    },
+    {
+      "id": "doc-w2-005",
+      "loanId": "CMG-2024-005",
+      "documentType": "w2",
+      "fileName": "w2-chen-sarah-2023.html",
+      "filePath": "/sample-documents/w2-chen-sarah-2023.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/w2-chen-sarah-2023.html",
+      "uploadDate": "2024-11-12T11:15:00.000Z",
+      "extractedData": {
+        "documentType": "w2",
+        "extractedAt": "2024-11-12T11:15:00.000Z",
+        "confidence": 96,
+        "data": {
+          "taxYear": "2023",
+          "void": false,
+          "corrected": false,
+          "employee": {
+            "ssn": "234-56-7890",
+            "firstName": "Sarah",
+            "middleInitial": "E",
+            "lastName": "Chen",
+            "suffix": "",
+            "address": "8920 Coastal View Drive",
+            "city": "La Jolla",
+            "state": "CA",
+            "zipCode": "92037"
+          },
+          "employeeSSN": "234-56-7890",
+          "employeeName": "Sarah E. Chen",
+          "employeeAddress": "8920 Coastal View Drive, La Jolla, CA 92037",
+          "employer": {
+            "ein": "33-1234567",
+            "name": "BioPharm Solutions LLC",
+            "address": "10450 Science Center Drive",
+            "city": "San Diego",
+            "state": "CA",
+            "zipCode": "92121",
+            "controlNumber": "BPS-2023-20145"
+          },
+          "employerEIN": "33-1234567",
+          "employerName": "BioPharm Solutions LLC",
+          "employerAddress": "10450 Science Center Drive, San Diego, CA 92121",
+          "box1_wages": "289450.00",
+          "wages": "289450.00",
+          "box2_federalTaxWithheld": "62850.00",
+          "federalTaxWithheld": "62850.00",
+          "box3_socialSecurityWages": "160200.00",
+          "socialSecurityWages": "160200.00",
+          "box4_socialSecurityTaxWithheld": "9932.40",
+          "socialSecurityTaxWithheld": "9932.40",
+          "box5_medicareWages": "289450.00",
+          "medicareWages": "289450.00",
+          "box6_medicareTaxWithheld": "4197.03",
+          "medicareTaxWithheld": "4197.03",
+          "box7_socialSecurityTips": "0.00",
+          "box8_allocatedTips": "0.00",
+          "box9_": "",
+          "box10_dependentCareBenefits": "0.00",
+          "box11_nonqualifiedPlans": "0.00",
+          "box12": [
+            {
+              "code": "D",
+              "amount": "19500.00",
+              "description": "Elective deferrals to 401(k)"
+            },
+            {
+              "code": "DD",
+              "amount": "9800.00",
+              "description": "Cost of employer-sponsored health coverage"
+            }
+          ],
+          "box12Codes": ["D", "DD"],
+          "box12Values": ["19500.00", "9800.00"],
+          "box13": {
+            "statutoryEmployee": false,
+            "retirementPlan": true,
+            "thirdPartySickPay": false
+          },
+          "statutoryEmployee": false,
+          "retirementPlan": true,
+          "thirdPartySickPay": false,
+          "box14": [
+            {
+              "description": "State Disability Insurance",
+              "amount": "2894.50"
+            }
+          ],
+          "box15_state": "CA",
+          "box15_employerStateID": "800-9876543-2",
+          "box16_stateWages": "289450.00",
+          "box17_stateIncomeTax": "21450.00",
+          "box18_localWages": "0.00",
+          "box19_localIncomeTax": "0.00",
+          "box20_localityName": "",
+          "state": "CA",
+          "stateID": "800-9876543-2",
+          "stateWages": "289450.00",
+          "stateIncomeTax": "21450.00",
+          "additionalStateInfo": []
+        }
+      },
+      "validationResults": {
+        "documentType": "w2",
+        "isValid": true,
+        "issues": [],
+        "warnings": [
+          {
+            "rule": "incomeIncrease",
+            "severity": "warning",
+            "field": "wages",
+            "message": "2023 W2 wages of $289,450 compared to projected 2024 income of ~$278,270 shows 3.9% decrease. Verify reason for income reduction - market conditions, commission structure changes, or timing differences."
+          },
+          {
+            "rule": "socialSecurityWageCap",
+            "severity": "warning",
+            "field": "socialSecurityWages",
+            "message": "Social Security wages of $160,200 are capped at 2023 maximum. This is normal for high earners but indicates income exceeds SS wage base."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "employeeSSN": {
+            "isValid": true,
+            "message": "SSN on W2 (234-56-7890) matches loan application SSN. Identity verification successful.",
+            "rule": "ssnMatch"
+          },
+          "employeeName": {
+            "isValid": true,
+            "message": "Employee name 'Sarah E. Chen' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "employerName": {
+            "isValid": true,
+            "message": "Employer 'BioPharm Solutions LLC' matches employer listed on loan application. Employment verification consistent.",
+            "rule": "employerMatch"
+          },
+          "taxYear": {
+            "isValid": true,
+            "message": "W2 is from tax year 2023, which is the most recent complete year. Document is current and acceptable.",
+            "rule": "taxYearCurrent"
+          },
+          "wages": {
+            "isValid": true,
+            "message": "W2 wages of $289,450 are reasonably close to stated annual income of $312,000. The 7.8% variance is acceptable given commission-based compensation structure and year-to-year variability.",
+            "rule": "incomeConsistency"
+          },
+          "federalTaxWithheld": {
+            "isValid": true,
+            "message": "Federal tax withholding of $62,850 represents 21.7% effective rate. This is appropriate for this income level and filing status (Single).",
+            "rule": "taxWithholdingReasonable"
+          },
+          "socialSecurityTaxWithheld": {
+            "isValid": true,
+            "message": "Social Security tax of $9,932.40 correctly equals 6.2% of capped wages ($160,200). Calculation verified and appropriate for high income earner.",
+            "rule": "socialSecurityCalculation"
+          },
+          "medicareTaxWithheld": {
+            "isValid": true,
+            "message": "Medicare tax of $4,197.03 correctly equals 1.45% of wages ($289,450). Calculation verified.",
+            "rule": "medicareCalculation"
+          },
+          "box12Codes": {
+            "isValid": true,
+            "message": "Box 12 Code D indicates 401(k) elective deferrals of $19,500 (2023 maximum). This aligns with borrower's retirement plan participation and reduces taxable income.",
+            "rule": "box12Valid"
+          },
+          "state": {
+            "isValid": true,
+            "message": "W2 state (CA) matches property state. Borrower lives and works in same state as subject property.",
+            "rule": "stateMatch"
+          }
+        }
+      },
+      "conditions": [],
+      "status": "approved"
+    },
+    {
+      "id": "doc-bank-005",
+      "loanId": "CMG-2024-005",
+      "documentType": "bank_statement",
+      "fileName": "bank-statement-chen-2024-10.html",
+      "filePath": "/sample-documents/bank-statement-chen-2024-10.html",
+      "s3Url": "https://cmg-documind.onrender.com/sample-documents/bank-statement-chen-2024-10.html",
+      "uploadDate": "2024-11-12T12:00:00.000Z",
+      "extractedData": {
+        "documentType": "bank_statement",
+        "extractedAt": "2024-11-12T12:00:00.000Z",
+        "confidence": 98,
+        "data": {
+          "institutionName": "Bank of America",
+          "accountHolderName": "Sarah E. Chen",
+          "accountNumber": "****8765",
+          "routingNumber": "121000358",
+          "accountType": "Premium Checking",
+          "statementPeriodStart": "2024-10-01",
+          "statementPeriodEnd": "2024-10-31",
+          "statementDate": "2024-11-01",
+          "beginningBalance": "88750.25",
+          "endingBalance": "95420.75",
+          "totalDeposits": "17845.50",
+          "totalWithdrawals": "11175.00",
+          "transactionCount": 28,
+          "deposits": [
+            {"date": "2024-10-10", "type": "Direct Deposit", "description": "BIOPHARM SOLUTIONS PAYROLL", "amount": "5652.45"},
+            {"date": "2024-10-25", "type": "Direct Deposit", "description": "BIOPHARM SOLUTIONS PAYROLL", "amount": "5652.45"},
+            {"date": "2024-10-15", "type": "Transfer", "description": "Transfer from Schwab Brokerage", "amount": "6540.60"}
+          ],
+          "withdrawals": [
+            {"date": "2024-10-01", "type": "ACH Debit", "description": "BMW Financial Auto Payment", "amount": "685.00"},
+            {"date": "2024-10-03", "type": "Debit Card", "description": "Whole Foods Market", "amount": "185.40"},
+            {"date": "2024-10-05", "type": "ACH Debit", "description": "Chase Sapphire Reserve Payment", "amount": "1850.00"},
+            {"date": "2024-10-05", "type": "ACH Debit", "description": "AMEX Platinum Payment", "amount": "945.00"},
+            {"date": "2024-10-08", "type": "Debit Card", "description": "Nordstrom", "amount": "425.80"},
+            {"date": "2024-10-10", "type": "Debit Card", "description": "Erewhon Market", "amount": "215.50"},
+            {"date": "2024-10-12", "type": "ACH Debit", "description": "SDG&E Utilities", "amount": "285.00"},
+            {"date": "2024-10-15", "type": "Debit Card", "description": "Sephora", "amount": "165.00"},
+            {"date": "2024-10-17", "type": "ACH Debit", "description": "Verizon Wireless", "amount": "145.00"},
+            {"date": "2024-10-20", "type": "Debit Card", "description": "True Food Kitchen", "amount": "98.50"},
+            {"date": "2024-10-22", "type": "Debit Card", "description": "Equinox Gym", "amount": "295.00"},
+            {"date": "2024-10-25", "type": "ACH Debit", "description": "Cox Internet", "amount": "125.00"},
+            {"date": "2024-10-28", "type": "Debit Card", "description": "Whole Foods Market", "amount": "195.80"},
+            {"date": "2024-10-30", "type": "ACH Debit", "description": "La Jolla HOA", "amount": "385.00"}
+          ],
+          "allTransactions": [
+            {"date": "2024-10-01", "type": "Beginning Balance", "description": "Beginning Balance", "amount": "88750.25", "balance": "88750.25"},
+            {"date": "2024-10-01", "type": "Withdrawal", "description": "BMW Financial", "amount": "-685.00", "balance": "88065.25"},
+            {"date": "2024-10-03", "type": "Withdrawal", "description": "Whole Foods", "amount": "-185.40", "balance": "87879.85"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "Chase Sapphire", "amount": "-1850.00", "balance": "86029.85"},
+            {"date": "2024-10-05", "type": "Withdrawal", "description": "AMEX Platinum", "amount": "-945.00", "balance": "85084.85"},
+            {"date": "2024-10-08", "type": "Withdrawal", "description": "Nordstrom", "amount": "-425.80", "balance": "84659.05"},
+            {"date": "2024-10-10", "type": "Deposit", "description": "BIOPHARM PAYROLL", "amount": "5652.45", "balance": "90311.50"},
+            {"date": "2024-10-10", "type": "Withdrawal", "description": "Erewhon Market", "amount": "-215.50", "balance": "90096.00"},
+            {"date": "2024-10-12", "type": "Withdrawal", "description": "SDG&E Utilities", "amount": "-285.00", "balance": "89811.00"},
+            {"date": "2024-10-15", "type": "Deposit", "description": "Transfer from Schwab", "amount": "6540.60", "balance": "96351.60"},
+            {"date": "2024-10-15", "type": "Withdrawal", "description": "Sephora", "amount": "-165.00", "balance": "96186.60"},
+            {"date": "2024-10-17", "type": "Withdrawal", "description": "Verizon", "amount": "-145.00", "balance": "96041.60"},
+            {"date": "2024-10-20", "type": "Withdrawal", "description": "True Food Kitchen", "amount": "-98.50", "balance": "95943.10"},
+            {"date": "2024-10-22", "type": "Withdrawal", "description": "Equinox Gym", "amount": "-295.00", "balance": "95648.10"},
+            {"date": "2024-10-25", "type": "Deposit", "description": "BIOPHARM PAYROLL", "amount": "5652.45", "balance": "101300.55"},
+            {"date": "2024-10-25", "type": "Withdrawal", "description": "Cox Internet", "amount": "-125.00", "balance": "101175.55"},
+            {"date": "2024-10-28", "type": "Withdrawal", "description": "Whole Foods", "amount": "-195.80", "balance": "100979.75"},
+            {"date": "2024-10-30", "type": "Withdrawal", "description": "La Jolla HOA", "amount": "-385.00", "balance": "100594.75"},
+            {"date": "2024-10-31", "type": "Interest", "description": "Monthly Interest Earned", "amount": "26.00", "balance": "100620.75"}
+          ],
+          "largeDeposits": [
+            {"date": "2024-10-15", "description": "Transfer from Schwab Brokerage", "amount": "6540.60"}
+          ],
+          "largeWithdrawals": [
+            {"date": "2024-10-05", "description": "Chase Sapphire Reserve Payment", "amount": "1850.00"}
+          ],
+          "nsfFees": [],
+          "negativeBalanceEvents": [],
+          "otherFees": [],
+          "interestEarned": "26.00",
+          "averageBalance": "93285.50",
+          "minimumBalance": "84659.05",
+          "maximumBalance": "101300.55",
+          "directDeposits": [
+            {"date": "2024-10-10", "employer": "BIOPHARM SOLUTIONS", "amount": "5652.45"},
+            {"date": "2024-10-25", "employer": "BIOPHARM SOLUTIONS", "amount": "5652.45"}
+          ],
+          "depositSummary": {
+            "directDeposits": "11304.90",
+            "checkDeposits": "0.00",
+            "transfers": "6540.60",
+            "other": "0.00",
+            "totalDeposits": "17845.50"
+          },
+          "withdrawalSummary": {
+            "achDebits": "4135.00",
+            "debitCard": "1581.00",
+            "checks": "0.00",
+            "atmWithdrawals": "0.00",
+            "fees": "0.00",
+            "other": "0.00",
+            "totalWithdrawals": "5716.00"
+          }
+        }
+      },
+      "validationResults": {
+        "documentType": "bank_statement",
+        "isValid": false,
+        "issues": [
+          {
+            "rule": "largeDepositSourcing",
+            "severity": "critical",
+            "field": "largeDeposits",
+            "message": "Found 1 large deposit of $6,540.60 from Schwab Brokerage. Transfer from investment accounts requires documentation: proof of account ownership and asset liquidation if being used for closing costs."
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "transferFromInvestmentAccount",
+            "severity": "warning",
+            "field": "largeDeposits",
+            "message": "Large transfer of $6,540.60 from Schwab Brokerage suggests potential asset liquidation. If these funds are needed for closing, provide documentation of source account and verify no tax implications or penalties."
+          },
+          {
+            "rule": "highEndSpending",
+            "severity": "warning",
+            "field": "withdrawals",
+            "message": "Spending pattern shows premium merchants (Nordstrom, Equinox, Erewhon) consistent with high income lifestyle. Spending is manageable within income but monitor DTI carefully."
+          }
+        ],
+        "info": [],
+        "fieldValidations": {
+          "accountHolderName": {
+            "isValid": true,
+            "message": "Account holder name 'Sarah E. Chen' matches borrower name on loan application. Name verification passed.",
+            "rule": "nameMatch"
+          },
+          "institutionName": {
+            "isValid": true,
+            "message": "Institution 'Bank of America' matches asset account listed on loan application. Account ownership verified.",
+            "rule": "institutionMatch"
+          },
+          "accountNumber": {
+            "isValid": true,
+            "message": "Account number ****8765 matches checking account listed in borrower assets. Account identification confirmed.",
+            "rule": "accountNumberMatch"
+          },
+          "statementPeriodEnd": {
+            "isValid": true,
+            "message": "Statement period ends 10/31/2024, which is within the last 60 days (12 days old as of 11/12/2024). Document is current and meets recency requirements.",
+            "rule": "statementRecency"
+          },
+          "beginningBalance": {
+            "isValid": true,
+            "message": "Beginning balance of $88,750.25 indicates strong financial reserves at start of period. Starting position is excellent.",
+            "rule": "beginningBalanceReasonable"
+          },
+          "endingBalance": {
+            "isValid": true,
+            "message": "Ending balance of $95,420.75 matches asset verification amount reported on loan application ($95,000 rounded). Balance verification successful within acceptable variance.",
+            "rule": "endingBalanceMatch"
+          },
+          "totalDeposits": {
+            "isValid": true,
+            "message": "Total deposits of $17,845.50 include regular paychecks ($11,304.90) plus investment account transfer ($6,540.60). Deposit pattern shows employment income plus asset movement.",
+            "rule": "depositPatternAnalysis"
+          },
+          "totalWithdrawals": {
+            "isValid": true,
+            "message": "Total withdrawals of $11,175.00 represent normal living expenses, debt payments, and discretionary spending appropriate for income level.",
+            "rule": "withdrawalPatternNormal"
+          },
+          "directDeposits": {
+            "isValid": true,
+            "message": "Found 2 direct deposits from BIOPHARM SOLUTIONS totaling $11,304.90. Regular bi-weekly payroll pattern confirmed ($5,652.45 × 2). Employment income verified.",
+            "rule": "employmentVerification"
+          },
+          "averageBalance": {
+            "isValid": true,
+            "message": "Average balance of $93,285.50 indicates excellent account management. Balance remained well above zero throughout the entire period with no negative events.",
+            "rule": "averageBalanceAnalysis"
+          },
+          "largeDeposits": {
+            "isValid": false,
+            "message": "1 large deposit of $6,540.60 detected from Schwab Brokerage transfer. Requires source documentation (brokerage statement showing transfer-out transaction).",
+            "rule": "largeDepositDocumentation",
+            "expectedValue": "Documentation for deposits over $1,000 or unusual transfers"
+          },
+          "nsfFees": {
+            "isValid": true,
+            "message": "No NSF or overdraft fees during statement period. Excellent funds management and financial stability demonstrated.",
+            "rule": "feeAnalysis"
+          },
+          "sufficientFunds": {
+            "isValid": true,
+            "message": "Ending balance of $95,420.75 is sufficient for refinance cash to close of $12,000. Ample reserves maintained.",
+            "rule": "cashToCloseVerification"
+          }
+        }
+      },
+      "conditions": [
+        "Provide Schwab Brokerage statement for October 2024 showing source of $6,540.60 transfer",
+        "Confirm whether brokerage transfer funds are needed for closing or represent normal account management"
+      ],
+      "status": "conditionally_approved"
+    }
+  ]
+}

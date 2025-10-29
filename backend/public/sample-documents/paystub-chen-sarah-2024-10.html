@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Sarah Chen - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #2c5aa0; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; font-size: 14px; background: #e8e8e8; padding: 8px; border-left: 4px solid #2c5aa0; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #2c5aa0; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #2c5aa0; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">BioPharm Solutions LLC</div>
+            <div>10450 Science Center Drive, San Diego, CA 92121</div>
+            <div>EIN: 33-1234567</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name:</span> Sarah Elizabeth Chen</div>
+                <div class="info-item"><span class="label">Employee ID:</span> EMP-20145</div>
+                <div class="info-item"><span class="label">SSN:</span> ***-**-7890</div>
+                <div class="info-item"><span class="label">Pay Date:</span> October 25, 2024</div>
+                <div class="info-item"><span class="label">Pay Period:</span> Oct 1 - Oct 15, 2024</div>
+                <div class="info-item"><span class="label">Pay Frequency:</span> Bi-Weekly</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Hours/Rate</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Base Salary</td>
+                    <td>Salary</td>
+                    <td>$7,500.00</td>
+                    <td>$157,500.00</td>
+                </tr>
+                <tr>
+                    <td>Commission</td>
+                    <td>Sales</td>
+                    <td>$3,200.00</td>
+                    <td>$58,400.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">GROSS PAY</td>
+                    <td>$10,700.00</td>
+                    <td>$215,900.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Federal Income Tax</td>
+                    <td>$2,354.00</td>
+                    <td>$47,522.00</td>
+                </tr>
+                <tr>
+                    <td>Social Security</td>
+                    <td>$663.40</td>
+                    <td>$13,385.80</td>
+                </tr>
+                <tr>
+                    <td>Medicare</td>
+                    <td>$155.15</td>
+                    <td>$3,130.55</td>
+                </tr>
+                <tr>
+                    <td>CA State Tax</td>
+                    <td>$856.00</td>
+                    <td>$17,272.00</td>
+                </tr>
+                <tr>
+                    <td>CA SDI</td>
+                    <td>$107.00</td>
+                    <td>$2,159.00</td>
+                </tr>
+                <tr>
+                    <td>401(k) Pre-tax</td>
+                    <td>$642.00</td>
+                    <td>$12,954.00</td>
+                </tr>
+                <tr>
+                    <td>Medical Insurance</td>
+                    <td>$220.00</td>
+                    <td>$4,620.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Insurance</td>
+                    <td>$35.00</td>
+                    <td>$735.00</td>
+                </tr>
+                <tr>
+                    <td>Vision Insurance</td>
+                    <td>$15.00</td>
+                    <td>$315.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL DEDUCTIONS</td>
+                    <td>$5,047.55</td>
+                    <td>$102,093.35</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="net-pay">
+            NET PAY: $5,652.45 | YTD NET PAY: $113,806.65
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT METHOD</div>
+            <div class="info-item">Direct Deposit to Bank of America Checking ****8765: $5,652.45</div>
+        </div>
+    </div>
+</body>
+</html>
