@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Security Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #e5e5e5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card-container {
+            width: 540px;
+            height: 340px;
+            background: linear-gradient(135deg, #e8f4f8 0%, #b8d8e8 100%);
+            border: 2px solid #2c5aa0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-size: 80px;
+            color: rgba(44, 90, 160, 0.08);
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 1;
+            letter-spacing: 10px;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .seal {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: radial-gradient(circle, #2c5aa0 0%, #1a3d7a 100%);
+            border: 4px solid #1a3d7a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.2;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .title-line1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a3d7a;
+            margin-bottom: 3px;
+            letter-spacing: 3px;
+        }
+        .title-line2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c5aa0;
+            letter-spacing: 2px;
+        }
+        .main-content {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .ssn-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ssn-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: 8px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-family: 'Courier New', monospace;
+        }
+        .name-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+            padding-left: 40px;
+        }
+        .name-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            text-align: left;
+            padding-left: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .signature-section {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            text-align: right;
+            font-size: 10px;
+        }
+        .signature-line {
+            border-bottom: 1px solid #333;
+            width: 200px;
+            margin: 5px 0;
+        }
+        .signature-label {
+            font-size: 9px;
+            color: #555;
+            font-style: italic;
+        }
+        .bottom-left {
+            position: absolute;
+            bottom: 25px;
+            left: 30px;
+            font-size: 9px;
+            color: #555;
+        }
+        .decorative-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                #1a3d7a 0px,
+                #1a3d7a 10px,
+                #2c5aa0 10px,
+                #2c5aa0 20px
+            );
+        }
+        .decorative-border-left {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(180deg, #1a3d7a 0%, #2c5aa0 100%);
+        }
+        .security-feature {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.3),
+                rgba(255,255,255,0.3) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            border: 1px solid rgba(44, 90, 160, 0.3);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="decorative-pattern"></div>
+        <div class="decorative-border-left"></div>
+        <div class="watermark">SSA</div>
+        <div class="security-feature"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="seal">
+                    SOCIAL<br>
+                    SECURITY
+                </div>
+                <div class="title-line1">SOCIAL SECURITY</div>
+                <div class="title-line2">UNITED STATES OF AMERICA</div>
+            </div>
+
+            <div class="main-content">
+                <div class="ssn-label">Social Security Number</div>
+                <div class="ssn-number">123-45-6789</div>
+
+                <div class="name-label">Name</div>
+                <div class="name-value">JENNIFER MARIE MARTINEZ</div>
+            </div>
+
+            <div class="signature-section">
+                <div class="signature-line"></div>
+                <div class="signature-label">SIGNATURE</div>
+            </div>
+
+            <div class="bottom-left">
+                FOR SOCIAL SECURITY AND TAX PURPOSES - NOT FOR IDENTIFICATION
+            </div>
+        </div>
+    </div>
+</body>
+</html>

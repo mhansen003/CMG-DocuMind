@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Report</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #005eb8 0%, #0077cc 100%);
+            color: white;
+            padding: 30px 40px;
+        }
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .header-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .report-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .score-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .score-label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .score-value {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .score-range {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .score-box {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .score-box-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .score-box-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #059669;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #005eb8;
+            border-bottom: 3px solid #005eb8;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #555;
+        }
+        .info-value {
+            color: #000;
+        }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .account-table th {
+            background: #005eb8;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .account-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        .account-table tr:hover {
+            background: #f9fafb;
+        }
+        .status-good {
+            color: #059669;
+            font-weight: bold;
+        }
+        .status-warning {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        .status-bad {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .summary-box {
+            background: #eff6ff;
+            border-left: 4px solid #005eb8;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+        }
+        .summary-label {
+            font-weight: bold;
+            color: #374151;
+        }
+        .summary-value {
+            color: #000;
+            font-weight: bold;
+        }
+        .footer {
+            background: #f9fafb;
+            padding: 30px 40px;
+            border-top: 3px solid #005eb8;
+            font-size: 11px;
+            color: #6b7280;
+        }
+        .inquiry-item {
+            background: #f9fafb;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #005eb8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">EXPERIAN</div>
+            <div class="header-subtitle">Credit Report and FICO Score</div>
+            <div class="report-info">
+                <div>
+                    Report Date: April 15, 2024<br>
+                    Report Number: EXP-2024-089456
+                </div>
+                <div style="text-align: right;">
+                    Prepared for: Capital Mortgage Group<br>
+                    Purpose: Mortgage Application
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">Consumer Information</div>
+                <div class="info-grid">
+                    <div class="info-label">Name:</div>
+                    <div class="info-value">Jennifer Marie Martinez</div>
+
+                    <div class="info-label">Date of Birth:</div>
+                    <div class="info-value">August 15, 1985</div>
+
+                    <div class="info-label">Social Security Number:</div>
+                    <div class="info-value">***-**-6789</div>
+
+                    <div class="info-label">Current Address:</div>
+                    <div class="info-value">742 Evergreen Terrace, Springfield, CA 90210<br>(Since: March 2024)</div>
+
+                    <div class="info-label">Previous Address:</div>
+                    <div class="info-value">1500 Oak Street, Apt 4B, San Francisco, CA 94102<br>(2019 - 2024)</div>
+
+                    <div class="info-label">Employment:</div>
+                    <div class="info-value">Tech Solutions Inc., Senior Software Engineer</div>
+                </div>
+            </div>
+
+            <div class="score-section">
+                <div class="score-label">FICO Score 8</div>
+                <div class="score-value">758</div>
+                <div class="score-range">Range: 300-850 | Rating: Very Good</div>
+            </div>
+
+            <div class="scores-grid">
+                <div class="score-box">
+                    <div class="score-box-label">EXPERIAN</div>
+                    <div class="score-box-value">758</div>
+                    <div style="font-size: 12px; color: #059669; margin-top: 5px;">Very Good</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-box-label">TRANSUNION</div>
+                    <div class="score-box-value">762</div>
+                    <div style="font-size: 12px; color: #059669; margin-top: 5px;">Very Good</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-box-label">EQUIFAX</div>
+                    <div class="score-box-value">755</div>
+                    <div style="font-size: 12px; color: #059669; margin-top: 5px;">Very Good</div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 15px;">Credit Summary</div>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Accounts:</span>
+                        <span class="summary-value">12</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Open Accounts:</span>
+                        <span class="summary-value">8</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Credit Limit:</span>
+                        <span class="summary-value">$87,500</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Balance:</span>
+                        <span class="summary-value">$18,245</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Credit Utilization:</span>
+                        <span class="summary-value">21%</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Payment History:</span>
+                        <span class="summary-value status-good">100% On-Time</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Oldest Account:</span>
+                        <span class="summary-value">9 years, 3 months</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Derogatory Marks:</span>
+                        <span class="summary-value status-good">None</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Credit Card Accounts</div>
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th>Creditor</th>
+                            <th>Account #</th>
+                            <th>Opened</th>
+                            <th>Credit Limit</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chase Sapphire Preferred</td>
+                            <td>****1234</td>
+                            <td>01/2015</td>
+                            <td>$25,000</td>
+                            <td>$4,125</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                        <tr>
+                            <td>American Express Blue Cash</td>
+                            <td>****5678</td>
+                            <td>06/2017</td>
+                            <td>$18,000</td>
+                            <td>$2,340</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                        <tr>
+                            <td>Citi Double Cash Card</td>
+                            <td>****9012</td>
+                            <td>03/2019</td>
+                            <td>$15,000</td>
+                            <td>$1,875</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                        <tr>
+                            <td>Capital One Venture</td>
+                            <td>****3456</td>
+                            <td>11/2020</td>
+                            <td>$12,500</td>
+                            <td>$0</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                        <tr>
+                            <td>Discover It Card</td>
+                            <td>****7890</td>
+                            <td>08/2021</td>
+                            <td>$10,000</td>
+                            <td>$1,105</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Installment Accounts</div>
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th>Creditor</th>
+                            <th>Account Type</th>
+                            <th>Opened</th>
+                            <th>Original Amount</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Toyota Financial Services</td>
+                            <td>Auto Loan</td>
+                            <td>09/2022</td>
+                            <td>$38,500</td>
+                            <td>$28,800</td>
+                            <td class="status-good">Current<br>$625/mo</td>
+                        </tr>
+                        <tr>
+                            <td>Sallie Mae</td>
+                            <td>Student Loan</td>
+                            <td>09/2007</td>
+                            <td>$45,000</td>
+                            <td>$0</td>
+                            <td class="status-good">Paid in Full<br>12/2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Revolving Accounts - Retail</div>
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th>Creditor</th>
+                            <th>Account #</th>
+                            <th>Opened</th>
+                            <th>Credit Limit</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Target RedCard</td>
+                            <td>****2345</td>
+                            <td>11/2018</td>
+                            <td>$3,000</td>
+                            <td>$0</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                        <tr>
+                            <td>Amazon Store Card</td>
+                            <td>****6789</td>
+                            <td>07/2020</td>
+                            <td>$4,000</td>
+                            <td>$0</td>
+                            <td class="status-good">Current</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Credit Inquiries (Last 24 Months)</div>
+                <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">
+                    Hard inquiries may impact your credit score. The following inquiries have been recorded:
+                </p>
+
+                <div class="inquiry-item">
+                    <strong>Capital Mortgage Group</strong><br>
+                    Date: April 5, 2024<br>
+                    Type: Mortgage Application
+                </div>
+
+                <div class="inquiry-item">
+                    <strong>Toyota Financial Services</strong><br>
+                    Date: September 12, 2022<br>
+                    Type: Auto Loan
+                </div>
+
+                <div class="inquiry-item">
+                    <strong>Capital One</strong><br>
+                    Date: November 8, 2020<br>
+                    Type: Credit Card Application
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Public Records</div>
+                <div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px;">
+                    <strong style="color: #059669;">No public records found.</strong><br>
+                    <span style="font-size: 13px; color: #6b7280;">
+                        No bankruptcies, tax liens, or civil judgments on file.
+                    </span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Collections</div>
+                <div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px;">
+                    <strong style="color: #059669;">No collection accounts found.</strong><br>
+                    <span style="font-size: 13px; color: #6b7280;">
+                        No accounts have been sent to collections.
+                    </span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Score Factors</div>
+                <p style="font-size: 13px; margin-bottom: 15px;">
+                    The following factors are currently affecting your credit score:
+                </p>
+
+                <div style="background: #f9fafb; padding: 15px; margin-bottom: 10px; border-left: 3px solid #10b981;">
+                    <strong style="color: #059669;">Positive Factors:</strong><br>
+                    <ul style="margin: 10px 0; padding-left: 20px; line-height: 1.8;">
+                        <li>Excellent payment history - 100% on-time payments</li>
+                        <li>Low credit utilization - 21% of available credit</li>
+                        <li>Long credit history - oldest account 9 years old</li>
+                        <li>Good mix of credit types</li>
+                        <li>No derogatory marks or public records</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fffbeb; padding: 15px; border-left: 3px solid #f59e0b;">
+                    <strong style="color: #d97706;">Areas to Maintain:</strong><br>
+                    <ul style="margin: 10px 0; padding-left: 20px; line-height: 1.8;">
+                        <li>Recent credit inquiry (mortgage application)</li>
+                        <li>Average age of accounts could improve over time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div style="font-weight: bold; margin-bottom: 10px; color: #374151;">IMPORTANT INFORMATION</div>
+            <p>
+                This credit report was prepared for <strong>Capital Mortgage Group</strong> for the purpose of evaluating a mortgage application. The information contained in this report is confidential and should be used only for its intended purpose.
+            </p>
+            <p>
+                <strong>Your Rights:</strong> You have the right to dispute incomplete or inaccurate information. If you identify information in your file that is incomplete or inaccurate and report it to the consumer reporting agency, the agency must investigate unless your dispute is frivolous.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Experian</strong> | P.O. Box 9701, Allen, TX 75013 | www.experian.com<br>
+                Customer Service: 1-888-397-3742 | Dispute Resolution: www.experian.com/disputes
+            </p>
+            <p style="margin-top: 15px; border-top: 1px solid #e5e7eb; padding-top: 15px;">
+                Report generated on April 15, 2024 at 10:32 AM PST | Document ID: EXP-2024-089456<br>
+                This report is valid for 120 days from the date of issue for mortgage lending purposes.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

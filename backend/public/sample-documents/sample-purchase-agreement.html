@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Purchase Agreement</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px double #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .doc-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .doc-subtitle {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-number {
+            display: inline-block;
+            width: 40px;
+            font-weight: bold;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #333;
+        }
+        .subsection {
+            margin-left: 40px;
+            margin-bottom: 15px;
+        }
+        .info-box {
+            background: #f9f9f9;
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .info-label {
+            font-weight: bold;
+            min-width: 180px;
+        }
+        .info-value {
+            flex: 1;
+            border-bottom: 1px solid #999;
+            padding-left: 10px;
+        }
+        .amount-box {
+            background: #fff8dc;
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        .signature-block {
+            margin-bottom: 50px;
+        }
+        .signature-line {
+            border-bottom: 2px solid #000;
+            width: 300px;
+            margin: 30px 0 5px 0;
+        }
+        .signature-label {
+            font-size: 12px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table td {
+            padding: 8px;
+            border: 1px solid #333;
+        }
+        .checkbox {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #333;
+            margin-right: 8px;
+            vertical-align: middle;
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: 'X';
+            position: absolute;
+            top: -4px;
+            left: 2px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .page-number {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="doc-title">Real Estate Purchase Agreement</div>
+            <div class="doc-subtitle">Residential Property Purchase Contract</div>
+            <div class="doc-subtitle" style="margin-top: 10px;">California Association of Realtors Standard Form</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-row">
+                <div class="info-label">Date:</div>
+                <div class="info-value">March 15, 2024</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Property Address:</div>
+                <div class="info-value">742 Evergreen Terrace, Springfield, CA 90210</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">APN:</div>
+                <div class="info-value">5421-018-032</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">1.</span> PARTIES</div>
+            <div class="subsection">
+                <div class="info-row">
+                    <div class="info-label">BUYER(S):</div>
+                    <div class="info-value">Jennifer Marie Martinez</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">SELLER(S):</div>
+                    <div class="info-value">Robert and Susan Thompson</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">2.</span> PURCHASE PRICE AND TERMS</div>
+            <div class="amount-box">
+                <div style="font-size: 18px; margin-bottom: 10px;">TOTAL PURCHASE PRICE: $650,000.00</div>
+                <div style="font-size: 13px;">(Six Hundred Fifty Thousand Dollars)</div>
+            </div>
+
+            <table>
+                <tr>
+                    <td style="width: 70%;"><strong>A.</strong> Initial Deposit (held in escrow)</td>
+                    <td style="text-align: right;">$10,000.00</td>
+                </tr>
+                <tr>
+                    <td><strong>B.</strong> Increased Deposit (within 3 days of acceptance)</td>
+                    <td style="text-align: right;">$15,000.00</td>
+                </tr>
+                <tr>
+                    <td><strong>C.</strong> Down Payment</td>
+                    <td style="text-align: right;">$130,000.00</td>
+                </tr>
+                <tr>
+                    <td><strong>D.</strong> New First Loan (Conventional 30-year fixed)</td>
+                    <td style="text-align: right;">$520,000.00</td>
+                </tr>
+                <tr>
+                    <td><strong>E.</strong> Closing Costs (estimated)</td>
+                    <td style="text-align: right;">$15,000.00</td>
+                </tr>
+                <tr style="font-weight: bold; background: #f0f0f0;">
+                    <td>TOTAL</td>
+                    <td style="text-align: right;">$650,000.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">3.</span> FINANCING TERMS</div>
+            <div class="subsection">
+                <p><span class="checkbox checked"></span> Buyer to obtain a new conventional loan in the amount of $520,000.00</p>
+                <p>Maximum interest rate: 7.5% | Loan term: 30 years</p>
+                <p>Loan to be obtained within 21 days from acceptance of this agreement</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">4.</span> CONTINGENCIES</div>
+            <div class="subsection">
+                <p><span class="checkbox checked"></span> <strong>Loan Contingency:</strong> 21 days from acceptance</p>
+                <p><span class="checkbox checked"></span> <strong>Appraisal Contingency:</strong> Property must appraise at or above purchase price within 17 days</p>
+                <p><span class="checkbox checked"></span> <strong>Home Inspection Contingency:</strong> 17 days from acceptance for buyer's investigation and approval</p>
+                <p><span class="checkbox checked"></span> <strong>Homeowner's Insurance:</strong> Buyer to obtain satisfactory insurance within 7 days prior to close</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">5.</span> CLOSING AND POSSESSION</div>
+            <div class="subsection">
+                <div class="info-row">
+                    <div class="info-label">Escrow Holder:</div>
+                    <div class="info-value">First American Title Company</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Escrow Number:</div>
+                    <div class="info-value">ESC-2024-789456</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Close of Escrow Date:</div>
+                    <div class="info-value">May 15, 2024 (60 days from acceptance)</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Possession:</div>
+                    <div class="info-value">6:00 PM on close of escrow or upon recording, whichever occurs first</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">6.</span> PROPERTY CONDITION</div>
+            <div class="subsection">
+                <p>Property is sold in "AS-IS" condition, subject to buyer's inspection rights. Seller agrees to maintain property in substantially the same condition as of the date of acceptance.</p>
+                <p><span class="checkbox checked"></span> Seller to provide: Natural Hazard Disclosure, Preliminary Title Report, Property Disclosure Statement, and Home Warranty (AHS 1-year coverage)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><span class="section-number">7.</span> ADDITIONAL TERMS</div>
+            <div class="subsection">
+                <p>Sale includes all fixtures, window coverings, built-in appliances, ceiling fans, and attached wall mounts. Refrigerator, washer, and dryer to remain as a gift from seller.</p>
+                <p>Buyer has been pre-approved by Capital Mortgage Group (Loan Officer: Sarah Chen, NMLS #987654)</p>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div class="section-title">BUYER'S SIGNATURE</div>
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-label">Jennifer Marie Martinez, BUYER | Date: _______________</div>
+                <div style="margin-top: 20px; font-size: 12px;">
+                    Buyer's Agent: Lisa Parker, DRE #01234567 | Realty One Group<br>
+                    Phone: (555) 234-5678 | Email: lisa.parker@realtyonegroup.com
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 50px;">SELLER'S SIGNATURE</div>
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-label">Robert Thompson, SELLER | Date: _______________</div>
+                <div class="signature-line" style="margin-top: 40px;"></div>
+                <div class="signature-label">Susan Thompson, SELLER | Date: _______________</div>
+                <div style="margin-top: 20px; font-size: 12px;">
+                    Seller's Agent: Mark Wilson, DRE #07654321 | Century 21 Prestige<br>
+                    Phone: (555) 345-6789 | Email: mark.wilson@century21.com
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">
+            Page 1 of 8 | Purchase Agreement | Property: 742 Evergreen Terrace, Springfield, CA 90210
+        </div>
+    </div>
+</body>
+</html>

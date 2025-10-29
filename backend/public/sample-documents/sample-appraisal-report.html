@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Appraisal Report</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px 40px;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo-section {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .report-number {
+            text-align: right;
+            font-size: 14px;
+        }
+        .property-address {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .value-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            padding: 25px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .value-label {
+            font-size: 16px;
+            color: #92400e;
+            margin-bottom: 5px;
+        }
+        .value-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #92400e;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e3a8a;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #555;
+        }
+        .info-value {
+            color: #000;
+        }
+        .comparable-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .comparable-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .comparable-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .comparable-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        .subject-row {
+            background: #dbeafe !important;
+            font-weight: bold;
+        }
+        .adjustment {
+            color: #059669;
+        }
+        .adjustment.negative {
+            color: #dc2626;
+        }
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .rating-item {
+            background: #f9fafb;
+            padding: 12px;
+            border-left: 3px solid #3b82f6;
+        }
+        .rating-label {
+            font-weight: bold;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .rating-value {
+            font-size: 16px;
+            color: #000;
+        }
+        .footer {
+            background: #f9fafb;
+            padding: 30px 40px;
+            border-top: 3px solid #1e3a8a;
+        }
+        .signature-section {
+            margin-top: 20px;
+        }
+        .signature-line {
+            border-bottom: 2px solid #000;
+            width: 300px;
+            margin: 20px 0 5px 0;
+        }
+        .disclaimer {
+            font-size: 11px;
+            color: #666;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-section">PRECISION APPRAISAL SERVICES</div>
+                <div class="report-number">
+                    Report #: 2024-CA-04-12789<br>
+                    Date: April 12, 2024
+                </div>
+            </div>
+            <div class="property-address">742 Evergreen Terrace, Springfield, CA 90210</div>
+            <div>Uniform Residential Appraisal Report (URAR) - Fannie Mae Form 1004</div>
+        </div>
+
+        <div class="content">
+            <div class="value-box">
+                <div class="value-label">AS-IS MARKET VALUE</div>
+                <div class="value-amount">$655,000</div>
+                <div class="value-label" style="margin-top: 10px;">Effective Date of Appraisal: April 12, 2024</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Property Information</div>
+                <div class="info-grid">
+                    <div class="info-label">Property Type:</div>
+                    <div class="info-value">Single Family Residence (SFR)</div>
+
+                    <div class="info-label">Legal Description:</div>
+                    <div class="info-value">Lot 18, Tract 5421, Map Book 145, Page 32</div>
+
+                    <div class="info-label">Assessor's Parcel #:</div>
+                    <div class="info-value">5421-018-032</div>
+
+                    <div class="info-label">Tax Year:</div>
+                    <div class="info-value">2024 | Annual Taxes: $7,865</div>
+
+                    <div class="info-label">Owner:</div>
+                    <div class="info-value">Robert and Susan Thompson</div>
+
+                    <div class="info-label">Occupancy:</div>
+                    <div class="info-value">Owner Occupied</div>
+
+                    <div class="info-label">Current Sale Price:</div>
+                    <div class="info-value">$650,000 (Purchase Agreement dated March 15, 2024)</div>
+
+                    <div class="info-label">HOA Dues:</div>
+                    <div class="info-value">$185 per month</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Site & Improvements</div>
+                <div class="info-grid">
+                    <div class="info-label">Site Area:</div>
+                    <div class="info-value">8,500 sq ft (0.20 acres)</div>
+
+                    <div class="info-label">Zoning:</div>
+                    <div class="info-value">R-1 (Single Family Residential)</div>
+
+                    <div class="info-label">Year Built:</div>
+                    <div class="info-value">2010</div>
+
+                    <div class="info-label">Effective Age:</div>
+                    <div class="info-value">8 years (Well maintained)</div>
+
+                    <div class="info-label">Gross Living Area:</div>
+                    <div class="info-value">2,450 sq ft</div>
+
+                    <div class="info-label">Total Rooms:</div>
+                    <div class="info-value">8</div>
+
+                    <div class="info-label">Bedrooms:</div>
+                    <div class="info-value">4</div>
+
+                    <div class="info-label">Bathrooms:</div>
+                    <div class="info-value">3.0 (2 Full, 1 Half)</div>
+
+                    <div class="info-label">Foundation:</div>
+                    <div class="info-value">Concrete Slab</div>
+
+                    <div class="info-label">Exterior Walls:</div>
+                    <div class="info-value">Stucco over Wood Frame</div>
+
+                    <div class="info-label">Roof:</div>
+                    <div class="info-value">Composition Shingle (8 years old)</div>
+
+                    <div class="info-label">Garage:</div>
+                    <div class="info-value">2-Car Attached (440 sq ft)</div>
+
+                    <div class="info-label">Heating/Cooling:</div>
+                    <div class="info-value">Forced Air / Central AC</div>
+
+                    <div class="info-label">Flooring:</div>
+                    <div class="info-value">Hardwood, Tile, Carpet</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Condition Ratings</div>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <div class="rating-label">Overall Condition</div>
+                        <div class="rating-value">Good (C3)</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">Quality of Construction</div>
+                        <div class="rating-value">Good (Q3)</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">Kitchen</div>
+                        <div class="rating-value">Updated 2022</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">Bathrooms</div>
+                        <div class="rating-value">Average</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">HVAC System</div>
+                        <div class="rating-value">Good (8 yrs)</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">Landscaping</div>
+                        <div class="rating-value">Well Maintained</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Sales Comparison Approach</div>
+                <p>The following comparable sales were used to determine market value:</p>
+
+                <table class="comparable-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Address</th>
+                            <th>Sale Price</th>
+                            <th>Sale Date</th>
+                            <th>GLA (sq ft)</th>
+                            <th>Bed/Bath</th>
+                            <th>$/sq ft</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="subject-row">
+                            <td>SUBJECT</td>
+                            <td>742 Evergreen Terrace</td>
+                            <td>$655,000</td>
+                            <td>Current</td>
+                            <td>2,450</td>
+                            <td>4/3.0</td>
+                            <td>$267</td>
+                        </tr>
+                        <tr>
+                            <td>Comp #1</td>
+                            <td>738 Evergreen Terrace</td>
+                            <td>$640,000</td>
+                            <td>March 2024</td>
+                            <td>2,380</td>
+                            <td>4/2.5</td>
+                            <td>$269</td>
+                        </tr>
+                        <tr>
+                            <td>Comp #2</td>
+                            <td>1215 Oak Street</td>
+                            <td>$672,000</td>
+                            <td>February 2024</td>
+                            <td>2,520</td>
+                            <td>4/3.0</td>
+                            <td>$267</td>
+                        </tr>
+                        <tr>
+                            <td>Comp #3</td>
+                            <td>890 Maple Avenue</td>
+                            <td>$658,000</td>
+                            <td>January 2024</td>
+                            <td>2,465</td>
+                            <td>4/3.0</td>
+                            <td>$267</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 20px; padding: 15px; background: #f9fafb; border-left: 4px solid #3b82f6;">
+                    <strong>Adjustments Applied:</strong><br>
+                    <div style="margin-top: 10px; line-height: 2;">
+                        Comp #1: +$15,000 (smaller GLA, dated kitchen)<br>
+                        Comp #2: -$17,000 (superior location, larger lot)<br>
+                        Comp #3: -$3,000 (slight time adjustment)
+                    </div>
+                    <div style="margin-top: 15px; font-weight: bold;">
+                        Adjusted Comparable Range: $652,000 - $658,000<br>
+                        Indicated Value by Sales Comparison Approach: $655,000
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Neighborhood Analysis</div>
+                <div class="info-grid">
+                    <div class="info-label">Location:</div>
+                    <div class="info-value">Urban, Established Residential</div>
+
+                    <div class="info-label">Built-Up:</div>
+                    <div class="info-value">Over 75%</div>
+
+                    <div class="info-label">Growth Rate:</div>
+                    <div class="info-value">Stable</div>
+
+                    <div class="info-label">Property Values:</div>
+                    <div class="info-value">Increasing</div>
+
+                    <div class="info-label">Demand/Supply:</div>
+                    <div class="info-value">In Balance</div>
+
+                    <div class="info-label">Marketing Time:</div>
+                    <div class="info-value">30-60 days</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Final Reconciliation</div>
+                <p>Based on the sales comparison approach and inspection of the subject property, the appraiser has concluded the following:</p>
+                <div style="background: #f9fafb; padding: 20px; margin-top: 15px; border-radius: 5px;">
+                    <strong>Market Value (As-Is):</strong> $655,000<br><br>
+                    The subject property is in good condition and well-maintained. The kitchen was recently updated (2022), which adds value. The property is located in a desirable neighborhood with good schools and amenities. The sales comparison approach provides strong support for the concluded value.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="section-title">Appraiser Certification</div>
+            <p>I certify that, to the best of my knowledge and belief, the statements of fact contained in this report are true and correct, and this appraisal has been made in conformity with the Uniform Standards of Professional Appraisal Practice (USPAP).</p>
+
+            <div class="signature-section">
+                <div class="signature-line"></div>
+                <div style="font-weight: bold;">David Richardson, MAI, SRA</div>
+                <div>Certified Residential Appraiser</div>
+                <div>California License #AR123456</div>
+                <div>Date: April 12, 2024</div>
+                <div style="margin-top: 10px;">
+                    Precision Appraisal Services<br>
+                    2500 Professional Plaza, Suite 400<br>
+                    Springfield, CA 90210<br>
+                    Phone: (555) 456-7890 | Email: david@precisionappraisal.com
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <strong>DISCLAIMER:</strong> This appraisal is prepared for mortgage financing purposes only. The value conclusion is subject to the assumptions and limiting conditions set forth in this report. This appraisal is not valid without the complete accompanying report. The appraiser assumes no responsibility for matters of a legal nature affecting the property or title thereto.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

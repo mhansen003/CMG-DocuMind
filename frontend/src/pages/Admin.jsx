@@ -3,6 +3,16 @@ import { paystubFields } from '../data/paystubFields';
 import { w2Fields } from '../data/w2Fields';
 import { bankStatementFields } from '../data/bankStatementFields';
 import { taxReturnFields } from '../data/taxReturnFields';
+import { driversLicenseFields } from '../data/driversLicenseFields';
+import { insuranceFields } from '../data/insuranceFields';
+import { purchaseAgreementFields } from '../data/purchaseAgreementFields';
+import { appraisalFields } from '../data/appraisalFields';
+import { titleInsuranceFields } from '../data/titleInsuranceFields';
+import { voeFields } from '../data/voeFields';
+import { ssnCardFields } from '../data/ssnCardFields';
+import { creditReportFields } from '../data/creditReportFields';
+import { giftLetterFields } from '../data/giftLetterFields';
+import { propertyTaxFields } from '../data/propertyTaxFields';
 import AddFieldModal from '../components/AddFieldModal';
 import '../styles/Admin.css';
 
@@ -25,6 +35,7 @@ function Admin({ onBack }) {
         name: 'Paystub',
         description: 'Employee pay statement showing income and deductions',
         icon: '💰',
+        previewUrl: '/sample-documents/paystub-chen-sarah-2024-10.html',
         fields: paystubFields
       },
       {
@@ -32,6 +43,7 @@ function Admin({ onBack }) {
         name: 'W-2 Form',
         description: 'IRS Form W-2 - Annual wage and tax statement',
         icon: '📋',
+        previewUrl: '/sample-documents/w2-chen-sarah-2023.html',
         fields: w2Fields
       },
       {
@@ -39,6 +51,7 @@ function Admin({ onBack }) {
         name: 'Bank Statement',
         description: 'Monthly bank account statement showing transactions and balances',
         icon: '🏦',
+        previewUrl: '/sample-documents/bank-statement-chen-2024-10.html',
         fields: bankStatementFields
       },
       {
@@ -46,7 +59,88 @@ function Admin({ onBack }) {
         name: 'Tax Return (1040)',
         description: 'IRS Form 1040 - Individual income tax return with supporting schedules',
         icon: '📊',
+        previewUrl: '/sample-documents/sample-credit-report.html',
         fields: taxReturnFields
+      },
+      {
+        id: 'drivers-license',
+        name: 'Driver\'s License',
+        description: 'State-issued driver\'s license or identification card',
+        icon: '🪪',
+        previewUrl: '/sample-documents/sample-drivers-license.html',
+        fields: driversLicenseFields
+      },
+      {
+        id: 'insurance',
+        name: 'Homeowner\'s Insurance',
+        description: 'Property insurance policy with coverage details and mortgagee clause',
+        icon: '🏠',
+        previewUrl: '/sample-documents/sample-insurance-policy.html',
+        fields: insuranceFields
+      },
+      {
+        id: 'purchase-agreement',
+        name: 'Purchase Agreement',
+        description: 'Real estate purchase contract between buyer and seller',
+        icon: '📝',
+        previewUrl: '/sample-documents/sample-purchase-agreement.html',
+        fields: purchaseAgreementFields
+      },
+      {
+        id: 'appraisal',
+        name: 'Appraisal Report',
+        description: 'Professional property valuation with comparable sales analysis',
+        icon: '🏘️',
+        previewUrl: '/sample-documents/sample-appraisal-report.html',
+        fields: appraisalFields
+      },
+      {
+        id: 'title-insurance',
+        name: 'Title Insurance',
+        description: 'Title commitment or policy showing ownership and encumbrances',
+        icon: '📜',
+        previewUrl: '/sample-documents/sample-title-insurance.html',
+        fields: titleInsuranceFields
+      },
+      {
+        id: 'voe',
+        name: 'Employment Verification',
+        description: 'Verification of Employment (VOE) letter from employer',
+        icon: '💼',
+        previewUrl: '/sample-documents/sample-voe-letter.html',
+        fields: voeFields
+      },
+      {
+        id: 'ssn-card',
+        name: 'Social Security Card',
+        description: 'Social Security card for identity verification',
+        icon: '🆔',
+        previewUrl: '/sample-documents/sample-ssn-card.html',
+        fields: ssnCardFields
+      },
+      {
+        id: 'credit-report',
+        name: 'Credit Report',
+        description: 'Tri-merge credit report with scores and account history',
+        icon: '📊',
+        previewUrl: '/sample-documents/sample-credit-report.html',
+        fields: creditReportFields
+      },
+      {
+        id: 'gift-letter',
+        name: 'Gift Letter',
+        description: 'Documentation of gift funds for down payment or closing costs',
+        icon: '🎁',
+        previewUrl: '/sample-documents/sample-gift-letter.html',
+        fields: giftLetterFields
+      },
+      {
+        id: 'property-tax',
+        name: 'Property Tax Statement',
+        description: 'County tax bill showing annual property taxes and assessments',
+        icon: '🏛️',
+        previewUrl: '/sample-documents/sample-property-tax-statement.html',
+        fields: propertyTaxFields
       }
     ];
 
@@ -150,8 +244,10 @@ function Admin({ onBack }) {
                 </button>
               </div>
 
-              {/* Fields List */}
-              <div className="fields-section">
+              {/* Two-Column Layout: Fields and Preview */}
+              <div className="admin-content-grid">
+                {/* Left Column - Fields List */}
+                <div className="fields-section">
                 <h3>Field Configuration</h3>
                 {selectedDocType.fields.length === 0 ? (
                   <div className="empty-state">
@@ -250,6 +346,19 @@ function Admin({ onBack }) {
                   </div>
                 )}
               </div>
+
+              {/* Right Column - Document Preview */}
+              <div className="preview-section">
+                <h3>Document Preview</h3>
+                <div className="preview-container">
+                  <iframe
+                    src={selectedDocType.previewUrl}
+                    title={`${selectedDocType.name} Preview`}
+                    className="document-preview-frame"
+                  />
+                </div>
+              </div>
+            </div>
             </>
           ) : (
             <div className="empty-state">

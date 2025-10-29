@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Insurance Commitment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #003366;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .logo-sub {
+            font-size: 16px;
+            font-style: italic;
+        }
+        .doc-title {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            border-top: 2px solid white;
+            padding-top: 15px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .commitment-box {
+            background: #e6f2ff;
+            border: 3px solid #003366;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .commitment-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .info-value {
+            color: #000;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            background: #003366;
+            color: white;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+        }
+        .subsection-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #003366;
+            margin: 20px 0 10px 0;
+            text-decoration: underline;
+        }
+        .legal-description {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .exception-list {
+            list-style: none;
+            counter-reset: exception-counter;
+            padding-left: 0;
+        }
+        .exception-list li {
+            counter-increment: exception-counter;
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .exception-list li:before {
+            content: counter(exception-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #003366;
+        }
+        .amount-box {
+            background: #fff8dc;
+            border: 2px solid #003366;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #003366;
+        }
+        .notice-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 30px 40px;
+            border-top: 3px solid #003366;
+            font-size: 12px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">FIRST AMERICAN TITLE</div>
+            <div class="logo-sub">Insurance Company</div>
+            <div class="doc-title">PRELIMINARY TITLE REPORT<br>AND COMMITMENT FOR TITLE INSURANCE</div>
+        </div>
+
+        <div class="content">
+            <div class="commitment-box">
+                <div class="commitment-number">Order No. 2024-CA-SPG-089456</div>
+                <div class="info-grid">
+                    <div class="info-label">Effective Date:</div>
+                    <div class="info-value">April 10, 2024 at 8:00 AM</div>
+
+                    <div class="info-label">Prepared For:</div>
+                    <div class="info-value">Capital Mortgage Group</div>
+
+                    <div class="info-label">Escrow Number:</div>
+                    <div class="info-value">ESC-2024-789456</div>
+
+                    <div class="info-label">Property Address:</div>
+                    <div class="info-value">742 Evergreen Terrace, Springfield, CA 90210</div>
+
+                    <div class="info-label">County:</div>
+                    <div class="info-value">Los Angeles County, California</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">SCHEDULE A - PROPOSED INSURED TRANSACTION</div>
+
+                <div class="info-grid" style="margin-top: 20px;">
+                    <div class="info-label">Policy Amount:</div>
+                    <div class="info-value">$650,000.00</div>
+
+                    <div class="info-label">Premium:</div>
+                    <div class="info-value">$2,275.00 (ALTA Homeowner's Policy with Standard Coverage)</div>
+
+                    <div class="info-label">Proposed Insured:</div>
+                    <div class="info-value">Jennifer Marie Martinez</div>
+
+                    <div class="info-label">Current Owner:</div>
+                    <div class="info-value">Robert Thompson and Susan Thompson, Husband and Wife as Joint Tenants</div>
+
+                    <div class="info-label">Vesting:</div>
+                    <div class="info-value">Jennifer Marie Martinez, A Single Woman</div>
+
+                    <div class="info-label">Type of Policy:</div>
+                    <div class="info-value">ALTA Homeowner's Policy of Title Insurance (2013)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">LEGAL DESCRIPTION</div>
+                <div class="legal-description">
+                    LOT 18 OF TRACT NO. 5421, IN THE CITY OF SPRINGFIELD,
+                    COUNTY OF LOS ANGELES, STATE OF CALIFORNIA, AS PER MAP
+                    RECORDED IN BOOK 145, PAGES 32 THROUGH 38, INCLUSIVE OF
+                    MAPS, IN THE OFFICE OF THE COUNTY RECORDER OF SAID COUNTY.
+                    <br><br>
+                    ASSESSOR'S PARCEL NUMBER: 5421-018-032
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">SCHEDULE B-I - REQUIREMENTS</div>
+                <p>The following are the requirements to be complied with:</p>
+
+                <ul class="exception-list">
+                    <li>Payment of the full consideration to, or for the account of, the grantors or mortgagors.</li>
+
+                    <li>Proper instrument(s) creating the estate or interest to be insured must be executed and duly filed for record.</li>
+
+                    <li>Payment of all taxes, charges, assessments, levies and liens shown herein.</li>
+
+                    <li>Satisfactory evidence that improvements and/or repairs or alterations thereto have been completed, that persons engaged to perform work or services or supply materials therefor have been paid, and that no other party has any right to a lien for such work, services or materials.</li>
+
+                    <li>Documents satisfactory to the Company, establishing payment of homeowners association transfer fees, if any.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">SCHEDULE B-II - EXCEPTIONS</div>
+                <p>The policy or policies to be issued will contain exceptions to the following matters unless the same are disposed of to the satisfaction of the Company:</p>
+
+                <ul class="exception-list">
+                    <li>Defects, liens, encumbrances, adverse claims or other matters, if any, created, first appearing in the public records or attaching subsequent to the effective date hereof but prior to the date the proposed insured acquires of record for value the estate or interest or mortgage thereon covered by this Commitment.</li>
+
+                    <li>Rights or claims of parties in possession not shown by the public records.</li>
+
+                    <li>Easements, liens or encumbrances, or claims thereof, not shown by the public records.</li>
+
+                    <li>Any lien, or right to a lien, for services, labor or material heretofore or hereafter furnished, imposed by law and not shown by the public records.</li>
+
+                    <li>Taxes or assessments which are not shown as existing liens by the records of any taxing authority that levies taxes or assessments on real property or by the public records.</li>
+
+                    <li>Proceedings by a public agency which may result in taxes or assessments, or notices of such proceedings, whether or not shown by the records of such agency or by the public records.</li>
+
+                    <li>The lien of supplemental taxes, if any, assessed pursuant to the provisions of Chapter 3.5 (commencing with Section 75) of the Revenue and Taxation Code of the State of California.</li>
+
+                    <li>Property taxes for the fiscal year 2024-2025:
+                        <div style="margin-top: 10px; margin-left: 20px;">
+                            1st Installment: $3,932.50 (Due November 1, 2024)<br>
+                            2nd Installment: $3,932.50 (Due February 1, 2025)<br>
+                            Total Annual Taxes: $7,865.00 (PAID CURRENT)
+                        </div>
+                    </li>
+
+                    <li>Covenants, Conditions and Restrictions recorded March 15, 2005 as Instrument No. 2005-0234567, Official Records. Said CC&Rs provide that a violation thereof shall not defeat or render invalid the lien of any mortgage or deed of trust made in good faith and for value.</li>
+
+                    <li>An easement for public utilities purposes recorded June 20, 2005 as Instrument No. 2005-0456789, Official Records, affecting the rear five feet of said land.</li>
+
+                    <li>A Notice of Assessment for Homeowners Association dues in favor of Evergreen Terrace HOA. Current assessments are $185.00 per month (PAID CURRENT).</li>
+                </ul>
+
+                <div class="notice-box">
+                    <strong>NOTE:</strong> The CC&Rs referenced in Item 9 above contain certain use restrictions and architectural guidelines. Buyer should review the CC&Rs and HOA documents prior to close of escrow. No violations are currently noted in the public records.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">SCHEDULE C - TITLE INSURANCE PREMIUM</div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Coverage Type</th>
+                            <th>Policy Amount</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ALTA Homeowner's Policy (Owner's Policy)</td>
+                            <td>$650,000.00</td>
+                            <td>$2,275.00</td>
+                        </tr>
+                        <tr>
+                            <td>ALTA Loan Policy (Lender's Policy)</td>
+                            <td>$520,000.00</td>
+                            <td>$1,820.00</td>
+                        </tr>
+                        <tr style="font-weight: bold; background: #f0f0f0;">
+                            <td colspan="2">TOTAL TITLE INSURANCE PREMIUM</td>
+                            <td>$4,095.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 15px; font-size: 13px;">
+                    <strong>Additional Charges:</strong><br>
+                    Escrow Fee: $895.00<br>
+                    Document Recording: $125.00<br>
+                    Notary Fees: $75.00<br>
+                    Title Search: $150.00
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">IMPORTANT INFORMATION</div>
+                <p><strong>Proposed Lender:</strong> Capital Mortgage Group</p>
+                <p><strong>Loan Amount:</strong> $520,000.00</p>
+                <p><strong>Loan Type:</strong> Conventional Fixed Rate Mortgage</p>
+                <p><strong>Estimated Closing Date:</strong> May 15, 2024</p>
+
+                <div class="notice-box" style="margin-top: 20px;">
+                    <strong>PLEASE NOTE:</strong> This Preliminary Report (Commitment) is furnished to advise you of the condition of title and is issued preparatory to the issuance of a policy of title insurance. It does not constitute a guaranty or warranty of title. The exceptions and requirements shown in this report will be set forth as exceptions and requirements in the policy of title insurance if issued.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <strong style="color: #003366; font-size: 14px;">FIRST AMERICAN TITLE INSURANCE COMPANY</strong>
+            </div>
+            <div style="text-align: center;">
+                Springfield Title Office<br>
+                5000 Commerce Drive, Suite 300<br>
+                Springfield, CA 90210<br>
+                Phone: (555) 789-0123 | Fax: (555) 789-0124<br>
+                Email: springfield@firstam.com
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                Title Officer: Rebecca Martinez, CLTP | License #TI-123456<br>
+                Escrow Officer: Patricia Chen | License #EO-789012
+            </div>
+            <div style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 15px; font-size: 10px;">
+                This report is confidential and is provided solely for the use of the addressee. First American Title Insurance Company assumes no liability to any other party. All title insurance policies are subject to the terms, conditions, and exclusions contained in the policy form.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
