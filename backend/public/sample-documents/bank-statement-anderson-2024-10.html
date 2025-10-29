@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Anderson - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #003e7e; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #003e7e; }
+        .account-info { text-align: right; }
+        .section-title { background: #003e7e; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #003e7e; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #003e7e; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+        .highlight { background: #fff3cd; padding: 10px; margin: 15px 0; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">CHASE</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">October 1 - October 31, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holders:</span> Emily G. Anderson and James M. Anderson</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****2468</div>
+            <div class="info-item"><span class="label">Address:</span> 2250 Park Avenue, Unit 3B<br>Palo Alto, CA 94301</div>
+            <div class="info-item"><span class="label">Account Type:</span> Chase Private Client Checking<br><span class="label">Routing:</span> 322271627</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (10/01/24):</span> <span class="amount">$178,950.75</span></div>
+            <div class="info-item"><span class="label">Ending Balance (10/31/24):</span> <span class="amount">$185,420.50</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$15,845.20</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$9,375.45</span></div>
+        </div>
+
+        <div class="highlight">
+            <strong>Important Notice:</strong> Large deposit of $4,864.60 from E*TRADE investment account on 10/15/2024. Investment income requires brokerage statement to verify source and determine if recurring.
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$178,950.75</td>
+                </tr>
+                <tr>
+                    <td>10/01</td>
+                    <td>ACH DEBIT - Rent Payment Palo Alto Property</td>
+                    <td>$4,200.00</td>
+                    <td>-</td>
+                    <td>$174,750.75</td>
+                </tr>
+                <tr>
+                    <td>10/03</td>
+                    <td>DEBIT CARD - Whole Foods Market</td>
+                    <td>$285.50</td>
+                    <td>-</td>
+                    <td>$174,465.25</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td class="deposit">DIRECT DEPOSIT - GOOGLE LLC PAYROLL - EMILY</td>
+                    <td>-</td>
+                    <td class="deposit">$2,204.85</td>
+                    <td>$176,670.10</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>ACH DEBIT - Chase Sapphire Reserve Payment</td>
+                    <td>$2,850.00</td>
+                    <td>-</td>
+                    <td>$173,820.10</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td>ACH DEBIT - Tesla Financial Payment</td>
+                    <td>$825.00</td>
+                    <td>-</td>
+                    <td>$172,995.10</td>
+                </tr>
+                <tr>
+                    <td>10/10</td>
+                    <td>DEBIT CARD - Equinox Gym</td>
+                    <td>$395.00</td>
+                    <td>-</td>
+                    <td>$172,600.10</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td class="deposit">DIRECT DEPOSIT - APPLE INC PAYROLL - JAMES</td>
+                    <td>-</td>
+                    <td class="deposit">$3,285.45</td>
+                    <td>$175,885.55</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td>ACH DEBIT - Kindercare Daycare</td>
+                    <td>$2,400.00</td>
+                    <td>-</td>
+                    <td>$173,485.55</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td>10/15</td>
+                    <td class="deposit"><strong>ACH DEPOSIT - E*TRADE Investment Income</strong></td>
+                    <td>-</td>
+                    <td class="deposit"><strong>$4,864.60</strong></td>
+                    <td>$178,350.15</td>
+                </tr>
+                <tr>
+                    <td>10/15</td>
+                    <td>ACH DEBIT - PG&E Utilities</td>
+                    <td>$185.00</td>
+                    <td>-</td>
+                    <td>$178,165.15</td>
+                </tr>
+                <tr>
+                    <td>10/18</td>
+                    <td>DEBIT CARD - Erewhon Market</td>
+                    <td>$325.80</td>
+                    <td>-</td>
+                    <td>$177,839.35</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td class="deposit">DIRECT DEPOSIT - GOOGLE LLC PAYROLL - EMILY</td>
+                    <td>-</td>
+                    <td class="deposit">$2,204.85</td>
+                    <td>$180,044.20</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td>ACH DEBIT - Verizon Wireless</td>
+                    <td>$215.00</td>
+                    <td>-</td>
+                    <td>$179,829.20</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td>DEBIT CARD - Amazon.com</td>
+                    <td>$425.65</td>
+                    <td>-</td>
+                    <td>$179,403.55</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td>ACH DEBIT - American Express Payment</td>
+                    <td>$1,850.00</td>
+                    <td>-</td>
+                    <td>$177,553.55</td>
+                </tr>
+                <tr>
+                    <td>10/26</td>
+                    <td class="deposit">DIRECT DEPOSIT - APPLE INC PAYROLL - JAMES</td>
+                    <td>-</td>
+                    <td class="deposit">$3,285.45</td>
+                    <td>$180,839.00</td>
+                </tr>
+                <tr>
+                    <td>10/28</td>
+                    <td>DEBIT CARD - Whole Foods Market</td>
+                    <td>$295.50</td>
+                    <td>-</td>
+                    <td>$180,543.50</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td class="deposit">Monthly Interest Earned</td>
+                    <td>-</td>
+                    <td class="deposit">$877.00</td>
+                    <td><strong>$181,420.50</strong></td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td>Monthly Service Adjustment</td>
+                    <td>($4,000.00)</td>
+                    <td>-</td>
+                    <td><strong>$185,420.50</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Direct Deposits (Payroll):</span> $10,980.60</div>
+                <div class="info-item"><span class="label">Investment Income:</span> $4,864.60</div>
+                <div class="info-item"><span class="label">Interest Earned:</span> $877.00</div>
+                <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">$16,722.20</span></div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Rent Payment:</span> $4,200.00</div>
+                <div class="info-item"><span class="label">Credit Card Payments:</span> $4,700.00</div>
+                <div class="info-item"><span class="label">Daycare:</span> $2,400.00</div>
+                <div class="info-item"><span class="label">Groceries & Shopping:</span> $1,332.45</div>
+                <div class="info-item"><span class="label">Utilities & Services:</span> $1,020.00</div>
+                <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount">$13,652.45</span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-left: 4px solid #003e7e;">
+            <strong>Average Daily Balance:</strong> $180,250.00<br>
+            <strong>Minimum Balance:</strong> $172,600.10 (10/10/2024)<br>
+            <strong>Maximum Balance:</strong> $181,420.50 (10/31/2024)
+        </div>
+
+        <div style="margin-top: 30px; font-size: 11px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 20px;">
+            <p>JPMorgan Chase Bank, N.A. | Member FDIC</p>
+            <p>For questions about your account, call 1-800-935-9935 or visit chase.com</p>
+            <p>This statement covers the period from October 1, 2024 through October 31, 2024</p>
+        </div>
+    </div>
+</body>
+</html>

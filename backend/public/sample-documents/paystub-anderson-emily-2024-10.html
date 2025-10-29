@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Emily Anderson - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #4285f4; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; font-size: 14px; background: #e8e8e8; padding: 8px; border-left: 4px solid #4285f4; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #4285f4; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #4285f4; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">Google LLC</div>
+            <div>1600 Amphitheatre Parkway, Mountain View, CA 94043</div>
+            <div>EIN: 77-0493581</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name:</span> Emily Grace Anderson</div>
+                <div class="info-item"><span class="label">Employee ID:</span> EMP-40301</div>
+                <div class="info-item"><span class="label">SSN:</span> ***-**-1234</div>
+                <div class="info-item"><span class="label">Pay Date:</span> October 20, 2024</div>
+                <div class="info-item"><span class="label">Pay Period:</span> Oct 1 - Oct 15, 2024</div>
+                <div class="info-item"><span class="label">Pay Frequency:</span> Bi-Weekly</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Hours/Rate</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Base Salary</td>
+                    <td>80 hrs @ $93.75</td>
+                    <td>$7,500.00</td>
+                    <td>$157,500.00</td>
+                </tr>
+                <tr>
+                    <td>Quarterly Performance Bonus</td>
+                    <td>-</td>
+                    <td>$0.00</td>
+                    <td>$8,350.00</td>
+                </tr>
+                <tr>
+                    <td>RSU Vesting</td>
+                    <td>Stock Comp</td>
+                    <td>$576.92</td>
+                    <td>$12,115.32</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">GROSS PAY</td>
+                    <td>$8,076.92</td>
+                    <td>$177,965.32</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Federal Income Tax</td>
+                    <td>$1,895.20</td>
+                    <td>$41,852.50</td>
+                </tr>
+                <tr>
+                    <td>Social Security</td>
+                    <td>$500.77</td>
+                    <td>$10,533.85</td>
+                </tr>
+                <tr>
+                    <td>Medicare</td>
+                    <td>$117.12</td>
+                    <td>$2,580.50</td>
+                </tr>
+                <tr>
+                    <td>Additional Medicare</td>
+                    <td>$0.00</td>
+                    <td>$158.45</td>
+                </tr>
+                <tr>
+                    <td>CA State Tax</td>
+                    <td>$685.52</td>
+                    <td>$15,128.95</td>
+                </tr>
+                <tr>
+                    <td>CA SDI</td>
+                    <td>$80.77</td>
+                    <td>$1,779.65</td>
+                </tr>
+                <tr>
+                    <td>401(k) Pre-tax - 20% (Google Match 50%)</td>
+                    <td>$1,615.38</td>
+                    <td>$35,593.06</td>
+                </tr>
+                <tr>
+                    <td>Medical Insurance - Family</td>
+                    <td>$285.00</td>
+                    <td>$5,985.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Insurance - Family</td>
+                    <td>$42.00</td>
+                    <td>$882.00</td>
+                </tr>
+                <tr>
+                    <td>Vision Insurance - Family</td>
+                    <td>$18.00</td>
+                    <td>$378.00</td>
+                </tr>
+                <tr>
+                    <td>Life Insurance ($500,000)</td>
+                    <td>$25.00</td>
+                    <td>$525.00</td>
+                </tr>
+                <tr>
+                    <td>LTD Insurance (60%)</td>
+                    <td>$15.00</td>
+                    <td>$315.00</td>
+                </tr>
+                <tr>
+                    <td>Health Savings Account (HSA)</td>
+                    <td>$250.00</td>
+                    <td>$5,250.00</td>
+                </tr>
+                <tr>
+                    <td>Dependent Care FSA</td>
+                    <td>$192.31</td>
+                    <td>$4,038.51</td>
+                </tr>
+                <tr>
+                    <td>Transit Benefit</td>
+                    <td>$150.00</td>
+                    <td>$3,150.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL DEDUCTIONS</td>
+                    <td>$5,872.07</td>
+                    <td>$128,150.47</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="net-pay">
+            NET PAY: $2,204.85 | YTD NET PAY: $49,814.85
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT METHOD</div>
+            <div class="info-item">Direct Deposit to Chase Bank Checking ****2468: $2,204.85</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAX FILING STATUS</div>
+            <div class="info-item">Filing Status: Married Filing Jointly | Allowances: 2 | Additional Withholding: $200.00</div>
+        </div>
+    </div>
+</body>
+</html>

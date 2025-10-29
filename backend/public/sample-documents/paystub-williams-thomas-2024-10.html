@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Thomas Williams - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #006837; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; font-size: 14px; background: #e8e8e8; padding: 8px; border-left: 4px solid #006837; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #006837; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #006837; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">Riverside Medical Center</div>
+            <div>4445 Magnolia Avenue, Riverside, CA 92501</div>
+            <div>EIN: 95-7654321</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name:</span> Thomas Lee Williams</div>
+                <div class="info-item"><span class="label">Employee ID:</span> EMP-50412</div>
+                <div class="info-item"><span class="label">SSN:</span> ***-**-3456</div>
+                <div class="info-item"><span class="label">Pay Date:</span> November 5, 2024</div>
+                <div class="info-item"><span class="label">Pay Period:</span> Oct 16 - Oct 31, 2024</div>
+                <div class="info-item"><span class="label">Pay Frequency:</span> Bi-Weekly</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Hours/Rate</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Regular Pay</td>
+                    <td>80 hrs @ $34.62</td>
+                    <td>$2,769.60</td>
+                    <td>$16,617.60</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">GROSS PAY</td>
+                    <td>$2,769.60</td>
+                    <td>$16,617.60</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Federal Income Tax</td>
+                    <td>$285.50</td>
+                    <td>$1,713.00</td>
+                </tr>
+                <tr>
+                    <td>Social Security</td>
+                    <td>$171.71</td>
+                    <td>$1,030.29</td>
+                </tr>
+                <tr>
+                    <td>Medicare</td>
+                    <td>$40.16</td>
+                    <td>$240.96</td>
+                </tr>
+                <tr>
+                    <td>CA State Tax</td>
+                    <td>$95.80</td>
+                    <td>$574.80</td>
+                </tr>
+                <tr>
+                    <td>CA SDI</td>
+                    <td>$27.70</td>
+                    <td>$166.18</td>
+                </tr>
+                <tr>
+                    <td>Medical Insurance - Single</td>
+                    <td>$125.00</td>
+                    <td>$750.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Insurance - Single</td>
+                    <td>$18.00</td>
+                    <td>$108.00</td>
+                </tr>
+                <tr>
+                    <td>Vision Insurance - Single</td>
+                    <td>$8.50</td>
+                    <td>$51.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL DEDUCTIONS</td>
+                    <td>$772.37</td>
+                    <td>$4,634.23</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="net-pay">
+            NET PAY: $1,997.23 | YTD NET PAY: $11,983.37
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT METHOD</div>
+            <div class="info-item">Direct Deposit to Bank of America Checking ****9876: $1,997.23</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAX FILING STATUS</div>
+            <div class="info-item">Filing Status: Single | Allowances: 1 | Additional Withholding: $0.00</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYMENT INFORMATION</div>
+            <div class="info-item">Position: Medical Assistant | Department: Primary Care | Start Date: June 15, 2024</div>
+        </div>
+    </div>
+</body>
+</html>

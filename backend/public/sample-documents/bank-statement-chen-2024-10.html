@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Chen - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #0066b2; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #0066b2; }
+        .account-info { text-align: right; }
+        .section-title { background: #0066b2; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #0066b2; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #0066b2; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+        .highlight { background: #fff3cd; padding: 10px; margin: 15px 0; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">BANK OF AMERICA</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">October 1 - October 31, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holder:</span> Sarah E. Chen</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****8765</div>
+            <div class="info-item"><span class="label">Address:</span> 8920 Coastal View Drive<br>La Jolla, CA 92037</div>
+            <div class="info-item"><span class="label">Account Type:</span> Premium Checking<br><span class="label">Routing:</span> 121000358</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (10/01/24):</span> <span class="amount">$88,750.25</span></div>
+            <div class="info-item"><span class="label">Ending Balance (10/31/24):</span> <span class="amount">$95,420.75</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$17,845.50</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$11,175.00</span></div>
+        </div>
+
+        <div class="highlight">
+            <strong>Important Notice:</strong> Large transfer of $6,540.60 from Schwab Brokerage on 10/15/2024. If these funds are being used for refinance closing, provide documentation of source account.
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$88,750.25</td>
+                </tr>
+                <tr>
+                    <td>10/01</td>
+                    <td>ACH DEBIT - BMW Financial Auto Payment</td>
+                    <td>$685.00</td>
+                    <td>-</td>
+                    <td>$88,065.25</td>
+                </tr>
+                <tr>
+                    <td>10/03</td>
+                    <td>DEBIT CARD - Whole Foods Market</td>
+                    <td>$185.40</td>
+                    <td>-</td>
+                    <td>$87,879.85</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>ACH DEBIT - Chase Sapphire Reserve Payment</td>
+                    <td>$1,850.00</td>
+                    <td>-</td>
+                    <td>$86,029.85</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>ACH DEBIT - AMEX Platinum Payment</td>
+                    <td>$945.00</td>
+                    <td>-</td>
+                    <td>$85,084.85</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td>DEBIT CARD - Nordstrom</td>
+                    <td>$425.80</td>
+                    <td>-</td>
+                    <td>$84,659.05</td>
+                </tr>
+                <tr>
+                    <td>10/10</td>
+                    <td class="deposit">DIRECT DEPOSIT - BIOPHARM SOLUTIONS PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$5,652.45</td>
+                    <td>$90,311.50</td>
+                </tr>
+                <tr>
+                    <td>10/10</td>
+                    <td>DEBIT CARD - Erewhon Market</td>
+                    <td>$215.50</td>
+                    <td>-</td>
+                    <td>$90,096.00</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td>ACH DEBIT - SDG&E Utilities</td>
+                    <td>$285.00</td>
+                    <td>-</td>
+                    <td>$89,811.00</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td>10/15</td>
+                    <td class="deposit"><strong>TRANSFER IN - Schwab Brokerage Account Transfer</strong></td>
+                    <td>-</td>
+                    <td class="deposit"><strong>$6,540.60</strong></td>
+                    <td>$96,351.60</td>
+                </tr>
+                <tr>
+                    <td>10/15</td>
+                    <td>DEBIT CARD - Sephora</td>
+                    <td>$165.00</td>
+                    <td>-</td>
+                    <td>$96,186.60</td>
+                </tr>
+                <tr>
+                    <td>10/17</td>
+                    <td>ACH DEBIT - Verizon Wireless</td>
+                    <td>$145.00</td>
+                    <td>-</td>
+                    <td>$96,041.60</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td>DEBIT CARD - True Food Kitchen</td>
+                    <td>$98.50</td>
+                    <td>-</td>
+                    <td>$95,943.10</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td>DEBIT CARD - Equinox Gym</td>
+                    <td>$295.00</td>
+                    <td>-</td>
+                    <td>$95,648.10</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td class="deposit">DIRECT DEPOSIT - BIOPHARM SOLUTIONS PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$5,652.45</td>
+                    <td>$101,300.55</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td>ACH DEBIT - Cox Internet</td>
+                    <td>$125.00</td>
+                    <td>-</td>
+                    <td>$101,175.55</td>
+                </tr>
+                <tr>
+                    <td>10/28</td>
+                    <td>DEBIT CARD - Whole Foods Market</td>
+                    <td>$195.80</td>
+                    <td>-</td>
+                    <td>$100,979.75</td>
+                </tr>
+                <tr>
+                    <td>10/30</td>
+                    <td>ACH DEBIT - La Jolla HOA Fees</td>
+                    <td>$385.00</td>
+                    <td>-</td>
+                    <td>$100,594.75</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td class="deposit">Interest Earned</td>
+                    <td>-</td>
+                    <td class="deposit">$26.00</td>
+                    <td>$100,620.75</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td>Monthly Service Adjustment</td>
+                    <td>$5,200.00</td>
+                    <td>-</td>
+                    <td><strong>$95,420.75</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Direct Deposits (Payroll):</span> $11,304.90</div>
+                <div class="info-item"><span class="label">Transfers (Brokerage):</span> $6,540.60</div>
+                <div class="info-item"><span class="label">Interest Earned:</span> $26.00</div>
+                <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">$17,871.50</span></div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">ACH Debits:</span> $4,135.00</div>
+                <div class="info-item"><span class="label">Debit Card Purchases:</span> $1,581.00</div>
+                <div class="info-item"><span class="label">Adjustments:</span> $5,200.00</div>
+                <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount">$10,916.00</span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-left: 4px solid #0066b2;">
+            <strong>Average Daily Balance:</strong> $93,285.50<br>
+            <strong>Minimum Balance:</strong> $84,659.05 (10/08/2024)<br>
+            <strong>Maximum Balance:</strong> $101,300.55 (10/25/2024)
+        </div>
+
+        <div style="margin-top: 30px; font-size: 11px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 20px;">
+            <p>Bank of America, N.A. | Member FDIC</p>
+            <p>For questions about your account, call 1-800-432-1000 or visit bankofamerica.com</p>
+            <p>This statement covers the period from October 1, 2024 through October 31, 2024</p>
+        </div>
+    </div>
+</body>
+</html>

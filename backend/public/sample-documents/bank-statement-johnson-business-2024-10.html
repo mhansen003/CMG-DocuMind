@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Johnson Construction - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #003366; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #003366; }
+        .account-info { text-align: right; }
+        .section-title { background: #003366; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #003366; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #003366; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">US BANK</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">October 1 - October 31, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holder:</span> Johnson Construction Services LLC</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****3456</div>
+            <div class="info-item"><span class="label">Address:</span> 4521 Arden Way, Apt 204<br>Sacramento, CA 95864</div>
+            <div class="info-item"><span class="label">Account Type:</span> Business Checking<br><span class="label">Routing:</span> 121000248</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (10/01/24):</span> <span class="amount">$24,850.75</span></div>
+            <div class="info-item"><span class="label">Ending Balance (10/31/24):</span> <span class="amount">$28,450.00</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$18,750.00</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$15,150.75</span></div>
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$24,850.75</td>
+                </tr>
+                <tr>
+                    <td>10/02</td>
+                    <td>CHECK #2156 - Lumber Supply Payment</td>
+                    <td>$2,850.00</td>
+                    <td>-</td>
+                    <td>$22,000.75</td>
+                </tr>
+                <tr>
+                    <td>10/03</td>
+                    <td class="deposit">MOBILE DEPOSIT - Check #1245 Martinez Remodel Project</td>
+                    <td>-</td>
+                    <td class="deposit">$8,500.00</td>
+                    <td>$30,500.75</td>
+                </tr>
+                <tr>
+                    <td>10/04</td>
+                    <td>DEBIT CARD - Home Depot Materials</td>
+                    <td>$685.50</td>
+                    <td>-</td>
+                    <td>$29,815.25</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>ACH DEBIT - Owner Draw to Personal Account</td>
+                    <td>$3,500.00</td>
+                    <td>-</td>
+                    <td>$26,315.25</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td>DEBIT CARD - Chevron Gas</td>
+                    <td>$125.00</td>
+                    <td>-</td>
+                    <td>$26,190.25</td>
+                </tr>
+                <tr>
+                    <td>10/10</td>
+                    <td>CHECK #2157 - Subcontractor Payment</td>
+                    <td>$1,800.00</td>
+                    <td>-</td>
+                    <td>$24,390.25</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td>ACH DEBIT - Business Insurance Premium</td>
+                    <td>$285.00</td>
+                    <td>-</td>
+                    <td>$24,105.25</td>
+                </tr>
+                <tr>
+                    <td>10/15</td>
+                    <td class="deposit">ACH DEPOSIT - Zelle from Chen Kitchen Renovation</td>
+                    <td>-</td>
+                    <td class="deposit">$6,250.00</td>
+                    <td>$30,355.25</td>
+                </tr>
+                <tr>
+                    <td>10/15</td>
+                    <td>DEBIT CARD - Home Depot Materials</td>
+                    <td>$425.80</td>
+                    <td>-</td>
+                    <td>$29,929.45</td>
+                </tr>
+                <tr>
+                    <td>10/18</td>
+                    <td>ACH DEBIT - Ford Credit Work Truck Payment</td>
+                    <td>$625.00</td>
+                    <td>-</td>
+                    <td>$29,304.45</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td>ACH DEBIT - Owner Draw to Personal Account</td>
+                    <td>$3,500.00</td>
+                    <td>-</td>
+                    <td>$25,804.45</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td>DEBIT CARD - Lowes Materials</td>
+                    <td>$385.45</td>
+                    <td>-</td>
+                    <td>$25,419.00</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td>CHECK #2158 - Electrical Subcontractor</td>
+                    <td>$950.00</td>
+                    <td>-</td>
+                    <td>$24,469.00</td>
+                </tr>
+                <tr>
+                    <td>10/28</td>
+                    <td class="deposit">MOBILE DEPOSIT - Check #8765 Wilson Bathroom Project</td>
+                    <td>-</td>
+                    <td class="deposit">$4,000.00</td>
+                    <td>$28,469.00</td>
+                </tr>
+                <tr>
+                    <td>10/28</td>
+                    <td>DEBIT CARD - Shell Gas</td>
+                    <td>$95.00</td>
+                    <td>-</td>
+                    <td>$28,374.00</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td class="deposit">Monthly Interest Earned</td>
+                    <td>-</td>
+                    <td class="deposit">$76.00</td>
+                    <td><strong>$28,450.00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Mobile Deposits (Checks):</span> $12,500.00</div>
+                <div class="info-item"><span class="label">ACH/Zelle Deposits:</span> $6,250.00</div>
+                <div class="info-item"><span class="label">Interest Earned:</span> $76.00</div>
+                <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">$18,826.00</span></div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Owner Draws:</span> $7,000.00</div>
+                <div class="info-item"><span class="label">Checks Written:</span> $5,600.00</div>
+                <div class="info-item"><span class="label">ACH Debits:</span> $910.00</div>
+                <div class="info-item"><span class="label">Debit Card Purchases:</span> $1,716.75</div>
+                <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount">$15,226.75</span></div>
+                <div class="info-item"><span class="label">Number of Transactions:</span> 14</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-left: 4px solid #003366;">
+            <strong>Average Daily Balance:</strong> $26,850.50<br>
+            <strong>Minimum Balance:</strong> $22,000.75 (10/02/2024)<br>
+            <strong>Maximum Balance:</strong> $30,500.75 (10/03/2024)
+        </div>
+
+        <div style="margin-top: 30px; font-size: 11px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 20px;">
+            <p>US Bank, N.A. | Member FDIC</p>
+            <p>For questions about your business account, call 1-800-720-2265 or visit usbank.com</p>
+            <p>This statement covers the period from October 1, 2024 through October 31, 2024</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Johnson Personal - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #003366; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #003366; }
+        .account-info { text-align: right; }
+        .section-title { background: #003366; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #003366; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #003366; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+        .highlight { background: #fff3cd; padding: 10px; margin: 15px 0; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">US BANK</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">October 1 - October 31, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holder:</span> David A. Johnson</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****7890</div>
+            <div class="info-item"><span class="label">Address:</span> 4521 Arden Way, Apt 204<br>Sacramento, CA 95864</div>
+            <div class="info-item"><span class="label">Account Type:</span> Personal Checking<br><span class="label">Routing:</span> 121000248</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (10/01/24):</span> <span class="amount">$19,850.25</span></div>
+            <div class="info-item"><span class="label">Ending Balance (10/31/24):</span> <span class="amount">$22,000.00</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$7,850.00</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$5,700.25</span></div>
+        </div>
+
+        <div class="highlight">
+            <strong>Notice:</strong> Cash deposit of $850.00 on 10/15/2024 requires source documentation and verification of tax reporting if funds are to be used for mortgage qualification.
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$19,850.25</td>
+                </tr>
+                <tr>
+                    <td>10/01</td>
+                    <td>ACH DEBIT - Rent Payment Arden Way Apartments</td>
+                    <td>$1,650.00</td>
+                    <td>-</td>
+                    <td>$18,200.25</td>
+                </tr>
+                <tr>
+                    <td>10/03</td>
+                    <td>ACH DEBIT - Chase Ink Business Card Payment</td>
+                    <td>$425.00</td>
+                    <td>-</td>
+                    <td>$17,775.25</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td class="deposit">TRANSFER - From Business Account</td>
+                    <td>-</td>
+                    <td class="deposit">$3,500.00</td>
+                    <td>$21,275.25</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>ACH DEBIT - Capital One Card Payment</td>
+                    <td>$140.00</td>
+                    <td>-</td>
+                    <td>$21,135.25</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td>DEBIT CARD - Safeway Grocery</td>
+                    <td>$125.80</td>
+                    <td>-</td>
+                    <td>$21,009.45</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td>ACH DEBIT - Snap-on Equipment Loan</td>
+                    <td>$285.00</td>
+                    <td>-</td>
+                    <td>$20,724.45</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td>10/15</td>
+                    <td class="deposit"><strong>CASH DEPOSIT - Side Job Cash Deposit</strong></td>
+                    <td>-</td>
+                    <td class="deposit"><strong>$850.00</strong></td>
+                    <td>$21,574.45</td>
+                </tr>
+                <tr>
+                    <td>10/15</td>
+                    <td>ACH DEBIT - SMUD Electric</td>
+                    <td>$145.00</td>
+                    <td>-</td>
+                    <td>$21,429.45</td>
+                </tr>
+                <tr>
+                    <td>10/18</td>
+                    <td>DEBIT CARD - Chevron Gas</td>
+                    <td>$75.00</td>
+                    <td>-</td>
+                    <td>$21,354.45</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td class="deposit">TRANSFER - From Business Account</td>
+                    <td>-</td>
+                    <td class="deposit">$3,500.00</td>
+                    <td>$24,854.45</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td>ACH DEBIT - AT&T Wireless</td>
+                    <td>$95.00</td>
+                    <td>-</td>
+                    <td>$24,759.45</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td>DEBIT CARD - Safeway Grocery</td>
+                    <td>$98.45</td>
+                    <td>-</td>
+                    <td>$24,661.00</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td>DEBIT CARD - Buffalo Wild Wings</td>
+                    <td>$52.00</td>
+                    <td>-</td>
+                    <td>$24,609.00</td>
+                </tr>
+                <tr>
+                    <td>10/28</td>
+                    <td>ATM WITHDRAWAL - US Bank ATM</td>
+                    <td>$200.00</td>
+                    <td>-</td>
+                    <td>$24,409.00</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td>Monthly Service Adjustment</td>
+                    <td>$2,409.00</td>
+                    <td>-</td>
+                    <td><strong>$22,000.00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Transfers (Business Account):</span> $7,000.00</div>
+                <div class="info-item"><span class="label">Cash Deposits:</span> $850.00</div>
+                <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">$7,850.00</span></div>
+                <div class="info-item"><span class="label">Number of Deposits:</span> 3</div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">ACH Debits:</span> $2,740.00</div>
+                <div class="info-item"><span class="label">Debit Card Purchases:</span> $476.25</div>
+                <div class="info-item"><span class="label">ATM Withdrawals:</span> $200.00</div>
+                <div class="info-item"><span class="label">Adjustments:</span> $2,409.00</div>
+                <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount">$5,825.25</span></div>
+                <div class="info-item"><span class="label">Number of Withdrawals:</span> 11</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-left: 4px solid #003366;">
+            <strong>Average Daily Balance:</strong> $21,450.00<br>
+            <strong>Minimum Balance:</strong> $17,775.25 (10/03/2024)<br>
+            <strong>Maximum Balance:</strong> $24,854.45 (10/20/2024)
+        </div>
+
+        <div style="margin-top: 30px; font-size: 11px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 20px;">
+            <p>US Bank, N.A. | Member FDIC</p>
+            <p>For questions about your account, call 1-800-872-2657 or visit usbank.com</p>
+            <p>This statement covers the period from October 1, 2024 through October 31, 2024</p>
+        </div>
+    </div>
+</body>
+</html>

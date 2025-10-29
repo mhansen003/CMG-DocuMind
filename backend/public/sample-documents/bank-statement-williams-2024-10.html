@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Williams - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #0066b2; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #0066b2; }
+        .account-info { text-align: right; }
+        .section-title { background: #0066b2; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #0066b2; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #0066b2; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+        .highlight { background: #ffe6e6; padding: 10px; margin: 15px 0; border-left: 4px solid #dc3545; }
+        .gift-highlight { background: #fff3cd; padding: 10px; margin: 15px 0; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">BANK OF AMERICA</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">October 1 - October 31, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holder:</span> Thomas L. Williams</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****9876</div>
+            <div class="info-item"><span class="label">Address:</span> 3340 University Avenue, Apt 8<br>Riverside, CA 92501</div>
+            <div class="info-item"><span class="label">Account Type:</span> Checking<br><span class="label">Routing:</span> 121000358</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (10/01/24):</span> <span class="amount">$9,650.25</span></div>
+            <div class="info-item"><span class="label">Ending Balance (10/31/24):</span> <span class="amount">$12,850.00</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$5,994.46</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$2,794.71</span></div>
+        </div>
+
+        <div class="highlight">
+            <strong>Account Alert:</strong> Late fee of $35.00 charged on 10/15/2024 due to insufficient balance. Please maintain adequate funds to avoid future fees.
+        </div>
+
+        <div class="gift-highlight">
+            <strong>Notice:</strong> Cash deposit of $2,000.00 on 10/15/2024 described as "Birthday Gift". Gift funds require documentation including gift letter and source verification if used for mortgage qualification.
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$9,650.25</td>
+                </tr>
+                <tr>
+                    <td>10/01</td>
+                    <td>ACH DEBIT - Rent University Apartments</td>
+                    <td>$1,450.00</td>
+                    <td>-</td>
+                    <td>$8,200.25</td>
+                </tr>
+                <tr>
+                    <td>10/03</td>
+                    <td>ACH DEBIT - Honda Financial Auto Payment</td>
+                    <td>$425.00</td>
+                    <td>-</td>
+                    <td>$7,775.25</td>
+                </tr>
+                <tr>
+                    <td>10/05</td>
+                    <td>DEBIT CARD - Chevron Gas</td>
+                    <td>$68.50</td>
+                    <td>-</td>
+                    <td>$7,706.75</td>
+                </tr>
+                <tr>
+                    <td>10/06</td>
+                    <td>ACH DEBIT - Capital One Card Payment</td>
+                    <td>$145.00</td>
+                    <td>-</td>
+                    <td>$7,561.75</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td class="deposit">DIRECT DEPOSIT - RIVERSIDE MEDICAL CTR PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$1,997.23</td>
+                    <td>$9,558.98</td>
+                </tr>
+                <tr>
+                    <td>10/08</td>
+                    <td>DEBIT CARD - Walmart</td>
+                    <td>$125.80</td>
+                    <td>-</td>
+                    <td>$9,433.18</td>
+                </tr>
+                <tr>
+                    <td>10/10</td>
+                    <td>DEBIT CARD - Chipotle</td>
+                    <td>$18.45</td>
+                    <td>-</td>
+                    <td>$9,414.73</td>
+                </tr>
+                <tr>
+                    <td>10/12</td>
+                    <td>ACH DEBIT - SCE Electric</td>
+                    <td>$95.00</td>
+                    <td>-</td>
+                    <td>$9,319.73</td>
+                </tr>
+                <tr>
+                    <td>10/14</td>
+                    <td>DEBIT CARD - Target</td>
+                    <td>$85.50</td>
+                    <td>-</td>
+                    <td>$9,234.23</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td>10/15</td>
+                    <td class="deposit"><strong>MOBILE DEPOSIT - Check Birthday Gift from Parents</strong></td>
+                    <td>-</td>
+                    <td class="deposit"><strong>$2,000.00</strong></td>
+                    <td>$11,234.23</td>
+                </tr>
+                <tr style="background: #ffe6e6;">
+                    <td>10/15</td>
+                    <td><strong>FEE - Late Fee Insufficient Balance</strong></td>
+                    <td><strong>$35.00</strong></td>
+                    <td>-</td>
+                    <td>$11,199.23</td>
+                </tr>
+                <tr>
+                    <td>10/18</td>
+                    <td>ACH DEBIT - Discover Card Payment</td>
+                    <td>$98.00</td>
+                    <td>-</td>
+                    <td>$11,101.23</td>
+                </tr>
+                <tr>
+                    <td>10/20</td>
+                    <td>DEBIT CARD - Chevron Gas</td>
+                    <td>$72.00</td>
+                    <td>-</td>
+                    <td>$11,029.23</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td class="deposit">DIRECT DEPOSIT - RIVERSIDE MEDICAL CTR PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$1,997.23</td>
+                    <td>$13,026.46</td>
+                </tr>
+                <tr>
+                    <td>10/22</td>
+                    <td>DEBIT CARD - Stater Bros Grocery</td>
+                    <td>$98.46</td>
+                    <td>-</td>
+                    <td>$12,928.00</td>
+                </tr>
+                <tr>
+                    <td>10/25</td>
+                    <td>ATM WITHDRAWAL - Bank of America ATM</td>
+                    <td>$100.00</td>
+                    <td>-</td>
+                    <td>$12,828.00</td>
+                </tr>
+                <tr>
+                    <td>10/31</td>
+                    <td class="deposit">Monthly Interest Earned</td>
+                    <td>-</td>
+                    <td class="deposit">$22.00</td>
+                    <td><strong>$12,850.00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Direct Deposits (Payroll):</span> $3,994.46</div>
+                <div class="info-item"><span class="label">Check Deposits (Gift):</span> $2,000.00</div>
+                <div class="info-item"><span class="label">Interest Earned:</span> $22.00</div>
+                <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">$6,016.46</span></div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div class="info-item"><span class="label">Rent Payment:</span> $1,450.00</div>
+                <div class="info-item"><span class="label">ACH Debits (Loans/CC):</span> $763.00</div>
+                <div class="info-item"><span class="label">Debit Card Purchases:</span> $468.71</div>
+                <div class="info-item"><span class="label">ATM Withdrawals:</span> $100.00</div>
+                <div class="info-item"><span class="label">Fees:</span> $35.00</div>
+                <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount">$2,816.71</span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-left: 4px solid #0066b2;">
+            <strong>Average Daily Balance:</strong> $10,250.50<br>
+            <strong>Minimum Balance:</strong> $7,561.75 (10/06/2024)<br>
+            <strong>Maximum Balance:</strong> $13,026.46 (10/22/2024)
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #ffe6e6; border: 1px solid #dc3545;">
+            <strong>Important Account Notices:</strong><br>
+            - One late fee charged this period. Please ensure sufficient funds are maintained.<br>
+            - Gift deposit of $2,000.00 requires documentation if being used for mortgage down payment.<br>
+            - Combined assets (checking + savings) total approximately $21,350, which may be insufficient for stated cash to close requirement.
+        </div>
+
+        <div style="margin-top: 30px; font-size: 11px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 20px;">
+            <p>Bank of America, N.A. | Member FDIC</p>
+            <p>For questions about your account, call 1-800-432-1000 or visit bankofamerica.com</p>
+            <p>This statement covers the period from October 1, 2024 through October 31, 2024</p>
+        </div>
+    </div>
+</body>
+</html>
