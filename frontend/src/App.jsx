@@ -12,6 +12,7 @@ function App() {
   const [selectedLoanId, setSelectedLoanId] = useState(null);
   const [showSplash, setShowSplash] = useState(false);
   const [showAgentMap, setShowAgentMap] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   // Check if user has seen the splash screen in this session
   useEffect(() => {
@@ -20,6 +21,18 @@ function App() {
       setShowSplash(true);
     }
   }, []);
+
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showUserMenu && !event.target.closest('.user-profile')) {
+        setShowUserMenu(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [showUserMenu]);
 
   const handleCloseSplash = () => {
     setShowSplash(false);
@@ -85,30 +98,13 @@ function App() {
               </nav>
             </div>
             <div className="header-right">
-              <button
-                className={`nav-button ${currentView === 'admin' ? 'active' : ''}`}
-                onClick={() => setCurrentView('admin')}
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-                </svg>
-                Admin
-              </button>
-              <button className="btn-intro" onClick={() => setShowAgentMap(true)} title="View Agent Relationship Map">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l-5.5 9h11z"/>
-                  <circle cx="17.5" cy="17.5" r="4.5"/>
-                  <circle cx="6.5" cy="17.5" r="4.5"/>
-                </svg>
-                Agent Map
-              </button>
               <button className="btn-intro" onClick={handleLaunchSplash} title="Watch Introduction">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
                 Intro
               </button>
-              <div className="user-profile">
+              <div className="user-profile" onClick={() => setShowUserMenu(!showUserMenu)}>
                 <div className="user-avatar">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -118,6 +114,43 @@ function App() {
                   <span className="user-name">Admin User</span>
                   <span className="user-role">Underwriter</span>
                 </div>
+                <svg className="dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+
+                {/* User Dropdown Menu */}
+                {showUserMenu && (
+                  <div className="user-dropdown-menu">
+                    <button
+                      className={`dropdown-menu-item ${currentView === 'admin' ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentView('admin');
+                        setShowUserMenu(false);
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                      </svg>
+                      <span>Admin Settings</span>
+                    </button>
+                    <button
+                      className="dropdown-menu-item"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowAgentMap(true);
+                        setShowUserMenu(false);
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l-5.5 9h11z"/>
+                        <circle cx="17.5" cy="17.5" r="4.5"/>
+                        <circle cx="6.5" cy="17.5" r="4.5"/>
+                      </svg>
+                      <span>Agent Map</span>
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
