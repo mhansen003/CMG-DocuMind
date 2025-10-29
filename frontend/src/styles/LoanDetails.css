@@ -4,36 +4,36 @@
 
 .loan-details-header {
   background: white;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .header-top-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .btn-summary {
   white-space: nowrap;
   font-size: 1rem;
   padding: 0.85rem 1.75rem;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px rgba(141, 198, 63, 0.3);
   transition: all 0.2s;
 }
 
 .btn-summary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(141, 198, 63, 0.4);
 }
 
 .btn-back {
   background: none;
   border: none;
-  color: #667eea;
+  color: var(--cmg-primary-green);
   font-size: 0.85rem;
   cursor: pointer;
   padding: 0;
@@ -48,14 +48,14 @@
 }
 
 .loan-details-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #333;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
   margin-top: 0;
 }
 
 .loan-number {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #666;
   margin-bottom: 0;
 }
@@ -63,7 +63,7 @@
 .loan-quick-stats {
   display: flex;
   gap: 3rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .quick-stat {
@@ -72,15 +72,15 @@
 }
 
 .quick-stat label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
 }
 
 .quick-stat .stat-value {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #333;
 }
@@ -89,15 +89,15 @@
 .tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border-bottom: 2px solid #e5e7eb;
 }
 
 .tab {
-  padding: 1rem 1.5rem;
+  padding: 0.65rem 1.25rem;
   border: none;
   background: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #666;
   cursor: pointer;
@@ -106,13 +106,13 @@
 }
 
 .tab:hover {
-  color: #667eea;
+  color: var(--cmg-primary-green);
   background-color: #f3f4f6;
 }
 
 .tab.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: var(--cmg-primary-green);
+  border-bottom-color: var(--cmg-primary-green);
 }
 
 /* Tab Content */
@@ -171,19 +171,19 @@
 }
 
 .document-item:hover {
-  border-color: #667eea;
+  border-color: var(--cmg-primary-green);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 24px rgba(141, 198, 63, 0.2);
 }
 
 .document-item.selected {
-  border-color: #667eea;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  border-color: var(--cmg-primary-green);
+  box-shadow: 0 4px 16px rgba(141, 198, 63, 0.3);
   background: linear-gradient(to bottom, #f9fafb 0%, white 100%);
 }
 
 .document-item-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   padding: 0.875rem 1.25rem;
   display: flex;
   align-items: center;
@@ -192,11 +192,11 @@
 }
 
 .document-item.selected .document-item-header {
-  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green-hover) 0%, #699C25 100%);
 }
 
 .document-item:hover .document-item-header {
-  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green-hover) 0%, #699C25 100%);
 }
 
 .document-item-body {
@@ -220,13 +220,13 @@
 }
 
 .document-item:hover .document-icon-container {
-  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
-  border-right-color: #c7d2fe;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-right-color: #bbf7d0;
 }
 
 .document-item.selected .document-icon-container {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  border-right-color: #a78bfa;
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-right-color: var(--cmg-primary-green-light);
 }
 
 .document-icon {
@@ -305,32 +305,32 @@
 /* Hover state */
 .document-item:hover .document-icon {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
-  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(141, 198, 63, 0.25);
+  border-color: var(--cmg-primary-green);
 }
 
 .document-item:hover .document-icon::before {
-  border-color: transparent #e0e7ff transparent transparent;
+  border-color: transparent #dcfce7 transparent transparent;
 }
 
 .document-item:hover .document-icon .doc-line {
-  background: linear-gradient(90deg, #c7d2fe 0%, #a78bfa 100%);
+  background: linear-gradient(90deg, #bbf7d0 0%, var(--cmg-primary-green-light) 100%);
 }
 
 /* Selected state */
 .document-item.selected .document-icon {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(141, 198, 63, 0.3);
+  border-color: var(--cmg-primary-green);
   background: linear-gradient(to bottom, white 0%, #f9fafb 100%);
 }
 
 .document-item.selected .document-icon::before {
-  border-color: transparent #ddd6fe transparent transparent;
+  border-color: transparent #bbf7d0 transparent transparent;
 }
 
 .document-item.selected .document-icon .doc-line {
-  background: linear-gradient(90deg, #a78bfa 0%, #667eea 100%);
+  background: linear-gradient(90deg, var(--cmg-primary-green-light) 0%, var(--cmg-primary-green) 100%);
 }
 
 .document-info {

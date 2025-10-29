@@ -52,17 +52,17 @@
 }
 
 .flow-control-btn:hover {
-  background: #667eea;
-  border-color: #667eea;
+  background: var(--cmg-primary-green);
+  border-color: var(--cmg-primary-green);
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 2px 4px rgba(141, 198, 63, 0.2);
 }
 
 .zoom-level {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--cmg-primary-green);
   min-width: 50px;
   text-align: center;
 }
@@ -129,7 +129,7 @@
 }
 
 .legend-arrow.primary-arrow {
-  color: #667eea;
+  color: var(--cmg-primary-green);
 }
 
 .legend-arrow.secondary-arrow {
@@ -217,7 +217,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   border-radius: 12px 12px 0 0;
   color: white;
 }
@@ -286,8 +286,8 @@
 }
 
 .dependency-item:hover {
-  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
-  border-color: #667eea;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: var(--cmg-primary-green);
   transform: translateX(4px);
 }
 
@@ -408,9 +408,9 @@
 
 /* Enhanced container with animated background */
 .flow-canvas.enhanced {
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+  background:
+    radial-gradient(circle at 20% 50%, rgba(141, 198, 63, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(27, 139, 143, 0.03) 0%, transparent 50%),
     linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
 }
 
@@ -478,7 +478,7 @@
   width: 24px;
   height: 16px;
   margin-right: 0.5rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--cmg-primary-green), var(--cmg-primary-green-hover));
   border-radius: 4px;
   flex-shrink: 0;
 }
@@ -497,7 +497,7 @@
 
 .legend-shape.cylinder {
   border-radius: 12px 12px 4px 4px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
 }
 
 /* Connection line indicators */
@@ -524,11 +524,11 @@
 }
 
 .legend-line.primary {
-  background: #667eea;
+  background: var(--cmg-primary-green);
 }
 
 .legend-line.primary::after {
-  border-left-color: #667eea;
+  border-left-color: var(--cmg-primary-green);
 }
 
 .legend-line.secondary {
@@ -571,7 +571,7 @@
 /* Node count badge */
 .node-count {
   padding: 0.5rem 0.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   color: white;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -653,7 +653,7 @@
   padding: 0.75rem;
   background: #f9fafb;
   border-radius: 8px;
-  border-left: 3px solid #667eea;
+  border-left: 3px solid var(--cmg-primary-green);
 }
 
 /* Enhanced Dependency Items */
@@ -671,9 +671,9 @@
 
 .dependency-item.enhanced:hover {
   background: #f9fafb;
-  border-color: #667eea;
+  border-color: var(--cmg-primary-green);
   transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 2px 8px rgba(141, 198, 63, 0.15);
 }
 
 .dependency-item.enhanced .dep-icon {
@@ -702,7 +702,7 @@
 
 /* Enhanced Instructions */
 .flow-instructions.enhanced {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(141, 198, 63, 0.95) 0%, rgba(122, 179, 46, 0.95) 100%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -747,12 +747,12 @@
 
 /* Glow effect for SVG elements */
 .svg-glow {
-  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5));
+  filter: drop-shadow(0 0 8px rgba(141, 198, 63, 0.5));
 }
 
 /* Gradient text effect */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -762,7 +762,7 @@
 .zoom-level {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--cmg-primary-green);
   padding: 0 0.5rem;
 }
 

@@ -161,12 +161,32 @@ function LoanDetails({ loanId, onBack }) {
                   <h3>Uploaded Documents</h3>
                   <div className="documents-grid">
                     {documents.map((doc) => {
-                      // Calculate validation summary
+                      // Calculate validation summary - only count real issues (mismatches, missing data)
                       const criticalCount = doc.validationResults?.issues?.length || 0;
                       const warningCount = doc.validationResults?.warnings?.length || 0;
                       const totalFields = Object.keys(doc.extractedData?.data || {}).length;
-                      const validFields = Object.values(doc.validationResults?.fieldValidations || {}).filter(v => v?.isValid).length;
-                      const invalidFields = totalFields - validFields;
+
+                      // Count only real field errors (not formatting issues)
+                      let invalidFields = 0;
+                      Object.entries(doc.extractedData?.data || {}).forEach(([fieldName, value]) => {
+                        const validation = doc.validationResults?.fieldValidations?.[fieldName];
+
+                        // Check for missing required fields
+                        if ((!value || value === '' || value === null || value === undefined) && validation) {
+                          invalidFields++;
+                        }
+                        // Check for backend validation errors that are NOT formatting-related
+                        else if (validation?.message && validation?.isValid === false) {
+                          const msg = validation.message.toLowerCase();
+                          // Ignore formatting/pattern/length errors
+                          if (!msg.includes('format') && !msg.includes('pattern') && !msg.includes('length') &&
+                              !msg.includes('invalid') && !msg.includes('must match')) {
+                            invalidFields++;
+                          }
+                        }
+                        // Note: Loan data mismatches are handled by the DocumentViewer component
+                        // We don't check them here to avoid redundant API calls
+                      });
 
                       return (
                         <div

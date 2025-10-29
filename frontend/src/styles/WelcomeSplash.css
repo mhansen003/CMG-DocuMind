@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
 }
 
 .splash-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   color: white;
   padding: 2rem;
   text-align: center;
@@ -127,7 +127,7 @@
   width: 50px;
   height: 50px;
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #667eea;
+  border-top-color: var(--cmg-primary-green);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 1rem;
@@ -183,7 +183,7 @@
 }
 
 .btn-play {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
   border: 3px solid white;
   border-radius: 20px;
   padding: 2rem 3rem;
@@ -214,7 +214,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  color: #667eea;
+  color: var(--cmg-primary-green);
   padding-left: 0.5rem;
 }
 
@@ -232,7 +232,7 @@
   right: 1.5rem;
   width: 60px;
   height: 60px;
-  background: rgba(102, 126, 234, 0.95);
+  background: rgba(141, 198, 63, 0.95);
   border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
@@ -246,7 +246,7 @@
 }
 
 .btn-unmute:hover {
-  background: rgba(118, 75, 162, 0.95);
+  background: rgba(122, 179, 46, 0.95);
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
@@ -264,8 +264,8 @@
 
 .btn-skip {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--cmg-primary-green);
+  border: 2px solid var(--cmg-primary-green);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -275,10 +275,10 @@
 }
 
 .btn-skip:hover {
-  background: #667eea;
+  background: var(--cmg-primary-green);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(141, 198, 63, 0.4);
 }
 
 .btn-skip:active {

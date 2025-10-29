@@ -18,6 +18,26 @@ function Scorecard({ scorecard, loan, documents }) {
     documents ? documents.map(doc => doc.id) : []
   );
 
+  // Expanded rows state for actions
+  const [expandedRows, setExpandedRows] = useState(new Set());
+
+  // Collapsible sections state
+  const [showStats, setShowStats] = useState(true);
+  const [showDocSelector, setShowDocSelector] = useState(true);
+
+  // Toggle row expansion
+  const toggleRowExpansion = (fieldName) => {
+    setExpandedRows(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(fieldName)) {
+        newSet.delete(fieldName);
+      } else {
+        newSet.add(fieldName);
+      }
+      return newSet;
+    });
+  };
+
   // Sample PDF URL for testing
   const TEST_PDF_URL = 'https://pdfobject.com/pdf/sample.pdf';
 
@@ -578,88 +598,114 @@ function Scorecard({ scorecard, loan, documents }) {
     <div className="scorecard-matrix">
       {/* Header with Stats */}
       <div className="scorecard-header">
-        <div className="scorecard-title">
-          <h2>📊 Data Validation Matrix</h2>
-          <p>Cross-reference of all extracted data vs ByteLOS</p>
+        <div className="scorecard-title-row">
+          <div className="scorecard-title">
+            <h2>📊 Data Validation Matrix</h2>
+            <p>Cross-reference of all extracted data vs ByteLOS</p>
+          </div>
+          <button
+            className="section-collapse-btn"
+            onClick={() => setShowStats(!showStats)}
+            title={showStats ? 'Collapse stats' : 'Expand stats'}
+          >
+            {showStats ? '▼' : '▶'}
+          </button>
         </div>
-        <div className="scorecard-stats">
-          <div className="stat-box match">
-            <div className="stat-icon">✓</div>
-            <div className="stat-content">
-              <div className="stat-value">{stats.matches}</div>
-              <div className="stat-label">Matches</div>
+        {showStats && (
+          <div className="scorecard-stats">
+            <div className="stat-box match">
+              <div className="stat-icon">✓</div>
+              <div className="stat-content">
+                <div className="stat-value">{stats.matches}</div>
+                <div className="stat-label">Matches</div>
+              </div>
+            </div>
+            <div className="stat-box mismatch">
+              <div className="stat-icon">✗</div>
+              <div className="stat-content">
+                <div className="stat-value">{stats.mismatches}</div>
+                <div className="stat-label">Mismatches</div>
+              </div>
+            </div>
+            <div className="stat-box na">
+              <div className="stat-icon">—</div>
+              <div className="stat-content">
+                <div className="stat-value">{stats.na}</div>
+                <div className="stat-label">N/A</div>
+              </div>
+            </div>
+            <div className="stat-box total">
+              <div className="stat-icon">∑</div>
+              <div className="stat-content">
+                <div className="stat-value">{stats.totalCells}</div>
+                <div className="stat-label">Total Cells</div>
+              </div>
             </div>
           </div>
-          <div className="stat-box mismatch">
-            <div className="stat-icon">✗</div>
-            <div className="stat-content">
-              <div className="stat-value">{stats.mismatches}</div>
-              <div className="stat-label">Mismatches</div>
-            </div>
-          </div>
-          <div className="stat-box na">
-            <div className="stat-icon">—</div>
-            <div className="stat-content">
-              <div className="stat-value">{stats.na}</div>
-              <div className="stat-label">N/A</div>
-            </div>
-          </div>
-          <div className="stat-box total">
-            <div className="stat-icon">∑</div>
-            <div className="stat-content">
-              <div className="stat-value">{stats.totalCells}</div>
-              <div className="stat-label">Total Cells</div>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* Document Selector */}
       <div className="document-selector">
         <div className="selector-header">
-          <h3>📄 Document Selector</h3>
-          <p>Select which documents to compare in the grid</p>
-        </div>
-        <div className="selector-controls">
-          <button
-            className="selector-btn"
-            onClick={selectAllDocuments}
-            disabled={selectedDocIds.length === documents.length}
-          >
-            ✓ Select All
-          </button>
-          <button
-            className="selector-btn"
-            onClick={deselectAllDocuments}
-            disabled={selectedDocIds.length === 0}
-          >
-            ✗ Deselect All
-          </button>
-          <div className="selection-count">
-            {selectedDocIds.length} of {documents.length} selected
+          <div className="selector-header-content">
+            <div>
+              <h3>📄 Document Selector</h3>
+              <p>Select which documents to compare in the grid</p>
+            </div>
+            <button
+              className="section-collapse-btn"
+              onClick={() => setShowDocSelector(!showDocSelector)}
+              title={showDocSelector ? 'Collapse selector' : 'Expand selector'}
+            >
+              {showDocSelector ? '▼' : '▶'}
+            </button>
           </div>
         </div>
-        <div className="document-checkboxes">
-          {documents.map((doc, idx) => (
-            <label key={doc.id} className="document-checkbox-item">
-              <input
-                type="checkbox"
-                checked={selectedDocIds.includes(doc.id)}
-                onChange={() => toggleDocumentSelection(doc.id)}
-                className="document-checkbox"
-              />
-              <div className="document-checkbox-content">
-                <div className="document-checkbox-icon">📄</div>
-                <div className="document-checkbox-info">
-                  <div className="document-checkbox-name" title={doc.fileName}>
-                    {doc.fileName}
-                  </div>
-                  <div className="document-checkbox-type">{doc.documentType}</div>
-                </div>
+        {showDocSelector && (
+          <>
+            <div className="selector-controls">
+              <button
+                className="selector-btn"
+                onClick={selectAllDocuments}
+                disabled={selectedDocIds.length === documents.length}
+              >
+                ✓ Select All
+              </button>
+              <button
+                className="selector-btn"
+                onClick={deselectAllDocuments}
+                disabled={selectedDocIds.length === 0}
+              >
+                ✗ Deselect All
+              </button>
+              <div className="selection-count">
+                {selectedDocIds.length} of {documents.length} selected
               </div>
-            </label>
-          ))}
-        </div>
+            </div>
+            <div className="document-checkboxes">
+              {documents.map((doc, idx) => (
+                <label key={doc.id} className="document-checkbox-item">
+                  <input
+                    type="checkbox"
+                    checked={selectedDocIds.includes(doc.id)}
+                    onChange={() => toggleDocumentSelection(doc.id)}
+                    className="document-checkbox"
+                  />
+                  <div className="document-checkbox-content">
+                    <div className="document-checkbox-icon">📄</div>
+                    <div className="document-checkbox-info">
+                      <div className="document-checkbox-name" title={doc.fileName}>
+                        {doc.fileName}
+                      </div>
+                      <div className="document-checkbox-type">{doc.documentType}</div>
+                    </div>
+                  </div>
+                </label>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       {/* Main Matrix Layout */}
@@ -691,12 +737,6 @@ function Scorecard({ scorecard, loan, documents }) {
                       </div>
                     </th>
                   ))}
-                  <th className="complexity-header">
-                    <div className="header-content">
-                      <div>Complexity</div>
-                      <div className="header-subtitle">1-10 Scale</div>
-                    </div>
-                  </th>
                   <th className={`actions-header sticky-header-right ${selectedCell?.documentId ? 'selected-column' : ''}`}>Actions</th>
                 </tr>
               </thead>
@@ -704,15 +744,16 @@ function Scorecard({ scorecard, loan, documents }) {
                 {Object.entries(fieldsByCategory).map(([category, fields]) => (
                   <>
                     <tr key={`category-${category}`} className="category-row">
-                      <td className="category-cell" colSpan={filteredDocuments.length + 3}>
+                      <td className="category-cell" colSpan={filteredDocuments.length + 2}>
                         <div className="category-label">{category}</div>
                       </td>
                     </tr>
                     {fields.map(field => {
                       const losValue = getByteLOSValue(field);
-                      const hasAnyMismatch = filteredDocuments.some(doc =>
-                        getCellStatus(field, doc).status === 'mismatch'
-                      );
+                      const hasAnyMismatch = filteredDocuments.some(doc => {
+                        const status = getCellStatus(field, doc).status;
+                        return status === 'mismatch' || status === 'no-los';
+                      });
                       const suggestedAgent = getSuggestedAgent(field);
 
                       // Check for mixed status (some match, some mismatch)
@@ -771,127 +812,212 @@ function Scorecard({ scorecard, loan, documents }) {
                               </td>
                             );
                           })}
-                          <td className="complexity-cell">
-                            {hasAnyMismatch && (() => {
-                              const complexityScore = getComplexityScore(field, filteredDocuments);
-                              const complexityColor = getComplexityColor(complexityScore);
-                              const complexityLabel = getComplexityLabel(complexityScore);
-
-                              return (
-                                <div className="complexity-indicator" title={`${complexityLabel} - Score: ${complexityScore}/10`}>
-                                  <div className="complexity-score" style={{ color: complexityColor }}>
-                                    {complexityScore}
-                                  </div>
-                                  <div className="complexity-bar">
-                                    <div
-                                      className="complexity-bar-fill"
-                                      style={{
-                                        width: `${complexityScore * 10}%`,
-                                        background: complexityColor
-                                      }}
-                                    ></div>
-                                  </div>
-                                  <div className="complexity-label" style={{ color: complexityColor }}>
-                                    {complexityLabel}
-                                  </div>
-                                </div>
-                              );
-                            })()}
-                          </td>
-                          <td className={`actions-cell sticky-column-right`}>
+                          <td className={`actions-cell sticky-column-right ${expandedRows.has(field.name) ? 'expanded' : ''}`}>
                             {hasAnyMismatch && (
                               <>
-                                <div className="action-buttons">
-                                  {(hasAnyMismatch || hasMixedStatus) && (
-                                    <button
-                                      className="action-btn sync-btn"
-                                      title="Sync to ByteLOS - Choose which document to use"
-                                      onClick={() => handleSyncToLOS(field)}
-                                    >
-                                      🔄 Sync to LOS
-                                    </button>
-                                  )}
-                                  <button
-                                    className="action-btn agent-btn"
-                                    title={`Assign to ${suggestedAgent.name}`}
-                                    onClick={() => handleAssignAgent(field)}
-                                  >
-                                    {suggestedAgent.icon} Agent
-                                  </button>
-                                  <button
-                                    className="action-btn condition-btn"
-                                    title="Create Condition"
-                                    onClick={() => handleCreateCondition(field)}
-                                  >
-                                    📋 Condition
-                                  </button>
-                                  <button
-                                    className="action-btn ignore-btn"
-                                    title="Ignore Mismatch"
-                                    onClick={() => handleIgnoreMismatch(field)}
-                                  >
-                                    🚫 Ignore
-                                  </button>
-                                </div>
+                                {/* Compact Toggle Button */}
+                                <button
+                                  className="action-toggle-btn"
+                                  onClick={() => toggleRowExpansion(field.name)}
+                                  title={expandedRows.has(field.name) ? 'Collapse actions' : 'Expand actions'}
+                                >
+                                  <span className="toggle-icon">
+                                    {expandedRows.has(field.name) ? '▼' : '▶'}
+                                  </span>
+                                  <span className="toggle-text">Actions</span>
+                                  <span className="action-count-badge">4</span>
+                                </button>
 
-                                {/* AI Summary Section */}
-                                {(() => {
-                                  const summary = generateMismatchSummary(field, filteredDocuments);
-                                  if (!summary) return null;
-
-                                  return (
-                                    <div className="ai-summary">
-                                      <div className="ai-summary-header">
-                                        <span className="ai-icon">🤖</span>
-                                        <span className="ai-label">AI Analysis</span>
-                                      </div>
-                                      <div className="ai-summary-text">
-                                        {summary}
-                                      </div>
+                                {/* Expanded Content */}
+                                {expandedRows.has(field.name) && (
+                                  <div className="actions-expanded-content">
+                                    <div className="action-buttons">
+                                      {(hasAnyMismatch || hasMixedStatus) && (
+                                        <button
+                                          className="action-btn sync-btn"
+                                          title="Sync to ByteLOS - Choose which document to use"
+                                          onClick={() => handleSyncToLOS(field)}
+                                        >
+                                          🔄 Sync to LOS
+                                        </button>
+                                      )}
+                                      <button
+                                        className="action-btn agent-btn"
+                                        title={`Assign to ${suggestedAgent.name}`}
+                                        onClick={() => handleAssignAgent(field)}
+                                      >
+                                        {suggestedAgent.icon} Agent
+                                      </button>
+                                      <button
+                                        className="action-btn condition-btn"
+                                        title="Create Condition"
+                                        onClick={() => handleCreateCondition(field)}
+                                      >
+                                        📋 Condition
+                                      </button>
+                                      <button
+                                        className="action-btn ignore-btn"
+                                        title="Ignore Mismatch"
+                                        onClick={() => handleIgnoreMismatch(field)}
+                                      >
+                                        🚫 Ignore
+                                      </button>
                                     </div>
-                                  );
-                                })()}
 
-                                {/* Agent Results Section */}
-                                {(() => {
-                                  const fieldKey = `field-${field.name}`;
-                                  const agentResult = agentResults[fieldKey];
+                                    {/* AI Summary Section */}
+                                    {(() => {
+                                      const summary = generateMismatchSummary(field, filteredDocuments);
+                                      if (!summary) return null;
 
-                                  if (!agentResult) return null;
-
-                                  const resultTypeClass = agentResult.result.type === 'rectified' ? 'success' :
-                                                         agentResult.result.type === 'alert' ? 'alert' : 'info';
-
-                                  return (
-                                    <div className={`agent-result ${resultTypeClass}`}>
-                                      <div className="agent-result-header">
-                                        <span className="agent-result-icon">{agentResult.agent.icon}</span>
-                                        <span className="agent-result-title">{agentResult.result.title}</span>
-                                        <span className="agent-result-timestamp">
-                                          {new Date(agentResult.completedAt).toLocaleTimeString()}
-                                        </span>
-                                      </div>
-                                      <div className="agent-result-body">
-                                        <div className="agent-result-section">
-                                          <strong>Findings:</strong>
-                                          <ul className="agent-findings">
-                                            {agentResult.result.findings.map((finding, idx) => (
-                                              <li key={idx}>{finding}</li>
-                                            ))}
-                                          </ul>
+                                      return (
+                                        <div className="ai-summary">
+                                          <div className="ai-summary-header">
+                                            <span className="ai-icon">🤖</span>
+                                            <span className="ai-label">AI Analysis</span>
+                                          </div>
+                                          <div className="ai-summary-text">
+                                            {summary}
+                                          </div>
                                         </div>
-                                        <div className="agent-result-section agent-recommendation">
-                                          <strong>
-                                            {agentResult.result.type === 'rectified' ? '✅ Resolution:' :
-                                             agentResult.result.type === 'alert' ? '⚠️ Recommendation:' :
-                                             '💡 Suggestion:'}
-                                          </strong>
-                                          <p>{agentResult.result.recommendation}</p>
+                                      );
+                                    })()}
+
+                                    {/* Agent Results Section */}
+                                    {(() => {
+                                      const fieldKey = `field-${field.name}`;
+                                      const agentResult = agentResults[fieldKey];
+
+                                      if (!agentResult) return null;
+
+                                      const resultTypeClass = agentResult.result.type === 'rectified' ? 'success' :
+                                                             agentResult.result.type === 'alert' ? 'alert' : 'info';
+
+                                      return (
+                                        <div className={`agent-result ${resultTypeClass}`}>
+                                          <div className="agent-result-header">
+                                            <span className="agent-result-icon">{agentResult.agent.icon}</span>
+                                            <span className="agent-result-title">{agentResult.result.title}</span>
+                                            <span className="agent-result-timestamp">
+                                              {new Date(agentResult.completedAt).toLocaleTimeString()}
+                                            </span>
+                                          </div>
+                                          <div className="agent-result-body">
+                                            <div className="agent-result-section">
+                                              <strong>Findings:</strong>
+                                              <ul className="agent-findings">
+                                                {agentResult.result.findings.map((finding, idx) => (
+                                                  <li key={idx}>{finding}</li>
+                                                ))}
+                                              </ul>
+                                            </div>
+                                            <div className="agent-result-section agent-recommendation">
+                                              <strong>
+                                                {agentResult.result.type === 'rectified' ? '✅ Resolution:' :
+                                                 agentResult.result.type === 'alert' ? '⚠️ Recommendation:' :
+                                                 '💡 Suggestion:'}
+                                              </strong>
+                                              <p>{agentResult.result.recommendation}</p>
+                                            </div>
+
+                                            {/* Action Buttons for Agent Result */}
+                                            <div className="agent-result-actions">
+                                              {agentResult.result.type === 'rectified' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn apply"
+                                                    onClick={() => {
+                                                      addToast(`✅ Applied fix from ${agentResult.agent.name}`, 'success');
+                                                    }}
+                                                    title="Apply the suggested fix"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                                    </svg>
+                                                    Apply Fix
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => handleSyncToLOS(field)}
+                                                    title="Sync to LOS"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                                                    </svg>
+                                                    Sync to LOS
+                                                  </button>
+                                                </>
+                                              )}
+                                              {agentResult.result.type === 'alert' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn warning"
+                                                    onClick={() => handleCreateCondition(field)}
+                                                    title="Create loan condition"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                                    </svg>
+                                                    Create Condition
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => {
+                                                      addToast('Document request generated', 'success');
+                                                    }}
+                                                    title="Request additional documents"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                                                    </svg>
+                                                    Request Documents
+                                                  </button>
+                                                </>
+                                              )}
+                                              {agentResult.result.type === 'analysis' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn success"
+                                                    onClick={() => {
+                                                      addToast('Issue marked as resolved', 'success');
+                                                    }}
+                                                    title="Accept findings and close"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                                    </svg>
+                                                    Accept
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => handleSyncToLOS(field)}
+                                                    title="Sync corrected value to LOS"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                                                    </svg>
+                                                    Sync to LOS
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => {
+                                                      addToast('Added notes to loan file', 'info');
+                                                    }}
+                                                    title="Add to loan notes"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                                                    </svg>
+                                                    Add to Notes
+                                                  </button>
+                                                </>
+                                              )}
+                                            </div>
+                                          </div>
                                         </div>
-                                      </div>
-                                    </div>
-                                  );
-                                })()}
+                                      );
+                                    })()}
+                                  </div>
+                                )}
                               </>
                             )}
                           </td>

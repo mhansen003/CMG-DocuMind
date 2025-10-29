@@ -128,8 +128,8 @@
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: var(--cmg-primary-green);
+  box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.1);
 }
 
 .form-group input[type="text"].error,
@@ -191,7 +191,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  accent-color: #667eea;
+  accent-color: var(--cmg-primary-green);
 }
 
 .checkbox-group span {

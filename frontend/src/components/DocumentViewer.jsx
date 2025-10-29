@@ -101,7 +101,9 @@ function DocumentViewer({ document, loanData }) {
   const [toasts, setToasts] = useState([]);
   const [assignedAgents, setAssignedAgents] = useState({}); // Track which agents are assigned to which issues
   const [agentResults, setAgentResults] = useState({}); // Track agent results after they complete
-  const [activeTab, setActiveTab] = useState('fields'); // 'fields', 'critical', 'warnings', or 'summary'
+  const [validationFilter, setValidationFilter] = useState('all'); // 'all', 'issues', 'passed', 'critical', 'warnings'
+  const [expandedItems, setExpandedItems] = useState({});
+  const [searchQuery, setSearchQuery] = useState('');
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
@@ -117,6 +119,14 @@ function DocumentViewer({ document, loanData }) {
     if (value === null || value === undefined) return 'N/A';
     if (typeof value === 'boolean') return value ? 'Yes' : 'No';
     if (typeof value === 'number') return value.toLocaleString();
+    if (typeof value === 'object') {
+      // Handle arrays
+      if (Array.isArray(value)) {
+        return value.length > 0 ? value.join(', ') : 'N/A';
+      }
+      // Handle objects - try to show a meaningful representation
+      return JSON.stringify(value, null, 2);
+    }
     return value.toString();
   };
 
@@ -477,35 +487,176 @@ function DocumentViewer({ document, loanData }) {
     setToasts(prev => prev.filter(t => t.id !== toastId));
   };
 
-  // Auto-assign agents for critical issues on document load
-  useEffect(() => {
-    if (!document.validationResults) return;
+  // Auto-assign agents disabled - agents are now only assigned manually by user clicks
 
-    const autoAssignments = [];
+  // Toggle expansion of validation items
+  const toggleExpanded = (itemId) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [itemId]: !prev[itemId]
+    }));
+  };
 
-    // Process critical issues
-    document.validationResults.issues?.forEach((issue, index) => {
-      const recommendedAgents = getRecommendedAgents(issue);
-      recommendedAgents.forEach(agent => {
-        if (agent.autoAssign) {
-          const issueKey = `${index}-${agent.id}`;
-          // Only auto-assign if not already assigned
-          if (!assignedAgents[issueKey]) {
-            autoAssignments.push({ agent, issue, issueIndex: index });
-          }
+  // Expand all visible items (after filtering)
+  const expandAll = () => {
+    const items = getFilteredValidationItems();
+    const allExpanded = {};
+    items.forEach(item => {
+      if (item.type !== 'valid') {
+        allExpanded[item.id] = true;
+      }
+    });
+    setExpandedItems(allExpanded);
+  };
+
+  // Collapse all items
+  const collapseAll = () => {
+    setExpandedItems({});
+  };
+
+  // Combine all validation items into a single unified list
+  const getAllValidationItems = () => {
+    const items = [];
+
+    // Add field validations - only show real issues (mismatches, missing data)
+    Object.entries(document.extractedData?.data || {}).forEach(([fieldName, value]) => {
+      const validation = getFieldValidation(fieldName);
+      const loanDataComparison = checkLoanDataMatch(fieldName, value);
+
+      // Determine if this is a real issue (not just formatting)
+      let errorMessage = null;
+      let actualStatus = 'valid';
+
+      // Priority 1: Check for loan data mismatch (most important)
+      if (loanDataComparison.hasLoanData && !loanDataComparison.matches) {
+        errorMessage = `Does not match loan application (expected: ${loanDataComparison.loanValue})`;
+        actualStatus = 'field-error';
+      }
+      // Priority 2: Check for missing required fields
+      else if ((!value || value === '' || value === null || value === undefined) && validation) {
+        errorMessage = 'Required field is missing or empty';
+        actualStatus = 'field-error';
+      }
+      // Priority 3: Only use backend validation message if it's NOT about formatting
+      else if (validation?.message && validation?.isValid === false) {
+        const msg = validation.message.toLowerCase();
+        // Ignore formatting/pattern/length errors - user doesn't care about these
+        if (!msg.includes('format') && !msg.includes('pattern') && !msg.includes('length') &&
+            !msg.includes('invalid') && !msg.includes('must match')) {
+          errorMessage = validation.message;
+          actualStatus = 'field-error';
         }
+      }
+
+      items.push({
+        id: `field-${fieldName}`,
+        type: actualStatus === 'valid' ? 'valid' : 'field-error',
+        severity: actualStatus === 'valid' ? 0 : 2, // 0=passed, 1=warning, 2=field-error, 3=critical
+        icon: actualStatus === 'valid' ? '✓' : '✗',
+        title: fieldName,
+        value: formatFieldValue(value),
+        message: errorMessage,
+        field: fieldName,
+        rule: validation?.rule,
+        validation,
+        loanDataComparison,
+        issue: errorMessage ? {
+          message: errorMessage,
+          field: fieldName,
+          rule: validation?.rule
+        } : null
       });
     });
 
-    // Assign all auto-agents with a slight delay for visual effect
-    if (autoAssignments.length > 0) {
-      autoAssignments.forEach((assignment, idx) => {
-        setTimeout(() => {
-          assignAgent(assignment.agent, assignment.issue, assignment.issueIndex);
-        }, idx * 300); // Stagger by 300ms each
+    // Add critical issues
+    document.validationResults?.issues?.forEach((issue, index) => {
+      items.push({
+        id: `critical-${index}`,
+        type: 'critical',
+        severity: 3,
+        icon: '🔴',
+        title: issue.field || 'Critical Issue',
+        message: issue.message,
+        field: issue.field,
+        rule: issue.rule,
+        impactLevel: issue.severity,
+        issue,
+        issueIndex: index
+      });
+    });
+
+    // Add warnings
+    document.validationResults?.warnings?.forEach((warning, index) => {
+      items.push({
+        id: `warning-${index}`,
+        type: 'warning',
+        severity: 1,
+        icon: '🟡',
+        title: warning.field || 'Warning',
+        message: warning.message,
+        field: warning.field,
+        rule: warning.rule,
+        issue: warning,
+        issueIndex: `warning-${index}`
+      });
+    });
+
+    return items;
+  };
+
+  // Filter validation items based on selected filter and search query
+  const getFilteredValidationItems = () => {
+    let allItems = getAllValidationItems();
+
+    // Apply filter
+    switch(validationFilter) {
+      case 'issues':
+        allItems = allItems.filter(item => item.type !== 'valid');
+        break;
+      case 'passed':
+        allItems = allItems.filter(item => item.type === 'valid');
+        break;
+      case 'critical':
+        allItems = allItems.filter(item => item.type === 'critical');
+        break;
+      case 'warnings':
+        allItems = allItems.filter(item => item.type === 'warning');
+        break;
+      case 'field-errors':
+        allItems = allItems.filter(item => item.type === 'field-error');
+        break;
+    }
+
+    // Apply search filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      allItems = allItems.filter(item => {
+        return (
+          item.title?.toLowerCase().includes(query) ||
+          item.message?.toLowerCase().includes(query) ||
+          item.field?.toLowerCase().includes(query) ||
+          item.value?.toString().toLowerCase().includes(query) ||
+          item.rule?.toLowerCase().includes(query)
+        );
       });
     }
-  }, [document.id]); // Only run when document changes
+
+    return allItems;
+  };
+
+  // Sort by severity (critical > field-error > warning > passed)
+  const filteredItems = getFilteredValidationItems().sort((a, b) => b.severity - a.severity);
+
+  // Get counts for filter badges
+  const allItems = getAllValidationItems();
+  const counts = {
+    all: allItems.length,
+    issues: allItems.filter(item => item.type !== 'valid').length,
+    passed: allItems.filter(item => item.type === 'valid').length,
+    critical: allItems.filter(item => item.type === 'critical').length,
+    warnings: allItems.filter(item => item.type === 'warning').length,
+    fieldErrors: allItems.filter(item => item.type === 'field-error').length
+  };
 
   return (
     <div className="document-viewer-container">
@@ -612,400 +763,512 @@ function DocumentViewer({ document, loanData }) {
         <div className="data-panel">
           <div className="panel-header">
             <h3>📊 Validation Results</h3>
+            <div className="validation-summary-badges">
+              {counts.critical > 0 && (
+                <span className="summary-badge critical">
+                  🔴 {counts.critical} Critical
+                </span>
+              )}
+              {counts.fieldErrors > 0 && (
+                <span className="summary-badge error">
+                  ✗ {counts.fieldErrors} Errors
+                </span>
+              )}
+              {counts.warnings > 0 && (
+                <span className="summary-badge warning">
+                  🟡 {counts.warnings} Warnings
+                </span>
+              )}
+              {counts.passed > 0 && (
+                <span className="summary-badge success">
+                  ✓ {counts.passed} Passed
+                </span>
+              )}
+            </div>
           </div>
 
-          {/* All Validation Tabs - Flat Structure */}
-          <div className="validation-main-tabs">
-            <button
-              className={`validation-main-tab ${activeTab === 'fields' ? 'active' : ''}`}
-              onClick={() => setActiveTab('fields')}
-            >
-              📋 Field Validation
-              <span className="tab-count">
-                {Object.keys(document.extractedData?.data || {}).length}
-              </span>
-            </button>
-            <button
-              className={`validation-main-tab ${activeTab === 'critical' ? 'active' : ''}`}
-              onClick={() => setActiveTab('critical')}
-            >
-              🔴 Critical Issues
-              <span className="tab-count">
-                {document.validationResults?.issues?.length || 0}
-              </span>
-            </button>
-            <button
-              className={`validation-main-tab ${activeTab === 'warnings' ? 'active' : ''}`}
-              onClick={() => setActiveTab('warnings')}
-            >
-              🟡 Warnings
-              <span className="tab-count">
-                {document.validationResults?.warnings?.length || 0}
-              </span>
-            </button>
+          {/* Filter Bar */}
+          <div className="validation-filter-bar">
+            {/* Search Bar */}
+            <div className="validation-search-bar">
+              <svg className="search-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
+              <input
+                type="text"
+                placeholder="Search validations..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="validation-search-input"
+              />
+              {searchQuery && (
+                <button
+                  className="search-clear-btn"
+                  onClick={() => setSearchQuery('')}
+                  title="Clear search"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+                </button>
+              )}
+            </div>
+
+            {/* Filter Buttons */}
+            <div className="validation-filter-buttons">
+              <button
+                className={`filter-button ${validationFilter === 'all' ? 'active' : ''}`}
+                onClick={() => setValidationFilter('all')}
+              >
+                All ({counts.all})
+              </button>
+              <button
+                className={`filter-button ${validationFilter === 'issues' ? 'active' : ''}`}
+                onClick={() => setValidationFilter('issues')}
+              >
+                Issues Only ({counts.issues})
+              </button>
+              <button
+                className={`filter-button ${validationFilter === 'critical' ? 'active' : ''}`}
+                onClick={() => setValidationFilter('critical')}
+              >
+                Critical ({counts.critical})
+              </button>
+              <button
+                className={`filter-button ${validationFilter === 'warnings' ? 'active' : ''}`}
+                onClick={() => setValidationFilter('warnings')}
+              >
+                Warnings ({counts.warnings})
+              </button>
+              <button
+                className={`filter-button ${validationFilter === 'passed' ? 'active' : ''}`}
+                onClick={() => setValidationFilter('passed')}
+              >
+                Passed ({counts.passed})
+              </button>
+            </div>
+
+            {/* Expand/Collapse All Buttons */}
+            <div className="validation-expand-controls">
+              <button
+                className="expand-control-btn"
+                onClick={expandAll}
+                title="Expand all filtered items"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"/>
+                </svg>
+                Expand All
+              </button>
+              <button
+                className="expand-control-btn"
+                onClick={collapseAll}
+                title="Collapse all items"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7.41 18.59L8.83 20 12 16.83 15.17 20l1.41-1.41L12 14l-4.59 4.59zm9.18-13.18L15.17 4 12 7.17 8.83 4 7.41 5.41 12 10l4.59-4.59z"/>
+                </svg>
+                Collapse All
+              </button>
+            </div>
           </div>
 
-          {/* Tab Content Container */}
-          <div className="tab-content-container">
-            {/* Field Validation Tab Content */}
-            {activeTab === 'fields' && (
-            <div className="extracted-data">
-            {Object.entries(document.extractedData?.data || {}).map(([key, value]) => {
-              const status = getFieldStatus(key);
-              const validation = getFieldValidation(key);
-              const loanDataComparison = checkLoanDataMatch(key, value);
-
-              return (
-                <div key={key} className={`data-field ${status}`}>
-                  <div className="field-header">
-                    <div className="field-header-content">
-                      <div className="field-header-left">
-                        <label className="field-name">{key}</label>
-                        {showValidation && (
-                          <span className={`field-status-badge ${status}`}>
-                            {status === 'valid' ? '✓' : status === 'invalid' ? '✗' : '?'}
-                          </span>
-                        )}
-                      </div>
-                      {showValidation && validation?.message && status === 'invalid' && (
-                        <div className="field-inline-error">
-                          {validation.message}
-                        </div>
-                      )}
+          {/* Unified Validation List */}
+          <div className="unified-validation-list">
+            {filteredItems.length === 0 ? (
+              <div className="validation-empty-state">
+                {searchQuery ? (
+                  // Empty state for search
+                  <>
+                    <svg className="empty-state-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                      <path d="M7 9h5v1H7z" fill="#ef4444"/>
+                    </svg>
+                    <div className="empty-state-title">No Results Found</div>
+                    <div className="empty-state-message">
+                      No validation items match "{searchQuery}"
                     </div>
-                  </div>
+                    <button
+                      className="empty-state-action"
+                      onClick={() => setSearchQuery('')}
+                    >
+                      Clear Search
+                    </button>
+                  </>
+                ) : validationFilter === 'passed' ? (
+                  // Empty state for "Passed" filter
+                  <>
+                    <svg className="empty-state-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div className="empty-state-title">No Passed Validations</div>
+                    <div className="empty-state-message">
+                      No validation checks have passed yet
+                    </div>
+                  </>
+                ) : validationFilter === 'critical' ? (
+                  // Empty state for "Critical" filter
+                  <>
+                    <svg className="empty-state-icon success" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div className="empty-state-title">No Critical Issues</div>
+                    <div className="empty-state-message">
+                      Great! No critical issues found in this document
+                    </div>
+                  </>
+                ) : validationFilter === 'warnings' ? (
+                  // Empty state for "Warnings" filter
+                  <>
+                    <svg className="empty-state-icon success" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div className="empty-state-title">No Warnings</div>
+                    <div className="empty-state-message">
+                      Excellent! No warnings found in this document
+                    </div>
+                  </>
+                ) : validationFilter === 'issues' ? (
+                  // Empty state for "Issues Only" filter
+                  <>
+                    <svg className="empty-state-icon success" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div className="empty-state-title">All Clear!</div>
+                    <div className="empty-state-message">
+                      No validation issues found - everything looks good
+                    </div>
+                  </>
+                ) : (
+                  // Empty state for "All" filter
+                  <>
+                    <svg className="empty-state-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                    <div className="empty-state-title">No Validation Data</div>
+                    <div className="empty-state-message">
+                      No validation information available for this document
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              filteredItems.map((item) => {
+                const isExpanded = expandedItems[item.id];
+                const recommendedAgents = item.issue ? getRecommendedAgents(item.issue) : [];
 
-                  <div className="field-value">{formatFieldValue(value)}</div>
-
-                  {/* ByteLOS Comparison Section - ALWAYS show if ByteLOS data exists */}
-                  {loanDataComparison.hasLoanData && (
-                    <div className={`bytelos-comparison ${loanDataComparison.matches ? 'match' : 'mismatch'}`}>
-                      <div className="bytelos-comparison-header">
-                        <span className="bytelos-icon">🔗</span>
-                        <span className="bytelos-label">ByteLOS Application Data:</span>
-                        <span className={`bytelos-match-indicator ${loanDataComparison.matches ? 'match' : 'mismatch'}`}>
-                          {loanDataComparison.matches ? '✓ Match' : '⚠️ Mismatch'}
+                return (
+                  <div key={item.id} className={`validation-item ${item.type} ${isExpanded ? 'expanded' : ''}`}>
+                    {/* Compact Header - Always Visible */}
+                    <div
+                      className="validation-item-header"
+                      onClick={() => item.type !== 'valid' && toggleExpanded(item.id)}
+                      style={{ cursor: item.type !== 'valid' ? 'pointer' : 'default' }}
+                    >
+                      <div className="item-icon-section">
+                        <span className={`item-icon ${item.type}`}>{item.icon}</span>
+                        <span className={`item-type-label ${item.type}`}>
+                          {item.type === 'valid' ? 'Passed' :
+                           item.type === 'critical' ? 'CRITICAL' :
+                           item.type === 'warning' ? 'WARNING' :
+                           item.rule || 'FIELD ERROR'}
                         </span>
                       </div>
-                      <div className="bytelos-value">
-                        {formatFieldValue(loanDataComparison.loanValue)}
-                      </div>
-
-                      {/* Show confirmation message for matches */}
-                      {loanDataComparison.matches && (
-                        <div className="bytelos-match-confirmation">
-                          <span className="confirmation-icon">✓</span>
-                          <span className="confirmation-text">
-                            Document data matches loan application
-                          </span>
+                      <div className="item-main-info">
+                        <div className="item-title">
+                          {item.title}
+                          {item.message && !isExpanded && (
+                            <span className="item-reason"> - {item.message}</span>
+                          )}
                         </div>
-                      )}
-
-                      {/* Show agent recommendation for mismatches */}
-                      {!loanDataComparison.matches && (
-                        <div className="bytelos-mismatch-actions">
-                          <div className="bytelos-warning">
-                            <span className="warning-icon">⚠️</span>
-                            <span className="warning-text">
-                              Document data doesn't match loan application. Consider agent review.
-                            </span>
-                          </div>
-                          <button
-                            className="btn-assign-agent recommended"
-                            onClick={() => {
-                              const agent = AGENTS.find(a => a.id === 'agent-015');
-                              const issue = {
-                                message: `${key} mismatch: Document shows "${value}" but loan application shows "${loanDataComparison.loanValue}"`,
-                                field: key,
-                                rule: 'ByteLOS Data Consistency'
-                              };
-                              assignAgent(agent, issue, `bytelos-${key}`);
-                            }}
-                            title="Cross-Document Consistency Checker - Compares data across multiple documents"
-                          >
-                            🔗 Assign Consistency Agent
-                          </button>
+                        {item.value && (
+                          <div className="item-value">Value: {item.value}</div>
+                        )}
+                      </div>
+                      {item.type !== 'valid' && (
+                        <div className="item-expand-icon">
+                          {isExpanded ? '▼' : '▶'}
                         </div>
                       )}
                     </div>
-                  )}
 
-                  {showValidation && validation && (
-                    <>
-                      {status === 'invalid' && (
-                        <div className="field-actions">
-                          <button
-                            className="btn-action btn-primary"
-                            onClick={() => handleRequestDocument(key, { message: validation?.message, rule: validation?.rule })}
-                          >
-                            📄 Request New Document
-                          </button>
-                          <button
-                            className="btn-action btn-secondary"
-                            onClick={() => handleOverride(key, validation)}
-                          >
-                            ✓ Override
-                          </button>
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-              );
-            })}
-            </div>
-          )}
-
-          {/* Critical Issues Tab Content */}
-          {activeTab === 'critical' && document.validationResults && (
-            <div className="validation-summary">
-              {document.validationResults.issues?.length > 0 ? (
-                <div className="issues-section">
-                  {document.validationResults.issues.map((issue, index) => {
-                    const recommendedAgents = getRecommendedAgents(issue);
-                    return (
-                      <div key={index} className="issue-item critical">
-                        <div className="issue-content">
-                          <div className="issue-header">
-                            <span className="issue-icon">🔴</span>
-                            <span className="issue-severity">CRITICAL</span>
+                    {/* Expanded Details - Only for issues */}
+                    {isExpanded && item.type !== 'valid' && (
+                      <div className="validation-item-details">
+                        {/* Issue Details */}
+                        <div className="details-section">
+                          <div className="details-header">
+                            <span className="details-icon">ℹ️</span>
+                            <span className="details-label">Issue Details</span>
                           </div>
-                          <div className="issue-message">{issue.message}</div>
-                          {issue.field && (
-                            <div className="issue-field">
-                              <strong>Field:</strong> {issue.field}
+                          <div className="details-content">
+                            <div className="detail-row">
+                              <strong>Message:</strong> {item.message}
                             </div>
-                          )}
-                          {issue.rule && (
-                            <div className="issue-rule">
-                              <strong>Rule:</strong> {issue.rule}
-                            </div>
-                          )}
-                          {issue.severity && (
-                            <div className="issue-severity-level">
-                              <strong>Impact:</strong> {issue.severity}
-                            </div>
-                          )}
+                            {item.field && (
+                              <div className="detail-row">
+                                <strong>Field:</strong> {item.field}
+                              </div>
+                            )}
+                            {item.rule && (
+                              <div className="detail-row">
+                                <strong>Rule:</strong> {item.rule}
+                              </div>
+                            )}
+                            {item.impactLevel && (
+                              <div className="detail-row">
+                                <strong>Impact:</strong> {item.impactLevel}
+                              </div>
+                            )}
+                          </div>
                         </div>
 
-                        {/* Recommended Agents Section */}
-                        {recommendedAgents.length > 0 && (
-                          <div className="recommended-agents">
-                            <div className="recommended-agents-header">
-                              <span className="recommended-icon">🤖</span>
-                              <span className="recommended-label">Recommended Agents:</span>
+                        {/* ByteLOS Comparison for field errors */}
+                        {item.loanDataComparison?.hasLoanData && (
+                          <div className={`details-section bytelos-section ${item.loanDataComparison.matches ? 'match' : 'mismatch'}`}>
+                            <div className="details-header">
+                              <span className="details-icon">🔗</span>
+                              <span className="details-label">ByteLOS Application Data</span>
+                              <span className={`match-indicator ${item.loanDataComparison.matches ? 'match' : 'mismatch'}`}>
+                                {item.loanDataComparison.matches ? '✓ Match' : '⚠️ Mismatch'}
+                              </span>
                             </div>
-                            <div className="agent-buttons">
-                              {recommendedAgents.map(agent => {
-                                const issueKey = `${index}-${agent.id}`;
-                                const isAssigned = assignedAgents[issueKey];
-                                return (
-                                  <button
-                                    key={agent.id}
-                                    className={`btn-assign-agent ${isAssigned ? 'assigned' : ''} ${agent.autoAssign ? 'auto-assigned' : ''}`}
-                                    onClick={() => assignAgent(agent, issue, index)}
-                                    title={agent.description}
-                                    data-tooltip={agent.description}
-                                  >
-                                    {agent.icon} {agent.name}
-                                    {isAssigned && <span className="assigned-badge">✓ Assigned</span>}
-                                    {agent.autoAssign && !isAssigned && <span className="auto-badge">⚡ Auto</span>}
-                                  </button>
-                                );
-                              })}
-                            </div>
-
-                            {/* Agent Results Section */}
-                            {recommendedAgents.map(agent => {
-                              const issueKey = `${index}-${agent.id}`;
-                              const agentResult = agentResults[issueKey];
-
-                              if (!agentResult) return null;
-
-                              const resultTypeClass = agentResult.result.type === 'rectified' ? 'success' :
-                                                     agentResult.result.type === 'alert' ? 'alert' : 'info';
-
-                              return (
-                                <div key={`result-${agent.id}`} className={`agent-result ${resultTypeClass}`}>
-                                  <div className="agent-result-header">
-                                    <span className="agent-result-icon">{agent.icon}</span>
-                                    <span className="agent-result-title">{agentResult.result.title}</span>
-                                    <span className="agent-result-timestamp">
-                                      {new Date(agentResult.completedAt).toLocaleTimeString()}
-                                    </span>
-                                  </div>
-                                  <div className="agent-result-body">
-                                    <div className="agent-result-section">
-                                      <strong>Findings:</strong>
-                                      <ul className="agent-findings">
-                                        {agentResult.result.findings.map((finding, idx) => (
-                                          <li key={idx}>{finding}</li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                    <div className="agent-result-section agent-recommendation">
-                                      <strong>
-                                        {agentResult.result.type === 'rectified' ? '✅ Resolution:' :
-                                         agentResult.result.type === 'alert' ? '⚠️ Recommendation:' :
-                                         '💡 Suggestion:'}
-                                      </strong>
-                                      <p>{agentResult.result.recommendation}</p>
-                                    </div>
-                                  </div>
+                            <div className="details-content">
+                              <div className="bytelos-value">
+                                {formatFieldValue(item.loanDataComparison.loanValue)}
+                              </div>
+                              {!item.loanDataComparison.matches && (
+                                <div className="bytelos-warning-text">
+                                  Document data doesn't match loan application
                                 </div>
-                              );
-                            })}
+                              )}
+                            </div>
                           </div>
                         )}
 
-                        <div className="issue-actions">
-                          <button
-                            className="btn-action btn-danger"
-                            onClick={() => handleCreateCondition(issue)}
-                          >
-                            📋 Create Condition
-                          </button>
-                          <button
-                            className="btn-action btn-primary"
-                            onClick={() => handleRequestDocument()}
-                          >
-                            📄 Request Document
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="validation-status success">
-                  ✓ No critical issues found
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Warnings Tab Content */}
-          {activeTab === 'warnings' && document.validationResults && (
-            <div className="validation-summary">
-              {document.validationResults.warnings?.length > 0 ? (
-                <div className="issues-section">
-                  {document.validationResults.warnings.map((warning, index) => {
-                    const recommendedAgents = getRecommendedAgents(warning);
-                    return (
-                      <div key={index} className="issue-item warning">
-                        <div className="issue-content">
-                          <div className="issue-header">
-                            <span className="issue-icon">🟡</span>
-                            <span className="issue-severity">WARNING</span>
-                          </div>
-                          <div className="issue-message">{warning.message}</div>
-                          {warning.field && (
-                            <div className="issue-field">
-                              <strong>Field:</strong> {warning.field}
-                            </div>
-                          )}
-                          {warning.rule && (
-                            <div className="issue-rule">
-                              <strong>Rule:</strong> {warning.rule}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Recommended Agents Section */}
-                        {recommendedAgents.length > 0 && (
-                          <div className="recommended-agents">
-                            <div className="recommended-agents-header">
-                              <span className="recommended-icon">🤖</span>
-                              <span className="recommended-label">Recommended Agents:</span>
-                            </div>
-                            <div className="agent-buttons">
-                              {recommendedAgents.map(agent => {
-                                const issueKey = `warning-${index}-${agent.id}`;
-                                const isAssigned = assignedAgents[issueKey];
-                                return (
-                                  <button
-                                    key={agent.id}
-                                    className={`btn-assign-agent ${isAssigned ? 'assigned' : ''} ${agent.autoAssign ? 'auto-assigned' : ''}`}
-                                    onClick={() => assignAgent(agent, warning, `warning-${index}`)}
-                                    title={agent.description}
-                                    data-tooltip={agent.description}
-                                  >
-                                    {agent.icon} {agent.name}
-                                    {isAssigned && <span className="assigned-badge">✓ Assigned</span>}
-                                    {agent.autoAssign && !isAssigned && <span className="auto-badge">⚡ Auto</span>}
-                                  </button>
-                                );
-                              })}
-                            </div>
-
-                            {/* Agent Results Section */}
-                            {recommendedAgents.map(agent => {
-                              const issueKey = `warning-${index}-${agent.id}`;
-                              const agentResult = agentResults[issueKey];
-
-                              if (!agentResult) return null;
-
-                              const resultTypeClass = agentResult.result.type === 'rectified' ? 'success' :
-                                                     agentResult.result.type === 'alert' ? 'alert' : 'info';
-
-                              return (
-                                <div key={`result-${agent.id}`} className={`agent-result ${resultTypeClass}`}>
-                                  <div className="agent-result-header">
-                                    <span className="agent-result-icon">{agent.icon}</span>
-                                    <span className="agent-result-title">{agentResult.result.title}</span>
-                                    <span className="agent-result-timestamp">
-                                      {new Date(agentResult.completedAt).toLocaleTimeString()}
-                                    </span>
-                                  </div>
-                                  <div className="agent-result-body">
-                                    <div className="agent-result-section">
-                                      <strong>Findings:</strong>
-                                      <ul className="agent-findings">
-                                        {agentResult.result.findings.map((finding, idx) => (
-                                          <li key={idx}>{finding}</li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                    <div className="agent-result-section agent-recommendation">
-                                      <strong>
-                                        {agentResult.result.type === 'rectified' ? '✅ Resolution:' :
-                                         agentResult.result.type === 'alert' ? '⚠️ Recommendation:' :
-                                         '💡 Suggestion:'}
-                                      </strong>
-                                      <p>{agentResult.result.recommendation}</p>
-                                    </div>
-                                  </div>
+                        {/* Agents & Actions - Consolidated Side-by-Side Layout */}
+                        <div className="details-section agents-actions-consolidated">
+                          <div className="consolidated-layout">
+                            {/* Left Column - Agents */}
+                            {recommendedAgents.length > 0 && (
+                              <div className="agents-column">
+                                <div className="details-header">
+                                  <span className="details-icon">🤖</span>
+                                  <span className="details-label">Recommended Agents</span>
                                 </div>
-                              );
-                            })}
-                          </div>
-                        )}
+                                <div className="agent-buttons-compact">
+                                  {recommendedAgents.map(agent => {
+                                    const issueKey = `${item.id}-${agent.id}`;
+                                    const isAssigned = assignedAgents[issueKey];
+                                    const agentResult = agentResults[issueKey];
 
-                        <div className="issue-actions">
-                          <button
-                            className="btn-action btn-warning"
-                            onClick={() => handleCreateCondition(warning)}
-                          >
-                            📋 Create Condition
-                          </button>
-                          <button
-                            className="btn-action btn-secondary"
-                            onClick={() => handleMarkReviewed(warning)}
-                          >
-                            ✓ Mark Reviewed
-                          </button>
+                                    return (
+                                      <div key={agent.id} className="agent-button-wrapper">
+                                        <button
+                                          className={`btn-assign-agent-compact ${isAssigned ? 'assigned' : ''}`}
+                                          onClick={() => assignAgent(agent, item.issue, item.issueIndex || item.id)}
+                                          title={agent.description}
+                                        >
+                                          <span className="agent-icon">{agent.icon}</span>
+                                          <span className="agent-name">{agent.name}</span>
+                                          {isAssigned && <span className="assigned-indicator">✓</span>}
+                                        </button>
+
+                                        {/* Agent Result - shown inline below button */}
+                                        {agentResult && (
+                                          <div className={`agent-result-compact ${agentResult.result.type}`}>
+                                            <div className="result-header-compact">
+                                              <span className="result-icon">{agent.icon}</span>
+                                              <span className="result-title">{agentResult.result.title}</span>
+                                            </div>
+                                            <div className="result-findings-compact">
+                                              <ul>
+                                                {agentResult.result.findings.map((finding, idx) => (
+                                                  <li key={idx}>{finding}</li>
+                                                ))}
+                                              </ul>
+                                            </div>
+                                            <div className="result-recommendation-compact">
+                                              <strong>
+                                                {agentResult.result.type === 'rectified' ? '✅' :
+                                                 agentResult.result.type === 'alert' ? '⚠️' : '💡'}
+                                              </strong>
+                                              <span>{agentResult.result.recommendation}</span>
+                                            </div>
+
+                                            {/* Action Buttons for Agent Result */}
+                                            <div className="result-actions">
+                                              {agentResult.result.type === 'rectified' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn apply"
+                                                    onClick={() => {
+                                                      addToast(`✅ Applied fix from ${agent.name}`, 'success');
+                                                    }}
+                                                    title="Apply the suggested fix"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                                    </svg>
+                                                    Apply Fix
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => {
+                                                      addToast('Added notes to loan file', 'info');
+                                                    }}
+                                                    title="Add to loan notes"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                                                    </svg>
+                                                    Add to Notes
+                                                  </button>
+                                                </>
+                                              )}
+                                              {agentResult.result.type === 'alert' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn warning"
+                                                    onClick={() => {
+                                                      addToast('Document flagged for underwriter review', 'warning');
+                                                    }}
+                                                    title="Flag for manual review"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/>
+                                                    </svg>
+                                                    Flag for Review
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => {
+                                                      addToast('Document request generated', 'success');
+                                                    }}
+                                                    title="Request additional documents"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                                                    </svg>
+                                                    Request Documents
+                                                  </button>
+                                                </>
+                                              )}
+                                              {agentResult.result.type === 'analysis' && (
+                                                <>
+                                                  <button
+                                                    className="result-action-btn success"
+                                                    onClick={() => {
+                                                      addToast('Issue marked as resolved', 'success');
+                                                    }}
+                                                    title="Accept findings and close"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                                    </svg>
+                                                    Accept
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn secondary"
+                                                    onClick={() => {
+                                                      addToast('Document request generated', 'success');
+                                                    }}
+                                                    title="Request clarification"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M19 2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 16h-2v-2h2v2zm0-4h-2V6h2v8z"/>
+                                                    </svg>
+                                                    Request Clarification
+                                                  </button>
+                                                  <button
+                                                    className="result-action-btn tertiary"
+                                                    onClick={() => {
+                                                      addToast('Override applied with justification', 'info');
+                                                    }}
+                                                    title="Override with justification"
+                                                  >
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                                    </svg>
+                                                    Override
+                                                  </button>
+                                                </>
+                                              )}
+                                            </div>
+                                          </div>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Right Column - Actions */}
+                            <div className="actions-column">
+                              <div className="details-header">
+                                <span className="details-icon">⚡</span>
+                                <span className="details-label">Quick Actions</span>
+                              </div>
+                              <div className="action-buttons-compact">
+                                {item.type === 'critical' && (
+                                  <>
+                                    <button
+                                      className="btn-action-compact btn-danger"
+                                      onClick={() => handleCreateCondition(item.issue)}
+                                    >
+                                      📋 Create Condition
+                                    </button>
+                                    <button
+                                      className="btn-action-compact btn-primary"
+                                      onClick={() => handleRequestDocument(item.field, item.issue)}
+                                    >
+                                      📄 Request Document
+                                    </button>
+                                  </>
+                                )}
+                                {item.type === 'warning' && (
+                                  <>
+                                    <button
+                                      className="btn-action-compact btn-warning"
+                                      onClick={() => handleCreateCondition(item.issue)}
+                                    >
+                                      📋 Create Condition
+                                    </button>
+                                    <button
+                                      className="btn-action-compact btn-secondary"
+                                      onClick={() => handleMarkReviewed(item.issue)}
+                                    >
+                                      ✓ Mark Reviewed
+                                    </button>
+                                  </>
+                                )}
+                                {item.type === 'field-error' && (
+                                  <>
+                                    <button
+                                      className="btn-action-compact btn-primary"
+                                      onClick={() => handleRequestDocument(item.field, item.issue)}
+                                    >
+                                      📄 Request New Document
+                                    </button>
+                                    <button
+                                      className="btn-action-compact btn-secondary"
+                                      onClick={() => handleOverride(item.field, item.validation)}
+                                    >
+                                      ✓ Override
+                                    </button>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="validation-status success">
-                  ✓ No warnings found
-                </div>
-              )}
-            </div>
-          )}
+                    )}
+                  </div>
+                );
+              })
+            )}
           </div>
 
           {/* Conditions - Only show if conditions have meaningful data */}
