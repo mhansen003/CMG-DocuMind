@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - James Chen - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #006ba6; }
+        .section-title { font-weight: bold; background: #e8e8e8; padding: 8px; border-left: 4px solid #006ba6; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #006ba6; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #006ba6; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">Pacific Coast Healthcare</div>
+            <div>3501 Atlantic Avenue, Long Beach, CA 90807</div>
+            <div>EIN: 95-3847561</div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div><strong>Name:</strong> James Robert Chen</div>
+                <div><strong>Employee ID:</strong> EMP-45678</div>
+                <div><strong>SSN:</strong> ***-**-8901</div>
+                <div><strong>Pay Date:</strong> October 5, 2024</div>
+                <div><strong>Pay Period:</strong> Sept 16 - Sept 30, 2024</div>
+                <div><strong>Pay Frequency:</strong> Bi-Weekly</div>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr><th>Description</th><th>Hours/Rate</th><th>Current</th><th>YTD</th></tr>
+                <tr><td>Regular Pay</td><td>80.00 hrs @ $34.62</td><td>$2,769.60</td><td>$66,470.40</td></tr>
+                <tr class="total-row"><td colspan="2">GROSS PAY</td><td>$2,769.23</td><td>$66,461.52</td></tr>
+            </table>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr><th>Description</th><th>Current</th><th>YTD</th></tr>
+                <tr><td>Federal Income Tax</td><td>$285.40</td><td>$6,848.50</td></tr>
+                <tr><td>Social Security</td><td>$171.69</td><td>$4,120.61</td></tr>
+                <tr><td>Medicare</td><td>$40.15</td><td>$963.69</td></tr>
+                <tr><td>CA State Tax</td><td>$110.77</td><td>$2,658.46</td></tr>
+                <tr><td>CA SDI</td><td>$27.69</td><td>$664.62</td></tr>
+                <tr><td>401(k) (5.0%)</td><td>$138.46</td><td>$3,323.08</td></tr>
+                <tr><td>Medical - Kaiser HMO</td><td>$92.00</td><td>$2,208.00</td></tr>
+                <tr><td>Dental</td><td>$18.50</td><td>$444.00</td></tr>
+                <tr><td>Vision</td><td>$8.00</td><td>$192.00</td></tr>
+                <tr class="total-row"><td>TOTAL DEDUCTIONS</td><td>$892.66</td><td>$21,422.96</td></tr>
+            </table>
+        </div>
+
+        <div class="net-pay">NET PAY: $1,876.57 | YTD: $45,038.56</div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border: 1px solid #ddd;">
+            <div class="section-title">PAYMENT INFORMATION</div>
+            <div class="info-grid">
+                <div><strong>Method:</strong> Direct Deposit</div>
+                <div><strong>Bank:</strong> Chase Bank</div>
+                <div><strong>Account:</strong> Checking ****5678</div>
+                <div><strong>Filing Status:</strong> Married Filing Jointly</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form W-2 - Catherine Patterson - 2023</title>
+    <style>
+        body { font-family: 'Courier New', monospace; padding: 40px; background: #f5f5f5; }
+        .w2-form { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 3px solid #000; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .form-title { font-size: 18px; font-weight: bold; }
+        .form-year { font-size: 24px; font-weight: bold; margin: 10px 0; }
+        .w2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border: 2px solid #000; margin-top: 15px; }
+        .w2-box { border: 1px solid #000; padding: 8px; min-height: 50px; background: white; }
+        .box-label { font-size: 9px; font-weight: bold; display: block; margin-bottom: 3px; }
+        .box-value { font-size: 12px; font-weight: bold; }
+        .employer-section { border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 15px; }
+        .employer-info { margin: 5px 0; font-size: 11px; }
+        .employee-section { padding: 10px; border: 2px solid #000; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="w2-form">
+        <div class="header">
+            <div class="form-title">Wage and Tax Statement</div>
+            <div class="form-year">2023</div>
+            <div style="font-size: 11px;">Copy B - To Be Filed With Employee's FEDERAL Tax Return</div>
+        </div>
+
+        <div class="employer-section">
+            <div class="employer-info"><strong>a</strong> Employee's social security number: <strong>567-89-0123</strong></div>
+            <div class="employer-info"><strong>b</strong> Employer identification number (EIN): <strong>77-8574321</strong></div>
+            <div class="employer-info"><strong>c</strong> Employer's name, address, and ZIP code:</div>
+            <div class="employer-info" style="margin-left: 15px;">
+                <strong>Hoag Memorial Hospital Presbyterian</strong><br>
+                1 Hoag Drive<br>
+                Newport Beach, CA 92663
+            </div>
+        </div>
+
+        <div class="employee-section">
+            <div class="employer-info"><strong>e</strong> Employee's first name and initial: <strong>Catherine E.</strong> Last name: <strong>Patterson</strong></div>
+            <div class="employer-info" style="margin-left: 15px; margin-top: 5px;">
+                5623 Vista Del Mar<br>
+                Newport Beach, CA 92663
+            </div>
+        </div>
+
+        <div class="w2-grid">
+            <div class="w2-box"><span class="box-label">1 Wages, tips, other compensation</span><span class="box-value">$485,240.00</span></div>
+            <div class="w2-box"><span class="box-label">2 Federal income tax withheld</span><span class="box-value">$128,450.00</span></div>
+            <div class="w2-box"><span class="box-label">3 Social security wages</span><span class="box-value">$160,200.00</span></div>
+            <div class="w2-box"><span class="box-label">4 Social security tax withheld</span><span class="box-value">$9,932.40</span></div>
+            <div class="w2-box"><span class="box-label">5 Medicare wages and tips</span><span class="box-value">$485,240.00</span></div>
+            <div class="w2-box"><span class="box-label">6 Medicare tax withheld</span><span class="box-value">$7,035.98</span></div>
+            <div class="w2-box"><span class="box-label">12a</span><div style="margin-top: 5px;"><div style="display: flex; gap: 10px;"><span style="font-weight: bold;">Code: D</span><span>$22,500.00</span></div><div style="display: flex; gap: 10px; margin-top: 5px;"><span style="font-weight: bold;">Code: BB</span><span>$8,500.00</span></div></div></div>
+            <div class="w2-box"><span class="box-label">13 Checkboxes</span><div style="margin-top: 5px;"><input type="checkbox" checked disabled> Retirement plan</div></div>
+        </div>
+
+        <div style="margin-top: 15px; border: 2px solid #000; padding: 10px;">
+            <div style="font-weight: bold; margin-bottom: 10px;">STATE TAX INFORMATION</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div><strong>15 State:</strong> CA</div>
+                <div><strong>16 State wages:</strong> $485,240.00</div>
+                <div><strong>17 State income tax:</strong> $52,340.80</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

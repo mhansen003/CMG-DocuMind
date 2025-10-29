@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Chen - September 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #0066cc; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #0066cc; }
+        .section-title { background: #0066cc; color: white; padding: 10px; margin-top: 25px; font-weight: bold; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 11px; }
+        .transactions-table th { background: #f0f0f0; padding: 8px; text-align: left; border-bottom: 2px solid #0066cc; }
+        .transactions-table td { padding: 6px; border-bottom: 1px solid #e0e0e0; }
+        .deposit { color: #008000; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">CHASE BANK</div>
+            <div style="text-align: right;">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">September 1 - September 30, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT INFORMATION</div>
+        <div class="info-grid">
+            <div><strong>Account Holders:</strong> James Chen & Amanda Chen</div>
+            <div><strong>Account Number:</strong> ****5678</div>
+            <div><strong>Address:</strong> 789 Cherry Avenue, Apt 12<br>Long Beach, CA 90806</div>
+            <div><strong>Account Type:</strong> Joint Checking<br><strong>Routing:</strong> 322271627</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div><strong>Beginning Balance (09/01/24):</strong> $6,850.00</div>
+            <div><strong>Ending Balance (09/30/24):</strong> $8,200.00</div>
+            <div><strong>Total Deposits:</strong> <span class="deposit">+$8,123.57</span></div>
+            <div><strong>Total Withdrawals:</strong> -$6,773.57</div>
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr><th>Date</th><th>Description</th><th>Withdrawals</th><th>Deposits</th><th>Balance</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>09/01</td><td>ACH DEBIT - Harbor Heights Rent</td><td>$1,850.00</td><td>-</td><td>$5,000.00</td></tr>
+                <tr><td>09/02</td><td>ACH DEBIT - State Farm Insurance</td><td>$156.00</td><td>-</td><td>$4,844.00</td></tr>
+                <tr><td>09/04</td><td>ACH DEBIT - SoCal Edison</td><td>$125.00</td><td>-</td><td>$4,719.00</td></tr>
+                <tr><td>09/05</td><td>DIRECT DEP - Pacific Coast Healthcare</td><td>-</td><td class="deposit">$1,923.45</td><td>$6,642.45</td></tr>
+                <tr><td>09/06</td><td>ACH DEBIT - T-Mobile</td><td>$110.00</td><td>-</td><td>$6,532.45</td></tr>
+                <tr><td>09/08</td><td>DEBIT - Costco</td><td>$185.50</td><td>-</td><td>$6,346.95</td></tr>
+                <tr><td>09/10</td><td>ACH DEBIT - Nelnet Student Loan</td><td>$380.00</td><td>-</td><td>$5,966.95</td></tr>
+                <tr><td>09/12</td><td>ACH DEBIT - Great Lakes Student Loan</td><td>$285.00</td><td>-</td><td>$5,681.95</td></tr>
+                <tr><td>09/14</td><td>ACH DEBIT - Honda Finance</td><td>$415.00</td><td>-</td><td>$5,266.95</td></tr>
+                <tr><td>09/15</td><td>TRANSFER - From Ally Savings</td><td>-</td><td class="deposit">$1,022.55</td><td>$6,289.50</td></tr>
+                <tr><td>09/17</td><td>ACH DEBIT - Spectrum Internet</td><td>$79.99</td><td>-</td><td>$6,209.51</td></tr>
+                <tr><td>09/19</td><td>ACH DEBIT - Capital One Card</td><td>$125.00</td><td>-</td><td>$6,084.51</td></tr>
+                <tr><td>09/20</td><td>DIRECT DEP - Pacific Coast Healthcare</td><td>-</td><td class="deposit">$1,923.45</td><td>$8,007.96</td></tr>
+                <tr><td>09/21</td><td>ACH DEBIT - Discover Card</td><td>$75.00</td><td>-</td><td>$7,932.96</td></tr>
+                <tr><td>09/23</td><td>ACH DEBIT - Target RedCard</td><td>$50.00</td><td>-</td><td>$7,882.96</td></tr>
+                <tr><td>09/26</td><td>ATM WITHDRAWAL</td><td>$100.00</td><td>-</td><td>$7,782.96</td></tr>
+                <tr><td>09/30</td><td>DIRECT DEP - Long Beach USD</td><td>-</td><td class="deposit">$3,254.12</td><td>$11,037.08</td></tr>
+                <tr><td>09/30</td><td>DEBIT - Long Beach Transit Pass</td><td>$50.00</td><td>-</td><td>$10,987.08</td></tr>
+                <tr><td>09/30</td><td>FEE - Monthly Service</td><td>$12.00</td><td>-</td><td>$10,975.08</td></tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f0f0f0;">
+            <div><strong>Direct Deposits:</strong> $7,101.02 | <strong>Total Withdrawals:</strong> $6,773.57</div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; font-size: 10px;">
+            <strong>Chase Bank</strong> | Member FDIC | Questions? 1-800-CHASE-24
+        </div>
+    </div>
+</body>
+</html>

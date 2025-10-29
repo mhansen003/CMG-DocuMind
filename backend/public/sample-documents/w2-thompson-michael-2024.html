@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form W-2 - Michael Thompson - 2024</title>
+    <style>
+        body { font-family: 'Courier New', monospace; padding: 40px; background: #f5f5f5; }
+        .w2-form { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 3px solid #000; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .form-title { font-size: 18px; font-weight: bold; margin-bottom: 5px; }
+        .form-year { font-size: 24px; font-weight: bold; margin: 10px 0; }
+        .w2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border: 2px solid #000; }
+        .w2-box { border: 1px solid #000; padding: 8px; min-height: 50px; background: white; }
+        .box-label { font-size: 9px; font-weight: bold; display: block; margin-bottom: 3px; }
+        .box-value { font-size: 12px; font-weight: bold; }
+        .full-width { grid-column: 1 / -1; }
+        .employer-section { border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 15px; }
+        .employer-info { margin: 5px 0; font-size: 11px; }
+        .employee-section { padding: 10px; border: 2px solid #000; margin-top: 15px; }
+        .checkbox-section { display: flex; gap: 20px; margin: 10px 0; }
+        .checkbox { display: flex; align-items: center; gap: 5px; }
+        .checkbox input { width: 15px; height: 15px; }
+    </style>
+</head>
+<body>
+    <div class="w2-form">
+        <div class="header">
+            <div class="form-title">Wage and Tax Statement</div>
+            <div class="form-year">2024</div>
+            <div style="font-size: 11px;">Copy B - To Be Filed With Employee's FEDERAL Tax Return</div>
+            <div style="font-size: 10px; margin-top: 5px;">This information is being furnished to the Internal Revenue Service</div>
+        </div>
+
+        <div class="employer-section">
+            <div class="employer-info"><strong>a</strong> Employee's social security number: <strong>123-45-6789</strong></div>
+            <div class="employer-info"><strong>b</strong> Employer identification number (EIN): <strong>94-2847561</strong></div>
+            <div class="employer-info"><strong>c</strong> Employer's name, address, and ZIP code:</div>
+            <div class="employer-info" style="margin-left: 15px;">
+                <strong>Tech Solutions Inc</strong><br>
+                789 Technology Parkway<br>
+                Irvine, CA 92614
+            </div>
+            <div class="employer-info"><strong>d</strong> Control number: TSI-2024-10234</div>
+        </div>
+
+        <div class="employee-section">
+            <div class="employer-info"><strong>e</strong> Employee's first name and initial: <strong>Michael J.</strong> Last name: <strong>Thompson</strong> Suff.</div>
+            <div class="employer-info" style="margin-left: 15px; margin-top: 5px;">
+                456 Oak Street, Apt 2B<br>
+                Mission Viejo, CA 92691
+            </div>
+        </div>
+
+        <div class="w2-grid" style="margin-top: 15px;">
+            <div class="w2-box">
+                <span class="box-label">1 Wages, tips, other compensation</span>
+                <span class="box-value">$145,850.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">2 Federal income tax withheld</span>
+                <span class="box-value">$28,450.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">3 Social security wages</span>
+                <span class="box-value">$145,850.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">4 Social security tax withheld</span>
+                <span class="box-value">$9,042.70</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">5 Medicare wages and tips</span>
+                <span class="box-value">$145,850.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">6 Medicare tax withheld</span>
+                <span class="box-value">$2,114.83</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">7 Social security tips</span>
+                <span class="box-value">$0.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">8 Allocated tips</span>
+                <span class="box-value">$0.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">9</span>
+                <span class="box-value"></span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">10 Dependent care benefits</span>
+                <span class="box-value">$0.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">11 Nonqualified plans</span>
+                <span class="box-value">$0.00</span>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">12a See instructions for box 12</span>
+                <div style="margin-top: 5px;">
+                    <div style="display: flex; gap: 10px;">
+                        <span style="font-weight: bold;">Code: D</span>
+                        <span>$8,500.00</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 5px;">
+                        <span style="font-weight: bold;">Code: DD</span>
+                        <span>$14,250.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w2-box">
+                <span class="box-label">13 Checkboxes</span>
+                <div class="checkbox-section">
+                    <div class="checkbox">
+                        <input type="checkbox" disabled>
+                        <label style="font-size: 9px;">Statutory employee</label>
+                    </div>
+                </div>
+                <div class="checkbox-section">
+                    <div class="checkbox">
+                        <input type="checkbox" checked disabled>
+                        <label style="font-size: 9px;">Retirement plan</label>
+                    </div>
+                </div>
+                <div class="checkbox-section">
+                    <div class="checkbox">
+                        <input type="checkbox" disabled>
+                        <label style="font-size: 9px;">Third-party sick pay</label>
+                    </div>
+                </div>
+            </div>
+            <div class="w2-box full-width">
+                <span class="box-label">14 Other (see instructions)</span>
+                <div style="margin-top: 5px;">
+                    <div style="font-size: 11px;">CA SDI: $1,458.50</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; border: 2px solid #000; padding: 10px;">
+            <div style="font-weight: bold; margin-bottom: 10px;">STATE AND LOCAL TAX INFORMATION</div>
+            <div class="w2-grid">
+                <div class="w2-box">
+                    <span class="box-label">15 State / Employer's state ID number</span>
+                    <span class="box-value">CA / 800-1234567-8</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">16 State wages, tips, etc.</span>
+                    <span class="box-value">$145,850.00</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">17 State income tax</span>
+                    <span class="box-value">$8,234.50</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">18 Local wages, tips, etc.</span>
+                    <span class="box-value">$0.00</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">19 Local income tax</span>
+                    <span class="box-value">$0.00</span>
+                </div>
+                <div class="w2-box">
+                    <span class="box-label">20 Locality name</span>
+                    <span class="box-value"></span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; font-size: 10px; text-align: center; border-top: 2px solid #000; padding-top: 15px;">
+            <div><strong>Box 12 Codes:</strong></div>
+            <div style="margin-top: 5px;">D = Elective deferrals to a 401(k) cash or deferred arrangement</div>
+            <div>DD = Cost of employer-sponsored health coverage</div>
+            <div style="margin-top: 10px; font-style: italic;">Keep this form for your tax records. Do not send to the IRS unless specifically instructed.</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 1040 - Patterson - 2023</title>
+    <style>
+        body { font-family: 'Courier New', monospace; padding: 40px; background: #f5f5f5; }
+        .form-1040 { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 3px solid #000; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .section { margin: 20px 0; padding: 15px; border: 2px solid #000; }
+        .section-title { font-weight: bold; background: #e0e0e0; padding: 8px; margin-bottom: 10px; }
+        .line-item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dotted #ccc; }
+        .highlight { background: #ffffcc; }
+    </style>
+</head>
+<body>
+    <div class="form-1040">
+        <div class="header">
+            <div style="font-size: 20px; font-weight: bold;">U.S. Individual Income Tax Return</div>
+            <div style="font-size: 24px; font-weight: bold; margin: 10px 0;">2023</div>
+            <div>Form 1040</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAXPAYER INFORMATION</div>
+            <div><strong>Filing Status:</strong> Married Filing Jointly</div>
+            <div><strong>Taxpayer:</strong> William Alexander Patterson III (SSN: 456-78-9012)</div>
+            <div><strong>Spouse:</strong> Catherine Elizabeth Patterson (SSN: 567-89-0123)</div>
+            <div><strong>Address:</strong> 5623 Vista Del Mar, Newport Beach, CA 92663</div>
+            <div><strong>Dependents:</strong> 2</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">INCOME</div>
+            <div class="line-item"><div>1z. Wages (W-2s combined)</div><div>$943,990.00</div></div>
+            <div class="line-item"><div>2b. Taxable interest</div><div>$8,450.00</div></div>
+            <div class="line-item"><div>3b. Qualified dividends</div><div>$12,680.00</div></div>
+            <div class="line-item"><div>5b. Rental income (Schedule E)</div><div>$17,550.00</div></div>
+            <div class="line-item"><div>7. Capital gain</div><div>$3,780.00</div></div>
+            <div class="line-item highlight"><div>9. TOTAL INCOME</div><div>$986,450.00</div></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ADJUSTED GROSS INCOME</div>
+            <div class="line-item"><div>10. Adjustments (incl. retirement contributions)</div><div>$74,110.00</div></div>
+            <div class="line-item highlight"><div>11. ADJUSTED GROSS INCOME</div><div>$912,340.00</div></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAX COMPUTATION</div>
+            <div class="line-item"><div>12. Standard deduction</div><div>$29,200.00</div></div>
+            <div class="line-item"><div>15. Taxable income</div><div>$854,720.00</div></div>
+            <div class="line-item"><div>16. Tax</div><div>$185,450.00</div></div>
+            <div class="line-item highlight"><div>26. TOTAL TAX</div><div>$185,450.00</div></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SCHEDULE E - RENTAL INCOME</div>
+            <div><strong>Property:</strong> 1245 Prospect Avenue, Tustin, CA 92780</div>
+            <div class="line-item"><div>Gross rental income</div><div>$36,000.00</div></div>
+            <div class="line-item"><div>Expenses (mortgage, taxes, insurance, maintenance)</div><div>$18,450.00</div></div>
+            <div class="line-item"><div>Depreciation</div><div>$9,200.00</div></div>
+            <div class="line-item highlight"><div>Net rental income</div><div>$17,550.00</div></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENTS</div>
+            <div class="line-item"><div>27. Federal withholding</div><div>$240,900.00</div></div>
+            <div class="line-item"><div>28. Estimated tax payments</div><div>$0.00</div></div>
+            <div class="line-item highlight"><div>31. Total payments</div><div>$240,900.00</div></div>
+        </div>
+
+        <div class="section" style="background: #e8f5e9;">
+            <div class="line-item"><div style="font-weight: bold;">33. REFUND</div><div style="color: green; font-size: 18px; font-weight: bold;">$55,450.00</div></div>
+        </div>
+    </div>
+</body>
+</html>

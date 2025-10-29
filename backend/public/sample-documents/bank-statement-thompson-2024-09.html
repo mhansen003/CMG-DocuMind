@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Thompson - September 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #0066cc; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #0066cc; }
+        .account-info { text-align: right; }
+        .section-title { background: #0066cc; color: white; padding: 10px; margin-top: 25px; font-weight: bold; font-size: 14px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .transactions-table th { background: #f0f0f0; padding: 10px; text-align: left; border-bottom: 2px solid #0066cc; font-size: 12px; }
+        .transactions-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
+        .deposit { color: #008000; font-weight: bold; }
+        .withdrawal { color: #000000; }
+        .summary-box { background: #f9f9f9; border: 2px solid #0066cc; padding: 20px; margin-top: 25px; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amount { font-weight: bold; }
+        .highlight { background: #fff3cd; padding: 10px; margin: 15px 0; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">CHASE BANK</div>
+            <div class="account-info">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">September 1 - September 30, 2024</div>
+                <div style="margin-top: 5px; font-size: 11px; color: #666;">Statement Date: October 1, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT HOLDER INFORMATION</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Account Holder:</span> Michael J. Thompson</div>
+            <div class="info-item"><span class="label">Account Number:</span> ****1234</div>
+            <div class="info-item"><span class="label">Address:</span> 456 Oak Street, Apt 2B<br>Mission Viejo, CA 92691</div>
+            <div class="info-item"><span class="label">Account Type:</span> Chase Total Checking<br><span class="label">Routing:</span> 322271627</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="label">Beginning Balance (09/01/24):</span> <span class="amount">$28,450.00</span></div>
+            <div class="info-item"><span class="label">Ending Balance (09/30/24):</span> <span class="amount">$31,285.50</span></div>
+            <div class="info-item"><span class="label">Total Deposits:</span> <span class="amount deposit">+$48,435.50</span></div>
+            <div class="info-item"><span class="label">Total Withdrawals:</span> <span class="amount withdrawal">-$45,600.00</span></div>
+        </div>
+
+        <div class="highlight">
+            <strong>Large Deposits Detected:</strong> Two large deposits totaling $41,500 (Tax refund: $12,000 and Year-end bonus: $29,500). Please retain documentation.
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Withdrawals</th>
+                    <th>Deposits</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09/01</td>
+                    <td>Beginning Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$28,450.00</td>
+                </tr>
+                <tr>
+                    <td>09/02</td>
+                    <td>ACH DEBIT - GEICO Insurance</td>
+                    <td>$245.00</td>
+                    <td>-</td>
+                    <td>$28,205.00</td>
+                </tr>
+                <tr>
+                    <td>09/03</td>
+                    <td>DIRECT DEP - TECH SOLUTIONS INC PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$3,338.21</td>
+                    <td>$31,543.21</td>
+                </tr>
+                <tr>
+                    <td>09/04</td>
+                    <td>DEBIT CARD - Costco Wholesale</td>
+                    <td>$285.50</td>
+                    <td>-</td>
+                    <td>$31,257.71</td>
+                </tr>
+                <tr>
+                    <td>09/05</td>
+                    <td>CHECK #2145</td>
+                    <td>$1,200.00</td>
+                    <td>-</td>
+                    <td>$30,057.71</td>
+                </tr>
+                <tr>
+                    <td>09/06</td>
+                    <td>DEBIT CARD - Shell Gas Station</td>
+                    <td>$67.50</td>
+                    <td>-</td>
+                    <td>$29,990.21</td>
+                </tr>
+                <tr>
+                    <td>09/08</td>
+                    <td>ACH DEBIT - Verizon Wireless</td>
+                    <td>$185.00</td>
+                    <td>-</td>
+                    <td>$29,805.21</td>
+                </tr>
+                <tr>
+                    <td>09/10</td>
+                    <td>DEBIT CARD - Target Store</td>
+                    <td>$124.75</td>
+                    <td>-</td>
+                    <td>$29,680.46</td>
+                </tr>
+                <tr>
+                    <td>09/12</td>
+                    <td>MOBILE DEP - Check #1523 - Tax Refund</td>
+                    <td>-</td>
+                    <td class="deposit">$12,000.00</td>
+                    <td>$41,680.46</td>
+                </tr>
+                <tr>
+                    <td>09/12</td>
+                    <td>ATM WITHDRAWAL - Chase ATM Mission Viejo</td>
+                    <td>$200.00</td>
+                    <td>-</td>
+                    <td>$41,480.46</td>
+                </tr>
+                <tr>
+                    <td>09/15</td>
+                    <td>ACH DEBIT - SDG&E Utilities</td>
+                    <td>$235.00</td>
+                    <td>-</td>
+                    <td>$41,245.46</td>
+                </tr>
+                <tr>
+                    <td>09/17</td>
+                    <td>DIRECT DEP - TECH SOLUTIONS INC PAYROLL</td>
+                    <td>-</td>
+                    <td class="deposit">$3,338.21</td>
+                    <td>$44,583.67</td>
+                </tr>
+                <tr>
+                    <td>09/17</td>
+                    <td>DEBIT CARD - Ralphs Grocery</td>
+                    <td>$156.80</td>
+                    <td>-</td>
+                    <td>$44,426.87</td>
+                </tr>
+                <tr>
+                    <td>09/19</td>
+                    <td>ACH DEBIT - Toyota Financial Auto Loan</td>
+                    <td>$425.00</td>
+                    <td>-</td>
+                    <td>$44,001.87</td>
+                </tr>
+                <tr>
+                    <td>09/21</td>
+                    <td>DEBIT CARD - Amazon.com</td>
+                    <td>$89.45</td>
+                    <td>-</td>
+                    <td>$43,912.42</td>
+                </tr>
+                <tr>
+                    <td>09/22</td>
+                    <td>ACH DEBIT - Chase Credit Card Payment</td>
+                    <td>$2,500.00</td>
+                    <td>-</td>
+                    <td>$41,412.42</td>
+                </tr>
+                <tr style="background: #ffe6e6;">
+                    <td>09/22</td>
+                    <td>FEE - Overdraft Protection Fee</td>
+                    <td>$35.00</td>
+                    <td>-</td>
+                    <td>$41,377.42</td>
+                </tr>
+                <tr>
+                    <td>09/23</td>
+                    <td>TRANSFER - From Wells Fargo Savings</td>
+                    <td>-</td>
+                    <td class="deposit">$259.08</td>
+                    <td>$41,636.50</td>
+                </tr>
+                <tr>
+                    <td>09/25</td>
+                    <td>DEBIT CARD - Vons Grocery</td>
+                    <td>$102.15</td>
+                    <td>-</td>
+                    <td>$41,534.35</td>
+                </tr>
+                <tr>
+                    <td>09/27</td>
+                    <td>ACH DEBIT - Spectrum Internet</td>
+                    <td>$89.99</td>
+                    <td>-</td>
+                    <td>$41,444.36</td>
+                </tr>
+                <tr>
+                    <td>09/28</td>
+                    <td>DEBIT CARD - Chevron Gas</td>
+                    <td>$72.00</td>
+                    <td>-</td>
+                    <td>$41,372.36</td>
+                </tr>
+                <tr>
+                    <td>09/30</td>
+                    <td>DIRECT DEP - TECH SOLUTIONS INC BONUS</td>
+                    <td>-</td>
+                    <td class="deposit">$29,500.00</td>
+                    <td>$70,872.36</td>
+                </tr>
+                <tr>
+                    <td>09/30</td>
+                    <td>ACH DEBIT - HOA Fees</td>
+                    <td>$250.00</td>
+                    <td>-</td>
+                    <td>$70,622.36</td>
+                </tr>
+                <tr>
+                    <td>09/30</td>
+                    <td>FEE - Monthly Service Fee</td>
+                    <td>$12.00</td>
+                    <td>-</td>
+                    <td>$70,610.36</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: center; font-style: italic; background: #f9f9f9;">
+                        Note: Final posted balance differs from statement ending balance due to pending transactions
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">DEPOSIT SUMMARY</div>
+            <div class="summary-grid">
+                <div><span class="label">Direct Deposits (Payroll):</span></div>
+                <div style="text-align: right;">$36,176.42</div>
+                <div><span class="label">Mobile Check Deposits:</span></div>
+                <div style="text-align: right;">$12,000.00</div>
+                <div><span class="label">Transfers In:</span></div>
+                <div style="text-align: right;">$259.08</div>
+                <div style="border-top: 2px solid #333; padding-top: 5px;"><span class="label">Total Deposits:</span></div>
+                <div style="border-top: 2px solid #333; padding-top: 5px; text-align: right; font-weight: bold;">$48,435.50</div>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <div style="font-weight: bold; margin-bottom: 15px; font-size: 16px;">WITHDRAWAL SUMMARY</div>
+            <div class="summary-grid">
+                <div><span class="label">ACH Debits:</span></div>
+                <div style="text-align: right;">$3,929.99</div>
+                <div><span class="label">Debit Card Purchases:</span></div>
+                <div style="text-align: right;">$898.15</div>
+                <div><span class="label">Checks:</span></div>
+                <div style="text-align: right;">$1,200.00</div>
+                <div><span class="label">ATM Withdrawals:</span></div>
+                <div style="text-align: right;">$200.00</div>
+                <div><span class="label">Fees:</span></div>
+                <div style="text-align: right;">$47.00</div>
+                <div style="border-top: 2px solid #333; padding-top: 5px;"><span class="label">Total Withdrawals:</span></div>
+                <div style="border-top: 2px solid #333; padding-top: 5px; text-align: right; font-weight: bold;">$6,275.14</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #e8f4fd; border: 1px solid #0066cc;">
+            <div style="font-weight: bold; margin-bottom: 10px;">ACCOUNT INSIGHTS</div>
+            <div style="margin: 5px 0;"><span class="label">Average Daily Balance:</span> $25,847.32</div>
+            <div style="margin: 5px 0;"><span class="label">Minimum Balance:</span> $28,205.00</div>
+            <div style="margin: 5px 0;"><span class="label">Maximum Balance:</span> $70,872.36</div>
+            <div style="margin: 5px 0;"><span class="label">Number of Transactions:</span> 24</div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; font-size: 11px; text-align: center; border-top: 2px solid #0066cc;">
+            <div><strong>Chase Bank</strong> | Member FDIC</div>
+            <div style="margin-top: 5px;">Questions? Call 1-800-CHASE-24 or visit chase.com</div>
+            <div style="margin-top: 10px; font-size: 10px;">This statement contains important account information. Please review carefully and contact us immediately if you notice any errors or unauthorized transactions.</div>
+        </div>
+    </div>
+</body>
+</html>

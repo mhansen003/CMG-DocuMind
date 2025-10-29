@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Amanda Chen - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #1e7145; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #1e7145; }
+        .section-title { font-weight: bold; background: #e8e8e8; padding: 8px; border-left: 4px solid #1e7145; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #1e7145; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #1e7145; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">Long Beach Unified School District</div>
+            <div>1515 Hughes Way, Long Beach, CA 90810</div>
+            <div>EIN: 95-6012345</div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div><strong>Name:</strong> Amanda Lee Chen</div>
+                <div><strong>Employee ID:</strong> T-892345</div>
+                <div><strong>SSN:</strong> ***-**-9012</div>
+                <div><strong>Pay Date:</strong> October 1, 2024</div>
+                <div><strong>Pay Period:</strong> September 2024</div>
+                <div><strong>Pay Frequency:</strong> Monthly</div>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr><th>Description</th><th>Rate</th><th>Current</th><th>YTD</th></tr>
+                <tr><td>Monthly Salary</td><td>Annual: $58,000.00</td><td>$4,833.33</td><td>$48,333.30</td></tr>
+                <tr class="total-row"><td colspan="2">GROSS PAY</td><td>$4,833.33</td><td>$48,333.30</td></tr>
+            </table>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr><th>Description</th><th>Current</th><th>YTD</th></tr>
+                <tr><td>Federal Income Tax</td><td>$622.50</td><td>$6,225.00</td></tr>
+                <tr><td>Social Security</td><td>$299.67</td><td>$2,996.66</td></tr>
+                <tr><td>Medicare</td><td>$70.08</td><td>$700.83</td></tr>
+                <tr><td>CA State Tax</td><td>$241.67</td><td>$2,416.65</td></tr>
+                <tr><td>CA SDI</td><td>$48.33</td><td>$483.33</td></tr>
+                <tr><td>CalSTRS Pension (8.0%)</td><td>$387.00</td><td>$3,870.00</td></tr>
+                <tr><td>Medical - Blue Shield HMO</td><td>$115.00</td><td>$1,150.00</td></tr>
+                <tr><td>Dental - Family</td><td>$24.00</td><td>$240.00</td></tr>
+                <tr><td>Vision - Family</td><td>$12.00</td><td>$120.00</td></tr>
+                <tr><td>Union Dues - LBTA</td><td>$85.00</td><td>$850.00</td></tr>
+                <tr class="total-row"><td>TOTAL DEDUCTIONS</td><td>$1,905.25</td><td>$19,052.47</td></tr>
+            </table>
+        </div>
+
+        <div class="net-pay">NET PAY: $2,928.08 | YTD: $29,280.83</div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border: 1px solid #ddd;">
+            <div class="section-title">PAYMENT INFORMATION</div>
+            <div class="info-grid">
+                <div><strong>Method:</strong> Direct Deposit</div>
+                <div><strong>Bank:</strong> Chase Bank</div>
+                <div><strong>Account:</strong> Joint Checking ****5678</div>
+                <div><strong>Position:</strong> Elementary School Teacher</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

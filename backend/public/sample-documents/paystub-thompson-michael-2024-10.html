@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Stub - Michael Thompson - October 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .paystub { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border: 2px solid #333; }
+        .header { text-align: center; border-bottom: 3px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #2c5aa0; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; font-size: 14px; background: #e8e8e8; padding: 8px; border-left: 4px solid #2c5aa0; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .info-item { padding: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .earnings-table, .deductions-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .earnings-table th, .deductions-table th { background: #2c5aa0; color: white; padding: 10px; text-align: left; }
+        .earnings-table td, .deductions-table td { border: 1px solid #ddd; padding: 8px; }
+        .total-row { background: #f0f0f0; font-weight: bold; }
+        .net-pay { background: #2c5aa0; color: white; padding: 15px; margin-top: 20px; text-align: center; font-size: 20px; }
+        .payment-info { background: #f9f9f9; padding: 15px; margin-top: 15px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="paystub">
+        <div class="header">
+            <div class="company-name">Tech Solutions Inc</div>
+            <div>789 Technology Parkway, Irvine, CA 92614</div>
+            <div>EIN: 94-2847561</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EMPLOYEE INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name:</span> Michael James Thompson</div>
+                <div class="info-item"><span class="label">Employee ID:</span> EMP-10234</div>
+                <div class="info-item"><span class="label">SSN:</span> ***-**-6789</div>
+                <div class="info-item"><span class="label">Pay Date:</span> October 20, 2024</div>
+                <div class="info-item"><span class="label">Pay Period:</span> Oct 1 - Oct 15, 2024</div>
+                <div class="info-item"><span class="label">Pay Frequency:</span> Bi-Weekly</div>
+            </div>
+            <div style="margin-top: 10px; padding: 10px; background: #fff3cd;">
+                <strong>Address:</strong> 456 Oak Street, Apt 2B, Mission Viejo, CA 92691
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EARNINGS</div>
+            <table class="earnings-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Hours/Rate</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Regular Pay</td>
+                    <td>80.00 hrs @ $69.47</td>
+                    <td>$5,557.60</td>
+                    <td>$117,465.50</td>
+                </tr>
+                <tr>
+                    <td>Overtime Pay</td>
+                    <td>4.00 hrs @ $104.21</td>
+                    <td>$416.84</td>
+                    <td>$8,325.60</td>
+                </tr>
+                <tr>
+                    <td>Referral Bonus</td>
+                    <td>-</td>
+                    <td>$20.76</td>
+                    <td>$843.45</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">GROSS PAY</td>
+                    <td>$5,995.20</td>
+                    <td>$126,634.55</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">DEDUCTIONS & TAXES</div>
+            <table class="deductions-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Current Amount</th>
+                    <th>YTD Amount</th>
+                </tr>
+                <tr>
+                    <td>Federal Income Tax</td>
+                    <td>$1,045.20</td>
+                    <td>$22,087.50</td>
+                </tr>
+                <tr>
+                    <td>Social Security (6.2%)</td>
+                    <td>$371.70</td>
+                    <td>$7,851.34</td>
+                </tr>
+                <tr>
+                    <td>Medicare (1.45%)</td>
+                    <td>$86.93</td>
+                    <td>$1,836.20</td>
+                </tr>
+                <tr>
+                    <td>CA State Tax</td>
+                    <td>$383.70</td>
+                    <td>$8,110.00</td>
+                </tr>
+                <tr>
+                    <td>CA SDI (1.0%)</td>
+                    <td>$59.95</td>
+                    <td>$1,266.35</td>
+                </tr>
+                <tr>
+                    <td>401(k) Pre-tax (6.0%)</td>
+                    <td>$359.71</td>
+                    <td>$7,598.07</td>
+                </tr>
+                <tr>
+                    <td>Medical - Blue Cross PPO Family</td>
+                    <td>$185.00</td>
+                    <td>$3,885.00</td>
+                </tr>
+                <tr>
+                    <td>Dental - Delta Dental Family</td>
+                    <td>$28.50</td>
+                    <td>$598.50</td>
+                </tr>
+                <tr>
+                    <td>Vision - VSP Family</td>
+                    <td>$12.00</td>
+                    <td>$252.00</td>
+                </tr>
+                <tr>
+                    <td>Life Insurance ($250,000)</td>
+                    <td>$15.40</td>
+                    <td>$323.40</td>
+                </tr>
+                <tr>
+                    <td>Disability Insurance (LTD 60%)</td>
+                    <td>$8.90</td>
+                    <td>$186.90</td>
+                </tr>
+                <tr>
+                    <td>Commuter Benefit (Pre-tax)</td>
+                    <td>$100.00</td>
+                    <td>$2,100.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL DEDUCTIONS</td>
+                    <td>$2,656.99</td>
+                    <td>$56,095.26</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="net-pay">
+            NET PAY: $3,338.21 | YTD NET PAY: $70,539.29
+        </div>
+
+        <div class="payment-info">
+            <div class="section-title" style="margin-bottom: 10px;">PAYMENT INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Payment Method:</span> Direct Deposit</div>
+                <div class="info-item"><span class="label">Bank:</span> Chase Bank</div>
+                <div class="info-item"><span class="label">Account Type:</span> Checking</div>
+                <div class="info-item"><span class="label">Account:</span> ****1234</div>
+            </div>
+        </div>
+
+        <div class="payment-info">
+            <div class="section-title" style="margin-bottom: 10px;">TAX INFORMATION</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Filing Status:</span> Married Filing Jointly</div>
+                <div class="info-item"><span class="label">Allowances:</span> 2</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; font-size: 11px; text-align: center; border-top: 2px solid #333;">
+            <div><strong>IMPORTANT:</strong> This is a confidential document. Please review carefully and report any discrepancies to Human Resources.</div>
+            <div style="margin-top: 5px;">Questions? Contact HR at hr@techsolutions.com or call (949) 555-9001</div>
+        </div>
+    </div>
+</body>
+</html>

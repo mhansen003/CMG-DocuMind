@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Statement - Martinez Design Studio - September 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
+        .statement { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ccc; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #d71e28; padding-bottom: 20px; margin-bottom: 30px; }
+        .bank-logo { font-size: 32px; font-weight: bold; color: #d71e28; }
+        .section-title { background: #d71e28; color: white; padding: 10px; margin-top: 25px; font-weight: bold; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; background: #f9f9f9; }
+        .transactions-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 11px; }
+        .transactions-table th { background: #f0f0f0; padding: 8px; text-align: left; border-bottom: 2px solid #d71e28; }
+        .transactions-table td { padding: 6px; border-bottom: 1px solid #e0e0e0; }
+        .deposit { color: #008000; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="statement">
+        <div class="header">
+            <div class="bank-logo">WELLS FARGO</div>
+            <div style="text-align: right;">
+                <div style="font-size: 11px; color: #666;">STATEMENT PERIOD</div>
+                <div style="font-weight: bold;">September 1 - September 30, 2024</div>
+            </div>
+        </div>
+
+        <div class="section-title">ACCOUNT INFORMATION</div>
+        <div class="info-grid">
+            <div><strong>Account Holder:</strong> Martinez Design Studio LLC</div>
+            <div><strong>Account Number:</strong> ****3456</div>
+            <div><strong>Address:</strong> 1550 5th Avenue, Suite 200<br>San Diego, CA 92101</div>
+            <div><strong>Account Type:</strong> Business Checking<br><strong>Routing:</strong> 121000248</div>
+        </div>
+
+        <div class="section-title">ACCOUNT SUMMARY</div>
+        <div class="info-grid">
+            <div><strong>Beginning Balance (09/01/24):</strong> $52,340.00</div>
+            <div><strong>Ending Balance (09/30/24):</strong> $48,500.00</div>
+            <div><strong>Total Deposits:</strong> <span class="deposit">+$28,650.00</span></div>
+            <div><strong>Total Withdrawals:</strong> -$32,490.00</div>
+        </div>
+
+        <div class="section-title">TRANSACTION HISTORY</div>
+        <table class="transactions-table">
+            <thead>
+                <tr><th>Date</th><th>Description</th><th>Withdrawals</th><th>Deposits</th><th>Balance</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>09/01</td><td>Beginning Balance</td><td>-</td><td>-</td><td>$52,340.00</td></tr>
+                <tr><td>09/02</td><td>ACH DEBIT - Harbor Business Center Rent</td><td>$4,500.00</td><td>-</td><td>$47,840.00</td></tr>
+                <tr><td>09/03</td><td>MOBILE DEP - Check #1234 Anderson Residence Project</td><td>-</td><td class="deposit">$8,500.00</td><td>$56,340.00</td></tr>
+                <tr><td>09/04</td><td>CHECK #2001 - Office Depot Supplies</td><td>$845.00</td><td>-</td><td>$55,495.00</td></tr>
+                <tr><td>09/05</td><td>ACH CREDIT - Coastal Properties Development</td><td>-</td><td class="deposit">$15,000.00</td><td>$70,495.00</td></tr>
+                <tr><td>09/06</td><td>DEBIT - Adobe Creative Cloud</td><td>$79.99</td><td>-</td><td>$70,415.01</td></tr>
+                <tr><td>09/08</td><td>CHECK #2002 - Home Depot Materials</td><td>$234.50</td><td>-</td><td>$70,180.51</td></tr>
+                <tr><td>09/10</td><td>ACH DEBIT - State Farm Business Insurance</td><td>$425.00</td><td>-</td><td>$69,755.51</td></tr>
+                <tr><td>09/12</td><td>WIRE TRANSFER - Pacific Design Group</td><td>-</td><td class="deposit">$3,200.00</td><td>$72,955.51</td></tr>
+                <tr><td>09/13</td><td>ACH DEBIT - Verizon Business Phone/Internet</td><td>$315.00</td><td>-</td><td>$72,640.51</td></tr>
+                <tr><td>09/15</td><td>CHECK #2003 - Contract Designer Payment</td><td>$2,500.00</td><td>-</td><td>$70,140.51</td></tr>
+                <tr><td>09/17</td><td>ACH DEBIT - SDG&E Utilities</td><td>$185.00</td><td>-</td><td>$69,955.51</td></tr>
+                <tr><td>09/18</td><td>MOBILE DEP - Check #5678 Thompson Commercial</td><td>-</td><td class="deposit">$1,950.00</td><td>$71,905.51</td></tr>
+                <tr><td>09/20</td><td>CHECK #2004 - Shipping Supplies</td><td>$125.00</td><td>-</td><td>$71,780.51</td></tr>
+                <tr><td>09/21</td><td>ACH DEBIT - Equipment Lease Payment</td><td>$450.00</td><td>-</td><td>$71,330.51</td></tr>
+                <tr><td>09/24</td><td>ACH DEBIT - PayPal Software Subscriptions</td><td>$149.00</td><td>-</td><td>$71,181.51</td></tr>
+                <tr><td>09/25</td><td>CHECK #2005 - Marketing Materials Print Shop</td><td>$680.00</td><td>-</td><td>$70,501.51</td></tr>
+                <tr><td>09/26</td><td>DEBIT - ASID Professional Dues</td><td>$285.00</td><td>-</td><td>$70,216.51</td></tr>
+                <tr><td>09/27</td><td>ACH DEBIT - AMEX Business Card Payment</td><td>$1,500.00</td><td>-</td><td>$68,716.51</td></tr>
+                <tr><td>09/29</td><td>CHECK #2006 - Vendor Supplies</td><td>$340.00</td><td>-</td><td>$68,376.51</td></tr>
+                <tr><td>09/30</td><td>ACH DEBIT - Estimated Tax Payment Q3</td><td>$15,000.00</td><td>-</td><td>$53,376.51</td></tr>
+                <tr><td>09/30</td><td>FEE - Monthly Maintenance</td><td>$15.00</td><td>-</td><td>$53,361.51</td></tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f0f0f0;">
+            <div><strong>DEPOSIT SUMMARY</strong></div>
+            <div style="margin: 5px 0;">Check Deposits: $10,450.00</div>
+            <div style="margin: 5px 0;">ACH Credits: $15,000.00</div>
+            <div style="margin: 5px 0;">Wire Transfers: $3,200.00</div>
+            <div style="margin: 5px 0; font-weight: bold;">Total Deposits: $28,650.00</div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; font-size: 10px;">
+            <strong>Wells Fargo Bank, N.A.</strong> | Member FDIC | Questions? 1-800-CALL-WELLS
+        </div>
+    </div>
+</body>
+</html>

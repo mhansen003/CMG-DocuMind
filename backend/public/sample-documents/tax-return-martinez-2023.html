@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 1040 - Rebecca Martinez - 2023</title>
+    <style>
+        body { font-family: 'Courier New', monospace; padding: 40px; background: #f5f5f5; }
+        .form-1040 { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border: 3px solid #000; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .form-title { font-size: 20px; font-weight: bold; }
+        .tax-year { font-size: 24px; font-weight: bold; margin: 10px 0; }
+        .section { margin: 20px 0; padding: 15px; border: 2px solid #000; }
+        .section-title { font-weight: bold; background: #e0e0e0; padding: 8px; margin-bottom: 10px; }
+        .line-item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dotted #ccc; }
+        .line-label { flex: 1; }
+        .line-value { font-weight: bold; text-align: right; width: 150px; }
+        .highlight { background: #ffffcc; }
+    </style>
+</head>
+<body>
+    <div class="form-1040">
+        <div class="header">
+            <div class="form-title">U.S. Individual Income Tax Return</div>
+            <div class="tax-year">2023</div>
+            <div style="font-size: 12px; margin-top: 5px;">Form 1040</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAXPAYER INFORMATION</div>
+            <div style="margin: 10px 0;"><strong>Name:</strong> Rebecca Lynn Martinez</div>
+            <div style="margin: 10px 0;"><strong>SSN:</strong> 234-56-7890</div>
+            <div style="margin: 10px 0;"><strong>Address:</strong> 2847 Harbor View Lane, San Diego, CA 92101</div>
+            <div style="margin: 10px 0;"><strong>Filing Status:</strong> Head of Household</div>
+            <div style="margin: 10px 0;"><strong>Dependents:</strong> 1 (Sofia Martinez, Daughter, Age 11)</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">INCOME</div>
+            <div class="line-item">
+                <div class="line-label">1z. Business income (Schedule C)</div>
+                <div class="line-value">$215,480.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">2b. Tax-exempt interest</div>
+                <div class="line-value">$1,250.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">2c. Taxable interest</div>
+                <div class="line-value">$340.00</div>
+            </div>
+            <div class="line-item highlight">
+                <div class="line-label">9. TOTAL INCOME</div>
+                <div class="line-value">$215,480.00</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ADJUSTED GROSS INCOME</div>
+            <div class="line-item">
+                <div class="line-label">10. Adjustments to income (incl. SEP contribution $22,028, SE tax deduction $15,207)</div>
+                <div class="line-value">$37,235.00</div>
+            </div>
+            <div class="line-item highlight">
+                <div class="line-label">11. ADJUSTED GROSS INCOME</div>
+                <div class="line-value">$178,245.00</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">TAX AND CREDITS</div>
+            <div class="line-item">
+                <div class="line-label">12. Standard deduction (Head of Household)</div>
+                <div class="line-value">$21,500.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">15. Taxable income</div>
+                <div class="line-value">$156,780.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">16. Tax (from tax tables)</div>
+                <div class="line-value">$28,945.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">24. Self-employment tax (Schedule SE)</div>
+                <div class="line-value">$30,415.00</div>
+            </div>
+            <div class="line-item highlight">
+                <div class="line-label">26. TOTAL TAX</div>
+                <div class="line-value">$59,360.00</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENTS</div>
+            <div class="line-item">
+                <div class="line-label">28. Estimated tax payments (Quarterly ES payments)</div>
+                <div class="line-value">$62,000.00</div>
+            </div>
+            <div class="line-item highlight">
+                <div class="line-label">31. Total payments</div>
+                <div class="line-value">$62,000.00</div>
+            </div>
+        </div>
+
+        <div class="section" style="background: #e8f5e9;">
+            <div class="section-title">REFUND OR AMOUNT OWED</div>
+            <div class="line-item">
+                <div class="line-label">33. Amount overpaid (REFUND)</div>
+                <div class="line-value" style="color: green; font-size: 18px;">$2,640.00</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SCHEDULE C - PROFIT OR LOSS FROM BUSINESS</div>
+            <div style="margin: 10px 0;"><strong>Business:</strong> Martinez Design Studio</div>
+            <div style="margin: 10px 0;"><strong>EIN:</strong> 77-9876543</div>
+            <div style="margin: 10px 0;"><strong>Business Code:</strong> 541410 (Interior Design Services)</div>
+            <div class="line-item">
+                <div class="line-label">Gross receipts</div>
+                <div class="line-value">$285,600.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">Total expenses</div>
+                <div class="line-value">$70,120.00</div>
+            </div>
+            <div class="line-item highlight">
+                <div class="line-label">Net profit</div>
+                <div class="line-value">$215,480.00</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SCHEDULE SE - SELF-EMPLOYMENT TAX</div>
+            <div class="line-item">
+                <div class="line-label">Net earnings from self-employment</div>
+                <div class="line-value">$215,480.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">Self-employment tax</div>
+                <div class="line-value">$30,415.00</div>
+            </div>
+            <div class="line-item">
+                <div class="line-label">Deductible portion (50%)</div>
+                <div class="line-value">$15,207.50</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; border: 1px solid #000;">
+            <div><strong>Tax Preparer Information:</strong></div>
+            <div style="margin: 5px 0;">Jennifer Wong, CPA</div>
+            <div style="margin: 5px 0;">Wong & Associates CPAs</div>
+            <div style="margin: 5px 0;">1250 Sixth Avenue, Suite 400, San Diego, CA 92101</div>
+            <div style="margin: 5px 0;">PTIN: P01234567 | EIN: 95-4567890</div>
+            <div style="margin: 5px 0;">Date Signed: April 10, 2024</div>
+        </div>
+    </div>
+</body>
+</html>
