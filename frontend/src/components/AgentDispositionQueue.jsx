@@ -6,6 +6,8 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
   const [expandedItem, setExpandedItem] = useState(null);
   const [previewDocument, setPreviewDocument] = useState(null);
   const [viewAgentDetails, setViewAgentDetails] = useState(null); // For agent details slideout
+  const [actionModal, setActionModal] = useState(null); // { dispositionId, actionId, actionLabel, actionType }
+  const [modalFormData, setModalFormData] = useState({}); // Form data for the modal
 
   const filteredDispositions = dispositions.filter(disp => {
     if (filter === 'all') return true;
@@ -49,10 +51,27 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
     return '🟢';
   };
 
-  const handleAction = (dispositionId, actionId, actionLabel) => {
-    if (onDisposition) {
-      onDisposition(dispositionId, actionId, actionLabel);
+  const handleAction = (dispositionId, actionId, actionLabel, actionType) => {
+    // Open modal instead of directly calling onDisposition
+    setActionModal({ dispositionId, actionId, actionLabel, actionType });
+    setModalFormData({});
+  };
+
+  const handleModalSubmit = () => {
+    if (actionModal && onDisposition) {
+      onDisposition(actionModal.dispositionId, actionModal.actionId, actionModal.actionLabel, modalFormData);
+      setActionModal(null);
+      setModalFormData({});
     }
+  };
+
+  const handleModalClose = () => {
+    setActionModal(null);
+    setModalFormData({});
+  };
+
+  const handleModalInputChange = (field, value) => {
+    setModalFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const formatDate = (dateString) => {
@@ -206,7 +225,7 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                               <button
                                 key={action.id}
                                 className={`action-btn action-${action.type}`}
-                                onClick={() => handleAction(disp.id, action.id, action.label)}
+                                onClick={() => handleAction(disp.id, action.id, action.label, action.type)}
                               >
                                 {action.label}
                               </button>
@@ -382,7 +401,7 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                 <div className="agent-detail-section">
                   <h4>
                     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                      <path d="M9 4v1.38c-.83-.33-1.72-.5-2.61-.5-1.79 0-3.58.68-4.95 2.05l3.33 3.33h1.11v1.11c.86.86 1.98 1.31 3.11 1.36V15H6v3c0 1.1.9 2 2 2h10c1.66 0 3-1.34 3-3V4H9zm-1.11 6.41V8.26H5.61L4.57 7.22C5.14 7.08 5.72 7 6.39 7c1.6 0 3.11.62 4.24 1.75l.03.03-2.77 2.63zM19 18c0 .55-.45 1-1 1s-1-.45-1-1v-2h-6v-2.59c.57-.23 1.1-.57 1.56-1.03l.2-.2L15.59 14H17v-1.41l-6-5.97V6h8v12z"/>
+                      <path d="M9 4v1.38c-.83-.33-1.72-.5-2.61-.5-1.79 0-3.58.68-4.95 2.05l3.33 3.33h1.11v1.11c.86.86 1.98 1.31 3.11 1.36V15H6v3c0 1.1.9 2 2 2h10c1.66 0 3-1.34 3-3V4H9zm-1.11 6.41V8.26H5.61L4.57 7.22C5.14 7.08 5.72 7 6.39 7c1.6 0 3.11.62 4.24 1.75l.03.03-2.77 2.63zM19 18c0 .55-.45 1-1 1s-1-.45-1-1v-2h-6v-2.59c.57-.23 1.10-.57 1.56-1.03l.2-.2L15.59 14H17v-1.41l-6-5.97V6h8v12z"/>
                     </svg>
                     Agent Instructions
                   </h4>
@@ -422,6 +441,159 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Action Modal */}
+      {actionModal && (
+        <div className="action-modal-overlay" onClick={handleModalClose}>
+          <div className="action-modal" onClick={(e) => e.stopPropagation()}>
+            <div className={`modal-header modal-header-${actionModal.actionType}`}>
+              <div className="modal-title">
+                <h3>{actionModal.actionLabel}</h3>
+                <p>Provide details to complete this action</p>
+              </div>
+              <button className="modal-close" onClick={handleModalClose}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+            </div>
+
+            <div className="modal-content">
+              {/* Common fields for all actions */}
+              <div className="modal-form-group">
+                <label htmlFor="notes">Notes / Comments {actionModal.actionType === 'danger' && <span className="required">*</span>}</label>
+                <textarea
+                  id="notes"
+                  className="modal-textarea"
+                  rows="4"
+                  placeholder={
+                    actionModal.actionType === 'success'
+                      ? 'Provide resolution details...'
+                      : actionModal.actionType === 'warning'
+                      ? 'Explain why this needs review...'
+                      : actionModal.actionType === 'danger'
+                      ? 'Provide justification for this action...'
+                      : 'Add any additional notes...'
+                  }
+                  value={modalFormData.notes || ''}
+                  onChange={(e) => handleModalInputChange('notes', e.target.value)}
+                  required={actionModal.actionType === 'danger'}
+                />
+              </div>
+
+              {/* Override reason field for warning/danger actions */}
+              {(actionModal.actionType === 'warning' || actionModal.actionType === 'danger') && (
+                <div className="modal-form-group">
+                  <label htmlFor="reason">Reason <span className="required">*</span></label>
+                  <select
+                    id="reason"
+                    className="modal-select"
+                    value={modalFormData.reason || ''}
+                    onChange={(e) => handleModalInputChange('reason', e.target.value)}
+                    required
+                  >
+                    <option value="">Select a reason...</option>
+                    <option value="agent_error">Agent Error - Incorrect Analysis</option>
+                    <option value="acceptable_risk">Acceptable Risk - Documented Exception</option>
+                    <option value="manual_verification">Manually Verified - Override Agent</option>
+                    <option value="business_decision">Business Decision - Management Approval</option>
+                    <option value="data_quality">Data Quality Issue - Document Problem</option>
+                    <option value="other">Other - See Notes</option>
+                  </select>
+                </div>
+              )}
+
+              {/* Assignee field for review requests */}
+              {actionModal.actionType === 'warning' && actionModal.actionLabel.toLowerCase().includes('review') && (
+                <div className="modal-form-group">
+                  <label htmlFor="assignee">Assign To</label>
+                  <select
+                    id="assignee"
+                    className="modal-select"
+                    value={modalFormData.assignee || ''}
+                    onChange={(e) => handleModalInputChange('assignee', e.target.value)}
+                  >
+                    <option value="">Current User</option>
+                    <option value="senior_underwriter">Senior Underwriter</option>
+                    <option value="qa_team">QA Team</option>
+                    <option value="compliance">Compliance</option>
+                    <option value="manager">Manager</option>
+                  </select>
+                </div>
+              )}
+
+              {/* Priority field for certain actions */}
+              {actionModal.actionType === 'warning' && (
+                <div className="modal-form-group">
+                  <label htmlFor="priority">Priority</label>
+                  <div className="modal-radio-group">
+                    <label className="modal-radio-label">
+                      <input
+                        type="radio"
+                        name="priority"
+                        value="high"
+                        checked={modalFormData.priority === 'high'}
+                        onChange={(e) => handleModalInputChange('priority', e.target.value)}
+                      />
+                      <span>🔴 High</span>
+                    </label>
+                    <label className="modal-radio-label">
+                      <input
+                        type="radio"
+                        name="priority"
+                        value="medium"
+                        checked={modalFormData.priority === 'medium' || !modalFormData.priority}
+                        onChange={(e) => handleModalInputChange('priority', e.target.value)}
+                      />
+                      <span>🟡 Medium</span>
+                    </label>
+                    <label className="modal-radio-label">
+                      <input
+                        type="radio"
+                        name="priority"
+                        value="low"
+                        checked={modalFormData.priority === 'low'}
+                        onChange={(e) => handleModalInputChange('priority', e.target.value)}
+                      />
+                      <span>🟢 Low</span>
+                    </label>
+                  </div>
+                </div>
+              )}
+
+              {/* Acknowledgment checkbox for danger actions */}
+              {actionModal.actionType === 'danger' && (
+                <div className="modal-form-group">
+                  <label className="modal-checkbox-label">
+                    <input
+                      type="checkbox"
+                      checked={modalFormData.acknowledged || false}
+                      onChange={(e) => handleModalInputChange('acknowledged', e.target.checked)}
+                    />
+                    <span>I acknowledge the risk and take full responsibility for this action</span>
+                  </label>
+                </div>
+              )}
+            </div>
+
+            <div className="modal-footer">
+              <button className="modal-btn modal-btn-cancel" onClick={handleModalClose}>
+                Cancel
+              </button>
+              <button
+                className={`modal-btn modal-btn-submit modal-btn-${actionModal.actionType}`}
+                onClick={handleModalSubmit}
+                disabled={
+                  (actionModal.actionType === 'danger' && (!modalFormData.notes || !modalFormData.acknowledged || !modalFormData.reason)) ||
+                  ((actionModal.actionType === 'warning') && actionModal.actionLabel.toLowerCase().includes('override') && !modalFormData.reason)
+                }
+              >
+                {actionModal.actionLabel}
+              </button>
             </div>
           </div>
         </div>
