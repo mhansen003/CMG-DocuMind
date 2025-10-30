@@ -61,6 +61,63 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
         description: 'Monthly income from pay stub ($5,000) does not match calculated monthly income from W2 ($4,000). This represents a 25% variance that exceeds acceptable tolerance levels.',
         createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
         documentIds: ['doc-1', 'doc-2'],
+        agentPrompt: `You are an Income Verification Agent for mortgage underwriting. Your task is to:
+
+1. Extract monthly income figures from all pay stubs provided
+2. Extract annual income from W2 forms and calculate monthly average
+3. Compare the two income sources and identify discrepancies
+4. Flag any variance exceeding 10% threshold for underwriter review
+5. Provide clear reasoning for any flagged issues
+
+Guidelines:
+- Use conservative estimates when income varies
+- Account for bonuses, overtime, and commissions separately
+- Consider year-to-date figures for accuracy
+- Flag missing documentation that could clarify discrepancies`,
+        agentSteps: [
+          {
+            step: 1,
+            action: 'Document Analysis',
+            description: 'Scanned and identified 2 relevant documents: Pay Stub (October 2024) and W2 Form (2023)',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 1000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 2,
+            action: 'Pay Stub Extraction',
+            description: 'Extracted monthly gross income from pay stub: $5,000. This represents regular salary without bonuses or overtime.',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 5000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 3,
+            action: 'W2 Analysis',
+            description: 'Extracted annual income from W2: $48,000. Calculated monthly average: $48,000 ÷ 12 = $4,000',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 8000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 4,
+            action: 'Variance Calculation',
+            description: 'Computed variance: ($5,000 - $4,000) ÷ $4,000 = 25% difference. This exceeds the 10% tolerance threshold.',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 10000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 5,
+            action: 'Risk Assessment',
+            description: 'Flagged as HIGH priority due to significant income discrepancy. Possible causes: salary increase, bonus income not reflected in W2, or data entry error.',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 12000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 6,
+            action: 'Disposition Created',
+            description: 'Created disposition for underwriter review with multiple resolution options.',
+            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000 + 15000).toISOString(),
+            status: 'completed'
+          }
+        ],
         possibleActions: [
           { id: 'accept', label: 'Accept as Valid', type: 'success' },
           { id: 'request_docs', label: 'Request Additional Pay Stubs', type: 'warning' },
@@ -84,6 +141,56 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
         description: 'Current employer listed as "Acme Corp" with start date of Jan 2024. Pay stub shows only 3 months of history. Recommend verification of employment letter or additional documentation.',
         createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
         documentIds: ['doc-1'],
+        agentPrompt: `You are an Employment Verification Agent. Your responsibilities include:
+
+1. Verify current employment status from pay stubs and documentation
+2. Confirm employment tenure meets minimum guideline requirements (typically 6+ months)
+3. Cross-reference employer information across multiple documents
+4. Identify gaps in employment history
+5. Recommend Verification of Employment (VOE) when needed
+
+Requirements:
+- Minimum 6 months current employment for conventional loans
+- 2 years employment history (can include multiple employers)
+- Self-employment requires 2 years of tax returns
+- Flag any inconsistencies in employer name or dates`,
+        agentSteps: [
+          {
+            step: 1,
+            action: 'Pay Stub Review',
+            description: 'Analyzed pay stub showing employer "Acme Corp" with YTD earnings starting January 2024',
+            timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000 + 2000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 2,
+            action: 'Tenure Calculation',
+            description: 'Calculated employment tenure: January 2024 to present = 3 months of employment history',
+            timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000 + 4000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 3,
+            action: 'Guideline Check',
+            description: 'Compared to minimum requirement of 6 months. Current tenure (3 months) is below threshold.',
+            timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000 + 6000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 4,
+            action: 'Documentation Assessment',
+            description: 'Checked for Verification of Employment (VOE) letter - not found in loan documents',
+            timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000 + 8000).toISOString(),
+            status: 'completed'
+          },
+          {
+            step: 5,
+            action: 'Recommendation Generated',
+            description: 'Flagged as MEDIUM priority. Recommend obtaining VOE letter to confirm employment status and future employment stability.',
+            timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000 + 10000).toISOString(),
+            status: 'completed'
+          }
+        ],
         possibleActions: [
           { id: 'request_voe', label: 'Request VOE Letter', type: 'warning' },
           { id: 'accept', label: 'Accept Current Documentation', type: 'success' },
