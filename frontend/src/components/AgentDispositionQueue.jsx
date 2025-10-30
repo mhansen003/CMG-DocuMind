@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getDocument } from '../api/client';
 import '../styles/AgentDispositionQueue.css';
 
 function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, documents = [] }) {
@@ -8,6 +9,7 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
   const [viewAgentDetails, setViewAgentDetails] = useState(null); // For agent details slideout
   const [actionModal, setActionModal] = useState(null); // { dispositionId, actionId, actionLabel, actionType }
   const [modalFormData, setModalFormData] = useState({}); // Form data for the modal
+  const [loadingDocument, setLoadingDocument] = useState(false); // Loading state for document fetch
 
   const filteredDispositions = dispositions.filter(disp => {
     if (filter === 'all') return true;
@@ -72,6 +74,23 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
 
   const handleModalInputChange = (field, value) => {
     setModalFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleDocumentPreview = async (doc) => {
+    try {
+      setLoadingDocument(true);
+      // Try to fetch full document data from API
+      const response = await getDocument(doc.id);
+      const fullDoc = response.data;
+      // Merge with basic doc info
+      setPreviewDocument({ ...doc, ...fullDoc });
+    } catch (error) {
+      console.error('Error fetching document:', error);
+      // Fall back to basic document info
+      setPreviewDocument(doc);
+    } finally {
+      setLoadingDocument(false);
+    }
   };
 
   const formatDate = (dateString) => {
@@ -252,15 +271,16 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                       </h5>
                       <div className="document-links">
                         {disp.documentIds.map((docId, index) => {
-                          const doc = documents.find(d => d.id === docId) || { fileName: `Document ${index + 1}`, documentType: 'Unknown' };
+                          const doc = documents.find(d => d.id === docId) || { id: docId, fileName: `Document ${index + 1}`, documentType: 'Unknown' };
                           return (
                             <button
                               key={docId}
                               className="document-link-btn"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                setPreviewDocument(doc);
+                                handleDocumentPreview(doc);
                               }}
+                              disabled={loadingDocument}
                             >
                               <span className="doc-link-icon">📄</span>
                               <div className="doc-link-info">
@@ -356,7 +376,13 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
               </button>
             </div>
             <div className="slideout-content">
-              {(() => {
+              {loadingDocument ? (
+                <div className="preview-placeholder">
+                  <div className="placeholder-icon">⏳</div>
+                  <h4>Loading Document...</h4>
+                  <p>Fetching document preview from server...</p>
+                </div>
+              ) : (() => {
                 // Try multiple possible document URL properties
                 const docUrl = previewDocument.filePath ||
                               previewDocument.s3Key && `/documents/${previewDocument.s3Key}` ||
@@ -408,7 +434,8 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                     </div>
                   </div>
                 );
-              })()}
+              })()
+              }
             </div>
           </div>
         </div>
