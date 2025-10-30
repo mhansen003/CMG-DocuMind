@@ -356,25 +356,59 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
               </button>
             </div>
             <div className="slideout-content">
-              {previewDocument.filePath || previewDocument.s3Key ? (
-                <div className="document-iframe-container">
-                  <iframe
-                    src={previewDocument.filePath || `/documents/${previewDocument.s3Key}`}
-                    title={previewDocument.fileName}
-                    className="document-iframe"
-                  />
-                </div>
-              ) : (
-                <div className="preview-placeholder">
-                  <div className="placeholder-icon">📄</div>
-                  <h4>Document Preview Not Available</h4>
-                  <p>Unable to load document preview at this time.</p>
-                  <div className="document-basic-info">
-                    <p><strong>File Name:</strong> {previewDocument.fileName}</p>
-                    <p><strong>Document Type:</strong> {previewDocument.documentType}</p>
+              {(() => {
+                // Try multiple possible document URL properties
+                const docUrl = previewDocument.filePath ||
+                              previewDocument.s3Key && `/documents/${previewDocument.s3Key}` ||
+                              previewDocument.url ||
+                              previewDocument.documentUrl ||
+                              previewDocument.htmlPath ||
+                              previewDocument.previewUrl;
+
+                if (docUrl) {
+                  return (
+                    <div className="document-iframe-container">
+                      <iframe
+                        src={docUrl}
+                        title={previewDocument.fileName}
+                        className="document-iframe"
+                      />
+                    </div>
+                  );
+                }
+
+                // If we have HTML content directly
+                if (previewDocument.htmlContent) {
+                  return (
+                    <div className="document-iframe-container">
+                      <iframe
+                        srcDoc={previewDocument.htmlContent}
+                        title={previewDocument.fileName}
+                        className="document-iframe"
+                        sandbox="allow-same-origin"
+                      />
+                    </div>
+                  );
+                }
+
+                // Fallback placeholder
+                return (
+                  <div className="preview-placeholder">
+                    <div className="placeholder-icon">📄</div>
+                    <h4>Document Preview Not Available</h4>
+                    <p>Unable to load document preview at this time.</p>
+                    <div className="document-basic-info">
+                      <p><strong>File Name:</strong> {previewDocument.fileName || 'Unknown'}</p>
+                      <p><strong>Document Type:</strong> {previewDocument.documentType || 'Unknown'}</p>
+                      {previewDocument.id && <p><strong>Document ID:</strong> {previewDocument.id}</p>}
+                    </div>
+                    <div style={{marginTop: '1rem', padding: '1rem', background: '#f3f4f6', borderRadius: '6px', fontSize: '0.75rem', textAlign: 'left'}}>
+                      <strong>Debug Info:</strong>
+                      <pre style={{marginTop: '0.5rem', fontSize: '0.7rem'}}>{JSON.stringify(Object.keys(previewDocument), null, 2)}</pre>
+                    </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
             </div>
           </div>
         </div>
