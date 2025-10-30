@@ -354,6 +354,54 @@ body {
   color: #333;
 }
 
+/* View Toggle */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.toggle-btn svg {
+  stroke: #666;
+}
+
+.toggle-btn:hover {
+  background: var(--cmg-primary-green-lighter);
+  color: var(--cmg-primary-green);
+}
+
+.toggle-btn:hover svg {
+  stroke: var(--cmg-primary-green);
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
+  color: white;
+  box-shadow: 0 2px 6px rgba(141, 198, 63, 0.3);
+}
+
+.toggle-btn.active svg {
+  stroke: white;
+}
+
 .dashboard-stats {
   display: flex;
   gap: 1.25rem;
@@ -478,6 +526,101 @@ body {
   align-items: center;
   font-size: 0.875rem;
   color: #666;
+}
+
+/* Table View */
+.loans-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.loans-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.loans-table thead {
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
+  color: white;
+}
+
+.loans-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.loans-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loans-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.loans-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.loans-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.loan-number-cell {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #666;
+}
+
+.borrower-cell strong {
+  color: #333;
+  font-size: 1rem;
+}
+
+.amount-cell {
+  font-weight: 600;
+  color: var(--cmg-primary-green);
+  font-size: 1rem;
+}
+
+.property-cell {
+  color: #666;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-cell {
+  text-align: center;
+}
+
+.date-cell {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.action-cell {
+  text-align: center;
+  color: #999;
+}
+
+.action-cell svg {
+  transition: transform 0.2s;
+}
+
+.loan-row:hover .action-cell svg {
+  transform: translateX(4px);
+  stroke: var(--cmg-primary-green);
 }
 
 /* Buttons */

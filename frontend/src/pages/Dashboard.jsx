@@ -5,6 +5,7 @@ function Dashboard({ onSelectLoan }) {
   const [loans, setLoans] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table'
 
   useEffect(() => {
     fetchLoans();
@@ -97,6 +98,33 @@ function Dashboard({ onSelectLoan }) {
     <div className="dashboard">
       <div className="dashboard-header">
         <h2>📊 Loan Dashboard</h2>
+        <div className="view-toggle">
+          <button
+            className={`toggle-btn ${viewMode === 'cards' ? 'active' : ''}`}
+            onClick={() => setViewMode('cards')}
+            title="Card View"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <span>Cards</span>
+          </button>
+          <button
+            className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
+            onClick={() => setViewMode('table')}
+            title="Table View"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+            <span>Table</span>
+          </button>
+        </div>
       </div>
 
       {/* Stats Cards */}
@@ -119,44 +147,89 @@ function Dashboard({ onSelectLoan }) {
         </div>
       </div>
 
-      {/* Loans Grid */}
-      <div className="loans-grid">
-        {loans.map((loan) => (
-          <div
-            key={loan.loanId}
-            className="loan-card"
-            onClick={() => onSelectLoan && onSelectLoan(loan.loanId)}
-          >
-            <div className="loan-card-header">
-              <div>
-                <h3>{loan.borrowerName}</h3>
-                <div className="loan-number">Loan # {loan.loanNumber}</div>
-              </div>
-              <span className={`status-badge ${getStatusClass(loan.status)}`}>
-                {getStatusLabel(loan.status)}
-              </span>
-            </div>
-
-            <div className="loan-card-body">
-              <div className="loan-info">
-                <div className="loan-info-row">
-                  <label>Loan Amount:</label>
-                  <span className="value">{formatCurrency(loan.loanAmount)}</span>
+      {/* Loans View - Cards or Table */}
+      {viewMode === 'cards' ? (
+        <div className="loans-grid">
+          {loans.map((loan) => (
+            <div
+              key={loan.loanId}
+              className="loan-card"
+              onClick={() => onSelectLoan && onSelectLoan(loan.loanId)}
+            >
+              <div className="loan-card-header">
+                <div>
+                  <h3>{loan.borrowerName}</h3>
+                  <div className="loan-number">Loan # {loan.loanNumber}</div>
                 </div>
-                <div className="loan-info-row">
-                  <label>Property:</label>
-                  <span className="value">{loan.propertyAddress}</span>
+                <span className={`status-badge ${getStatusClass(loan.status)}`}>
+                  {getStatusLabel(loan.status)}
+                </span>
+              </div>
+
+              <div className="loan-card-body">
+                <div className="loan-info">
+                  <div className="loan-info-row">
+                    <label>Loan Amount:</label>
+                    <span className="value">{formatCurrency(loan.loanAmount)}</span>
+                  </div>
+                  <div className="loan-info-row">
+                    <label>Property:</label>
+                    <span className="value">{loan.propertyAddress}</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="loan-card-footer">
-              <span>Last Updated: {formatDate(loan.lastUpdated)}</span>
-              <span>→</span>
+              <div className="loan-card-footer">
+                <span>Last Updated: {formatDate(loan.lastUpdated)}</span>
+                <span>→</span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="loans-table-container">
+          <table className="loans-table">
+            <thead>
+              <tr>
+                <th>Loan #</th>
+                <th>Borrower</th>
+                <th>Loan Amount</th>
+                <th>Property Address</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {loans.map((loan) => (
+                <tr
+                  key={loan.loanId}
+                  className="loan-row"
+                  onClick={() => onSelectLoan && onSelectLoan(loan.loanId)}
+                >
+                  <td className="loan-number-cell">{loan.loanNumber}</td>
+                  <td className="borrower-cell">
+                    <strong>{loan.borrowerName}</strong>
+                  </td>
+                  <td className="amount-cell">{formatCurrency(loan.loanAmount)}</td>
+                  <td className="property-cell">{loan.propertyAddress}</td>
+                  <td className="status-cell">
+                    <span className={`status-badge ${getStatusClass(loan.status)}`}>
+                      {getStatusLabel(loan.status)}
+                    </span>
+                  </td>
+                  <td className="date-cell">{formatDate(loan.lastUpdated)}</td>
+                  <td className="action-cell">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
