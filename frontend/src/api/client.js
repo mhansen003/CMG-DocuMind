@@ -37,4 +37,9 @@ export const clearCondition = (conditionId, notes) =>
 export const requestDocument = (conditionId, documentType, notes) =>
   apiClient.post(`/conditions/${conditionId}/request-document`, { documentType, notes });
 
+// Agent Dispositions
+export const getLoanDispositions = (loanId) => apiClient.get(`/loans/${loanId}/dispositions`);
+export const updateDisposition = (dispositionId, actionId, notes) =>
+  apiClient.put(`/dispositions/${dispositionId}`, { actionId, notes });
+
 export default apiClient;

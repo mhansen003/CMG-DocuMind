@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
-import { getLoan, getLoanDocuments, getLoanScorecard, uploadDocument } from '../api/client';
+import { getLoan, getLoanDocuments, getLoanScorecard, uploadDocument, getLoanDispositions, updateDisposition } from '../api/client';
 import DocumentViewer from '../components/DocumentViewer';
 import Scorecard from '../components/Scorecard';
 import DocumentUpload from '../components/DocumentUpload';
+import AgentDispositionQueue from '../components/AgentDispositionQueue';
 import '../styles/LoanDetails.css';
 
 function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
   const [loan, setLoan] = useState(null);
   const [documents, setDocuments] = useState([]);
   const [scorecard, setScorecard] = useState(null);
+  const [dispositions, setDispositions] = useState([]);
   const [selectedDocument, setSelectedDocument] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('documents'); // documents, scorecard, upload
+  const [activeTab, setActiveTab] = useState('documents'); // documents, scorecard, dispositions, upload
 
   useEffect(() => {
     if (loanId) {
@@ -31,10 +33,171 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
       setLoan(loanRes.data);
       setDocuments(docsRes.data);
       setScorecard(scorecardRes.data);
+
+      // Fetch dispositions (with fallback to mock data if API not ready)
+      try {
+        const dispositionsRes = await getLoanDispositions(loanId);
+        setDispositions(dispositionsRes.data);
+      } catch (dispError) {
+        // Use mock data for demo if API endpoint not available
+        console.log('Using mock disposition data');
+        setDispositions(getMockDispositions(loanId));
+      }
     } catch (error) {
       console.error('Error fetching loan data:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const getMockDispositions = (loanId) => {
+    return [
+      {
+        id: 'disp-001',
+        agentName: 'Income Verification Agent',
+        agentType: 'IncomeVerification',
+        priority: 'high',
+        status: 'open',
+        title: 'Income discrepancy detected',
+        description: 'Monthly income from pay stub ($5,000) does not match calculated monthly income from W2 ($4,000). This represents a 25% variance that exceeds acceptable tolerance levels.',
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+        documentIds: ['doc-1', 'doc-2'],
+        possibleActions: [
+          { id: 'accept', label: 'Accept as Valid', type: 'success' },
+          { id: 'request_docs', label: 'Request Additional Pay Stubs', type: 'warning' },
+          { id: 'escalate', label: 'Escalate to Senior Underwriter', type: 'danger' },
+          { id: 'dismiss', label: 'Dismiss Issue', type: 'neutral' }
+        ],
+        metadata: {
+          'Pay Stub Monthly Income': '$5,000',
+          'W2 Calculated Monthly': '$4,000',
+          'Variance': '25%',
+          'Tolerance Threshold': '10%'
+        }
+      },
+      {
+        id: 'disp-002',
+        agentName: 'Employment Verification Agent',
+        agentType: 'EmploymentVerification',
+        priority: 'medium',
+        status: 'open',
+        title: 'Employment tenure verification needed',
+        description: 'Current employer listed as "Acme Corp" with start date of Jan 2024. Pay stub shows only 3 months of history. Recommend verification of employment letter or additional documentation.',
+        createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+        documentIds: ['doc-1'],
+        possibleActions: [
+          { id: 'request_voe', label: 'Request VOE Letter', type: 'warning' },
+          { id: 'accept', label: 'Accept Current Documentation', type: 'success' },
+          { id: 'contact_employer', label: 'Contact Employer Directly', type: 'warning' },
+          { id: 'dismiss', label: 'Dismiss', type: 'neutral' }
+        ],
+        metadata: {
+          'Employer': 'Acme Corp',
+          'Start Date': 'January 2024',
+          'Tenure': '3 months',
+          'Required Tenure': '6 months'
+        }
+      },
+      {
+        id: 'disp-003',
+        agentName: 'Asset Verification Agent',
+        agentType: 'AssetVerification',
+        priority: 'low',
+        status: 'in_progress',
+        title: 'Bank statement formatting issue',
+        description: 'Bank statement for Chase account ending in 4567 has unusual formatting that may require manual review. Automated extraction confidence is 78% (below 85% threshold).',
+        createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+        documentIds: ['doc-3'],
+        possibleActions: [
+          { id: 'manual_review', label: 'Perform Manual Review', type: 'warning' },
+          { id: 'request_new', label: 'Request New Statement', type: 'warning' },
+          { id: 'accept', label: 'Accept Current Data', type: 'success' },
+          { id: 'dismiss', label: 'Dismiss', type: 'neutral' }
+        ],
+        metadata: {
+          'Bank': 'Chase',
+          'Account': '****4567',
+          'Extraction Confidence': '78%',
+          'Threshold': '85%'
+        }
+      },
+      {
+        id: 'disp-004',
+        agentName: 'Credit Report Agent',
+        agentType: 'CreditReview',
+        priority: 'high',
+        status: 'resolved',
+        title: 'Credit score below guideline threshold',
+        description: 'Credit score of 620 is below the standard threshold of 640 for conventional loans. Borrower may qualify for alternative programs.',
+        createdAt: new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString(),
+        documentIds: ['doc-4'],
+        possibleActions: [],
+        resolution: {
+          action: 'Escalate to Senior Underwriter',
+          note: 'Approved for FHA program. Compensating factors documented.',
+          user: 'Sarah Johnson',
+          timestamp: new Date(Date.now() - 36 * 60 * 60 * 1000).toISOString()
+        },
+        metadata: {
+          'Credit Score': '620',
+          'Guideline Minimum': '640',
+          'Alternative Program': 'FHA Available'
+        }
+      },
+      {
+        id: 'disp-005',
+        agentName: 'Property Appraisal Agent',
+        agentType: 'PropertyReview',
+        priority: 'medium',
+        status: 'resolved',
+        title: 'Appraisal value review complete',
+        description: 'Property appraised at $425,000, which is $10,000 above purchase price. LTV ratio verified at 78%.',
+        createdAt: new Date(Date.now() - 72 * 60 * 60 * 1000).toISOString(),
+        documentIds: ['doc-5'],
+        possibleActions: [],
+        resolution: {
+          action: 'Accept as Valid',
+          note: 'Appraisal meets all guidelines. No issues identified.',
+          user: 'Michael Chen',
+          timestamp: new Date(Date.now() - 60 * 60 * 60 * 1000).toISOString()
+        },
+        metadata: {
+          'Appraised Value': '$425,000',
+          'Purchase Price': '$415,000',
+          'LTV Ratio': '78%'
+        }
+      }
+    ];
+  };
+
+  const handleDisposition = async (dispositionId, actionId, actionLabel) => {
+    try {
+      // Update via API
+      await updateDisposition(dispositionId, actionId, actionLabel);
+
+      // Refresh dispositions
+      await fetchLoanData();
+
+      // Show success message (could use a toast notification here)
+      console.log(`Disposition ${dispositionId} updated with action: ${actionLabel}`);
+    } catch (error) {
+      console.error('Error updating disposition:', error);
+      // For demo purposes, update locally
+      setDispositions(prev => prev.map(disp => {
+        if (disp.id === dispositionId) {
+          return {
+            ...disp,
+            status: 'resolved',
+            resolution: {
+              action: actionLabel,
+              note: '',
+              user: 'Current User',
+              timestamp: new Date().toISOString()
+            }
+          };
+        }
+        return disp;
+      }));
     }
   };
 
@@ -126,6 +289,12 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
           onClick={() => setActiveTab('scorecard')}
         >
           📊 Scorecard
+        </button>
+        <button
+          className={`tab ${activeTab === 'dispositions' ? 'active' : ''} ${dispositions.filter(d => d.status === 'open' || d.status === 'in_progress').length > 0 ? 'tab-alert' : ''}`}
+          onClick={() => setActiveTab('dispositions')}
+        >
+          🔔 Dispositions ({dispositions.filter(d => d.status === 'open' || d.status === 'in_progress').length})
         </button>
         <button
           className={`tab ${activeTab === 'upload' ? 'active' : ''}`}
@@ -240,6 +409,14 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
 
         {activeTab === 'scorecard' && scorecard && (
           <Scorecard scorecard={scorecard} loan={loan} documents={documents} />
+        )}
+
+        {activeTab === 'dispositions' && (
+          <AgentDispositionQueue
+            loanId={loanId}
+            dispositions={dispositions}
+            onDisposition={handleDisposition}
+          />
         )}
 
         {activeTab === 'upload' && (
