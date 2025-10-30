@@ -1,7 +1,73 @@
 .loan-details {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Compact Header */
+.loan-details-header-compact {
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1rem;
+}
+
+.header-main-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.header-info h2 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+.separator {
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+.stat-inline {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.status-badge-inline {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge-inline.document-review {
+  background-color: #fff4e6;
+  color: #f59e0b;
+}
+
+.status-badge-inline.processing {
+  background-color: #e0e7ff;
+  color: #6366f1;
+}
+
+.status-badge-inline.approved {
+  background-color: #d1fae5;
+  color: #10b981;
+}
+
+/* Old header styles (keeping for backwards compatibility) */
 .loan-details-header {
   background: white;
   padding: 0.75rem 1.5rem;
@@ -128,6 +194,100 @@
   width: 100%;
 }
 
+/* Split View Layout for Documents */
+.documents-section-split {
+  display: flex;
+  gap: 1.5rem;
+  height: calc(100vh - 280px);
+  min-height: 600px;
+}
+
+/* Left Sidebar - Documents List */
+.documents-sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.documents-sidebar .documents-grid,
+.documents-sidebar .documents-table-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 1rem;
+}
+
+/* Custom scrollbar for documents sidebar */
+.documents-sidebar .documents-grid::-webkit-scrollbar,
+.documents-sidebar .documents-table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.documents-sidebar .documents-grid::-webkit-scrollbar-track,
+.documents-sidebar .documents-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.documents-sidebar .documents-grid::-webkit-scrollbar-thumb,
+.documents-sidebar .documents-table-container::-webkit-scrollbar-thumb {
+  background: var(--cmg-primary-green);
+  border-radius: 4px;
+}
+
+.documents-sidebar .documents-grid::-webkit-scrollbar-thumb:hover,
+.documents-sidebar .documents-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--cmg-primary-green-hover);
+}
+
+/* Right Main Area - Document Viewer */
+.document-viewer-area {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* No Document Selected State */
+.no-document-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+  text-align: center;
+  padding: 3rem;
+}
+
+.no-document-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-document-selected h3 {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0 0 0.5rem 0;
+}
+
+.no-document-selected p {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Old full-width documents list (keep for other views) */
 .documents-list {
   width: 100%;
   background: white;
@@ -582,6 +742,26 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .documents-section-split {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .documents-sidebar {
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .document-viewer-area {
+    min-height: 500px;
+  }
+
+  .header-info {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 1024px) {
   .documents-section {
     flex-direction: column;
@@ -598,6 +778,10 @@
 
   .documents-grid {
     grid-template-columns: 1fr;
+  }
+
+  .documents-sidebar {
+    max-height: 350px;
   }
 }
 
@@ -633,5 +817,28 @@
 
   .document-validation-summary {
     justify-content: center;
+  }
+
+  .header-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-info h2 {
+    font-size: 1rem;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .documents-sidebar {
+    max-height: 300px;
+  }
+
+  .stat-inline,
+  .loan-number {
+    font-size: 0.8rem;
   }
 }

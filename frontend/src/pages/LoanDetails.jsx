@@ -91,29 +91,24 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
 
   return (
     <div className="loan-details">
-      {/* Header */}
-      <div className="loan-details-header">
-        <div className="header-top-row">
-          <div>
-            <button className="btn-back" onClick={() => onBack && onBack()}>
-              ← Back to Dashboard
-            </button>
+      {/* Compact Header */}
+      <div className="loan-details-header-compact">
+        <div className="header-main-row">
+          <button className="btn-back" onClick={() => onBack && onBack()}>
+            ← Back to Dashboard
+          </button>
+          <div className="header-info">
             <h2>{loan.borrower.firstName} {loan.borrower.lastName}</h2>
-            <p className="loan-number">Loan # {loan.loanNumber}</p>
-          </div>
-        </div>
-        <div className="loan-quick-stats">
-          <div className="quick-stat">
-            <label>Loan Amount</label>
-            <div className="stat-value">${loan.mismo.loanAmountRequested.toLocaleString()}</div>
-          </div>
-          <div className="quick-stat">
-            <label>Property</label>
-            <div className="stat-value">{loan.mismo.propertyAddress}, {loan.mismo.city}</div>
-          </div>
-          <div className="quick-stat">
-            <label>Status</label>
-            <div className="stat-value">{loan.processingStatus.stage}</div>
+            <span className="separator">•</span>
+            <span className="loan-number">Loan # {loan.loanNumber}</span>
+            <span className="separator">•</span>
+            <span className="stat-inline">${loan.mismo.loanAmountRequested.toLocaleString()}</span>
+            <span className="separator">•</span>
+            <span className="stat-inline">{loan.mismo.propertyAddress}, {loan.mismo.city}</span>
+            <span className="separator">•</span>
+            <span className={`status-badge-inline ${loan.processingStatus.stage.toLowerCase().replace(/\s+/g, '-')}`}>
+              {loan.processingStatus.stage}
+            </span>
           </div>
         </div>
       </div>
@@ -143,7 +138,7 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
       {/* Tab Content */}
       <div className="tab-content">
         {activeTab === 'documents' && (
-          <div className="documents-section">
+          <div className="documents-section-split">
             {documents.length === 0 ? (
               <div className="empty-state">
                 <h3>No Documents Uploaded Yet</h3>
@@ -157,7 +152,8 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
               </div>
             ) : (
               <>
-                <div className="documents-list">
+                {/* Left Sidebar - Documents List */}
+                <div className="documents-sidebar">
                   <div className="documents-list-header">
                     <h3>Uploaded Documents</h3>
                     <div className="view-toggle">
@@ -384,12 +380,21 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
                   )}
                 </div>
 
-                {selectedDocument && (
-                  <DocumentViewer
-                    document={selectedDocument}
-                    loanData={loan}
-                  />
-                )}
+                {/* Right Main Area - Document Viewer */}
+                <div className="document-viewer-area">
+                  {selectedDocument ? (
+                    <DocumentViewer
+                      document={selectedDocument}
+                      loanData={loan}
+                    />
+                  ) : (
+                    <div className="no-document-selected">
+                      <div className="no-document-icon">📄</div>
+                      <h3>Select a Document</h3>
+                      <p>Choose a document from the list to view its details and validation results</p>
+                    </div>
+                  )}
+                </div>
               </>
             )}
           </div>
