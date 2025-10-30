@@ -397,20 +397,25 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
               </button>
             </div>
             <div className="slideout-content">
-              {previewDocument.extractedData && (
+              {previewDocument.extractedData && previewDocument.extractedData.data && Object.keys(previewDocument.extractedData.data).length > 0 ? (
                 <div className="preview-data">
                   <h4>Extracted Data</h4>
-                  {Object.entries(previewDocument.extractedData.data || {}).map(([key, value]) => (
+                  {Object.entries(previewDocument.extractedData.data).map(([key, value]) => (
                     <div key={key} className="preview-data-item">
                       <span className="preview-data-key">{key}:</span>
                       <span className="preview-data-value">{value || 'N/A'}</span>
                     </div>
                   ))}
                 </div>
-              )}
-              {!previewDocument.extractedData && (
+              ) : (
                 <div className="preview-placeholder">
-                  <p>Document preview not available</p>
+                  <div className="placeholder-icon">📄</div>
+                  <h4>No Extracted Data Available</h4>
+                  <p>This document has not been processed yet or the extracted data is not available.</p>
+                  <div className="document-basic-info">
+                    <p><strong>File Name:</strong> {previewDocument.fileName}</p>
+                    <p><strong>Document Type:</strong> {previewDocument.documentType}</p>
+                  </div>
                 </div>
               )}
             </div>
