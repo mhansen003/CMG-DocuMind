@@ -509,6 +509,7 @@ Requirements:
           <AgentDispositionQueue
             loanId={loanId}
             dispositions={dispositions}
+            documents={documents}
             onDisposition={handleDisposition}
           />
         )}

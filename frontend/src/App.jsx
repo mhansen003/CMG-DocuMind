@@ -13,7 +13,11 @@ function App() {
   const [showSplash, setShowSplash] = useState(false);
   const [showAgentMap, setShowAgentMap] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table' - shared across Dashboard and LoanDetails
+  const [viewMode, setViewMode] = useState(() => {
+    // Load view mode from localStorage, default to 'cards'
+    const savedViewMode = localStorage.getItem('viewMode');
+    return savedViewMode || 'cards';
+  }); // 'cards' or 'table' - shared across Dashboard and LoanDetails
 
   // Check if user has seen the splash screen in this session
   useEffect(() => {
@@ -22,6 +26,11 @@ function App() {
       setShowSplash(true);
     }
   }, []);
+
+  // Save view mode to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('viewMode', viewMode);
+  }, [viewMode]);
 
   // Close user menu when clicking outside
   useEffect(() => {

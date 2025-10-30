@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import '../styles/AgentDispositionQueue.css';
 
-function AgentDispositionQueue({ loanId, dispositions = [], onDisposition }) {
+function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, documents = [] }) {
   const [filter, setFilter] = useState('all'); // all, open, resolved
   const [expandedItem, setExpandedItem] = useState(null);
+  const [previewDocument, setPreviewDocument] = useState(null);
 
   const filteredDispositions = dispositions.filter(disp => {
     if (filter === 'all') return true;
@@ -193,9 +194,68 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition }) {
               {/* Expanded Content */}
               {expandedItem === disp.id && (
                 <div className="disposition-content">
-                  <div className="disposition-description">
-                    <p>{disp.description}</p>
-                  </div>
+                  <div className="disposition-layout">
+                    {/* Left Column - Actions */}
+                    <div className="disposition-actions-column">
+                      {(disp.status === 'open' || disp.status === 'in_progress') && disp.possibleActions && (
+                        <>
+                          <h5>Available Actions</h5>
+                          <div className="action-buttons-vertical">
+                            {disp.possibleActions.map((action) => (
+                              <button
+                                key={action.id}
+                                className={`action-btn action-${action.type}`}
+                                onClick={() => handleAction(disp.id, action.id, action.label)}
+                              >
+                                {action.label}
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+
+                    {/* Right Column - Information */}
+                    <div className="disposition-info-column">
+                      <div className="disposition-description-compact">
+                        <p>{disp.description}</p>
+                      </div>
+
+                      {/* Related Documents */}
+                  {disp.documentIds && disp.documentIds.length > 0 && (
+                    <div className="related-documents-section">
+                      <h5>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                        Related Documents
+                      </h5>
+                      <div className="document-links">
+                        {disp.documentIds.map((docId, index) => {
+                          const doc = documents.find(d => d.id === docId) || { fileName: `Document ${index + 1}`, documentType: 'Unknown' };
+                          return (
+                            <button
+                              key={docId}
+                              className="document-link-btn"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setPreviewDocument(doc);
+                              }}
+                            >
+                              <span className="doc-link-icon">📄</span>
+                              <div className="doc-link-info">
+                                <span className="doc-link-name">{doc.fileName}</span>
+                                <span className="doc-link-type">{doc.documentType}</span>
+                              </div>
+                              <svg className="preview-icon" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                              </svg>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Agent Prompt */}
                   {disp.agentPrompt && (
@@ -243,38 +303,34 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition }) {
                     </div>
                   )}
 
-                  {disp.metadata && Object.keys(disp.metadata).length > 0 && (
-                    <div className="disposition-metadata">
-                      <h5>Details</h5>
-                      <div className="metadata-grid">
-                        {Object.entries(disp.metadata).map(([key, value]) => (
-                          <div key={key} className="metadata-item">
-                            <span className="metadata-key">{key}:</span>
-                            <span className="metadata-value">{value}</span>
+                      {disp.metadata && Object.keys(disp.metadata).length > 0 && (
+                        <div className="disposition-metadata-compact">
+                          <h5>Key Details</h5>
+                          <div className="metadata-grid-compact">
+                            {Object.entries(disp.metadata).map(([key, value]) => (
+                              <div key={key} className="metadata-item-compact">
+                                <span className="metadata-key">{key}:</span>
+                                <span className="metadata-value">{value}</span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                        </div>
+                      )}
 
-                  {(disp.status === 'open' || disp.status === 'in_progress') && disp.possibleActions && (
-                    <div className="disposition-actions">
-                      <h5>Available Actions</h5>
-                      <div className="action-buttons">
-                        {disp.possibleActions.map((action) => (
-                          <button
-                            key={action.id}
-                            className={`action-btn action-${action.type}`}
-                            onClick={() => handleAction(disp.id, action.id, action.label)}
-                          >
-                            {action.label}
-                          </button>
-                        ))}
-                      </div>
+                      {disp.status === 'resolved' && disp.resolution && (
+                        <div className="disposition-resolution-compact">
+                          <h5>Resolution</h5>
+                          <p><strong>Action:</strong> {disp.resolution.action}</p>
+                          {disp.resolution.note && <p><strong>Note:</strong> {disp.resolution.note}</p>}
+                          <p className="resolved-by">
+                            By {disp.resolution.user} on {new Date(disp.resolution.timestamp).toLocaleString()}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
-                  {disp.status === 'resolved' && disp.resolution && (
+                  {disp.status === 'resolved' && disp.resolution && false && (
                     <div className="disposition-resolution">
                       <h5>Resolution</h5>
                       <p><strong>Action Taken:</strong> {disp.resolution.action}</p>
@@ -290,6 +346,43 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition }) {
           ))
         )}
       </div>
+
+      {/* Document Preview Slide-out */}
+      {previewDocument && (
+        <div className="document-slideout-overlay" onClick={() => setPreviewDocument(null)}>
+          <div className="document-slideout" onClick={(e) => e.stopPropagation()}>
+            <div className="slideout-header">
+              <div className="slideout-title">
+                <h3>{previewDocument.fileName}</h3>
+                <span className="slideout-doc-type">{previewDocument.documentType}</span>
+              </div>
+              <button className="slideout-close" onClick={() => setPreviewDocument(null)}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+            </div>
+            <div className="slideout-content">
+              {previewDocument.extractedData && (
+                <div className="preview-data">
+                  <h4>Extracted Data</h4>
+                  {Object.entries(previewDocument.extractedData.data || {}).map(([key, value]) => (
+                    <div key={key} className="preview-data-item">
+                      <span className="preview-data-key">{key}:</span>
+                      <span className="preview-data-value">{value || 'N/A'}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {!previewDocument.extractedData && (
+                <div className="preview-placeholder">
+                  <p>Document preview not available</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
