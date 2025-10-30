@@ -218,23 +218,6 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
                   </div>
                 </div>
 
-                {/* Middle Area - Validation Results */}
-                <div className="validation-results-area">
-                  {selectedDocument ? (
-                    <div className="validation-results-content">
-                      <h3>Validation Results</h3>
-                      {/* This will be populated by extracting validation from DocumentViewer */}
-                      <div className="results-placeholder">
-                        <p>Validation results will be displayed here</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="no-selection">
-                      <p>Select a document to view validation results</p>
-                    </div>
-                  )}
-                </div>
-
                 {/* Right Area - Document Viewer */}
                 <div className="document-viewer-area">
                   {selectedDocument ? (

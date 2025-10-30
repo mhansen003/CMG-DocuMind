@@ -194,7 +194,7 @@
   width: 100%;
 }
 
-/* Three-Column Layout for Documents */
+/* Two-Column Layout for Documents */
 .documents-section-split {
   display: flex;
   gap: 1.5rem;
@@ -349,44 +349,6 @@
 
 .documents-menu::-webkit-scrollbar-thumb:hover {
   background: var(--cmg-primary-green-hover);
-}
-
-/* Middle Area - Validation Results */
-.validation-results-area {
-  width: 380px;
-  flex-shrink: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.validation-results-content {
-  padding: 1.5rem;
-}
-
-.validation-results-content h3 {
-  margin: 0 0 1.5rem 0;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.results-placeholder {
-  padding: 2rem;
-  text-align: center;
-  color: #999;
-}
-
-.no-selection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 2rem;
-  text-align: center;
-  color: #999;
 }
 
 /* Right Area - Document Viewer */
