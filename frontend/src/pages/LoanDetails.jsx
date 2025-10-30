@@ -152,235 +152,90 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
               </div>
             ) : (
               <>
-                {/* Left Sidebar - Documents List */}
-                <div className="documents-sidebar">
-                  <div className="documents-list-header">
-                    <h3>Uploaded Documents</h3>
-                    <div className="view-toggle">
-                      <button
-                        className={`toggle-btn ${viewMode === 'cards' ? 'active' : ''}`}
-                        onClick={() => setViewMode('cards')}
-                        title="Card View"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <rect x="3" y="3" width="7" height="7" rx="1"/>
-                          <rect x="14" y="3" width="7" height="7" rx="1"/>
-                          <rect x="3" y="14" width="7" height="7" rx="1"/>
-                          <rect x="14" y="14" width="7" height="7" rx="1"/>
-                        </svg>
-                        <span>Cards</span>
-                      </button>
-                      <button
-                        className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
-                        onClick={() => setViewMode('table')}
-                        title="Table View"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <line x1="3" y1="6" x2="21" y2="6"/>
-                          <line x1="3" y1="12" x2="21" y2="12"/>
-                          <line x1="3" y1="18" x2="21" y2="18"/>
-                        </svg>
-                        <span>Table</span>
-                      </button>
-                    </div>
+                {/* Left Sidebar - Documents Menu */}
+                <div className="documents-nav">
+                  <div className="documents-nav-header">
+                    <h3>Documents</h3>
+                    <span className="document-count">{documents.length}</span>
                   </div>
 
-                  {viewMode === 'cards' ? (
-                    <div className="documents-grid">
+                  <div className="documents-menu">
                     {documents.map((doc) => {
-                      // Calculate validation summary - only count real issues (mismatches, missing data)
+                      // Calculate validation summary
                       const criticalCount = doc.validationResults?.issues?.length || 0;
                       const warningCount = doc.validationResults?.warnings?.length || 0;
-                      const totalFields = Object.keys(doc.extractedData?.data || {}).length;
 
-                      // Count only real field errors (not formatting issues)
                       let invalidFields = 0;
                       Object.entries(doc.extractedData?.data || {}).forEach(([fieldName, value]) => {
                         const validation = doc.validationResults?.fieldValidations?.[fieldName];
-
-                        // Check for missing required fields
                         if ((!value || value === '' || value === null || value === undefined) && validation) {
                           invalidFields++;
-                        }
-                        // Check for backend validation errors that are NOT formatting-related
-                        else if (validation?.message && validation?.isValid === false) {
+                        } else if (validation?.message && validation?.isValid === false) {
                           const msg = validation.message.toLowerCase();
-                          // Ignore formatting/pattern/length errors
                           if (!msg.includes('format') && !msg.includes('pattern') && !msg.includes('length') &&
                               !msg.includes('invalid') && !msg.includes('must match')) {
                             invalidFields++;
                           }
                         }
-                        // Note: Loan data mismatches are handled by the DocumentViewer component
-                        // We don't check them here to avoid redundant API calls
                       });
+
+                      const hasIssues = criticalCount > 0 || warningCount > 0 || invalidFields > 0;
 
                       return (
                         <div
                           key={doc.id}
-                          className={`document-item ${selectedDocument?.id === doc.id ? 'selected' : ''}`}
+                          className={`document-menu-item ${selectedDocument?.id === doc.id ? 'active' : ''}`}
                           onClick={() => setSelectedDocument(doc)}
                         >
-                          {/* Header with document name and status */}
-                          <div className="document-item-header">
-                            <div className="document-name" title={doc.fileName}>{doc.fileName}</div>
-                            <div className={`document-status ${doc.status}`}>
-                              {doc.status}
-                            </div>
+                          <div className="doc-icon">📄</div>
+                          <div className="doc-info">
+                            <div className="doc-name" title={doc.fileName}>{doc.fileName}</div>
+                            <div className="doc-type">{doc.documentType}</div>
                           </div>
-
-                          {/* Body with icon and info */}
-                          <div className="document-item-body">
-                            <div className="document-icon-container">
-                              <div className="document-icon">
-                                <div className="doc-line"></div>
-                                <div className="doc-line"></div>
-                                <div className="doc-line"></div>
-                                <div className="doc-line"></div>
-                                <div className="doc-line"></div>
-                              </div>
-                            </div>
-                            <div className="document-info">
-                              <div className="document-meta">
-                                <div className="document-meta-item">
-                                  <span className="document-meta-icon">📋</span>
-                                  <span>{doc.documentType}</span>
-                                </div>
-                                <div className="document-meta-item">
-                                  <span className="document-meta-icon">📅</span>
-                                  <span>{new Date(doc.uploadDate).toLocaleDateString()}</span>
-                                </div>
-                                <div className="document-meta-item">
-                                  <span className="document-meta-icon">📊</span>
-                                  <span>{totalFields} fields</span>
-                                </div>
-                              </div>
-
-                              {/* Validation Summary Badges */}
-                              <div className="document-validation-summary">
-                                {criticalCount > 0 && (
-                                  <span className="validation-badge critical" title={`${criticalCount} critical issue(s)`}>
-                                    🔴 {criticalCount} Critical
-                                  </span>
-                                )}
-                                {warningCount > 0 && (
-                                  <span className="validation-badge warning" title={`${warningCount} warning(s)`}>
-                                    🟡 {warningCount} Warning{warningCount > 1 ? 's' : ''}
-                                  </span>
-                                )}
-                                {invalidFields > 0 && (
-                                  <span className="validation-badge invalid-field" title={`${invalidFields} field(s) failed validation`}>
-                                    ✗ {invalidFields} Failed
-                                  </span>
-                                )}
-                                {criticalCount === 0 && warningCount === 0 && invalidFields === 0 && (
-                                  <span className="validation-badge success" title="All validations passed">
-                                    ✓ All Valid
-                                  </span>
-                                )}
-                              </div>
-                            </div>
+                          <div className="doc-status">
+                            {criticalCount > 0 && (
+                              <span className="status-indicator critical" title={`${criticalCount} critical issues`}>
+                                {criticalCount}
+                              </span>
+                            )}
+                            {warningCount > 0 && (
+                              <span className="status-indicator warning" title={`${warningCount} warnings`}>
+                                {warningCount}
+                              </span>
+                            )}
+                            {invalidFields > 0 && (
+                              <span className="status-indicator invalid" title={`${invalidFields} invalid fields`}>
+                                {invalidFields}
+                              </span>
+                            )}
+                            {!hasIssues && (
+                              <span className="status-indicator success" title="All valid">✓</span>
+                            )}
                           </div>
                         </div>
                       );
                     })}
+                  </div>
+                </div>
+
+                {/* Middle Area - Validation Results */}
+                <div className="validation-results-area">
+                  {selectedDocument ? (
+                    <div className="validation-results-content">
+                      <h3>Validation Results</h3>
+                      {/* This will be populated by extracting validation from DocumentViewer */}
+                      <div className="results-placeholder">
+                        <p>Validation results will be displayed here</p>
+                      </div>
                     </div>
                   ) : (
-                    <div className="documents-table-container">
-                      <table className="documents-table">
-                        <thead>
-                          <tr>
-                            <th>Document Name</th>
-                            <th>Type</th>
-                            <th>Upload Date</th>
-                            <th>Fields</th>
-                            <th>Validation</th>
-                            <th>Status</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {documents.map((doc) => {
-                            const criticalCount = doc.validationResults?.issues?.length || 0;
-                            const warningCount = doc.validationResults?.warnings?.length || 0;
-                            const totalFields = Object.keys(doc.extractedData?.data || {}).length;
-
-                            let invalidFields = 0;
-                            Object.entries(doc.extractedData?.data || {}).forEach(([fieldName, value]) => {
-                              const validation = doc.validationResults?.fieldValidations?.[fieldName];
-                              if ((!value || value === '' || value === null || value === undefined) && validation) {
-                                invalidFields++;
-                              } else if (validation?.message && validation?.isValid === false) {
-                                const msg = validation.message.toLowerCase();
-                                if (!msg.includes('format') && !msg.includes('pattern') && !msg.includes('length') &&
-                                    !msg.includes('invalid') && !msg.includes('must match')) {
-                                  invalidFields++;
-                                }
-                              }
-                            });
-
-                            return (
-                              <tr
-                                key={doc.id}
-                                className={`document-row ${selectedDocument?.id === doc.id ? 'selected' : ''}`}
-                                onClick={() => setSelectedDocument(doc)}
-                              >
-                                <td className="document-name-cell" title={doc.fileName}>
-                                  {doc.fileName}
-                                </td>
-                                <td className="document-type-cell">
-                                  <span className="document-type-badge">
-                                    📋 {doc.documentType}
-                                  </span>
-                                </td>
-                                <td className="date-cell">
-                                  {new Date(doc.uploadDate).toLocaleDateString()}
-                                </td>
-                                <td className="fields-cell">
-                                  {totalFields} fields
-                                </td>
-                                <td className="validation-cell">
-                                  {criticalCount > 0 && (
-                                    <span className="validation-badge critical">
-                                      🔴 {criticalCount}
-                                    </span>
-                                  )}
-                                  {warningCount > 0 && (
-                                    <span className="validation-badge warning">
-                                      🟡 {warningCount}
-                                    </span>
-                                  )}
-                                  {invalidFields > 0 && (
-                                    <span className="validation-badge invalid-field">
-                                      ✗ {invalidFields}
-                                    </span>
-                                  )}
-                                  {criticalCount === 0 && warningCount === 0 && invalidFields === 0 && (
-                                    <span className="validation-badge success">
-                                      ✓ Valid
-                                    </span>
-                                  )}
-                                </td>
-                                <td className="status-cell">
-                                  <span className={`document-status ${doc.status}`}>
-                                    {doc.status}
-                                  </span>
-                                </td>
-                                <td className="action-cell">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                  </svg>
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                    <div className="no-selection">
+                      <p>Select a document to view validation results</p>
                     </div>
                   )}
                 </div>
 
-                {/* Right Main Area - Document Viewer */}
+                {/* Right Area - Document Viewer */}
                 <div className="document-viewer-area">
                   {selectedDocument ? (
                     <DocumentViewer

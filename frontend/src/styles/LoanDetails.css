@@ -194,7 +194,7 @@
   width: 100%;
 }
 
-/* Split View Layout for Documents */
+/* Three-Column Layout for Documents */
 .documents-section-split {
   display: flex;
   gap: 1.5rem;
@@ -202,51 +202,194 @@
   min-height: 600px;
 }
 
-/* Left Sidebar - Documents List */
-.documents-sidebar {
-  width: 380px;
+/* Left Nav - Documents Menu */
+.documents-nav {
+  width: 280px;
   flex-shrink: 0;
   background: white;
   border-radius: 8px;
-  padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.documents-sidebar .documents-grid,
-.documents-sidebar .documents-table-container {
+.documents-nav-header {
+  padding: 1.25rem;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
+}
+
+.documents-nav-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.document-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.documents-menu {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-top: 1rem;
 }
 
-/* Custom scrollbar for documents sidebar */
-.documents-sidebar .documents-grid::-webkit-scrollbar,
-.documents-sidebar .documents-table-container::-webkit-scrollbar {
-  width: 8px;
+/* Document Menu Items */
+.document-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s;
 }
 
-.documents-sidebar .documents-grid::-webkit-scrollbar-track,
-.documents-sidebar .documents-table-container::-webkit-scrollbar-track {
+.document-menu-item:hover {
+  background: #f9fafb;
+}
+
+.document-menu-item.active {
+  background: linear-gradient(135deg, rgba(141, 198, 63, 0.1) 0%, rgba(107, 168, 46, 0.1) 100%);
+  border-left: 4px solid var(--cmg-primary-green);
+  padding-left: calc(1rem - 4px);
+}
+
+.doc-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.doc-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+
+.doc-type {
+  font-size: 0.75rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc-status {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 0.35rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.status-indicator.critical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-indicator.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-indicator.invalid {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-indicator.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Custom scrollbar for documents menu */
+.documents-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.documents-menu::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 4px;
 }
 
-.documents-sidebar .documents-grid::-webkit-scrollbar-thumb,
-.documents-sidebar .documents-table-container::-webkit-scrollbar-thumb {
+.documents-menu::-webkit-scrollbar-thumb {
   background: var(--cmg-primary-green);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
-.documents-sidebar .documents-grid::-webkit-scrollbar-thumb:hover,
-.documents-sidebar .documents-table-container::-webkit-scrollbar-thumb:hover {
+.documents-menu::-webkit-scrollbar-thumb:hover {
   background: var(--cmg-primary-green-hover);
 }
 
-/* Right Main Area - Document Viewer */
+/* Middle Area - Validation Results */
+.validation-results-area {
+  width: 380px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.validation-results-content {
+  padding: 1.5rem;
+}
+
+.validation-results-content h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.results-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}
+
+/* Right Area - Document Viewer */
 .document-viewer-area {
   flex: 1;
   background: white;
@@ -742,13 +885,32 @@
 }
 
 /* Responsive */
+@media (max-width: 1400px) {
+  .documents-section-split {
+    gap: 1rem;
+  }
+
+  .documents-nav {
+    width: 250px;
+  }
+
+  .validation-results-area {
+    width: 320px;
+  }
+}
+
 @media (max-width: 1200px) {
   .documents-section-split {
     flex-direction: column;
     height: auto;
   }
 
-  .documents-sidebar {
+  .documents-nav {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .validation-results-area {
     width: 100%;
     max-height: 400px;
   }
@@ -780,7 +942,11 @@
     grid-template-columns: 1fr;
   }
 
-  .documents-sidebar {
+  .documents-nav {
+    max-height: 250px;
+  }
+
+  .validation-results-area {
     max-height: 350px;
   }
 }
