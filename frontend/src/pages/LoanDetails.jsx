@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { getLoan, getLoanDocuments, getLoanScorecard, uploadDocument, getLoanDispositions, updateDisposition } from '../api/client';
 import DocumentViewer from '../components/DocumentViewer';
 import Scorecard from '../components/Scorecard';
-import DocumentUpload from '../components/DocumentUpload';
 import AgentDispositionQueue from '../components/AgentDispositionQueue';
 import '../styles/LoanDetails.css';
 
@@ -13,7 +12,7 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
   const [dispositions, setDispositions] = useState([]);
   const [selectedDocument, setSelectedDocument] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('documents'); // documents, scorecard, dispositions, upload
+  const [activeTab, setActiveTab] = useState('documents'); // documents, scorecard, dispositions
 
   useEffect(() => {
     if (loanId) {
@@ -288,19 +287,13 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
           className={`tab ${activeTab === 'scorecard' ? 'active' : ''}`}
           onClick={() => setActiveTab('scorecard')}
         >
-          📊 Scorecard
+          ⚖️ Side-by-Side Compare
         </button>
         <button
           className={`tab ${activeTab === 'dispositions' ? 'active' : ''} ${dispositions.filter(d => d.status === 'open' || d.status === 'in_progress').length > 0 ? 'tab-alert' : ''}`}
           onClick={() => setActiveTab('dispositions')}
         >
           🔔 Dispositions ({dispositions.filter(d => d.status === 'open' || d.status === 'in_progress').length})
-        </button>
-        <button
-          className={`tab ${activeTab === 'upload' ? 'active' : ''}`}
-          onClick={() => setActiveTab('upload')}
-        >
-          ⬆️ Upload Document
         </button>
       </div>
 
@@ -311,13 +304,7 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
             {documents.length === 0 ? (
               <div className="empty-state">
                 <h3>No Documents Uploaded Yet</h3>
-                <p>Upload documents to begin processing</p>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => setActiveTab('upload')}
-                >
-                  Upload First Document
-                </button>
+                <p>Documents will appear here once uploaded to the loan</p>
               </div>
             ) : (
               <>
@@ -416,13 +403,6 @@ function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
             loanId={loanId}
             dispositions={dispositions}
             onDisposition={handleDisposition}
-          />
-        )}
-
-        {activeTab === 'upload' && (
-          <DocumentUpload
-            loanId={loanId}
-            onUpload={handleDocumentUpload}
           />
         )}
       </div>
