@@ -5,17 +5,7 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
   const [filter, setFilter] = useState('all'); // all, open, resolved
   const [expandedItem, setExpandedItem] = useState(null);
   const [previewDocument, setPreviewDocument] = useState(null);
-  const [expandedAgentSections, setExpandedAgentSections] = useState({}); // Track which agent sections are expanded
-
-  const toggleAgentSection = (dispId, section) => {
-    setExpandedAgentSections(prev => ({
-      ...prev,
-      [dispId]: {
-        ...(prev[dispId] || {}),
-        [section]: !(prev[dispId]?.[section])
-      }
-    }));
-  };
+  const [viewAgentDetails, setViewAgentDetails] = useState(null); // For agent details slideout
 
   const filteredDispositions = dispositions.filter(disp => {
     if (filter === 'all') return true;
@@ -268,74 +258,24 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                     </div>
                   )}
 
-                  {/* Agent Configuration - Collapsible Boxes */}
-                  <div className="agent-config-boxes">
-                    {/* Agent Prompt Box */}
-                    {disp.agentPrompt && (
-                      <div className="agent-config-box">
-                        <button
-                          className="agent-config-header"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleAgentSection(disp.id, 'prompt');
-                          }}
-                        >
-                          <span className="config-icon">🤖</span>
-                          <span className="config-label">Agent Instructions</span>
-                          <svg className={`config-expand-icon ${expandedAgentSections[disp.id]?.prompt ? 'expanded' : ''}`} viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                            <path d="M7 10l5 5 5-5z"/>
-                          </svg>
-                        </button>
-                        {expandedAgentSections[disp.id]?.prompt && (
-                          <div className="agent-config-content">
-                            <pre>{disp.agentPrompt}</pre>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Agent Processing Steps Box */}
-                    {disp.agentSteps && disp.agentSteps.length > 0 && (
-                      <div className="agent-config-box">
-                        <button
-                          className="agent-config-header"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleAgentSection(disp.id, 'steps');
-                          }}
-                        >
-                          <span className="config-icon">⚙️</span>
-                          <span className="config-label">Processing Steps ({disp.agentSteps.length})</span>
-                          <svg className={`config-expand-icon ${expandedAgentSections[disp.id]?.steps ? 'expanded' : ''}`} viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                            <path d="M7 10l5 5 5-5z"/>
-                          </svg>
-                        </button>
-                        {expandedAgentSections[disp.id]?.steps && (
-                          <div className="agent-config-content">
-                            <div className="agent-steps-timeline">
-                              {disp.agentSteps.map((step, index) => (
-                                <div key={index} className={`step-item ${step.status}`}>
-                                  <div className="step-marker">
-                                    <div className="step-number">{step.step}</div>
-                                    {index < disp.agentSteps.length - 1 && <div className="step-line"></div>}
-                                  </div>
-                                  <div className="step-content">
-                                    <div className="step-header">
-                                      <h6>{step.action}</h6>
-                                      <span className="step-time">
-                                        {formatDate(step.timestamp)}
-                                      </span>
-                                    </div>
-                                    <p className="step-description">{step.description}</p>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                  {/* Agent Details Button */}
+                  {(disp.agentPrompt || (disp.agentSteps && disp.agentSteps.length > 0)) && (
+                    <button
+                      className="view-agent-details-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setViewAgentDetails(disp);
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                      </svg>
+                      View Agent Details
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                      </svg>
+                    </button>
+                  )}
 
                       {disp.metadata && Object.keys(disp.metadata).length > 0 && (
                         <div className="disposition-metadata-compact">
@@ -397,24 +337,88 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
               </button>
             </div>
             <div className="slideout-content">
-              {previewDocument.extractedData && previewDocument.extractedData.data && Object.keys(previewDocument.extractedData.data).length > 0 ? (
-                <div className="preview-data">
-                  <h4>Extracted Data</h4>
-                  {Object.entries(previewDocument.extractedData.data).map(([key, value]) => (
-                    <div key={key} className="preview-data-item">
-                      <span className="preview-data-key">{key}:</span>
-                      <span className="preview-data-value">{value || 'N/A'}</span>
-                    </div>
-                  ))}
+              {previewDocument.filePath || previewDocument.s3Key ? (
+                <div className="document-iframe-container">
+                  <iframe
+                    src={previewDocument.filePath || `/documents/${previewDocument.s3Key}`}
+                    title={previewDocument.fileName}
+                    className="document-iframe"
+                  />
                 </div>
               ) : (
                 <div className="preview-placeholder">
                   <div className="placeholder-icon">📄</div>
-                  <h4>No Extracted Data Available</h4>
-                  <p>This document has not been processed yet or the extracted data is not available.</p>
+                  <h4>Document Preview Not Available</h4>
+                  <p>Unable to load document preview at this time.</p>
                   <div className="document-basic-info">
                     <p><strong>File Name:</strong> {previewDocument.fileName}</p>
                     <p><strong>Document Type:</strong> {previewDocument.documentType}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Agent Details Slide-out */}
+      {viewAgentDetails && (
+        <div className="document-slideout-overlay" onClick={() => setViewAgentDetails(null)}>
+          <div className="document-slideout" onClick={(e) => e.stopPropagation()}>
+            <div className="slideout-header">
+              <div className="slideout-title">
+                <h3>{viewAgentDetails.agentName}</h3>
+                <span className="slideout-doc-type">{viewAgentDetails.agentType}</span>
+              </div>
+              <button className="slideout-close" onClick={() => setViewAgentDetails(null)}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+            </div>
+            <div className="slideout-content agent-details-slideout">
+              {/* Agent Instructions */}
+              {viewAgentDetails.agentPrompt && (
+                <div className="agent-detail-section">
+                  <h4>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M9 4v1.38c-.83-.33-1.72-.5-2.61-.5-1.79 0-3.58.68-4.95 2.05l3.33 3.33h1.11v1.11c.86.86 1.98 1.31 3.11 1.36V15H6v3c0 1.1.9 2 2 2h10c1.66 0 3-1.34 3-3V4H9zm-1.11 6.41V8.26H5.61L4.57 7.22C5.14 7.08 5.72 7 6.39 7c1.6 0 3.11.62 4.24 1.75l.03.03-2.77 2.63zM19 18c0 .55-.45 1-1 1s-1-.45-1-1v-2h-6v-2.59c.57-.23 1.1-.57 1.56-1.03l.2-.2L15.59 14H17v-1.41l-6-5.97V6h8v12z"/>
+                    </svg>
+                    Agent Instructions
+                  </h4>
+                  <div className="agent-detail-content">
+                    <pre>{viewAgentDetails.agentPrompt}</pre>
+                  </div>
+                </div>
+              )}
+
+              {/* Processing Steps */}
+              {viewAgentDetails.agentSteps && viewAgentDetails.agentSteps.length > 0 && (
+                <div className="agent-detail-section">
+                  <h4>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Processing Steps ({viewAgentDetails.agentSteps.length})
+                  </h4>
+                  <div className="agent-steps-timeline-slideout">
+                    {viewAgentDetails.agentSteps.map((step, index) => (
+                      <div key={index} className={`step-item ${step.status}`}>
+                        <div className="step-marker">
+                          <div className="step-number">{step.step}</div>
+                          {index < viewAgentDetails.agentSteps.length - 1 && <div className="step-line"></div>}
+                        </div>
+                        <div className="step-content">
+                          <div className="step-header">
+                            <h6>{step.action}</h6>
+                            <span className="step-time">
+                              {formatDate(step.timestamp)}
+                            </span>
+                          </div>
+                          <p className="step-description">{step.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
