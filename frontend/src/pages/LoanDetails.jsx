@@ -5,7 +5,7 @@ import Scorecard from '../components/Scorecard';
 import DocumentUpload from '../components/DocumentUpload';
 import '../styles/LoanDetails.css';
 
-function LoanDetails({ loanId, onBack }) {
+function LoanDetails({ loanId, onBack, viewMode, setViewMode }) {
   const [loan, setLoan] = useState(null);
   const [documents, setDocuments] = useState([]);
   const [scorecard, setScorecard] = useState(null);
@@ -158,8 +158,39 @@ function LoanDetails({ loanId, onBack }) {
             ) : (
               <>
                 <div className="documents-list">
-                  <h3>Uploaded Documents</h3>
-                  <div className="documents-grid">
+                  <div className="documents-list-header">
+                    <h3>Uploaded Documents</h3>
+                    <div className="view-toggle">
+                      <button
+                        className={`toggle-btn ${viewMode === 'cards' ? 'active' : ''}`}
+                        onClick={() => setViewMode('cards')}
+                        title="Card View"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="3" y="3" width="7" height="7" rx="1"/>
+                          <rect x="14" y="3" width="7" height="7" rx="1"/>
+                          <rect x="3" y="14" width="7" height="7" rx="1"/>
+                          <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        <span>Cards</span>
+                      </button>
+                      <button
+                        className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
+                        onClick={() => setViewMode('table')}
+                        title="Table View"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <line x1="3" y1="6" x2="21" y2="6"/>
+                          <line x1="3" y1="12" x2="21" y2="12"/>
+                          <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                        <span>Table</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {viewMode === 'cards' ? (
+                    <div className="documents-grid">
                     {documents.map((doc) => {
                       // Calculate validation summary - only count real issues (mismatches, missing data)
                       const criticalCount = doc.validationResults?.issues?.length || 0;
@@ -257,7 +288,100 @@ function LoanDetails({ loanId, onBack }) {
                         </div>
                       );
                     })}
-                  </div>
+                    </div>
+                  ) : (
+                    <div className="documents-table-container">
+                      <table className="documents-table">
+                        <thead>
+                          <tr>
+                            <th>Document Name</th>
+                            <th>Type</th>
+                            <th>Upload Date</th>
+                            <th>Fields</th>
+                            <th>Validation</th>
+                            <th>Status</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {documents.map((doc) => {
+                            const criticalCount = doc.validationResults?.issues?.length || 0;
+                            const warningCount = doc.validationResults?.warnings?.length || 0;
+                            const totalFields = Object.keys(doc.extractedData?.data || {}).length;
+
+                            let invalidFields = 0;
+                            Object.entries(doc.extractedData?.data || {}).forEach(([fieldName, value]) => {
+                              const validation = doc.validationResults?.fieldValidations?.[fieldName];
+                              if ((!value || value === '' || value === null || value === undefined) && validation) {
+                                invalidFields++;
+                              } else if (validation?.message && validation?.isValid === false) {
+                                const msg = validation.message.toLowerCase();
+                                if (!msg.includes('format') && !msg.includes('pattern') && !msg.includes('length') &&
+                                    !msg.includes('invalid') && !msg.includes('must match')) {
+                                  invalidFields++;
+                                }
+                              }
+                            });
+
+                            return (
+                              <tr
+                                key={doc.id}
+                                className={`document-row ${selectedDocument?.id === doc.id ? 'selected' : ''}`}
+                                onClick={() => setSelectedDocument(doc)}
+                              >
+                                <td className="document-name-cell" title={doc.fileName}>
+                                  {doc.fileName}
+                                </td>
+                                <td className="document-type-cell">
+                                  <span className="document-type-badge">
+                                    📋 {doc.documentType}
+                                  </span>
+                                </td>
+                                <td className="date-cell">
+                                  {new Date(doc.uploadDate).toLocaleDateString()}
+                                </td>
+                                <td className="fields-cell">
+                                  {totalFields} fields
+                                </td>
+                                <td className="validation-cell">
+                                  {criticalCount > 0 && (
+                                    <span className="validation-badge critical">
+                                      🔴 {criticalCount}
+                                    </span>
+                                  )}
+                                  {warningCount > 0 && (
+                                    <span className="validation-badge warning">
+                                      🟡 {warningCount}
+                                    </span>
+                                  )}
+                                  {invalidFields > 0 && (
+                                    <span className="validation-badge invalid-field">
+                                      ✗ {invalidFields}
+                                    </span>
+                                  )}
+                                  {criticalCount === 0 && warningCount === 0 && invalidFields === 0 && (
+                                    <span className="validation-badge success">
+                                      ✓ Valid
+                                    </span>
+                                  )}
+                                </td>
+                                <td className="status-cell">
+                                  <span className={`document-status ${doc.status}`}>
+                                    {doc.status}
+                                  </span>
+                                </td>
+                                <td className="action-cell">
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                  </svg>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
 
                 {selectedDocument && (

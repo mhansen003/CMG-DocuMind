@@ -13,6 +13,7 @@ function App() {
   const [showSplash, setShowSplash] = useState(false);
   const [showAgentMap, setShowAgentMap] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table' - shared across Dashboard and LoanDetails
 
   // Check if user has seen the splash screen in this session
   useEffect(() => {
@@ -158,12 +159,18 @@ function App() {
 
         <main className="main-content">
           {currentView === 'dashboard' && (
-            <Dashboard onSelectLoan={handleSelectLoan} />
+            <Dashboard
+              onSelectLoan={handleSelectLoan}
+              viewMode={viewMode}
+              setViewMode={setViewMode}
+            />
           )}
           {currentView === 'loanDetails' && (
             <LoanDetails
               loanId={selectedLoanId}
               onBack={handleBackToDashboard}
+              viewMode={viewMode}
+              setViewMode={setViewMode}
             />
           )}
           {currentView === 'agents' && (

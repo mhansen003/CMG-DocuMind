@@ -136,9 +136,16 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+.documents-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 .documents-list h3 {
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
   color: #333;
 }
 
@@ -478,6 +485,100 @@
 
 .document-item.selected .validation-badge.success {
   box-shadow: 0 2px 4px rgba(6, 95, 70, 0.3);
+}
+
+/* Documents Table View */
+.documents-table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.documents-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.documents-table thead {
+  background: linear-gradient(135deg, var(--cmg-primary-green) 0%, var(--cmg-primary-green-hover) 100%);
+  color: white;
+}
+
+.documents-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.documents-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.documents-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.documents-table tbody tr.selected {
+  background-color: #f0fdf4;
+  border-left: 4px solid var(--cmg-primary-green);
+}
+
+.documents-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.documents-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.document-name-cell {
+  font-weight: 600;
+  color: #333;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.document-type-cell {
+  font-size: 0.875rem;
+}
+
+.document-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid var(--cmg-primary-green-light);
+  border-radius: 12px;
+  font-weight: 500;
+  color: #166534;
+}
+
+.fields-cell {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.validation-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.document-row:hover .action-cell svg {
+  transform: translateX(4px);
+  stroke: var(--cmg-primary-green);
 }
 
 /* Responsive */

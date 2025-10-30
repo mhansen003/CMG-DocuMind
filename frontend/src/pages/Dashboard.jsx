@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getLoans } from '../api/client';
 
-function Dashboard({ onSelectLoan }) {
+function Dashboard({ onSelectLoan, viewMode, setViewMode }) {
   const [loans, setLoans] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table'
 
   useEffect(() => {
     fetchLoans();
