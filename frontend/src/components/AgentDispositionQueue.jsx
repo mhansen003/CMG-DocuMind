@@ -384,7 +384,8 @@ function AgentDispositionQueue({ loanId, dispositions = [], onDisposition, docum
                 </div>
               ) : (() => {
                 // Try multiple possible document URL properties
-                const docUrl = previewDocument.filePath ||
+                const docUrl = previewDocument.s3Url ||
+                              previewDocument.filePath ||
                               previewDocument.s3Key && `/documents/${previewDocument.s3Key}` ||
                               previewDocument.url ||
                               previewDocument.documentUrl ||
