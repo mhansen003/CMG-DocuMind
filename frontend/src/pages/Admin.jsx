@@ -35,7 +35,7 @@ function Admin({ onBack }) {
         name: 'Paystub',
         description: 'Employee pay statement showing income and deductions',
         icon: '💰',
-        previewUrl: '/sample-documents/paystub-chen-sarah-2024-10.html',
+        previewUrl: '/sample-documents/paystub-thompson-michael-2024-10.html',
         fields: paystubFields
       },
       {
@@ -43,7 +43,7 @@ function Admin({ onBack }) {
         name: 'W-2 Form',
         description: 'IRS Form W-2 - Annual wage and tax statement',
         icon: '📋',
-        previewUrl: '/sample-documents/w2-chen-sarah-2023.html',
+        previewUrl: '/sample-documents/w2-thompson-michael-2024.html',
         fields: w2Fields
       },
       {
@@ -51,7 +51,7 @@ function Admin({ onBack }) {
         name: 'Bank Statement',
         description: 'Monthly bank account statement showing transactions and balances',
         icon: '🏦',
-        previewUrl: '/sample-documents/bank-statement-chen-2024-10.html',
+        previewUrl: '/sample-documents/bank-statement-thompson-2024-09.html',
         fields: bankStatementFields
       },
       {

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Security Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card-container {
+            width: 500px;
+            height: 320px;
+            perspective: 1000px;
+        }
+        .ssn-card {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #bfdbfe 0%, #dbeafe 100%);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid #0284c7;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 14px;
+            color: #0c4a6e;
+            font-weight: bold;
+        }
+        .header h2 {
+            margin: 5px 0 0 0;
+            font-size: 20px;
+            color: #0369a1;
+        }
+        .ssn-number {
+            text-align: center;
+            font-size: 42px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin: 40px 0 30px 0;
+            letter-spacing: 4px;
+        }
+        .name-section {
+            margin-top: 40px;
+        }
+        .label {
+            font-size: 10px;
+            color: #0369a1;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .value {
+            font-size: 20px;
+            color: #0c4a6e;
+            font-weight: bold;
+            display: block;
+        }
+        .signature {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-style: italic;
+            font-size: 16px;
+            color: #0369a1;
+        }
+        .seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #0284c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: white;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            color: rgba(12, 74, 110, 0.05);
+            font-weight: bold;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="ssn-card">
+            <div class="watermark">SAMPLE</div>
+            <div class="seal">🦅</div>
+            <div class="header">
+                <h1>SOCIAL SECURITY</h1>
+                <h2>🆔</h2>
+            </div>
+
+            <div class="ssn-number">
+                XXX-XX-5678
+            </div>
+
+            <div class="name-section">
+                <span class="label">NAME</span>
+                <span class="value">MICHAEL THOMPSON</span>
+            </div>
+
+            <div class="signature">
+                Signature on file
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appraisal Report (Form 1004)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .document {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2563eb;
+        }
+        .value-box {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .value-amount {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .section {
+            margin: 25px 0;
+        }
+        .section h2 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-left: 4px solid #2563eb;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .info-item {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 12px;
+            display: block;
+        }
+        .info-value {
+            color: #333;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+            font-size: 13px;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <h1>🏘️ UNIFORM RESIDENTIAL APPRAISAL REPORT</h1>
+            <p><strong>Form 1004 - Fannie Mae / Freddie Mac</strong></p>
+            <p>File #: 2024-AP-789456</p>
+        </div>
+
+        <div class="value-box">
+            <div>APPRAISED VALUE</div>
+            <div class="value-amount">$428,000</div>
+            <div>As of October 15, 2024</div>
+        </div>
+
+        <div class="section">
+            <h2>SUBJECT PROPERTY</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Property Address</span>
+                    <span class="info-value">456 Oak Avenue<br>Portland, OR 97201</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Legal Description</span>
+                    <span class="info-value">Lot 15, Block 4, Oak Heights Subdivision</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Assessor's Parcel #</span>
+                    <span class="info-value">R123456789</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Tax Year</span>
+                    <span class="info-value">2024 | Taxes: $6,200/year</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Borrower</span>
+                    <span class="info-value">Michael Thompson</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Current Owner</span>
+                    <span class="info-value">Robert & Mary Johnson</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>CONTRACT INFORMATION</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Contract Price</span>
+                    <span class="info-value">$425,000</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Contract Date</span>
+                    <span class="info-value">October 1, 2024</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Is Property Seller Own?</span>
+                    <span class="info-value">Yes</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Date of Inspection</span>
+                    <span class="info-value">October 15, 2024</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PROPERTY CHARACTERISTICS</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Property Type</span>
+                    <span class="info-value">Single Family Residence</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Design (Style)</span>
+                    <span class="info-value">Contemporary Two-Story</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Year Built</span>
+                    <span class="info-value">2015</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Effective Age</span>
+                    <span class="info-value">8 years</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Gross Living Area</span>
+                    <span class="info-value">2,400 sq ft</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Lot Size</span>
+                    <span class="info-value">6,500 sq ft</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Rooms</span>
+                    <span class="info-value">4 Bedrooms / 3 Bathrooms</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Garage/Carport</span>
+                    <span class="info-value">2-Car Attached Garage</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Foundation</span>
+                    <span class="info-value">Concrete Slab</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Exterior Walls</span>
+                    <span class="info-value">Vinyl Siding</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Roof</span>
+                    <span class="info-value">Asphalt Shingle (Good Condition)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Overall Condition</span>
+                    <span class="info-value">Good</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>COMPARABLE SALES</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Address</th>
+                        <th>Sale Price</th>
+                        <th>Sale Date</th>
+                        <th>GLA</th>
+                        <th>Price/SF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Subject</strong></td>
+                        <td>456 Oak Ave</td>
+                        <td>$428,000</td>
+                        <td>-</td>
+                        <td>2,400</td>
+                        <td>$178.33</td>
+                    </tr>
+                    <tr>
+                        <td>Comp 1</td>
+                        <td>123 Maple St</td>
+                        <td>$415,000</td>
+                        <td>Sep 2024</td>
+                        <td>2,350</td>
+                        <td>$176.60</td>
+                    </tr>
+                    <tr>
+                        <td>Comp 2</td>
+                        <td>789 Pine Dr</td>
+                        <td>$432,500</td>
+                        <td>Aug 2024</td>
+                        <td>2,450</td>
+                        <td>$176.53</td>
+                    </tr>
+                    <tr>
+                        <td>Comp 3</td>
+                        <td>321 Birch Ln</td>
+                        <td>$425,000</td>
+                        <td>Sep 2024</td>
+                        <td>2,400</td>
+                        <td>$177.08</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>RECONCILIATION & FINAL VALUE</h2>
+            <div class="info-item">
+                <span class="info-label">Sales Comparison Approach</span>
+                <span class="info-value">$428,000</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Cost Approach (if applicable)</span>
+                <span class="info-value">$425,000</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Income Approach (if applicable)</span>
+                <span class="info-value">N/A</span>
+            </div>
+            <div class="info-item" style="background: #f0f9ff; border: 2px solid #2563eb; margin-top: 20px;">
+                <span class="info-label">FINAL OPINION OF VALUE</span>
+                <span class="info-value" style="font-size: 24px; font-weight: bold; color: #2563eb;">$428,000</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>APPRAISER INFORMATION</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Appraiser Name</span>
+                    <span class="info-value">David Anderson, MAI</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">License #</span>
+                    <span class="info-value">OR-CRA-12345</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Company</span>
+                    <span class="info-value">Pacific Northwest Appraisal Services</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Report Date</span>
+                    <span class="info-value">October 20, 2024</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center; color: #999; font-size: 12px;">
+            <p>This is a sample document for demonstration purposes only.</p>
+            <p>File #: 2024-AP-789456 | Generated by CMG DocuMind</p>
+        </div>
+    </div>
+</body>
+</html>

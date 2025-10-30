@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeowner's Insurance Policy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+        }
+        .document {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #10b981;
+        }
+        .header h1 {
+            color: #10b981;
+            margin: 0 0 10px 0;
+        }
+        .section {
+            margin: 25px 0;
+        }
+        .section h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .info-value {
+            color: #333;
+            text-align: right;
+        }
+        .coverage-box {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .premium-box {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .premium-amount {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <h1>🏠 HOMEOWNER'S INSURANCE POLICY</h1>
+            <p><strong>State Farm Insurance</strong></p>
+            <p>Policy Number: HO-2024-789456</p>
+        </div>
+
+        <div class="section">
+            <h2>Policy Information</h2>
+            <div class="info-row">
+                <span class="info-label">Policyholder:</span>
+                <span class="info-value">Michael Thompson</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Policy Type:</span>
+                <span class="info-value">HO-3 Homeowners Special Form</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Policy Period:</span>
+                <span class="info-value">01/01/2024 to 01/01/2025</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Effective Date:</span>
+                <span class="info-value">January 1, 2024</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Insured Property</h2>
+            <div class="info-row">
+                <span class="info-label">Property Address:</span>
+                <span class="info-value">456 Oak Avenue<br>Portland, OR 97201</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Property Type:</span>
+                <span class="info-value">Single Family Residence</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Year Built:</span>
+                <span class="info-value">2015</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Square Footage:</span>
+                <span class="info-value">2,400 sq ft</span>
+            </div>
+        </div>
+
+        <div class="premium-box">
+            <div>Annual Premium</div>
+            <div class="premium-amount">$1,850</div>
+            <div>Monthly: $154.17</div>
+        </div>
+
+        <div class="section">
+            <h2>Coverage Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Coverage Type</th>
+                        <th style="text-align: right;">Limit</th>
+                        <th style="text-align: right;">Deductible</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Coverage A:</strong> Dwelling</td>
+                        <td style="text-align: right;">$425,000</td>
+                        <td style="text-align: right;">$1,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage B:</strong> Other Structures</td>
+                        <td style="text-align: right;">$42,500 (10%)</td>
+                        <td style="text-align: right;">$1,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage C:</strong> Personal Property</td>
+                        <td style="text-align: right;">$212,500 (50%)</td>
+                        <td style="text-align: right;">$1,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage D:</strong> Loss of Use</td>
+                        <td style="text-align: right;">$85,000 (20%)</td>
+                        <td style="text-align: right;">N/A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage E:</strong> Personal Liability</td>
+                        <td style="text-align: right;">$300,000</td>
+                        <td style="text-align: right;">N/A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage F:</strong> Medical Payments</td>
+                        <td style="text-align: right;">$5,000</td>
+                        <td style="text-align: right;">N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="coverage-box">
+            <h3 style="margin-top: 0; color: #059669;">✓ Additional Coverages Included</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Replacement Cost Coverage on Dwelling and Personal Property</li>
+                <li>Water Backup Coverage: $10,000</li>
+                <li>Identity Theft Protection: $15,000</li>
+                <li>Earthquake Coverage: $50,000</li>
+                <li>Equipment Breakdown Coverage</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Mortgagee Clause</h2>
+            <div class="coverage-box">
+                <div class="info-row" style="border: none;">
+                    <span class="info-label">Mortgagee Name:</span>
+                    <span class="info-value">CMG Mortgage, Inc.</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span class="info-label">Loan Number:</span>
+                    <span class="info-value">CMG-2024-001</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span class="info-label">Mortgagee Address:</span>
+                    <span class="info-value">123 Lender Street<br>San Francisco, CA 94111</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Agent Information</h2>
+            <div class="info-row">
+                <span class="info-label">Agent Name:</span>
+                <span class="info-value">Jennifer Martinez</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Agent Phone:</span>
+                <span class="info-value">(503) 555-0199</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Agent Email:</span>
+                <span class="info-value">j.martinez@statefarm.com</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>This is a sample document for demonstration purposes only.</p>
+            <p>Policy ID: HO-2024-789456 | Generated by CMG DocuMind</p>
+        </div>
+    </div>
+</body>
+</html>

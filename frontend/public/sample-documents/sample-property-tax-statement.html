@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Tax Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .document {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: white;
+            padding: 30px;
+            margin: -40px -40px 30px -40px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .section {
+            margin: 25px 0;
+        }
+        .section h2 {
+            color: #7c3aed;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .info-value {
+            color: #333;
+            text-align: right;
+        }
+        .amount-box {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        .amount {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .breakdown-table th,
+        .breakdown-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .breakdown-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+        .breakdown-table .total-row {
+            background: #faf5ff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .payment-schedule {
+            background: #faf5ff;
+            border: 2px solid #7c3aed;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .status-current {
+            background: #dcfce7;
+            color: #166534;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <h1>🏛️ PROPERTY TAX STATEMENT</h1>
+            <p style="margin: 10px 0 0 0;">Multnomah County, Oregon</p>
+            <p style="margin: 5px 0 0 0; font-size: 14px;">Tax Year 2024-2025</p>
+        </div>
+
+        <div class="section">
+            <h2>Property Information</h2>
+            <div class="info-row">
+                <span class="info-label">Property Address:</span>
+                <span class="info-value">456 Oak Avenue, Portland, OR 97201</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Property ID (Tax Lot):</span>
+                <span class="info-value">R123456789</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Account Number:</span>
+                <span class="info-value">MC-2024-789456</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Legal Description:</span>
+                <span class="info-value">Lot 15, Block 4, Oak Heights Subdivision</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Owner Information</h2>
+            <div class="info-row">
+                <span class="info-label">Owner Name:</span>
+                <span class="info-value">Robert and Mary Johnson</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Mailing Address:</span>
+                <span class="info-value">456 Oak Avenue, Portland, OR 97201</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Assessed Value</h2>
+            <div class="info-row">
+                <span class="info-label">Land Value:</span>
+                <span class="info-value">$120,000</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Improvement Value:</span>
+                <span class="info-value">$305,000</span>
+            </div>
+            <div class="info-row" style="background: #f8f9fa; font-weight: bold;">
+                <span class="info-label">Total Assessed Value:</span>
+                <span class="info-value">$425,000</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Taxable Value (Real Market Value):</span>
+                <span class="info-value">$425,000</span>
+            </div>
+        </div>
+
+        <div class="amount-box">
+            <div>ANNUAL TAX AMOUNT</div>
+            <div class="amount">$6,200.00</div>
+            <div>Tax Year: July 1, 2024 - June 30, 2025</div>
+        </div>
+
+        <div class="section">
+            <h2>Tax Breakdown</h2>
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Taxing District</th>
+                        <th style="text-align: right;">Tax Rate</th>
+                        <th style="text-align: right;">Tax Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Multnomah County General</td>
+                        <td style="text-align: right;">$3.9456 per $1,000</td>
+                        <td style="text-align: right;">$1,677.00</td>
+                    </tr>
+                    <tr>
+                        <td>City of Portland</td>
+                        <td style="text-align: right;">$4.5234 per $1,000</td>
+                        <td style="text-align: right;">$1,922.00</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Public Schools</td>
+                        <td style="text-align: right;">$4.2890 per $1,000</td>
+                        <td style="text-align: right;">$1,823.00</td>
+                    </tr>
+                    <tr>
+                        <td>Metro Regional Government</td>
+                        <td style="text-align: right;">$0.6745 per $1,000</td>
+                        <td style="text-align: right;">$287.00</td>
+                    </tr>
+                    <tr>
+                        <td>Library District</td>
+                        <td style="text-align: right;">$0.3456 per $1,000</td>
+                        <td style="text-align: right;">$147.00</td>
+                    </tr>
+                    <tr>
+                        <td>Fire & Emergency Services</td>
+                        <td style="text-align: right;">$0.8123 per $1,000</td>
+                        <td style="text-align: right;">$344.00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">TOTAL ANNUAL TAX</td>
+                        <td style="text-align: right;">$6,200.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Payment Schedule & Status</h2>
+            <div class="payment-schedule">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <span class="status-badge status-current">CURRENT - NO AMOUNT DUE</span>
+                </div>
+
+                <div class="info-row" style="border: none;">
+                    <span class="info-label"><strong>Installment 1 (1/3):</strong> Due November 15, 2024</span>
+                    <span class="info-value"><strong>$2,066.67</strong> - PAID ✓</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span class="info-label"><strong>Installment 2 (1/3):</strong> Due February 15, 2025</span>
+                    <span class="info-value"><strong>$2,066.67</strong> - Not Yet Due</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span class="info-label"><strong>Installment 3 (1/3):</strong> Due May 15, 2025</span>
+                    <span class="info-value"><strong>$2,066.66</strong> - Not Yet Due</span>
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid #7c3aed;">
+                    <div class="info-row" style="border: none;">
+                        <span class="info-label">Amount Paid to Date:</span>
+                        <span class="info-value" style="color: #059669; font-weight: bold;">$2,066.67</span>
+                    </div>
+                    <div class="info-row" style="border: none;">
+                        <span class="info-label">Balance Remaining:</span>
+                        <span class="info-value" style="font-weight: bold;">$4,133.33</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Payment History</h2>
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th style="text-align: right;">Amount</th>
+                        <th>Receipt #</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/30/2024</td>
+                        <td>First Installment Payment</td>
+                        <td style="text-align: right;">$2,066.67</td>
+                        <td>PAY-2024-103045</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Important Information</h2>
+            <div style="line-height: 1.8; color: #555;">
+                <p><strong>Payment Options:</strong></p>
+                <ul style="margin: 10px 0; padding-left: 25px;">
+                    <li>Online: www.multco.us/assessment-taxation</li>
+                    <li>Phone: (503) 988-3326</li>
+                    <li>Mail: Multnomah County Tax Department, 501 SE Hawthorne Blvd, Portland, OR 97214</li>
+                    <li>In Person: County Administration Building</li>
+                </ul>
+
+                <p><strong>Late Payment Penalty:</strong> Interest of 1.33% per month (16% annually) will be charged on any unpaid balance after the due date.</p>
+
+                <p><strong>Discount Option:</strong> Pay the full amount by November 15, 2024 to receive a 3% discount ($186.00 savings).</p>
+
+                <p><strong>Property Tax Exemptions:</strong> This property does not currently have any exemptions. Contact the Assessor's office if you believe you qualify for homestead, senior, veteran, or disability exemptions.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center; color: #999; font-size: 12px;">
+            <p><strong>Questions?</strong> Contact Multnomah County Tax Department<br>
+            Phone: (503) 988-3326 | Email: tax.info@multco.us</p>
+            <p style="margin-top: 20px;">This is a sample document for demonstration purposes only.</p>
+            <p>Statement ID: TX-2024-789456 | Generated by CMG DocuMind</p>
+        </div>
+    </div>
+</body>
+</html>
