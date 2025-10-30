@@ -64,8 +64,11 @@
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   height: fit-content;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
   position: sticky;
   top: 2rem;
+  align-self: start;
 }
 
 .admin-sidebar h3 {
@@ -80,6 +83,25 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+/* Custom scrollbar for sidebar */
+.admin-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #8DC63F;
+  border-radius: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #7ab534;
 }
 
 .doc-type-item {

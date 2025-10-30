@@ -59,7 +59,7 @@ function Admin({ onBack }) {
         name: 'Tax Return (1040)',
         description: 'IRS Form 1040 - Individual income tax return with supporting schedules',
         icon: '📊',
-        previewUrl: '/sample-documents/sample-credit-report.html',
+        previewUrl: '/sample-documents/sample-tax-return-1040.html',
         fields: taxReturnFields
       },
       {
